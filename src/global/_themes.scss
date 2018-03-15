@@ -1,0 +1,10 @@
+@import 'variables';
+.primary {
+  background: $blue;
+  color: white;
+  &.outline {
+    color: $blue;
+    background: none;
+    border: 2px solid $blue;
+  }
+}

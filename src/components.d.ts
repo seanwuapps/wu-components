@@ -20,31 +20,121 @@ declare global {
 
 
 import {
-  MyComponent as MyComponent
-} from './components/my-component/my-component';
+  WuCol as WuCol
+} from './components/wu-grid/wu-col/wu-col';
 
 declare global {
-  interface HTMLMyComponentElement extends MyComponent, HTMLStencilElement {
+  interface HTMLWuColElement extends WuCol, HTMLStencilElement {
   }
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  var HTMLWuColElement: {
+    prototype: HTMLWuColElement;
+    new (): HTMLWuColElement;
   };
   interface HTMLElementTagNameMap {
-    "my-component": HTMLMyComponentElement;
+    "wu-col": HTMLWuColElement;
   }
   interface ElementTagNameMap {
-    "my-component": HTMLMyComponentElement;
+    "wu-col": HTMLWuColElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "my-component": JSXElements.MyComponentAttributes;
+      "wu-col": JSXElements.WuColAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyComponentAttributes extends HTMLAttributes {
-      first?: string;
-      last?: string;
+    export interface WuColAttributes extends HTMLAttributes {
+      basis?: string;
+    }
+  }
+}
+
+
+import {
+  WuRow as WuRow
+} from './components/wu-grid/wu-row/wu-row';
+
+declare global {
+  interface HTMLWuRowElement extends WuRow, HTMLStencilElement {
+  }
+  var HTMLWuRowElement: {
+    prototype: HTMLWuRowElement;
+    new (): HTMLWuRowElement;
+  };
+  interface HTMLElementTagNameMap {
+    "wu-row": HTMLWuRowElement;
+  }
+  interface ElementTagNameMap {
+    "wu-row": HTMLWuRowElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "wu-row": JSXElements.WuRowAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuRowAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
+  WuBurger as WuBurger
+} from './components/wu-menu/wu-burger/wu-burger';
+
+declare global {
+  interface HTMLWuBurgerElement extends WuBurger, HTMLStencilElement {
+  }
+  var HTMLWuBurgerElement: {
+    prototype: HTMLWuBurgerElement;
+    new (): HTMLWuBurgerElement;
+  };
+  interface HTMLElementTagNameMap {
+    "wu-burger": HTMLWuBurgerElement;
+  }
+  interface ElementTagNameMap {
+    "wu-burger": HTMLWuBurgerElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "wu-burger": JSXElements.WuBurgerAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuBurgerAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
+  WuSpinner as WuSpinner
+} from './components/wu-spinner/wu-spinner';
+
+declare global {
+  interface HTMLWuSpinnerElement extends WuSpinner, HTMLStencilElement {
+  }
+  var HTMLWuSpinnerElement: {
+    prototype: HTMLWuSpinnerElement;
+    new (): HTMLWuSpinnerElement;
+  };
+  interface HTMLElementTagNameMap {
+    "wu-spinner": HTMLWuSpinnerElement;
+  }
+  interface ElementTagNameMap {
+    "wu-spinner": HTMLWuSpinnerElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "wu-spinner": JSXElements.WuSpinnerAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuSpinnerAttributes extends HTMLAttributes {
+      color?: string;
+      type?: string;
     }
   }
 }

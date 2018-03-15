@@ -1,15 +1,64 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
-  <script src="/build/mycomponent.js"></script>
+  <script src="/build/wu-components.js"></script>
+  <style>
+    body {
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+    }
 
+    .grey {
+      background: #ccc;
+    }
+
+    .outline {
+      outline: 1px dashed black;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+  </style>
 </head>
+
 <body>
+  <h2>Spinner</h2>
+  <wu-spinner color="orange" type="android"></wu-spinner>
+  <wu-spinner color="blue" type="circle"></wu-spinner>
+  <wu-spinner color="green" type="ios"></wu-spinner>
+  <wu-spinner color="red" type="bars"></wu-spinner>
 
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+  <h2>Grid</h2>
+  <wu-row class="grey text-center">
+    <wu-col class="outline">1/2</wu-col>
+    <wu-col class="outline">1/2</wu-col>
+  </wu-row>
 
+  <wu-row class="grey text-center">
+    <wu-col class="outline">1/4</wu-col>
+    <wu-col class="outline">1/4</wu-col>
+    <wu-col class="outline">1/4</wu-col>
+    <wu-col class="outline">1/4</wu-col>
+  </wu-row>
+
+  <wu-row class="grey text-center">
+    <wu-col basis="30%" class="outline">30%</wu-col>
+    <wu-col class="outline">auto</wu-col>
+  </wu-row>
+
+  <wu-row class="grey text-center">
+    <wu-col class="outline">auto</wu-col>
+    <wu-col basis="30%" class="outline">30%</wu-col>
+  </wu-row>
+  <h2>Menu</h2>
+  <h3>Burger</h3>
+
+  <wu-burger onclick="console.log('toggle menu')"></wu-burger>
 </body>
+
 </html>
