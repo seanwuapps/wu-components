@@ -1,0 +1,21 @@
+{
+  "namespace": "WuComponents",
+  "fsNamespace": "wu-components",
+  "loader": "../wu-components.js",
+  "core": "wu-components.core.js",
+  "corePolyfilled": "es5-build-disabled.js",
+  "components": {
+    "wu-burger": {
+      "$": "wu-burger"
+    },
+    "wu-col": {
+      "$": "wu-burger"
+    },
+    "wu-row": {
+      "$": "wu-burger"
+    },
+    "wu-spinner": {
+      "$": "wu-burger"
+    }
+  }
+}
