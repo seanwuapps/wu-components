@@ -6,9 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>WebUp Components</title>
 
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
 
   <script src="/build/wu-components.js"></script>
   <style>
@@ -101,6 +98,41 @@
     <wu-col basis="30%" class="outline">30%</wu-col>
   </wu-row>
 
+  <h2>Accordion</h2>
+  <wu-row>
+    <wu-col>
+  <wu-accordion>
+    <wu-accordion-header>Heading</wu-accordion-header>
+    <wu-accordion-content>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim erat, egestas nec accumsan a, iaculis at magna.
+        Suspendisse fringilla quis tortor vitae gravida. Mauris metus tortor, volutpat sit amet arcu at, ullamcorper hendrerit
+        est. Cras aliquet orci dapibus malesuada semper. Duis condimentum, erat et porta elementum, eros mauris sodales augue,
+        ac semper arcu neque at orci. Ut commodo, lacus in suscipit bibendum, quam eros rutrum erat, dapibus pharetra arcu
+        odio in libero. Suspendisse sed sapien tortor. Suspendisse ornare libero vitae ornare elementum.
+
+      </p>
+    </wu-accordion-content>
+  </wu-accordion>
+</wu-col>
+</wu-row>
+<wu-row>
+  <wu-col>
+  <wu-accordion>
+      <wu-accordion-header>Heading
+      </wu-accordion-header>
+      <wu-accordion-content>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim erat, egestas nec accumsan a, iaculis at magna.
+          Suspendisse fringilla quis tortor vitae gravida. Mauris metus tortor, volutpat sit amet arcu at, ullamcorper hendrerit
+          est. Cras aliquet orci dapibus malesuada semper. Duis condimentum, erat et porta elementum, eros mauris sodales augue,
+          ac semper arcu neque at orci. Ut commodo, lacus in suscipit bibendum, quam eros rutrum erat, dapibus pharetra arcu
+          odio in libero. Suspendisse sed sapien tortor. Suspendisse ornare libero vitae ornare elementum.
+  
+        </p>
+      </wu-accordion-content>
+    </wu-accordion>
+  </wu-col>
+</wu-row>
+
   <h2>Buttons</h2>
   <wu-button>default</wu-button>
   <wu-button type="outline">outline</wu-button>
@@ -110,47 +142,12 @@
   <wu-button flat type="outline">flat outline</wu-button>
 
   <wu-button type="outline" style="background: red; border: none; color: white">custom</wu-button>
+
   <h2>Menu</h2>
   <h3>Burger trigger animation</h3>
 
   <wu-burger></wu-burger>
 
-
-  <wu-row>
-    <wu-col>
-
-      <wu-accordion>
-        <wu-accordion-header>
-          <p>Heading</p>
-        </wu-accordion-header>
-        <wu-accordion-content>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim erat, egestas nec accumsan a, iaculis at
-            magna. Suspendisse fringilla quis tortor vitae gravida. Mauris metus tortor, volutpat sit amet arcu at, ullamcorper
-            hendrerit est. Cras aliquet orci dapibus malesuada semper. Duis condimentum, erat et porta elementum, eros mauris
-            sodales augue, ac semper arcu neque at orci. Ut commodo, lacus in suscipit bibendum, quam eros rutrum erat, dapibus
-            pharetra arcu odio in libero. Suspendisse sed sapien tortor. Suspendisse ornare libero vitae ornare elementum.
-
-          </p>
-        </wu-accordion-content>
-      </wu-accordion>
-
-    </wu-col>
-    <wu-col>
-      Code:
-      <pre>
-        <code class="html">
-          &lt;wu-accordion&gt;
-              &lt;wu-accordion-header&gt;
-                &lt;p&gt;Heading&lt;/p&gt;
-              &lt;/wu-accordion-header&gt;
-              &lt;wu-accordion-content&gt;
-              ...
-              &lt;/wu-accordion-content&gt;
-          &lt;/wu-accordion&gt;
-        </code>
-      </pre>
-    </wu-col>
-  </wu-row>
 </body>
 
 </html>

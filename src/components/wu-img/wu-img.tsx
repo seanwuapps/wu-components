@@ -13,54 +13,18 @@ export class WuImg {
 
   @State() loaded: boolean = false
 
-  @State() loadedSrc: string = ''
-  img: HTMLImageElement
-  imgClasses: string
+  componentWillLoad = () => {}
 
-  componentWillLoad = () => {
-    if (!this.thumb) {
-      this.loadedSrc = this.src
-    }
-    this.loadedSrc = this.thumb
-  }
+  componentDidLoad = () => {}
 
-  componentDidLoad = () => {
-    if (!this.thumb) {
-      this.loadedSrc = this.src
-      this.imgClasses = this.imgClasses + ' enhanced'
-      this.img = this.el.querySelector('img')
-      this.img.className = this.imgClasses
-    }
-
-    // load first image
-    this.initImage()
-  }
-
-  initImage = () => {
-    if (this.loaded) {
-      return
-    }
-    this.img = this.el.querySelector('img')
-    // move class list into img tag
-    this.imgClasses = this.el.className
-    this.el.className = ''
-    this.img.className = this.imgClasses
-    this.img.onload = this.onImageLoaded
-  }
-
-  onImageLoaded = () => {
-    if (this.img.src === this.src) {
-      this.imgClasses = this.imgClasses + ' enhanced'
-      this.img.className = this.imgClasses
-      this.loaded = true
-      return
-    }
-
-    // load large image
-    this.loadedSrc = this.src
-  }
+  initImage = () => {}
 
   render() {
-    return <img src={this.loadedSrc} alt={this.alt} />
+    return (
+      <div>
+        <img src={this.thumb} alt={this.alt} />
+        <img src={this.src} alt={this.alt} class="enhanced" />
+      </div>
+    )
   }
 }

@@ -163,7 +163,7 @@ declare global {
   }
   namespace JSXElements {
     export interface WuFloatAsideAttributes extends HTMLAttributes {
-      
+      trigger?: string;
     }
   }
 }

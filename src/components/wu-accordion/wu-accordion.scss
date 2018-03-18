@@ -1,4 +1,5 @@
 @import '../../global/mixins';
+@import '../../global/variables';
 wu-accordion {
   display: block;
   clear: both;
@@ -8,7 +9,7 @@ wu-accordion {
     overflow: hidden;
     display: block;
     padding: 0 20px;
-    transition: max-height 0.3s, padding 0.3s;
+    transition: max-height $fast, padding $fast;
   }
 
   wu-accordion-header > div {
@@ -17,28 +18,37 @@ wu-accordion {
     @include raised();
     background: #333;
     color: white;
-    padding: 15px;
+    padding: 12px;
     padding-left: 44px;
     font-size: 14px;
     cursor: pointer;
     clear: both;
     border-radius: 2px;
+    &:hover,
+    &:focus {
+      @include raisedHover();
+    }
     &:before {
-      content: '+';
+      content: '';
+      background: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 120" fill="#fff" stroke="#fff"><path d="M32.59 78.41a2 2 0 0 0 2.83 0l29-29a2 2 0 0 0 0-2.83l-29-29a2 2 0 0 0-2.83 2.83L60.17 48 32.59 75.59a2 2 0 0 0 0 2.82z"/></svg>');
+      background-size: cover;
+      width: 20px;
+      height: 20px;
       font-family: Arial, Helvetica, sans-serif;
       position: absolute;
       top: 50%;
-      transform: translate(0, -50%);
+      margin-top: -10px;
+      transform-origin: center;
       left: 15px;
       font-size: 20px;
-      line-height: 20px;
+      transition: transform $fast;
     }
   }
 
   &.open {
     wu-accordion-header > div {
       &:before {
-        content: '-';
+        transform: rotate(90deg);
       }
     }
     wu-accordion-content {
