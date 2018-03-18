@@ -1,0 +1,10 @@
+wu-img {
+  display: inherit;
+  img {
+    max-width: 100%;
+    transition: filter 0.4s ease-out;
+  }
+  img:not(.enhanced) {
+    filter: blur(10px);
+  }
+}

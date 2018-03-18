@@ -1,0 +1,49 @@
+@import '../../global/mixins';
+wu-accordion {
+  display: block;
+  clear: both;
+  @include raised();
+  wu-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    display: block;
+    padding: 0 20px;
+    transition: max-height 0.3s, padding 0.3s;
+  }
+
+  wu-accordion-header > div {
+    display: block;
+    position: relative;
+    @include raised();
+    background: #333;
+    color: white;
+    padding: 15px;
+    padding-left: 44px;
+    font-size: 14px;
+    cursor: pointer;
+    clear: both;
+    border-radius: 2px;
+    &:before {
+      content: '+';
+      font-family: Arial, Helvetica, sans-serif;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      left: 15px;
+      font-size: 20px;
+      line-height: 20px;
+    }
+  }
+
+  &.open {
+    wu-accordion-header > div {
+      &:before {
+        content: '-';
+      }
+    }
+    wu-accordion-content {
+      max-height: 400px;
+      padding: 10px 20px;
+    }
+  }
+}

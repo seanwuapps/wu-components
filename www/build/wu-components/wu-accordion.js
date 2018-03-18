@@ -1,6 +1,45 @@
 /*! Built with http://stenciljs.com */
 const { h } = window.WuComponents;
 
+class WuAccordion {
+    render() {
+        return h("slot", null);
+    }
+    static get is() { return "wu-accordion"; }
+    static get style() { return "wu-accordion {\n  display: block;\n  clear: both;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n  transition: box-shadow 0.3s ease-out; }\n  wu-accordion wu-accordion-content {\n    max-height: 0;\n    overflow: hidden;\n    display: block;\n    padding: 0 20px;\n    transition: max-height 0.3s, padding 0.3s; }\n  wu-accordion wu-accordion-header > div {\n    display: block;\n    position: relative;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n    transition: box-shadow 0.3s ease-out;\n    background: #333;\n    color: white;\n    padding: 15px;\n    padding-left: 44px;\n    font-size: 14px;\n    cursor: pointer;\n    clear: both;\n    border-radius: 2px; }\n    wu-accordion wu-accordion-header > div:before {\n      content: '+';\n      font-family: Arial, Helvetica, sans-serif;\n      position: absolute;\n      top: 50%;\n      transform: translate(0, -50%);\n      left: 15px;\n      font-size: 20px;\n      line-height: 20px; }\n  wu-accordion.open wu-accordion-header > div:before {\n    content: '-'; }\n  wu-accordion.open wu-accordion-content {\n    max-height: 400px;\n    padding: 10px 20px; }"; }
+}
+
+class WuAccodionContent {
+    render() {
+        return h("slot", null);
+    }
+    static get is() { return "wu-accordion-content"; }
+    static get style() { return ""; }
+}
+
+class WuAccordionHeader {
+    constructor() {
+        this.toggleOpen = () => {
+            const accordion = this.header.closest('wu-accordion');
+            if (accordion.classList.contains('open')) {
+                accordion.classList.remove('open');
+            }
+            else {
+                accordion.classList.add('open');
+            }
+        };
+    }
+    render() {
+        return (h("div", { onClick: () => {
+                this.toggleOpen();
+            } },
+            h("slot", null)));
+    }
+    static get is() { return "wu-accordion-header"; }
+    static get properties() { return { "header": { "elementRef": true } }; }
+    static get style() { return ""; }
+}
+
 class WuBurger {
     toggle() {
         if (this.burger.classList.contains('open')) {
@@ -18,7 +57,7 @@ class WuBurger {
     }
     static get is() { return "wu-burger"; }
     static get properties() { return { "burger": { "elementRef": true } }; }
-    static get style() { return "wu-burger button {\n  position: relative;\n  width: 36px;\n  height: 36px;\n  cursor: pointer;\n  background: none;\n  border: none;\n  display: inline-block;\n  padding: 4px 0; }\n\nwu-burger:focus {\n  outline: 1px solid blue; }\n\nwu-burger span {\n  display: block;\n  width: 24px;\n  height: 4px;\n  border-radius: 4px;\n  background: #000;\n  position: absolute;\n  left: 50%;\n  transform: translate(-50%, 0);\n  -webkit-transition: 0.25s ease-in-out;\n  -moz-transition: 0.25s ease-in-out;\n  -o-transition: 0.25s ease-in-out;\n  transition: 0.25s ease-in-out; }\n  wu-burger span:nth-child(1) {\n    top: 8px; }\n  wu-burger span:nth-child(2) {\n    top: 16px; }\n  wu-burger span:nth-child(3) {\n    top: 24px; }\n\nwu-burger span {\n  transition: transform 0.25s, top 0.25s 0.25s, opacity 0.25s; }\n\nwu-burger.open span {\n  transition: top 0.25s, transform 0.25s 0.25s, opacity 0.25s; }\n  wu-burger.open span:nth-child(1) {\n    top: 16px;\n    transform: translate(-50%, 0) rotate(45deg); }\n  wu-burger.open span:nth-child(2) {\n    opacity: 0; }\n  wu-burger.open span:nth-child(3) {\n    top: 16px;\n    transform: translate(-50%, 0) rotate(-45deg); }"; }
+    static get style() { return "wu-burger button {\n  color: currentColor;\n  position: relative;\n  width: 36px;\n  height: 36px;\n  cursor: pointer;\n  background: none;\n  border: none;\n  display: inline-block;\n  padding: 4px 0; }\n\nwu-burger:focus {\n  outline: 1px solid blue; }\n\nwu-burger span {\n  display: block;\n  width: 24px;\n  height: 4px;\n  border-radius: 4px;\n  background: currentColor;\n  position: absolute;\n  left: 50%;\n  transform: translate(-50%, 0);\n  -webkit-transition: 0.25s ease-in-out;\n  -moz-transition: 0.25s ease-in-out;\n  -o-transition: 0.25s ease-in-out;\n  transition: 0.25s ease-in-out; }\n  wu-burger span:nth-child(1) {\n    top: 8px; }\n  wu-burger span:nth-child(2) {\n    top: 16px; }\n  wu-burger span:nth-child(3) {\n    top: 24px; }\n\nwu-burger span {\n  transition: transform 0.25s, top 0.25s 0.25s, opacity 0.25s; }\n\nwu-burger.open span {\n  transition: top 0.25s, transform 0.25s 0.25s, opacity 0.25s; }\n  wu-burger.open span:nth-child(1) {\n    top: 16px;\n    transform: translate(-50%, 0) rotate(45deg); }\n  wu-burger.open span:nth-child(2) {\n    opacity: 0; }\n  wu-burger.open span:nth-child(3) {\n    top: 16px;\n    transform: translate(-50%, 0) rotate(-45deg); }"; }
 }
 
 class WuCol {
@@ -43,6 +82,7 @@ class WuRow {
         return h("slot", null);
     }
     static get is() { return "wu-row"; }
+    static get properties() { return { "maxCols": { "type": Number, "attr": "max-cols" }, "row": { "elementRef": true } }; }
     static get style() { return "wu-row {\n  display: flex;\n  justify-content: space-between;\n  flex-direction: column;\n  margin-bottom: 10px;\n  align-items: stretch; }\n  \@media screen and (min-width: 768px) {\n    wu-row {\n      flex-direction: row; } }"; }
 }
 
@@ -97,4 +137,4 @@ class WuSpinner {
     static get style() { return "wu-spinner svg {\n  width: 2rem;\n  height: 2rem; }\n  wu-spinner svg.spinner-android {\n    animation: rotate 2s linear infinite; }\n    wu-spinner svg.spinner-android .path {\n      stroke-linecap: round;\n      animation: dash 1.5s ease-in-out infinite; }\n  wu-spinner svg.spinner-ios {\n    animation: iosIntro .6s; }\n    wu-spinner svg.spinner-ios path:nth-of-type(1) {\n      animation: pulse 1s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(2) {\n      animation: pulse 1s -.083s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(3) {\n      animation: pulse 1s -.166s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(4) {\n      animation: pulse 1s -.249s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(5) {\n      animation: pulse 1s -.332s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(6) {\n      animation: pulse 1s -.415s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(7) {\n      animation: pulse 1s -.498s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(8) {\n      animation: pulse 1s -.581s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(9) {\n      animation: pulse 1s -.664s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(10) {\n      animation: pulse 1s -.747s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(11) {\n      animation: pulse 1s -.83s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(12) {\n      animation: pulse 1s -.913s infinite linear; }\n\n\@keyframes rotate {\n  100% {\n    transform: rotate(360deg); } }\n\n\@keyframes dash {\n  0% {\n    stroke-dasharray: 1, 150;\n    stroke-dashoffset: 0; }\n  50% {\n    stroke-dasharray: 90, 150;\n    stroke-dashoffset: -35; }\n  100% {\n    stroke-dasharray: 90, 150;\n    stroke-dashoffset: -124; } }\n\n\@keyframes pulse {\n  50% {\n    fill-opacity: .2; }\n  to {\n    fill-opacity: 1; } }\n\n\@keyframes iosIntro {\n  from {\n    transform: scale(0);\n    opacity: 0; }\n  to {\n    transform: scale(1);\n    opacity: 1; } }"; }
 }
 
-export { WuBurger, WuCol, WuRow, WuSpinner };
+export { WuAccordion, WuAccodionContent as WuAccordionContent, WuAccordionHeader, WuBurger, WuCol, WuRow, WuSpinner };

@@ -6,7 +6,15 @@ exports.config = {
   plugins: [sass()],
   bundles: [
     {
-      components: ['wu-row', 'wu-col', 'wu-spinner', 'wu-burger']
+      components: [
+        'wu-row',
+        'wu-col',
+        'wu-spinner',
+        'wu-burger',
+        'wu-accordion',
+        'wu-accordion-header',
+        'wu-accordion-content'
+      ]
     }
   ]
 }

@@ -608,7 +608,15 @@ var s=document.querySelector("script[data-namespace='wu-components']");if(s){pub
         // create the instance from the user's component class
         // https://www.youtube.com/watch?v=olLxrojmvMg
                 instance = initComponentInstance(plt, elm);
-        false;
+        true;
+        // fire off the user's componentWillLoad method (if one was provided)
+        // componentWillLoad only runs ONCE, after instance's element has been
+        // assigned as the host element, but BEFORE render() has been called
+        try {
+          instance.componentWillLoad && (userPromise = instance.componentWillLoad());
+        } catch (e) {
+          plt.onError(e, 3 /* WillLoadError */ , elm);
+        }
       } else {
         false;
       }

@@ -4,7 +4,6 @@ wu-row {
   flex-direction: column;
   margin-bottom: 10px;
   align-items: stretch;
-
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }

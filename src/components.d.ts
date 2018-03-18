@@ -20,6 +20,156 @@ declare global {
 
 
 import {
+  WuAccodionContent as WuAccordionContent
+} from './components/wu-accordion/wu-accordion-content/wu-accordion-content';
+
+declare global {
+  interface HTMLWuAccordionContentElement extends WuAccordionContent, HTMLStencilElement {
+  }
+  var HTMLWuAccordionContentElement: {
+    prototype: HTMLWuAccordionContentElement;
+    new (): HTMLWuAccordionContentElement;
+  };
+  interface HTMLElementTagNameMap {
+    "wu-accordion-content": HTMLWuAccordionContentElement;
+  }
+  interface ElementTagNameMap {
+    "wu-accordion-content": HTMLWuAccordionContentElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "wu-accordion-content": JSXElements.WuAccordionContentAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuAccordionContentAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
+  WuAccordionHeader as WuAccordionHeader
+} from './components/wu-accordion/wu-accordion-header/wu-accordion-header';
+
+declare global {
+  interface HTMLWuAccordionHeaderElement extends WuAccordionHeader, HTMLStencilElement {
+  }
+  var HTMLWuAccordionHeaderElement: {
+    prototype: HTMLWuAccordionHeaderElement;
+    new (): HTMLWuAccordionHeaderElement;
+  };
+  interface HTMLElementTagNameMap {
+    "wu-accordion-header": HTMLWuAccordionHeaderElement;
+  }
+  interface ElementTagNameMap {
+    "wu-accordion-header": HTMLWuAccordionHeaderElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "wu-accordion-header": JSXElements.WuAccordionHeaderAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuAccordionHeaderAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
+  WuAccordion as WuAccordion
+} from './components/wu-accordion/wu-accordion';
+
+declare global {
+  interface HTMLWuAccordionElement extends WuAccordion, HTMLStencilElement {
+  }
+  var HTMLWuAccordionElement: {
+    prototype: HTMLWuAccordionElement;
+    new (): HTMLWuAccordionElement;
+  };
+  interface HTMLElementTagNameMap {
+    "wu-accordion": HTMLWuAccordionElement;
+  }
+  interface ElementTagNameMap {
+    "wu-accordion": HTMLWuAccordionElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "wu-accordion": JSXElements.WuAccordionAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuAccordionAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
+  WuButton as WuButton
+} from './components/wu-button/wu-button';
+
+declare global {
+  interface HTMLWuButtonElement extends WuButton, HTMLStencilElement {
+  }
+  var HTMLWuButtonElement: {
+    prototype: HTMLWuButtonElement;
+    new (): HTMLWuButtonElement;
+  };
+  interface HTMLElementTagNameMap {
+    "wu-button": HTMLWuButtonElement;
+  }
+  interface ElementTagNameMap {
+    "wu-button": HTMLWuButtonElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "wu-button": JSXElements.WuButtonAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuButtonAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
+  WuFloatAside as WuFloatAside
+} from './components/wu-float-aside/wu-float-aside';
+
+declare global {
+  interface HTMLWuFloatAsideElement extends WuFloatAside, HTMLStencilElement {
+  }
+  var HTMLWuFloatAsideElement: {
+    prototype: HTMLWuFloatAsideElement;
+    new (): HTMLWuFloatAsideElement;
+  };
+  interface HTMLElementTagNameMap {
+    "wu-float-aside": HTMLWuFloatAsideElement;
+  }
+  interface ElementTagNameMap {
+    "wu-float-aside": HTMLWuFloatAsideElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "wu-float-aside": JSXElements.WuFloatAsideAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuFloatAsideAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
   WuCol as WuCol
 } from './components/wu-grid/wu-col/wu-col';
 
@@ -73,7 +223,39 @@ declare global {
   }
   namespace JSXElements {
     export interface WuRowAttributes extends HTMLAttributes {
-      
+      maxCols?: number;
+    }
+  }
+}
+
+
+import {
+  WuImg as WuImg
+} from './components/wu-img/wu-img';
+
+declare global {
+  interface HTMLWuImgElement extends WuImg, HTMLStencilElement {
+  }
+  var HTMLWuImgElement: {
+    prototype: HTMLWuImgElement;
+    new (): HTMLWuImgElement;
+  };
+  interface HTMLElementTagNameMap {
+    "wu-img": HTMLWuImgElement;
+  }
+  interface ElementTagNameMap {
+    "wu-img": HTMLWuImgElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "wu-img": JSXElements.WuImgAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuImgAttributes extends HTMLAttributes {
+      alt?: string;
+      src?: string;
+      thumb?: string;
     }
   }
 }

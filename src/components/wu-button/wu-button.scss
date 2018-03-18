@@ -1,0 +1,51 @@
+@import '../../global/_variables.scss';
+@import '../../global/_mixins.scss';
+
+wu-button {
+  min-width: 60px;
+  max-width: 100%;
+  padding: $button-padding;
+  display: inline-block;
+  text-transform: uppercase;
+  @include raised();
+  cursor: pointer;
+  background: $button-theme;
+  color: white;
+  margin: 0 5px;
+  text-align: center;
+  &:hover,
+  &:focus {
+    @include raisedHover();
+    filter: brightness(110%);
+  }
+  &[type='outline'] {
+    border: 1px solid $button-theme;
+    background: white;
+    color: $button-theme;
+    &:hover {
+      filter: brightness(95%);
+    }
+  }
+  &[type='block'] {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  &[flat] {
+    box-shadow: none;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+  &[secondary] {
+    background: #ccc;
+    color: #333;
+    &[type='outline'] {
+      border-color: #ccc;
+      background: white;
+      color: #333;
+    }
+  }
+}

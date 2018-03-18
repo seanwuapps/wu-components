@@ -1,8 +1,9 @@
 $burgerSize: 36px;
 $barTickness: 4px;
-$barColor: #000;
+$barColor: currentColor;
 wu-burger {
   button {
+    color: currentColor;
     position: relative;
     width: $burgerSize;
     height: $burgerSize;
