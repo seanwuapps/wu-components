@@ -13,7 +13,8 @@ exports.config = {
         'wu-burger',
         'wu-accordion',
         'wu-accordion-header',
-        'wu-accordion-content'
+        'wu-accordion-content',
+        'code-block'
       ]
     }
   ]

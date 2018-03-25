@@ -11,19 +11,37 @@ export class WuImg {
   @Prop() src: string
   @Prop() alt: string
 
-  @State() loaded: boolean = false
+  @State() loading: boolean = true
 
   componentWillLoad = () => {}
 
-  componentDidLoad = () => {}
+  componentDidLoad = () => {
+    // this.loading = false
+    console.log('asdf')
+  }
 
-  initImage = () => {}
+  onFullImageLoaded = () => {
+    let mainImg: HTMLImageElement = this.el.querySelector('img.main')
+    let loaderImg: HTMLImageElement = this.el.querySelector('img.loader')
+    mainImg.src = loaderImg.src
+    loaderImg.parentNode.removeChild(loaderImg)
+    this.loading = false
+  }
 
   render() {
     return (
       <div>
-        <img src={this.thumb} alt={this.alt} />
-        <img src={this.src} alt={this.alt} class="enhanced" />
+        <img
+          src={this.thumb}
+          alt={this.alt}
+          class={this.loading ? 'main' : 'main loaded'}
+        />
+        <img
+          src={this.src}
+          alt={this.alt}
+          class="loader"
+          onLoad={() => this.onFullImageLoaded()}
+        />
       </div>
     )
   }

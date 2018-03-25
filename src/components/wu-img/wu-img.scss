@@ -1,10 +1,17 @@
 wu-img {
   display: inherit;
-  img {
-    max-width: 100%;
-    transition: filter 0.4s ease-out;
-  }
-  img:not(.enhanced) {
+
+  img.main {
+    width: 100%;
     filter: blur(10px);
+    transition: filter 0.5s;
+    &.loaded {
+      filter: none;
+    }
+  }
+
+  img.loader {
+    opacity: 0;
+    height: 0px;
   }
 }

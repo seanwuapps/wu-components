@@ -20,6 +20,37 @@ declare global {
 
 
 import {
+  CodeBlock as CodeBlock
+} from './components/code-block/code-block';
+
+declare global {
+  interface HTMLCodeBlockElement extends CodeBlock, HTMLStencilElement {
+  }
+  var HTMLCodeBlockElement: {
+    prototype: HTMLCodeBlockElement;
+    new (): HTMLCodeBlockElement;
+  };
+  interface HTMLElementTagNameMap {
+    "code-block": HTMLCodeBlockElement;
+  }
+  interface ElementTagNameMap {
+    "code-block": HTMLCodeBlockElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "code-block": JSXElements.CodeBlockAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface CodeBlockAttributes extends HTMLAttributes {
+      code?: string;
+      language?: string;
+    }
+  }
+}
+
+
+import {
   WuAccodionContent as WuAccordionContent
 } from './components/wu-accordion/wu-accordion-content/wu-accordion-content';
 

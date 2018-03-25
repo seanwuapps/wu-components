@@ -3,25 +3,28 @@
   "fsNamespace": "wu-components",
   "loader": "../wu-components.js",
   "core": "wu-components.core.js",
-  "corePolyfilled": "wu-components.core.pf.js",
+  "corePolyfilled": "es5-build-disabled.js",
   "components": {
+    "code-block": {
+      "$": "code-block"
+    },
     "wu-accordion": {
-      "$": "wu-accordion"
+      "$": "code-block"
     },
     "wu-accordion-content": {
-      "$": "wu-accordion"
+      "$": "code-block"
     },
     "wu-accordion-header": {
-      "$": "wu-accordion"
+      "$": "code-block"
     },
     "wu-burger": {
-      "$": "wu-accordion"
+      "$": "code-block"
     },
     "wu-button": {
       "$": "wu-button"
     },
     "wu-col": {
-      "$": "wu-accordion"
+      "$": "code-block"
     },
     "wu-float-aside": {
       "$": "wu-float-aside"
@@ -30,10 +33,10 @@
       "$": "wu-img"
     },
     "wu-row": {
-      "$": "wu-accordion"
+      "$": "code-block"
     },
     "wu-spinner": {
-      "$": "wu-accordion"
+      "$": "code-block"
     }
   }
 }

@@ -1,2 +1,30 @@
 /*! Built with http://stenciljs.com */
-const{h:s}=window.WuComponents;class t{constructor(){this.loaded=!1,this.loadedSrc="",this.componentWillLoad=(()=>{this.thumb||(this.loadedSrc=this.src),this.loadedSrc=this.thumb}),this.componentDidLoad=(()=>{this.thumb||(this.loadedSrc=this.src,this.imgClasses=this.imgClasses+" enhanced",this.img=this.el.querySelector("img"),this.img.className=this.imgClasses),this.initImage()}),this.initImage=(()=>{this.loaded||(this.img=this.el.querySelector("img"),this.imgClasses=this.el.className,this.el.className="",this.img.className=this.imgClasses,this.img.onload=this.onImageLoaded)}),this.onImageLoaded=(()=>{if(this.img.src===this.src)return this.imgClasses=this.imgClasses+" enhanced",this.img.className=this.imgClasses,void(this.loaded=!0);this.loadedSrc=this.src})}render(){return[s("img",{src:this.loadedSrc,alt:this.alt}),s("img",{src:this.loadedSrc,alt:this.alt})]}static get is(){return"wu-img"}static get properties(){return{alt:{type:String,attr:"alt"},el:{elementRef:!0},loaded:{state:!0},loadedSrc:{state:!0},src:{type:String,attr:"src"},thumb:{type:String,attr:"thumb"}}}static get style(){return"wu-img{display:inherit}wu-img img{max-width:100%;transition:filter .4s ease-out}wu-img img:not(.enhanced){filter:blur(10px)}"}}export{t as WuImg};
+const { h } = window.WuComponents;
+
+class WuImg {
+    constructor() {
+        this.loading = true;
+        this.componentWillLoad = () => { };
+        this.componentDidLoad = () => {
+            // this.loading = false
+            console.log('asdf');
+        };
+        this.onFullImageLoaded = () => {
+            let mainImg = this.el.querySelector('img.main');
+            let loaderImg = this.el.querySelector('img.loader');
+            mainImg.src = loaderImg.src;
+            loaderImg.parentNode.removeChild(loaderImg);
+            this.loading = false;
+        };
+    }
+    render() {
+        return (h("div", null,
+            h("img", { src: this.thumb, alt: this.alt, class: this.loading ? 'main' : 'main loaded' }),
+            h("img", { src: this.src, alt: this.alt, class: "loader", onLoad: () => this.onFullImageLoaded() })));
+    }
+    static get is() { return "wu-img"; }
+    static get properties() { return { "alt": { "type": String, "attr": "alt" }, "el": { "elementRef": true }, "loading": { "state": true }, "src": { "type": String, "attr": "src" }, "thumb": { "type": String, "attr": "thumb" } }; }
+    static get style() { return "wu-img {\n  display: inherit; }\n  wu-img img.main {\n    width: 100%;\n    filter: blur(10px);\n    transition: filter 0.5s; }\n    wu-img img.main.loaded {\n      filter: none; }\n  wu-img img.loader {\n    opacity: 0;\n    height: 0px; }"; }
+}
+
+export { WuImg };
