@@ -35,6 +35,9 @@
     "wu-row": {
       "$": "code-block"
     },
+    "wu-shadow": {
+      "$": "wu-shadow"
+    },
     "wu-spinner": {
       "$": "code-block"
     }

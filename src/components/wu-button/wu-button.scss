@@ -2,17 +2,18 @@
 @import '../../global/_mixins.scss';
 
 wu-button {
+  @include raised(1);
   min-width: 60px;
   max-width: 100%;
   padding: $button-padding;
   display: inline-block;
   text-transform: uppercase;
-  @include raised();
   cursor: pointer;
   background: $button-theme;
   color: white;
   margin: 0 5px;
   text-align: center;
+  transition: box-shadow 0.3s ease-out, filter 0.3s ease-in;
   &:hover,
   &:focus {
     @include raisedHover();

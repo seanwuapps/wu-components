@@ -1,7 +1,8 @@
-$burgerSize: 36px;
-$barTickness: 4px;
+$burgerSize: 2.25em;
+$barTickness: 0.25em;
 $barColor: currentColor;
 wu-burger {
+  font-size: 1em;
   button {
     color: currentColor;
     position: relative;
@@ -42,8 +43,8 @@ wu-burger {
 
   span {
     transition:
-          /* step 1 duration=0.5s*/ transform 0.25s,
-      /* step 2 duration=0.5 delay=0.5*/ top 0.25s 0.25s, opacity 0.25s;
+          /* step 1 duration=0.5s*/ transform 0.25s, /* step 2 duration=0.5 delay=0.5*/ top 0.25s 0.25s,
+      opacity 0.25s;
   }
   &.open {
     span {

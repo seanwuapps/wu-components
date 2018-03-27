@@ -1,0 +1,8 @@
+@import '../../global/_mixins.scss';
+wu-shadow {
+  .box {
+    @include raised(1);
+  }
+  .drop {
+  }
+}

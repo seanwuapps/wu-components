@@ -323,6 +323,37 @@ declare global {
 
 
 import {
+  WuShadow as WuShadow
+} from './components/wu-shadow/wu-shadow';
+
+declare global {
+  interface HTMLWuShadowElement extends WuShadow, HTMLStencilElement {
+  }
+  var HTMLWuShadowElement: {
+    prototype: HTMLWuShadowElement;
+    new (): HTMLWuShadowElement;
+  };
+  interface HTMLElementTagNameMap {
+    "wu-shadow": HTMLWuShadowElement;
+  }
+  interface ElementTagNameMap {
+    "wu-shadow": HTMLWuShadowElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "wu-shadow": JSXElements.WuShadowAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuShadowAttributes extends HTMLAttributes {
+      depth?: number;
+      type?: string;
+    }
+  }
+}
+
+
+import {
   WuSpinner as WuSpinner
 } from './components/wu-spinner/wu-spinner';
 

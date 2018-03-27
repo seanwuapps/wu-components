@@ -3,7 +3,7 @@
 wu-accordion {
   display: block;
   clear: both;
-  @include raised();
+  @include raised(1);
   wu-accordion-content {
     max-height: 0;
     overflow: hidden;
@@ -15,7 +15,7 @@ wu-accordion {
   wu-accordion-header > div {
     display: block;
     position: relative;
-    @include raised();
+    @include raised(1);
     background: #333;
     color: white;
     padding: 12px;
