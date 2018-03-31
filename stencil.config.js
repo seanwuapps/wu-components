@@ -14,6 +14,7 @@ exports.config = {
         'wu-accordion',
         'wu-accordion-header',
         'wu-accordion-content',
+        'wu-rating',
         'code-block'
       ]
     }

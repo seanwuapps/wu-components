@@ -13,13 +13,6 @@ export class WuImg {
 
   @State() loading: boolean = true
 
-  componentWillLoad = () => {}
-
-  componentDidLoad = () => {
-    // this.loading = false
-    console.log('asdf')
-  }
-
   onFullImageLoaded = () => {
     let mainImg: HTMLImageElement = this.el.querySelector('img.main')
     let loaderImg: HTMLImageElement = this.el.querySelector('img.loader')

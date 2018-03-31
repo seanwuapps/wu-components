@@ -4,11 +4,6 @@ const { h } = window.WuComponents;
 class WuImg {
     constructor() {
         this.loading = true;
-        this.componentWillLoad = () => { };
-        this.componentDidLoad = () => {
-            // this.loading = false
-            console.log('asdf');
-        };
         this.onFullImageLoaded = () => {
             let mainImg = this.el.querySelector('img.main');
             let loaderImg = this.el.querySelector('img.loader');

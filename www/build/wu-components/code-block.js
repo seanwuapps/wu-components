@@ -28,7 +28,7 @@ class WuAccordion {
         return h("slot", null);
     }
     static get is() { return "wu-accordion"; }
-    static get style() { return "wu-accordion {\n  display: block;\n  clear: both;\n  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  transition: box-shadow 0.3s ease-out; }\n  wu-accordion wu-accordion-content {\n    max-height: 0;\n    overflow: hidden;\n    display: block;\n    padding: 0 20px;\n    transition: max-height 0.2s, padding 0.2s; }\n  wu-accordion wu-accordion-header > div {\n    display: block;\n    position: relative;\n    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n    transition: box-shadow 0.3s ease-out;\n    background: #333;\n    color: white;\n    padding: 12px;\n    padding-left: 44px;\n    font-size: 14px;\n    cursor: pointer;\n    clear: both;\n    border-radius: 2px; }\n    wu-accordion wu-accordion-header > div:hover, wu-accordion wu-accordion-header > div:focus {\n      box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2), 0 10px 18px 0 rgba(0, 0, 0, 0.19); }\n    wu-accordion wu-accordion-header > div:before {\n      content: '';\n      background: url('data:image/svg+xml; utf8, <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 120\" fill=\"#fff\" stroke=\"#fff\"><path d=\"M32.59 78.41a2 2 0 0 0 2.83 0l29-29a2 2 0 0 0 0-2.83l-29-29a2 2 0 0 0-2.83 2.83L60.17 48 32.59 75.59a2 2 0 0 0 0 2.82z\"/></svg>');\n      background-size: cover;\n      width: 20px;\n      height: 20px;\n      font-family: Arial, Helvetica, sans-serif;\n      position: absolute;\n      top: 50%;\n      margin-top: -10px;\n      transform-origin: center;\n      left: 15px;\n      font-size: 20px;\n      transition: transform 0.2s; }\n  wu-accordion.open wu-accordion-header > div:before {\n    transform: rotate(90deg); }\n  wu-accordion.open wu-accordion-content {\n    max-height: 400px;\n    padding: 10px 20px; }"; }
+    static get style() { return "wu-accordion {\n  display: block;\n  clear: both;\n  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  transition: box-shadow 0.3s ease-out; }\n  wu-accordion wu-accordion-content {\n    max-height: 0;\n    overflow: hidden;\n    display: block;\n    padding: 0 20px;\n    transition: max-height 0.2s, padding 0.2s; }\n  wu-accordion wu-accordion-header > div {\n    display: block;\n    position: relative;\n    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n    transition: box-shadow 0.3s ease-out;\n    background: #333;\n    color: white;\n    padding: 12px;\n    padding-left: 44px;\n    font-size: 14px;\n    cursor: pointer;\n    clear: both;\n    border-radius: 2px; }\n    wu-accordion wu-accordion-header > div:hover, wu-accordion wu-accordion-header > div:focus {\n      box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2), 0 10px 18px 0 rgba(0, 0, 0, 0.19); }\n    wu-accordion wu-accordion-header > div:before {\n      content: '';\n      background: url('data:image/svg+xml; utf8, <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 120\" fill=\"#fff\" stroke=\"#fff\"><path d=\"M32.59 78.41a2 2 0 0 0 2.83 0l29-29a2 2 0 0 0 0-2.83l-29-29a2 2 0 0 0-2.83 2.83L60.17 48 32.59 75.59a2 2 0 0 0 0 2.82z\"/></svg>');\n      background-size: cover;\n      width: 20px;\n      height: 20px;\n      font-family: Arial, Helvetica, sans-serif;\n      position: absolute;\n      top: 50%;\n      margin-top: -10px;\n      transform-origin: center;\n      left: 15px;\n      font-size: 20px;\n      transition: transform 0.5s; }\n  wu-accordion.open wu-accordion-header > div:before {\n    transform: rotate(90deg); }\n  wu-accordion.open wu-accordion-content {\n    max-height: 400px;\n    padding: 10px 20px; }"; }
 }
 
 class WuAccodionContent {
@@ -79,7 +79,7 @@ class WuBurger {
     }
     static get is() { return "wu-burger"; }
     static get properties() { return { "burger": { "elementRef": true } }; }
-    static get style() { return "wu-burger {\n  font-size: 1em; }\n  wu-burger button {\n    color: currentColor;\n    position: relative;\n    width: 2.25em;\n    height: 2.25em;\n    cursor: pointer;\n    background: none;\n    border: none;\n    display: inline-block;\n    padding: 0.25em 0; }\n  wu-burger:focus {\n    outline: 1px solid blue; }\n  wu-burger span {\n    display: block;\n    width: 1.5em;\n    height: 0.25em;\n    border-radius: 0.25em;\n    background: currentColor;\n    position: absolute;\n    left: 50%;\n    transform: translate(-50%, 0);\n    -webkit-transition: 0.25s ease-in-out;\n    -moz-transition: 0.25s ease-in-out;\n    -o-transition: 0.25s ease-in-out;\n    transition: 0.25s ease-in-out; }\n    wu-burger span:nth-child(1) {\n      top: 0.5em; }\n    wu-burger span:nth-child(2) {\n      top: 1em; }\n    wu-burger span:nth-child(3) {\n      top: 1.5em; }\n  wu-burger span {\n    transition: transform 0.25s, top 0.25s 0.25s, opacity 0.25s; }\n  wu-burger.open span {\n    transition: top 0.25s, transform 0.25s 0.25s, opacity 0.25s; }\n    wu-burger.open span:nth-child(1) {\n      top: 1em;\n      transform: translate(-50%, 0) rotate(45deg); }\n    wu-burger.open span:nth-child(2) {\n      opacity: 0; }\n    wu-burger.open span:nth-child(3) {\n      top: 1em;\n      transform: translate(-50%, 0) rotate(-45deg); }"; }
+    static get style() { return "wu-burger {\n  font-size: 18px; }\n  wu-burger button {\n    font-size: 1em;\n    color: currentColor;\n    position: relative;\n    width: 2.25em;\n    height: 2.25em;\n    cursor: pointer;\n    background: none;\n    border: none;\n    display: inline-block;\n    padding: 0.25em 0; }\n  wu-burger:focus {\n    outline: 1px solid blue; }\n  wu-burger span {\n    display: block;\n    width: 1.5em;\n    height: 0.25em;\n    border-radius: 0.25em;\n    background: currentColor;\n    position: absolute;\n    left: 50%;\n    transform: translate(-50%, 0);\n    -webkit-transition: 0.2s ease-in-out;\n    -moz-transition: 0.2s ease-in-out;\n    -o-transition: 0.2s ease-in-out;\n    transition: 0.2s ease-in-out; }\n    wu-burger span:nth-child(1) {\n      top: 0.5em; }\n    wu-burger span:nth-child(2) {\n      top: 1em; }\n    wu-burger span:nth-child(3) {\n      top: 1.5em; }\n  wu-burger span {\n    transition: transform 0.2s, top 0.2s 0.2s, opacity 0.2s; }\n  wu-burger.open span {\n    transition: top 0.2s, transform 0.2s 0.2s, opacity 0.2s; }\n    wu-burger.open span:nth-child(1) {\n      top: 1em;\n      transform: translate(-50%, 0) rotate(45deg); }\n    wu-burger.open span:nth-child(2) {\n      opacity: 0; }\n    wu-burger.open span:nth-child(3) {\n      top: 1em;\n      transform: translate(-50%, 0) rotate(-45deg); }"; }
 }
 
 class WuCol {
@@ -97,6 +97,71 @@ class WuCol {
     static get is() { return "wu-col"; }
     static get properties() { return { "basis": { "type": String, "attr": "basis" }, "col": { "elementRef": true } }; }
     static get style() { return "wu-col {\n  width: 100%; }"; }
+}
+
+class WuRating {
+    constructor() {
+        this.resetToValue = 0;
+        this.value = 0;
+        this.max = 5;
+        this.icon = '';
+        this.iconOutline = '';
+        this.currentFillStates = [];
+        this.onHover = hoveredIndex => {
+            this.setVal(hoveredIndex + 1);
+        };
+        this.reset = () => {
+            this.setVal(this.resetToValue);
+        };
+        this.onSelect = index => {
+            let newVal = index + 1;
+            this.setVal(newVal);
+            this.resetToValue = newVal;
+        };
+    }
+    setVal(val) {
+        this.currentFillStates = this.currentFillStates.map((state, i) => {
+            if (i < val) {
+                return true;
+            }
+            return false;
+        });
+        return this.currentFillStates.filter(v => v).length;
+    }
+    getVal() {
+        return this.value;
+    }
+    renderStar(i, filled = false) {
+        //     <linearGradient id="lg" x1="0" y1="0" x2="1" y2="0">
+        //     <stop offset="0%" stop-color="currentColor"/>
+        //     <stop offset="75%" stop-color="currentColor"/>
+        //     <stop offset="75%" stop-color="#fff"/>
+        // </linearGradient>
+        let icon = (h("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 100 100" },
+            h("path", { d: "M50 7L39 40H5l28 20-11 33 28-20 28 20-11-33 28-20H61" })));
+        let iconOutline = (h("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 100 100" },
+            h("path", { d: "M50 7L39 40H5l28 20-11 33 28-20 28 20-11-33 28-20H61M50 17l8 26h27L64 59l8 26-22-16-22 16 8-26-21-16h27l8-26" })));
+        return (h("span", { class: "rating-icon", onClick: () => this.onSelect(i), onMouseEnter: () => this.onHover(i) }, filled ? icon : iconOutline));
+    }
+    componentWillLoad() {
+        let fillStates = [];
+        for (let i = 0; i < this.max; i++) {
+            if (i < this.value) {
+                fillStates.push(true);
+            }
+            else {
+                fillStates.push(false);
+            }
+        }
+        this.resetToValue = this.value;
+        this.currentFillStates = fillStates;
+    }
+    render() {
+        return (h("div", { class: "stars", onMouseLeave: () => this.reset() }, this.currentFillStates.map((state, i) => this.renderStar(i, state))));
+    }
+    static get is() { return "wu-rating"; }
+    static get properties() { return { "currentFillStates": { "state": true }, "getVal": { "method": true }, "icon": { "type": "Any", "attr": "icon" }, "iconOutline": { "type": "Any", "attr": "icon-outline" }, "max": { "type": Number, "attr": "max" }, "setVal": { "method": true }, "value": { "type": Number, "attr": "value" } }; }
+    static get style() { return "wu-rating {\n  font-size: 20px;\n  color: #666; }\n  wu-rating .rating-icon {\n    width: 1em;\n    height: 1em;\n    display: inline-block;\n    cursor: pointer; }\n    wu-rating .rating-icon svg {\n      fill: currentColor; }"; }
 }
 
 class WuRow {
@@ -159,4 +224,4 @@ class WuSpinner {
     static get style() { return "wu-spinner svg {\n  width: 2rem;\n  height: 2rem; }\n  wu-spinner svg.spinner-android {\n    animation: rotate 2s linear infinite; }\n    wu-spinner svg.spinner-android .path {\n      stroke-linecap: round;\n      animation: dash 1.5s ease-in-out infinite; }\n  wu-spinner svg.spinner-ios {\n    animation: iosIntro .6s; }\n    wu-spinner svg.spinner-ios path:nth-of-type(1) {\n      animation: pulse 1s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(2) {\n      animation: pulse 1s -.083s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(3) {\n      animation: pulse 1s -.166s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(4) {\n      animation: pulse 1s -.249s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(5) {\n      animation: pulse 1s -.332s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(6) {\n      animation: pulse 1s -.415s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(7) {\n      animation: pulse 1s -.498s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(8) {\n      animation: pulse 1s -.581s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(9) {\n      animation: pulse 1s -.664s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(10) {\n      animation: pulse 1s -.747s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(11) {\n      animation: pulse 1s -.83s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(12) {\n      animation: pulse 1s -.913s infinite linear; }\n\n\@keyframes rotate {\n  100% {\n    transform: rotate(360deg); } }\n\n\@keyframes dash {\n  0% {\n    stroke-dasharray: 1, 150;\n    stroke-dashoffset: 0; }\n  50% {\n    stroke-dasharray: 90, 150;\n    stroke-dashoffset: -35; }\n  100% {\n    stroke-dasharray: 90, 150;\n    stroke-dashoffset: -124; } }\n\n\@keyframes pulse {\n  50% {\n    fill-opacity: .2; }\n  to {\n    fill-opacity: 1; } }\n\n\@keyframes iosIntro {\n  from {\n    transform: scale(0);\n    opacity: 0; }\n  to {\n    transform: scale(1);\n    opacity: 1; } }"; }
 }
 
-export { CodeBlock, WuAccordion, WuAccodionContent as WuAccordionContent, WuAccordionHeader, WuBurger, WuCol, WuRow, WuSpinner };
+export { CodeBlock, WuAccordion, WuAccodionContent as WuAccordionContent, WuAccordionHeader, WuBurger, WuCol, WuRating, WuRow, WuSpinner };

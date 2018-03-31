@@ -32,6 +32,9 @@
     "wu-img": {
       "$": "wu-img"
     },
+    "wu-rating": {
+      "$": "code-block"
+    },
     "wu-row": {
       "$": "code-block"
     },

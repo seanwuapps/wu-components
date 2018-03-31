@@ -323,6 +323,39 @@ declare global {
 
 
 import {
+  WuRating as WuRating
+} from './components/wu-rating/wu-rating';
+
+declare global {
+  interface HTMLWuRatingElement extends WuRating, HTMLStencilElement {
+  }
+  var HTMLWuRatingElement: {
+    prototype: HTMLWuRatingElement;
+    new (): HTMLWuRatingElement;
+  };
+  interface HTMLElementTagNameMap {
+    "wu-rating": HTMLWuRatingElement;
+  }
+  interface ElementTagNameMap {
+    "wu-rating": HTMLWuRatingElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "wu-rating": JSXElements.WuRatingAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuRatingAttributes extends HTMLAttributes {
+      icon?: any;
+      iconOutline?: any;
+      max?: number;
+      value?: number;
+    }
+  }
+}
+
+
+import {
   WuShadow as WuShadow
 } from './components/wu-shadow/wu-shadow';
 

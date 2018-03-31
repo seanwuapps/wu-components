@@ -37,3 +37,8 @@ npm start
 ### Integrate with a framework
 
 see [Framework integration](https://stenciljs.com/docs/framework-integration)
+
+
+## Credits
+
+Star icon: Created by Magicon from the Noun Project

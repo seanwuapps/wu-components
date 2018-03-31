@@ -1,0 +1,15 @@
+@import '../../global/_variables.scss';
+@import '../../global/_mixins.scss';
+wu-rating {
+  font-size: 20px;
+  color: #666;
+  .rating-icon {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    cursor: pointer;
+    svg {
+      fill: currentColor;
+    }
+  }
+}
