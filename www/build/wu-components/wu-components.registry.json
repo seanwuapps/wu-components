@@ -23,6 +23,9 @@
     "wu-button": {
       "$": "wu-button"
     },
+    "wu-card": {
+      "$": "wu-card"
+    },
     "wu-col": {
       "$": "code-block"
     },

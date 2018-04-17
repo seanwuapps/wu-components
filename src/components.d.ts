@@ -171,6 +171,36 @@ declare global {
 
 
 import {
+  WuCard as WuCard
+} from './components/wu-card/wu-card';
+
+declare global {
+  interface HTMLWuCardElement extends WuCard, HTMLStencilElement {
+  }
+  var HTMLWuCardElement: {
+    prototype: HTMLWuCardElement;
+    new (): HTMLWuCardElement;
+  };
+  interface HTMLElementTagNameMap {
+    "wu-card": HTMLWuCardElement;
+  }
+  interface ElementTagNameMap {
+    "wu-card": HTMLWuCardElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "wu-card": JSXElements.WuCardAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuCardAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
   WuFloatAside as WuFloatAside
 } from './components/wu-float-aside/wu-float-aside';
 
