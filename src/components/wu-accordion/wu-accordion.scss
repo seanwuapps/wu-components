@@ -4,7 +4,7 @@ wu-accordion {
   display: block;
   clear: both;
   @include raised(1);
-  wu-accordion-content {
+  wu-content {
     max-height: 0;
     overflow: hidden;
     display: block;
@@ -51,7 +51,7 @@ wu-accordion {
         transform: rotate(90deg);
       }
     }
-    wu-accordion-content {
+    wu-content {
       max-height: 400px;
       padding: 10px 20px;
     }
