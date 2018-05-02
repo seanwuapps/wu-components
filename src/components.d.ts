@@ -51,36 +51,6 @@ declare global {
 
 
 import {
-  WuAccodionContent as WuAccordionContent
-} from './components/wu-accordion/wu-accordion-content/wu-accordion-content';
-
-declare global {
-  interface HTMLWuAccordionContentElement extends WuAccordionContent, HTMLStencilElement {
-  }
-  var HTMLWuAccordionContentElement: {
-    prototype: HTMLWuAccordionContentElement;
-    new (): HTMLWuAccordionContentElement;
-  };
-  interface HTMLElementTagNameMap {
-    "wu-accordion-content": HTMLWuAccordionContentElement;
-  }
-  interface ElementTagNameMap {
-    "wu-accordion-content": HTMLWuAccordionContentElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      "wu-accordion-content": JSXElements.WuAccordionContentAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface WuAccordionContentAttributes extends HTMLAttributes {
-      
-    }
-  }
-}
-
-
-import {
   WuAccordionHeader as WuAccordionHeader
 } from './components/wu-accordion/wu-accordion-header/wu-accordion-header';
 
@@ -194,6 +164,36 @@ declare global {
   }
   namespace JSXElements {
     export interface WuCardAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
+  WuContent as WuContent
+} from './components/wu-content/wu-content';
+
+declare global {
+  interface HTMLWuContentElement extends WuContent, HTMLStencilElement {
+  }
+  var HTMLWuContentElement: {
+    prototype: HTMLWuContentElement;
+    new (): HTMLWuContentElement;
+  };
+  interface HTMLElementTagNameMap {
+    "wu-content": HTMLWuContentElement;
+  }
+  interface ElementTagNameMap {
+    "wu-content": HTMLWuContentElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "wu-content": JSXElements.WuContentAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuContentAttributes extends HTMLAttributes {
       
     }
   }

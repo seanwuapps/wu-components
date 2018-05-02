@@ -11,9 +11,6 @@
     "wu-accordion": {
       "$": "code-block"
     },
-    "wu-accordion-content": {
-      "$": "code-block"
-    },
     "wu-accordion-header": {
       "$": "code-block"
     },
@@ -27,6 +24,9 @@
       "$": "wu-card"
     },
     "wu-col": {
+      "$": "code-block"
+    },
+    "wu-content": {
       "$": "code-block"
     },
     "wu-float-aside": {

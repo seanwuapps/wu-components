@@ -1,5 +1,7 @@
 import { Component } from '@stencil/core'
-
+/**
+ * reusable content component
+ */
 @Component({
   tag: 'wu-content',
   styleUrl: 'wu-content.scss'
