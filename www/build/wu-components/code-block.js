@@ -119,7 +119,16 @@ class WuRating {
         this.onSelect = index => {
             let newVal = index + 1;
             this.setVal(newVal);
+            this.value = newVal;
             this.resetToValue = newVal;
+            this.change.emit();
+        };
+        this.valueChanged = () => {
+            console.log('prop did change: value');
+            if (this.el.value !== String(this.value)) {
+                this.el.value = String(this.value);
+                console.log(this.el.value);
+            }
         };
     }
     setVal(val) {
@@ -163,7 +172,8 @@ class WuRating {
         return (h("div", { class: "stars", onMouseLeave: () => this.reset() }, this.currentFillStates.map((state, i) => this.renderStar(i, state))));
     }
     static get is() { return "wu-rating"; }
-    static get properties() { return { "currentFillStates": { "state": true }, "getVal": { "method": true }, "icon": { "type": "Any", "attr": "icon" }, "iconOutline": { "type": "Any", "attr": "icon-outline" }, "max": { "type": Number, "attr": "max" }, "setVal": { "method": true }, "value": { "type": Number, "attr": "value" } }; }
+    static get properties() { return { "currentFillStates": { "state": true }, "el": { "elementRef": true }, "getVal": { "method": true }, "icon": { "type": "Any", "attr": "icon" }, "iconOutline": { "type": "Any", "attr": "icon-outline" }, "max": { "type": Number, "attr": "max" }, "setVal": { "method": true }, "value": { "type": Number, "attr": "value", "mutable": true } }; }
+    static get events() { return [{ "name": "change", "method": "change", "bubbles": true, "cancelable": true, "composed": true }]; }
     static get style() { return "wu-rating {\n  font-size: 20px;\n  color: #666; }\n  wu-rating .rating-icon {\n    width: 1em;\n    height: 1em;\n    display: inline-block;\n    cursor: pointer; }\n    wu-rating .rating-icon svg {\n      fill: currentColor; }"; }
 }
 

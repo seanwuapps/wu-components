@@ -72,6 +72,18 @@
   </wu-row>
 
   <wu-row class="grey text-center">
+    <wu-col class="outline">
+      <p>1/2 with nested row</p>
+      <wu-row>
+        <wu-col class="outline">1</wu-col>
+        <wu-col class="outline">2</wu-col>
+        <wu-col class="outline">3</wu-col>
+      </wu-row>
+    </wu-col>
+    <wu-col class="outline">1/2</wu-col>
+  </wu-row>
+
+  <wu-row class="grey text-center">
     <wu-col class="outline">1/4</wu-col>
     <wu-col class="outline">1/4</wu-col>
     <wu-col class="outline">1/4</wu-col>
@@ -152,9 +164,14 @@
 
   <h2>Inputs</h2>
   <h3>Star rating</h3>
-  <wu-rating value="3" style="font-size: 60px; color: gold"></wu-rating>
+  <wu-rating value="3" style="font-size: 60px; color: gold" id="rating-test"></wu-rating>
   <wu-rating value="" max="4"></wu-rating>
-
+  <script>
+    const ratingElement = document.getElementById('rating-test');
+    ratingElement.addEventListener('change', function (e) {
+      console.log(e.target.value);
+    })
+  </script>
   <h2>Card</h2>
   <wu-card size="big">
     <wu-title>Card title</wu-title>

@@ -279,7 +279,13 @@ var s=document.querySelector("script[data-namespace='wu-components']");if(s){pub
     false;
     false;
     domApi.$dispatchEvent = ((elm, eventName, data) => elm && elm.dispatchEvent(new win.CustomEvent(eventName, data)));
-    false, false;
+    true;
+    // test if this browser supports event options or not
+    try {
+      win.addEventListener('e', null, Object.defineProperty({}, 'passive', {
+        get: () => domApi.$supportsEventOptions = true
+      }));
+    } catch (e) {}
     domApi.$parentElement = ((elm, parentNode) => {
       // if the parent node is a document fragment (shadow root)
       // then use the "host" property on it
@@ -356,6 +362,23 @@ var s=document.querySelector("script[data-namespace='wu-components']");if(s){pub
     // so no need to change to a different type
         return propValue;
   }
+  function initEventEmitters(plt, cmpEvents, instance) {
+    if (cmpEvents) {
+      const elm = plt.hostElementMap.get(instance);
+      cmpEvents.forEach(eventMeta => {
+        instance[eventMeta.method] = {
+          emit: data => {
+            plt.emitEvent(elm, eventMeta.name, {
+              bubbles: eventMeta.bubbles,
+              composed: eventMeta.composed,
+              cancelable: eventMeta.cancelable,
+              detail: data
+            });
+          }
+        };
+      });
+    }
+  }
   function proxyComponentInstance(plt, cmpConstructor, elm, instance, properties, memberName) {
     // at this point we've got a specific node of a host element, and created a component class instance
     // and we've already created getters/setters on both the host element and component class prototypes
@@ -392,7 +415,10 @@ var s=document.querySelector("script[data-namespace='wu-components']");if(s){pub
       // let's upgrade the data on the host element
       // and let the getters/setters do their jobs
             proxyComponentInstance(plt, componentConstructor, elm, instance);
-      false;
+      true;
+      // add each of the event emitters which wire up instance methods
+      // to fire off dom events from the host element
+      initEventEmitters(plt, componentConstructor.events, instance);
       false;
     } catch (e) {
       // something done went wrong trying to create a component instance
@@ -1476,7 +1502,8 @@ var s=document.querySelector("script[data-namespace='wu-components']");if(s){pub
     Context.document = doc;
     Context.publicPath = publicPath;
     false;
-    false;
+    true;
+    Context.emit = ((elm, eventName, data) => domApi.$dispatchEvent(elm, Context.eventNameFn ? Context.eventNameFn(eventName) : eventName, data));
     // add the h() fn to the app's global namespace
     App.h = h;
     App.Context = Context;
