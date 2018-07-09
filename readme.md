@@ -25,6 +25,8 @@ npm start
 
 ### Script tag
 
+(Coming soon)
+
 - Put `<script src='https://unpkg.com/wu-component@latest/dist/wu-component.js'></script>` inside your `<head>` tag
 - Then you can use the element anywhere in your template, JSX, html etc
 
