@@ -1,0 +1,55 @@
+{
+  "namespace": "WuComponents",
+  "fsNamespace": "wu-components",
+  "loader": "../wu-components.js",
+  "corePolyfilled": "es5-build-disabled.js",
+  "global": "wu-components.global.js",
+  "core": "wu-components.core.js",
+  "components": {
+    "code-block": {
+      "$": "code-block"
+    },
+    "wu-accordion": {
+      "$": "code-block"
+    },
+    "wu-accordion-header": {
+      "$": "code-block"
+    },
+    "wu-burger": {
+      "$": "code-block"
+    },
+    "wu-button": {
+      "$": "wu-button"
+    },
+    "wu-card": {
+      "$": "wu-card"
+    },
+    "wu-col": {
+      "$": "code-block"
+    },
+    "wu-content": {
+      "$": "code-block"
+    },
+    "wu-float-aside": {
+      "$": "wu-float-aside"
+    },
+    "wu-img": {
+      "$": "wu-img"
+    },
+    "wu-rating": {
+      "$": "code-block"
+    },
+    "wu-row": {
+      "$": "code-block"
+    },
+    "wu-shadow": {
+      "$": "wu-shadow"
+    },
+    "wu-spinner": {
+      "$": "code-block"
+    },
+    "wu-tinder-card": {
+      "$": "code-block"
+    }
+  }
+}
