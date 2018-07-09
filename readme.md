@@ -30,6 +30,8 @@ npm start
 
 ### Node Modules
 
+(Coming soon)
+
 - Run `npm install wu-component --save`
 - Put `<script src='node_modules/wu-component/dist/wu-component.js'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
