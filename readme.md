@@ -4,7 +4,7 @@
 
 A [web components](https://en.wikipedia.org/wiki/Web_Components) library built with [Stenciljs](https://stenciljs.com/)
 
-Demo (not set up yet)
+[Demo](https://seanwuapps.github.io/wu-components/)
 
 ## Getting Started
 
