@@ -4,7 +4,7 @@
 
 A [web components](https://en.wikipedia.org/wiki/Web_Components) library built with [Stenciljs](https://stenciljs.com/)
 
-[Demo](http://seanwuapps.com/wu-components)
+Demo (not set up yet)
 
 ## Getting Started
 
@@ -25,19 +25,18 @@ npm start
 
 ### Script tag
 
-* Put `<script src='https://unpkg.com/wu-component@latest/dist/wu-component.js'></script>` inside your `<head>` tag
-* Then you can use the element anywhere in your template, JSX, html etc
+- Put `<script src='https://unpkg.com/wu-component@latest/dist/wu-component.js'></script>` inside your `<head>` tag
+- Then you can use the element anywhere in your template, JSX, html etc
 
 ### Node Modules
 
-* Run `npm install wu-component --save`
-* Put `<script src='node_modules/wu-component/dist/wu-component.js'></script>` in the head of your index.html
-* Then you can use the element anywhere in your template, JSX, html etc
+- Run `npm install wu-component --save`
+- Put `<script src='node_modules/wu-component/dist/wu-component.js'></script>` in the head of your index.html
+- Then you can use the element anywhere in your template, JSX, html etc
 
 ### Integrate with a framework
 
 see [Framework integration](https://stenciljs.com/docs/framework-integration)
-
 
 ## Credits
 
