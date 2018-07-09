@@ -2,8 +2,9 @@
   "namespace": "WuComponents",
   "fsNamespace": "wu-components",
   "loader": "../wu-components.js",
-  "core": "wu-components.core.js",
   "corePolyfilled": "es5-build-disabled.js",
+  "global": "wu-components.global.js",
+  "core": "wu-components.core.js",
   "components": {
     "code-block": {
       "$": "code-block"
@@ -45,6 +46,9 @@
       "$": "wu-shadow"
     },
     "wu-spinner": {
+      "$": "code-block"
+    },
+    "wu-tinder-card": {
       "$": "code-block"
     }
   }

@@ -18,8 +18,27 @@ class WuImg {
             h("img", { src: this.src, alt: this.alt, class: "loader", onLoad: () => this.onFullImageLoaded() })));
     }
     static get is() { return "wu-img"; }
-    static get properties() { return { "alt": { "type": String, "attr": "alt" }, "el": { "elementRef": true }, "loading": { "state": true }, "src": { "type": String, "attr": "src" }, "thumb": { "type": String, "attr": "thumb" } }; }
-    static get style() { return "wu-img {\n  display: inherit; }\n  wu-img img.main {\n    width: 100%;\n    filter: blur(10px);\n    transition: filter 0.5s; }\n    wu-img img.main.loaded {\n      filter: none; }\n  wu-img img.loader {\n    opacity: 0;\n    height: 0px; }"; }
+    static get properties() { return {
+        "alt": {
+            "type": String,
+            "attr": "alt"
+        },
+        "el": {
+            "elementRef": true
+        },
+        "loading": {
+            "state": true
+        },
+        "src": {
+            "type": String,
+            "attr": "src"
+        },
+        "thumb": {
+            "type": String,
+            "attr": "thumb"
+        }
+    }; }
+    static get style() { return "wu-img {\n  display: inherit; }\n  wu-img img.main {\n    width: 100%;\n    -webkit-filter: blur(10px);\n    filter: blur(10px);\n    -webkit-transition: -webkit-filter 0.5s;\n    transition: -webkit-filter 0.5s;\n    transition: filter 0.5s;\n    transition: filter 0.5s, -webkit-filter 0.5s; }\n    wu-img img.main.loaded {\n      -webkit-filter: none;\n      filter: none; }\n  wu-img img.loader {\n    opacity: 0;\n    height: 0px; }"; }
 }
 
 export { WuImg };

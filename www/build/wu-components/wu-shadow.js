@@ -11,8 +11,17 @@ class WuShadow {
             h("slot", null)));
     }
     static get is() { return "wu-shadow"; }
-    static get properties() { return { "depth": { "type": Number, "attr": "depth" }, "type": { "type": String, "attr": "type" } }; }
-    static get style() { return "wu-shadow .box {\n  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  transition: box-shadow 0.3s ease-out; }"; }
+    static get properties() { return {
+        "depth": {
+            "type": Number,
+            "attr": "depth"
+        },
+        "type": {
+            "type": String,
+            "attr": "type"
+        }
+    }; }
+    static get style() { return "wu-shadow .box {\n  -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  -webkit-transition: -webkit-box-shadow 0.3s ease-out;\n  transition: -webkit-box-shadow 0.3s ease-out;\n  transition: box-shadow 0.3s ease-out;\n  transition: box-shadow 0.3s ease-out, -webkit-box-shadow 0.3s ease-out; }"; }
 }
 
 export { WuShadow };

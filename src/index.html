@@ -180,6 +180,30 @@
       at incidunt magnam vero explicabo id dolor veniam suscipit quos pariatur quidem deserunt.
     </wu-content>
   </wu-card>
+
+
+  <wu-tinder-card id="dog-card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
+    src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" threshold="150">
+  </wu-tinder-card>
+
+  <wu-tinder-card id="text-card">
+    <h1>yo</h1>
+  </wu-tinder-card>
+  <script>
+      (function () {
+        var component = document.querySelector('#dog-card');
+        component.addEventListener("swipe", function (e) {
+          var direction = e.detail.direction
+          if (direction === 'left') {
+            alert(`you miss 100% of the opportunities you don't try`)
+          }
+          if (direction === 'right') {
+            alert('nice work, we shall tell you when you have a match')
+          }
+        });
+      })();
+  </script>
+
 </body>
 
 </html>

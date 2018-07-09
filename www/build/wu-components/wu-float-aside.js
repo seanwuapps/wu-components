@@ -9,7 +9,12 @@ class WuFloatAside {
         return h("slot", null);
     }
     static get is() { return "wu-float-aside"; }
-    static get properties() { return { "trigger": { "type": String, "attr": "trigger" } }; }
+    static get properties() { return {
+        "trigger": {
+            "type": String,
+            "attr": "trigger"
+        }
+    }; }
     static get style() { return ""; }
 }
 

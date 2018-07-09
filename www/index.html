@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html dir="ltr" lang="en">
-
-<head>
+<!DOCTYPE html><html dir="ltr" lang="en"><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>WebUp Components</title>
@@ -53,8 +50,7 @@
   <wu-row>
     <wu-col></wu-col>
     <wu-col>
-      <wu-img class="full-width" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
-        src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text"></wu-img>
+      <wu-img class="full-width" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text"></wu-img>
     </wu-col>
     <wu-col></wu-col>
   </wu-row>
@@ -147,10 +143,10 @@
   <h2>Buttons</h2>
   <wu-button>default</wu-button>
   <wu-button type="outline">outline</wu-button>
-  <wu-button secondary>secondary</wu-button>
-  <wu-button secondary type="outline">secondary outline</wu-button>
-  <wu-button flat>flat</wu-button>
-  <wu-button flat type="outline">flat outline</wu-button>
+  <wu-button secondary="">secondary</wu-button>
+  <wu-button secondary="" type="outline">secondary outline</wu-button>
+  <wu-button flat="">flat</wu-button>
+  <wu-button flat="" type="outline">flat outline</wu-button>
 
   <wu-button style="background: red; border: none; color: white">custom</wu-button>
 
@@ -181,17 +177,28 @@
     </wu-content>
   </wu-card>
 
+
+  <wu-tinder-card id="dog-card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" threshold="150">
+  </wu-tinder-card>
+
+  <wu-tinder-card id="text-card">
+    <h1>yo</h1>
+  </wu-tinder-card>
   <script>
-    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-      // auto-unregister service worker during dev mode
-      navigator.serviceWorker.getRegistration().then(function(registration) {
-        if (registration) {
-          registration.unregister().then(function() { location.reload(true) });
-        }
-      });
-    }
+      (function () {
+        var component = document.querySelector('#dog-card');
+        component.addEventListener("swipe", function (e) {
+          var direction = e.detail.direction
+          if (direction === 'left') {
+            alert(`you miss 100% of the opportunities you don't try`)
+          }
+          if (direction === 'right') {
+            alert('nice work, we shall tell you when you have a match')
+          }
+        });
+      })();
   </script>
 
-</body>
 
-</html>
+
+</body></html>

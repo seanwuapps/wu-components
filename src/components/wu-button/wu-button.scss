@@ -49,4 +49,7 @@ wu-button {
       color: #333;
     }
   }
+  &[circle] {
+    border-radius: 50%;
+  }
 }

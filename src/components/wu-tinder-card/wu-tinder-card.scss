@@ -1,0 +1,14 @@
+wu-tinder-card {
+  display: block;
+  margin: 0 auto;
+  max-width: 320px;
+  padding: 20px;
+  border: 2px solid pink;
+  .tinder-card-controls {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+    .negative {
+    }
+  }
+}

@@ -15,7 +15,8 @@ exports.config = {
         'wu-accordion-header',
         'wu-content',
         'wu-rating',
-        'code-block'
+        'code-block',
+        'wu-tinder-card'
       ]
     }
   ]
