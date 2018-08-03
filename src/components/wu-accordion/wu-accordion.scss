@@ -4,7 +4,7 @@ wu-accordion {
   display: block;
   clear: both;
   @include raised(1);
-  wu-content {
+  .accordion-content {
     max-height: 0;
     overflow: hidden;
     display: block;
@@ -28,30 +28,30 @@ wu-accordion {
     &:focus {
       @include raisedHover();
     }
-    &:before {
-      content: '';
-      background: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 120" fill="#fff" stroke="#fff"><path d="M32.59 78.41a2 2 0 0 0 2.83 0l29-29a2 2 0 0 0 0-2.83l-29-29a2 2 0 0 0-2.83 2.83L60.17 48 32.59 75.59a2 2 0 0 0 0 2.82z"/></svg>');
+    svg.arrow {
+      stroke: white;
+      fill: white;
       background-size: cover;
       width: 20px;
       height: 20px;
       font-family: Arial, Helvetica, sans-serif;
       position: absolute;
       top: 50%;
-      margin-top: -10px;
-      transform-origin: center;
       left: 15px;
+      margin-top: -10px;
       font-size: 20px;
-      transition: transform $slow;
+      transform-origin: center;
+      transition: transform $fast;
     }
   }
 
   &.open {
     wu-accordion-header > div {
-      &:before {
+      svg.arrow {
         transform: rotate(90deg);
       }
     }
-    wu-content {
+    .accordion-content {
       max-height: 400px;
       padding: 10px 20px;
     }

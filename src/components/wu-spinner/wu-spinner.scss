@@ -1,7 +1,7 @@
 wu-spinner{
     svg {
-        width: 2rem;
-        height: 2rem;
+        width: 2em;
+        height: 2em;
         &.spinner-android {
             animation: rotate 2s linear infinite;
             & .path {

@@ -1,9 +1,15 @@
 const sass = require('@stencil/sass')
 exports.config = {
   namespace: 'wu-components',
-  generateDistribution: true,
-  serviceWorker: false,
   plugins: [sass()],
+  outputTargets: [
+    {
+      type: 'dist',
+    },
+    {
+      type: 'www'
+    }
+  ],
   bundles: [
     {
       components: [
@@ -11,12 +17,14 @@ exports.config = {
         'wu-col',
         'wu-spinner',
         'wu-burger',
+        'wu-img',
+        'wu-menu',
         'wu-accordion',
         'wu-accordion-header',
-        'wu-content',
         'wu-rating',
+        'wu-button',
+        'wu-tinder-card',
         'code-block',
-        'wu-tinder-card'
       ]
     }
   ]

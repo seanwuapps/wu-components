@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core'
+import { Component, Prop, Element } from '@stencil/core'
 
 @Component({
   tag: 'code-block',
@@ -7,22 +7,24 @@ import { Component, Prop } from '@stencil/core'
 export class CodeBlock {
   @Prop() language: string = 'markup'
   @Prop() code: string = ''
+  @Element() el: HTMLElement
 
-  htmlEntities(str) {
-    return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
+  componentDidLoad() {
+    window.hljs.highlightBlock(this.el.querySelector('pre'));
   }
-
-  componentDidLoad() {}
 
   render() {
     return (
-      <pre>
-        <code>{this.code}</code>
-      </pre>
+      <div>
+        <wu-accordion>
+          <wu-accordion-header>View code</wu-accordion-header>
+          <div class="accordion-content">
+            <pre>
+              <code class="xml">{this.code ? this.code : <slot/> }</code>
+            </pre>
+          </div>
+        </wu-accordion>
+      </div>
     )
   }
 }

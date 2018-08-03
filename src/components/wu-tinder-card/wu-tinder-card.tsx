@@ -8,6 +8,8 @@ export class WuTinderCard {
   @Prop() src: string
   @Prop() thumb: string
   @Prop() threshold: number = 150
+  @Prop() leftBtnText: string
+  @Prop() rightBtnText: string
 
   @Event() swipe: EventEmitter
 
@@ -23,6 +25,10 @@ export class WuTinderCard {
       (e: TouchEvent) => {
         this.startX = e.touches[0].clientX
         this.startY = e.touches[0].clientY
+        
+        this.currentX = e.touches[0].clientX
+        this.currentY = e.touches[0].clientY
+
       },
       false
     )
@@ -66,16 +72,23 @@ export class WuTinderCard {
     return false
   }
 
+  triggerSwipe(direction: string){
+    this.swipe.emit({direction})
+  }
+
   render() {
     return (
       <div class="tinder-card">
+
         {this.src ? <wu-img thumb={this.thumb} src={this.src} /> : <slot />}
 
         <div class="tinder-card-controls">
-          <div class="negative" onClick={this.onswipe('left')}>
-            No
-          </div>
-          <div class="positive">Yes</div>
+          <button class="negative" onClick={ () => { this.triggerSwipe('left')} }>
+            {this.leftBtnText ? this.leftBtnText : 'Left'}
+          </button>
+          <button class="positive" onClick={ () => { this.triggerSwipe('right')} }>
+            {this.rightBtnText ? this.rightBtnText : 'Right'}
+          </button>
         </div>
       </div>
     )

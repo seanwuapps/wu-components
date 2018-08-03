@@ -19,7 +19,7 @@
       "$": "code-block"
     },
     "wu-button": {
-      "$": "wu-button"
+      "$": "code-block"
     },
     "wu-card": {
       "$": "wu-card"
@@ -27,14 +27,11 @@
     "wu-col": {
       "$": "code-block"
     },
-    "wu-content": {
+    "wu-img": {
       "$": "code-block"
     },
-    "wu-float-aside": {
-      "$": "wu-float-aside"
-    },
-    "wu-img": {
-      "$": "wu-img"
+    "wu-menu": {
+      "$": "code-block"
     },
     "wu-rating": {
       "$": "code-block"

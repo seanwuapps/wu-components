@@ -164,7 +164,7 @@ declare global {
 
   namespace StencilComponents {
     interface WuCard {
-
+      'title': string;
     }
   }
 
@@ -187,73 +187,7 @@ declare global {
   }
   namespace JSXElements {
     export interface WuCardAttributes extends HTMLAttributes {
-
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface WuContent {
-
-    }
-  }
-
-  interface HTMLWuContentElement extends StencilComponents.WuContent, HTMLStencilElement {}
-
-  var HTMLWuContentElement: {
-    prototype: HTMLWuContentElement;
-    new (): HTMLWuContentElement;
-  };
-  interface HTMLElementTagNameMap {
-    'wu-content': HTMLWuContentElement;
-  }
-  interface ElementTagNameMap {
-    'wu-content': HTMLWuContentElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'wu-content': JSXElements.WuContentAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface WuContentAttributes extends HTMLAttributes {
-
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface WuFloatAside {
-      'trigger': string;
-    }
-  }
-
-  interface HTMLWuFloatAsideElement extends StencilComponents.WuFloatAside, HTMLStencilElement {}
-
-  var HTMLWuFloatAsideElement: {
-    prototype: HTMLWuFloatAsideElement;
-    new (): HTMLWuFloatAsideElement;
-  };
-  interface HTMLElementTagNameMap {
-    'wu-float-aside': HTMLWuFloatAsideElement;
-  }
-  interface ElementTagNameMap {
-    'wu-float-aside': HTMLWuFloatAsideElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'wu-float-aside': JSXElements.WuFloatAsideAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface WuFloatAsideAttributes extends HTMLAttributes {
-      'trigger'?: string;
+      'title'?: string;
     }
   }
 }
@@ -398,6 +332,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface WuMenu {
+      'menuItems': Object;
+    }
+  }
+
+  interface HTMLWuMenuElement extends StencilComponents.WuMenu, HTMLStencilElement {}
+
+  var HTMLWuMenuElement: {
+    prototype: HTMLWuMenuElement;
+    new (): HTMLWuMenuElement;
+  };
+  interface HTMLElementTagNameMap {
+    'wu-menu': HTMLWuMenuElement;
+  }
+  interface ElementTagNameMap {
+    'wu-menu': HTMLWuMenuElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'wu-menu': JSXElements.WuMenuAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuMenuAttributes extends HTMLAttributes {
+      'menuItems'?: Object;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface WuRating {
       'getVal': () => number;
       'icon': any;
@@ -511,6 +478,8 @@ declare global {
 
   namespace StencilComponents {
     interface WuTinderCard {
+      'leftBtnText': string;
+      'rightBtnText': string;
       'src': string;
       'threshold': number;
       'thumb': string;
@@ -536,7 +505,9 @@ declare global {
   }
   namespace JSXElements {
     export interface WuTinderCardAttributes extends HTMLAttributes {
+      'leftBtnText'?: string;
       'onSwipe'?: (event: CustomEvent) => void;
+      'rightBtnText'?: string;
       'src'?: string;
       'threshold'?: number;
       'thumb'?: string;

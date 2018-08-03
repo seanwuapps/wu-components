@@ -1,14 +1,24 @@
+@import '../../global/mixins';
+
 wu-tinder-card {
   display: block;
   margin: 0 auto;
   max-width: 320px;
   padding: 20px;
+  background-color: white;
   border: 2px solid pink;
+  @include raised(1);
   .tinder-card-controls {
     margin-top: 2rem;
     display: flex;
     justify-content: space-around;
-    .negative {
+    button{
+      background: inherit;
+      border: 2px solid pink;
+      width: 40%;
+      height: 60px;
+      border-radius: 10px;
+      cursor: pointer;
     }
   }
 }

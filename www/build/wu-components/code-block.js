@@ -6,17 +6,16 @@ class CodeBlock {
         this.language = 'markup';
         this.code = '';
     }
-    htmlEntities(str) {
-        return String(str)
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;');
+    componentDidLoad() {
+        window.hljs.highlightBlock(this.el.querySelector('pre'));
     }
-    componentDidLoad() { }
     render() {
-        return (h("pre", null,
-            h("code", null, this.code)));
+        return (h("div", null,
+            h("wu-accordion", null,
+                h("wu-accordion-header", null, "View code"),
+                h("div", { class: "accordion-content" },
+                    h("pre", null,
+                        h("code", { class: "xml" }, this.code ? this.code : h("slot", null)))))));
     }
     static get is() { return "code-block"; }
     static get properties() { return {
@@ -24,12 +23,15 @@ class CodeBlock {
             "type": String,
             "attr": "code"
         },
+        "el": {
+            "elementRef": true
+        },
         "language": {
             "type": String,
             "attr": "language"
         }
     }; }
-    static get style() { return ""; }
+    static get style() { return "code-block {\n  display: block;\n  margin: 20px 0;\n  font-family: 'Inconsolata', monospace; }\n  code-block .accordion-header {\n    text-transform: uppercase;\n    background: #4478BB; }"; }
 }
 
 class WuAccordion {
@@ -37,7 +39,7 @@ class WuAccordion {
         return h("slot", null);
     }
     static get is() { return "wu-accordion"; }
-    static get style() { return "wu-accordion {\n  display: block;\n  clear: both;\n  -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  -webkit-transition: -webkit-box-shadow 0.3s ease-out;\n  transition: -webkit-box-shadow 0.3s ease-out;\n  transition: box-shadow 0.3s ease-out;\n  transition: box-shadow 0.3s ease-out, -webkit-box-shadow 0.3s ease-out; }\n  wu-accordion wu-content {\n    max-height: 0;\n    overflow: hidden;\n    display: block;\n    padding: 0 20px;\n    -webkit-transition: max-height 0.2s, padding 0.2s;\n    transition: max-height 0.2s, padding 0.2s; }\n  wu-accordion wu-accordion-header > div {\n    display: block;\n    position: relative;\n    -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n    -webkit-transition: -webkit-box-shadow 0.3s ease-out;\n    transition: -webkit-box-shadow 0.3s ease-out;\n    transition: box-shadow 0.3s ease-out;\n    transition: box-shadow 0.3s ease-out, -webkit-box-shadow 0.3s ease-out;\n    background: #333;\n    color: white;\n    padding: 12px;\n    padding-left: 44px;\n    font-size: 14px;\n    cursor: pointer;\n    clear: both;\n    border-radius: 2px; }\n    wu-accordion wu-accordion-header > div:hover, wu-accordion wu-accordion-header > div:focus {\n      -webkit-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2), 0 10px 18px 0 rgba(0, 0, 0, 0.19);\n      box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2), 0 10px 18px 0 rgba(0, 0, 0, 0.19); }\n    wu-accordion wu-accordion-header > div:before {\n      content: '';\n      background: url('data:image/svg+xml; utf8, <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 120\" fill=\"#fff\" stroke=\"#fff\"><path d=\"M32.59 78.41a2 2 0 0 0 2.83 0l29-29a2 2 0 0 0 0-2.83l-29-29a2 2 0 0 0-2.83 2.83L60.17 48 32.59 75.59a2 2 0 0 0 0 2.82z\"/></svg>');\n      background-size: cover;\n      width: 20px;\n      height: 20px;\n      font-family: Arial, Helvetica, sans-serif;\n      position: absolute;\n      top: 50%;\n      margin-top: -10px;\n      -webkit-transform-origin: center;\n      transform-origin: center;\n      left: 15px;\n      font-size: 20px;\n      -webkit-transition: -webkit-transform 0.5s;\n      transition: -webkit-transform 0.5s;\n      transition: transform 0.5s;\n      transition: transform 0.5s, -webkit-transform 0.5s; }\n  wu-accordion.open wu-accordion-header > div:before {\n    -webkit-transform: rotate(90deg);\n    transform: rotate(90deg); }\n  wu-accordion.open wu-content {\n    max-height: 400px;\n    padding: 10px 20px; }"; }
+    static get style() { return "wu-accordion {\n  display: block;\n  clear: both;\n  -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  -webkit-transition: -webkit-box-shadow 0.3s ease-out;\n  transition: -webkit-box-shadow 0.3s ease-out;\n  transition: box-shadow 0.3s ease-out;\n  transition: box-shadow 0.3s ease-out, -webkit-box-shadow 0.3s ease-out; }\n  wu-accordion .accordion-content {\n    max-height: 0;\n    overflow: hidden;\n    display: block;\n    padding: 0 20px;\n    -webkit-transition: max-height 0.2s, padding 0.2s;\n    transition: max-height 0.2s, padding 0.2s; }\n  wu-accordion wu-accordion-header > div {\n    display: block;\n    position: relative;\n    -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n    -webkit-transition: -webkit-box-shadow 0.3s ease-out;\n    transition: -webkit-box-shadow 0.3s ease-out;\n    transition: box-shadow 0.3s ease-out;\n    transition: box-shadow 0.3s ease-out, -webkit-box-shadow 0.3s ease-out;\n    background: #333;\n    color: white;\n    padding: 12px;\n    padding-left: 44px;\n    font-size: 14px;\n    cursor: pointer;\n    clear: both;\n    border-radius: 2px; }\n    wu-accordion wu-accordion-header > div:hover, wu-accordion wu-accordion-header > div:focus {\n      -webkit-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2), 0 10px 18px 0 rgba(0, 0, 0, 0.19);\n      box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2), 0 10px 18px 0 rgba(0, 0, 0, 0.19); }\n    wu-accordion wu-accordion-header > div svg.arrow {\n      stroke: white;\n      fill: white;\n      background-size: cover;\n      width: 20px;\n      height: 20px;\n      font-family: Arial, Helvetica, sans-serif;\n      position: absolute;\n      top: 50%;\n      left: 15px;\n      margin-top: -10px;\n      font-size: 20px;\n      -webkit-transform-origin: center;\n      transform-origin: center;\n      -webkit-transition: -webkit-transform 0.2s;\n      transition: -webkit-transform 0.2s;\n      transition: transform 0.2s;\n      transition: transform 0.2s, -webkit-transform 0.2s; }\n  wu-accordion.open wu-accordion-header > div svg.arrow {\n    -webkit-transform: rotate(90deg);\n    transform: rotate(90deg); }\n  wu-accordion.open .accordion-content {\n    max-height: 400px;\n    padding: 10px 20px; }"; }
 }
 
 class WuAccordionHeader {
@@ -53,9 +55,11 @@ class WuAccordionHeader {
         };
     }
     render() {
-        return (h("div", { onClick: () => {
+        return (h("div", { class: "accordion-header", onClick: () => {
                 this.toggleOpen();
             } },
+            h("svg", { class: "arrow", viewBox: "0 0 96 120" },
+                h("path", { d: "M32.59 78.41a2 2 0 0 0 2.83 0l29-29a2 2 0 0 0 0-2.83l-29-29a2 2 0 0 0-2.83 2.83L60.17 48 32.59 75.59a2 2 0 0 0 0 2.82z" })),
             h("slot", null)));
     }
     static get is() { return "wu-accordion-header"; }
@@ -91,6 +95,19 @@ class WuBurger {
     static get style() { return "wu-burger {\n  font-size: 18px; }\n  wu-burger button {\n    font-size: 1em;\n    color: currentColor;\n    position: relative;\n    width: 2.25em;\n    height: 2.25em;\n    cursor: pointer;\n    background: none;\n    border: none;\n    display: inline-block;\n    padding: 0.25em 0; }\n  wu-burger:focus {\n    outline: 1px solid blue; }\n  wu-burger span {\n    display: block;\n    width: 1.5em;\n    height: 0.25em;\n    border-radius: 0.25em;\n    background: currentColor;\n    position: absolute;\n    left: 50%;\n    -webkit-transform: translate(-50%, 0);\n    transform: translate(-50%, 0);\n    -webkit-transition: 0.2s ease-in-out;\n    -moz-transition: 0.2s ease-in-out;\n    -o-transition: 0.2s ease-in-out;\n    transition: 0.2s ease-in-out; }\n    wu-burger span:nth-child(1) {\n      top: 0.5em; }\n    wu-burger span:nth-child(2) {\n      top: 1em; }\n    wu-burger span:nth-child(3) {\n      top: 1.5em; }\n  wu-burger span {\n    -webkit-transition: top 0.2s 0.2s, opacity 0.2s, -webkit-transform 0.2s;\n    transition: top 0.2s 0.2s, opacity 0.2s, -webkit-transform 0.2s;\n    transition: transform 0.2s, top 0.2s 0.2s, opacity 0.2s;\n    transition: transform 0.2s, top 0.2s 0.2s, opacity 0.2s, -webkit-transform 0.2s; }\n  wu-burger.open span {\n    -webkit-transition: top 0.2s, opacity 0.2s, -webkit-transform 0.2s 0.2s;\n    transition: top 0.2s, opacity 0.2s, -webkit-transform 0.2s 0.2s;\n    transition: top 0.2s, transform 0.2s 0.2s, opacity 0.2s;\n    transition: top 0.2s, transform 0.2s 0.2s, opacity 0.2s, -webkit-transform 0.2s 0.2s; }\n    wu-burger.open span:nth-child(1) {\n      top: 1em;\n      -webkit-transform: translate(-50%, 0) rotate(45deg);\n      transform: translate(-50%, 0) rotate(45deg); }\n    wu-burger.open span:nth-child(2) {\n      opacity: 0; }\n    wu-burger.open span:nth-child(3) {\n      top: 1em;\n      -webkit-transform: translate(-50%, 0) rotate(-45deg);\n      transform: translate(-50%, 0) rotate(-45deg); }"; }
 }
 
+class WuButton {
+    render() {
+        return h("slot", null);
+    }
+    static get is() { return "wu-button"; }
+    static get properties() { return {
+        "button": {
+            "elementRef": true
+        }
+    }; }
+    static get style() { return "wu-button {\n  -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  -webkit-transition: -webkit-box-shadow 0.3s ease-out;\n  transition: -webkit-box-shadow 0.3s ease-out;\n  transition: box-shadow 0.3s ease-out;\n  transition: box-shadow 0.3s ease-out, -webkit-box-shadow 0.3s ease-out;\n  min-width: 60px;\n  max-width: 100%;\n  padding: 10px 30px;\n  display: inline-block;\n  text-transform: uppercase;\n  cursor: pointer;\n  background: #2b98f0;\n  color: white;\n  margin: 0 5px;\n  text-align: center;\n  -webkit-transition: -webkit-box-shadow 0.3s ease-out, -webkit-filter 0.3s ease-in;\n  transition: -webkit-box-shadow 0.3s ease-out, -webkit-filter 0.3s ease-in;\n  transition: box-shadow 0.3s ease-out, filter 0.3s ease-in;\n  transition: box-shadow 0.3s ease-out, filter 0.3s ease-in, -webkit-box-shadow 0.3s ease-out, -webkit-filter 0.3s ease-in; }\n  wu-button:hover, wu-button:focus {\n    -webkit-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2), 0 10px 18px 0 rgba(0, 0, 0, 0.19);\n    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2), 0 10px 18px 0 rgba(0, 0, 0, 0.19);\n    -webkit-filter: brightness(110%);\n    filter: brightness(110%); }\n  wu-button[type='outline'] {\n    border: 1px solid #2b98f0;\n    background: white;\n    color: #2b98f0; }\n    wu-button[type='outline']:hover {\n      -webkit-filter: brightness(95%);\n      filter: brightness(95%); }\n  wu-button[type='block'] {\n    display: block;\n    width: 100%;\n    text-align: center;\n    padding-left: 0;\n    padding-right: 0; }\n  wu-button[flat] {\n    -webkit-box-shadow: none;\n    box-shadow: none; }\n    wu-button[flat]:hover {\n      -webkit-box-shadow: none;\n      box-shadow: none; }\n  wu-button[secondary] {\n    background: #ccc;\n    color: #333; }\n    wu-button[secondary][type='outline'] {\n      border-color: #ccc;\n      background: white;\n      color: #333; }\n  wu-button[circle] {\n    border-radius: 50%; }"; }
+}
+
 class WuCol {
     constructor() {
         this.basis = 'auto';
@@ -116,14 +133,57 @@ class WuCol {
     static get style() { return "wu-col {\n  width: 100%; }"; }
 }
 
-/**
- * reusable content component
- */
-class WuContent {
-    render() {
-        return h("slot", null);
+class WuImg {
+    constructor() {
+        this.loading = true;
+        this.onFullImageLoaded = () => {
+            let mainImg = this.el.querySelector('img.main');
+            let loaderImg = this.el.querySelector('img.loader');
+            mainImg.src = loaderImg.src;
+            loaderImg.parentNode.removeChild(loaderImg);
+            this.loading = false;
+        };
     }
-    static get is() { return "wu-content"; }
+    render() {
+        return (h("div", null,
+            h("img", { src: this.thumb, alt: this.alt, class: this.loading ? 'main' : 'main loaded' }),
+            h("img", { src: this.src, alt: this.alt, class: "loader", onLoad: () => this.onFullImageLoaded() })));
+    }
+    static get is() { return "wu-img"; }
+    static get properties() { return {
+        "alt": {
+            "type": String,
+            "attr": "alt"
+        },
+        "el": {
+            "elementRef": true
+        },
+        "loading": {
+            "state": true
+        },
+        "src": {
+            "type": String,
+            "attr": "src"
+        },
+        "thumb": {
+            "type": String,
+            "attr": "thumb"
+        }
+    }; }
+    static get style() { return "wu-img {\n  display: inherit; }\n  wu-img img.main {\n    width: 100%;\n    -webkit-filter: blur(10px);\n    filter: blur(10px);\n    -webkit-transition: -webkit-filter 0.5s;\n    transition: -webkit-filter 0.5s;\n    transition: filter 0.5s;\n    transition: filter 0.5s, -webkit-filter 0.5s; }\n    wu-img img.main.loaded {\n      -webkit-filter: none;\n      filter: none; }\n  wu-img img.loader {\n    opacity: 0;\n    height: 0px; }"; }
+}
+
+class WuMenu {
+    render() {
+        return (h("div", { class: "side-menu" }));
+    }
+    static get is() { return "wu-menu"; }
+    static get properties() { return {
+        "menuItems": {
+            "type": "Any",
+            "attr": "menu-items"
+        }
+    }; }
     static get style() { return ""; }
 }
 
@@ -254,7 +314,7 @@ class WuRow {
 
 class WuSpinner {
     constructor() {
-        this.type = 'android';
+        this.type = 'circle';
         this.color = 'currentColor';
     }
     render() {
@@ -277,9 +337,15 @@ class WuSpinner {
                         h("animate", { attributeName: "opacity", attributeType: "XML", values: "0.2; 1; .2", begin: "0.3s", dur: "0.6s", repeatCount: "indefinite" }),
                         h("animate", { attributeName: "height", attributeType: "XML", values: "10; 20; 10", begin: "0.3s", dur: "0.6s", repeatCount: "indefinite" }),
                         h("animate", { attributeName: "y", attributeType: "XML", values: "10; 5; 10", begin: "0.3s", dur: "0.6s", repeatCount: "indefinite" }))));
-            case 'android':
-                return (h("svg", { class: "spinner-android", viewBox: "0 0 50 50" },
-                    h("circle", { class: "path", cx: "25", cy: "25", r: "20", fill: "none", stroke: this.color, "stroke-width": "5" })));
+            case 'ring':
+                return (h("svg", { viewBox: "0 0 44 44", xmlns: "http://www.w3.org/2000/svg", stroke: this.color },
+                    h("g", { fill: "none", "fill-rule": "evenodd", "stroke-width": "2" },
+                        h("circle", { cx: "22", cy: "22", r: "1" },
+                            h("animate", { attributeName: "r", begin: "0s", dur: "1.8s", values: "1; 20", calcMode: "spline", keyTimes: "0; 1", keySplines: "0.165, 0.84, 0.44, 1", repeatCount: "indefinite" }),
+                            h("animate", { attributeName: "stroke-opacity", begin: "0s", dur: "1.8s", values: "1; 0", calcMode: "spline", keyTimes: "0; 1", keySplines: "0.3, 0.61, 0.355, 1", repeatCount: "indefinite" })),
+                        h("circle", { cx: "22", cy: "22", r: "1" },
+                            h("animate", { attributeName: "r", begin: "-0.9s", dur: "1.8s", values: "1; 20", calcMode: "spline", keyTimes: "0; 1", keySplines: "0.165, 0.84, 0.44, 1", repeatCount: "indefinite" }),
+                            h("animate", { attributeName: "stroke-opacity", begin: "-0.9s", dur: "1.8s", values: "1; 0", calcMode: "spline", keyTimes: "0; 1", keySplines: "0.3, 0.61, 0.355, 1", repeatCount: "indefinite" })))));
             case 'ios':
                 return (h("svg", { class: "spinner-ios", xmlns: "http://www.w3.org/2000/svg", width: "27", height: "27", viewBox: "0 0 27 27", fill: this.color },
                     h("path", { d: "M18.696,10.5c-0.275-0.479-0.113-1.09,0.365-1.367l4.759-2.751c0.482-0.273,1.095-0.11,1.37,0.368 c0.276,0.479,0.115,1.092-0.364,1.364l-4.764,2.751C19.583,11.141,18.973,10.977,18.696,10.5z" }),
@@ -294,6 +360,14 @@ class WuSpinner {
                     h("path", { d: "M17.867,19.062l2.748,4.764c0.275,0.479,0.113,1.088-0.365,1.365c-0.479,0.276-1.091,0.112-1.367-0.362l-2.75-4.767 c-0.276-0.477-0.111-1.088,0.367-1.365C16.979,18.424,17.591,18.585,17.867,19.062z" }),
                     h("path", { d: "M18.696,16.502c0.276-0.48,0.887-0.646,1.365-0.367l4.765,2.748c0.479,0.279,0.64,0.889,0.364,1.368 c-0.275,0.479-0.888,0.64-1.37,0.366l-4.759-2.749C18.583,17.59,18.421,16.979,18.696,16.502z" }),
                     h("path", { d: "M25.998,12.499h-5.501c-0.552,0-1.001,0.448-1.001,1.001c0,0.552,0.447,1,1.001,1h5.501c0.554,0,1.002-0.448,1.002-1 C27,12.946,26.552,12.499,25.998,12.499z" })));
+            case 'dots':
+                return (h("svg", { version: "1.1", id: "L4", xmlns: "http://www.w3.org/2000/svg", x: "0px", y: "0px", viewBox: "0 0 70 100" },
+                    h("circle", { fill: this.color, stroke: "none", cx: "6", cy: "50", r: "6" },
+                        h("animate", { attributeName: "opacity", dur: "1s", values: "0;1;0", repeatCount: "indefinite", begin: "0.1" })),
+                    h("circle", { fill: this.color, stroke: "none", cx: "26", cy: "50", r: "6" },
+                        h("animate", { attributeName: "opacity", dur: "1s", values: "0;1;0", repeatCount: "indefinite", begin: "0.2" })),
+                    h("circle", { fill: this.color, stroke: "none", cx: "46", cy: "50", r: "6" },
+                        h("animate", { attributeName: "opacity", dur: "1s", values: "0;1;0", repeatCount: "indefinite", begin: "0.3" }))));
             default:
                 return (null);
         }
@@ -309,7 +383,7 @@ class WuSpinner {
             "attr": "type"
         }
     }; }
-    static get style() { return "wu-spinner svg {\n  width: 2rem;\n  height: 2rem; }\n  wu-spinner svg.spinner-android {\n    -webkit-animation: rotate 2s linear infinite;\n    animation: rotate 2s linear infinite; }\n    wu-spinner svg.spinner-android .path {\n      stroke-linecap: round;\n      -webkit-animation: dash 1.5s ease-in-out infinite;\n      animation: dash 1.5s ease-in-out infinite; }\n  wu-spinner svg.spinner-ios {\n    -webkit-animation: iosIntro .6s;\n    animation: iosIntro .6s; }\n    wu-spinner svg.spinner-ios path:nth-of-type(1) {\n      -webkit-animation: pulse 1s infinite linear;\n      animation: pulse 1s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(2) {\n      -webkit-animation: pulse 1s -.083s infinite linear;\n      animation: pulse 1s -.083s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(3) {\n      -webkit-animation: pulse 1s -.166s infinite linear;\n      animation: pulse 1s -.166s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(4) {\n      -webkit-animation: pulse 1s -.249s infinite linear;\n      animation: pulse 1s -.249s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(5) {\n      -webkit-animation: pulse 1s -.332s infinite linear;\n      animation: pulse 1s -.332s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(6) {\n      -webkit-animation: pulse 1s -.415s infinite linear;\n      animation: pulse 1s -.415s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(7) {\n      -webkit-animation: pulse 1s -.498s infinite linear;\n      animation: pulse 1s -.498s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(8) {\n      -webkit-animation: pulse 1s -.581s infinite linear;\n      animation: pulse 1s -.581s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(9) {\n      -webkit-animation: pulse 1s -.664s infinite linear;\n      animation: pulse 1s -.664s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(10) {\n      -webkit-animation: pulse 1s -.747s infinite linear;\n      animation: pulse 1s -.747s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(11) {\n      -webkit-animation: pulse 1s -.83s infinite linear;\n      animation: pulse 1s -.83s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(12) {\n      -webkit-animation: pulse 1s -.913s infinite linear;\n      animation: pulse 1s -.913s infinite linear; }\n\n\@-webkit-keyframes rotate {\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg); } }\n\n\@keyframes rotate {\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg); } }\n\n\@-webkit-keyframes dash {\n  0% {\n    stroke-dasharray: 1, 150;\n    stroke-dashoffset: 0; }\n  50% {\n    stroke-dasharray: 90, 150;\n    stroke-dashoffset: -35; }\n  100% {\n    stroke-dasharray: 90, 150;\n    stroke-dashoffset: -124; } }\n\n\@keyframes dash {\n  0% {\n    stroke-dasharray: 1, 150;\n    stroke-dashoffset: 0; }\n  50% {\n    stroke-dasharray: 90, 150;\n    stroke-dashoffset: -35; }\n  100% {\n    stroke-dasharray: 90, 150;\n    stroke-dashoffset: -124; } }\n\n\@-webkit-keyframes pulse {\n  50% {\n    fill-opacity: .2; }\n  to {\n    fill-opacity: 1; } }\n\n\@keyframes pulse {\n  50% {\n    fill-opacity: .2; }\n  to {\n    fill-opacity: 1; } }\n\n\@-webkit-keyframes iosIntro {\n  from {\n    -webkit-transform: scale(0);\n    transform: scale(0);\n    opacity: 0; }\n  to {\n    -webkit-transform: scale(1);\n    transform: scale(1);\n    opacity: 1; } }\n\n\@keyframes iosIntro {\n  from {\n    -webkit-transform: scale(0);\n    transform: scale(0);\n    opacity: 0; }\n  to {\n    -webkit-transform: scale(1);\n    transform: scale(1);\n    opacity: 1; } }"; }
+    static get style() { return "wu-spinner svg {\n  width: 2em;\n  height: 2em; }\n  wu-spinner svg.spinner-android {\n    -webkit-animation: rotate 2s linear infinite;\n    animation: rotate 2s linear infinite; }\n    wu-spinner svg.spinner-android .path {\n      stroke-linecap: round;\n      -webkit-animation: dash 1.5s ease-in-out infinite;\n      animation: dash 1.5s ease-in-out infinite; }\n  wu-spinner svg.spinner-ios {\n    -webkit-animation: iosIntro .6s;\n    animation: iosIntro .6s; }\n    wu-spinner svg.spinner-ios path:nth-of-type(1) {\n      -webkit-animation: pulse 1s infinite linear;\n      animation: pulse 1s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(2) {\n      -webkit-animation: pulse 1s -.083s infinite linear;\n      animation: pulse 1s -.083s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(3) {\n      -webkit-animation: pulse 1s -.166s infinite linear;\n      animation: pulse 1s -.166s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(4) {\n      -webkit-animation: pulse 1s -.249s infinite linear;\n      animation: pulse 1s -.249s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(5) {\n      -webkit-animation: pulse 1s -.332s infinite linear;\n      animation: pulse 1s -.332s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(6) {\n      -webkit-animation: pulse 1s -.415s infinite linear;\n      animation: pulse 1s -.415s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(7) {\n      -webkit-animation: pulse 1s -.498s infinite linear;\n      animation: pulse 1s -.498s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(8) {\n      -webkit-animation: pulse 1s -.581s infinite linear;\n      animation: pulse 1s -.581s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(9) {\n      -webkit-animation: pulse 1s -.664s infinite linear;\n      animation: pulse 1s -.664s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(10) {\n      -webkit-animation: pulse 1s -.747s infinite linear;\n      animation: pulse 1s -.747s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(11) {\n      -webkit-animation: pulse 1s -.83s infinite linear;\n      animation: pulse 1s -.83s infinite linear; }\n    wu-spinner svg.spinner-ios path:nth-of-type(12) {\n      -webkit-animation: pulse 1s -.913s infinite linear;\n      animation: pulse 1s -.913s infinite linear; }\n\n\@-webkit-keyframes rotate {\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg); } }\n\n\@keyframes rotate {\n  100% {\n    -webkit-transform: rotate(360deg);\n    transform: rotate(360deg); } }\n\n\@-webkit-keyframes dash {\n  0% {\n    stroke-dasharray: 1, 150;\n    stroke-dashoffset: 0; }\n  50% {\n    stroke-dasharray: 90, 150;\n    stroke-dashoffset: -35; }\n  100% {\n    stroke-dasharray: 90, 150;\n    stroke-dashoffset: -124; } }\n\n\@keyframes dash {\n  0% {\n    stroke-dasharray: 1, 150;\n    stroke-dashoffset: 0; }\n  50% {\n    stroke-dasharray: 90, 150;\n    stroke-dashoffset: -35; }\n  100% {\n    stroke-dasharray: 90, 150;\n    stroke-dashoffset: -124; } }\n\n\@-webkit-keyframes pulse {\n  50% {\n    fill-opacity: .2; }\n  to {\n    fill-opacity: 1; } }\n\n\@keyframes pulse {\n  50% {\n    fill-opacity: .2; }\n  to {\n    fill-opacity: 1; } }\n\n\@-webkit-keyframes iosIntro {\n  from {\n    -webkit-transform: scale(0);\n    transform: scale(0);\n    opacity: 0; }\n  to {\n    -webkit-transform: scale(1);\n    transform: scale(1);\n    opacity: 1; } }\n\n\@keyframes iosIntro {\n  from {\n    -webkit-transform: scale(0);\n    transform: scale(0);\n    opacity: 0; }\n  to {\n    -webkit-transform: scale(1);\n    transform: scale(1);\n    opacity: 1; } }"; }
 }
 
 class WuTinderCard {
@@ -320,6 +394,8 @@ class WuTinderCard {
         this.el.addEventListener('touchstart', (e) => {
             this.startX = e.touches[0].clientX;
             this.startY = e.touches[0].clientY;
+            this.currentX = e.touches[0].clientX;
+            this.currentY = e.touches[0].clientY;
         }, false);
         this.el.addEventListener('touchmove', (e) => {
             this.currentX = e.touches[0].clientX;
@@ -347,17 +423,28 @@ class WuTinderCard {
         }
         return false;
     }
+    triggerSwipe(direction) {
+        this.swipe.emit({ direction });
+    }
     render() {
         return (h("div", { class: "tinder-card" },
             this.src ? h("wu-img", { thumb: this.thumb, src: this.src }) : h("slot", null),
             h("div", { class: "tinder-card-controls" },
-                h("div", { class: "negative", onClick: this.onswipe('left') }, "No"),
-                h("div", { class: "positive" }, "Yes"))));
+                h("button", { class: "negative", onClick: () => { this.triggerSwipe('left'); } }, this.leftBtnText ? this.leftBtnText : 'Left'),
+                h("button", { class: "positive", onClick: () => { this.triggerSwipe('right'); } }, this.rightBtnText ? this.rightBtnText : 'Right'))));
     }
     static get is() { return "wu-tinder-card"; }
     static get properties() { return {
         "el": {
             "elementRef": true
+        },
+        "leftBtnText": {
+            "type": String,
+            "attr": "left-btn-text"
+        },
+        "rightBtnText": {
+            "type": String,
+            "attr": "right-btn-text"
         },
         "src": {
             "type": String,
@@ -379,7 +466,7 @@ class WuTinderCard {
             "cancelable": true,
             "composed": true
         }]; }
-    static get style() { return "wu-tinder-card {\n  display: block;\n  margin: 0 auto;\n  max-width: 320px;\n  padding: 20px;\n  border: 2px solid pink; }\n  wu-tinder-card .tinder-card-controls {\n    margin-top: 2rem;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-pack: distribute;\n    justify-content: space-around; }"; }
+    static get style() { return "wu-tinder-card {\n  display: block;\n  margin: 0 auto;\n  max-width: 320px;\n  padding: 20px;\n  background-color: white;\n  border: 2px solid pink;\n  -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  -webkit-transition: -webkit-box-shadow 0.3s ease-out;\n  transition: -webkit-box-shadow 0.3s ease-out;\n  transition: box-shadow 0.3s ease-out;\n  transition: box-shadow 0.3s ease-out, -webkit-box-shadow 0.3s ease-out; }\n  wu-tinder-card .tinder-card-controls {\n    margin-top: 2rem;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-pack: distribute;\n    justify-content: space-around; }\n    wu-tinder-card .tinder-card-controls button {\n      background: inherit;\n      border: 2px solid pink;\n      width: 40%;\n      height: 60px;\n      border-radius: 10px;\n      cursor: pointer; }"; }
 }
 
-export { CodeBlock, WuAccordion, WuAccordionHeader, WuBurger, WuCol, WuContent, WuRating, WuRow, WuSpinner, WuTinderCard };
+export { CodeBlock, WuAccordion, WuAccordionHeader, WuBurger, WuButton, WuCol, WuImg, WuMenu, WuRating, WuRow, WuSpinner, WuTinderCard };

@@ -7,7 +7,7 @@ import { Component, Prop } from '@stencil/core';
 })
 export class WuSpinner {
 
-    @Prop() type: string = 'android';
+    @Prop() type: string = 'circle';
     @Prop() color: string = 'currentColor';
 
     render() {
@@ -40,11 +40,44 @@ export class WuSpinner {
                     </rect>
                   </svg>
                 );
-            case 'android':
+            case 'ring':
                 return (
-                    <svg class="spinner-android" viewBox="0 0 50 50">
-                        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke={this.color} stroke-width="5"></circle>
-                  </svg>
+                    <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" stroke={this.color}>
+                        <g fill="none" fill-rule="evenodd" stroke-width="2">
+                            <circle cx="22" cy="22" r="1">
+                                <animate attributeName="r"
+                                    begin="0s" dur="1.8s"
+                                    values="1; 20"
+                                    calcMode="spline"
+                                    keyTimes="0; 1"
+                                    keySplines="0.165, 0.84, 0.44, 1"
+                                    repeatCount="indefinite" />
+                                <animate attributeName="stroke-opacity"
+                                    begin="0s" dur="1.8s"
+                                    values="1; 0"
+                                    calcMode="spline"
+                                    keyTimes="0; 1"
+                                    keySplines="0.3, 0.61, 0.355, 1"
+                                    repeatCount="indefinite" />
+                            </circle>
+                            <circle cx="22" cy="22" r="1">
+                                <animate attributeName="r"
+                                    begin="-0.9s" dur="1.8s"
+                                    values="1; 20"
+                                    calcMode="spline"
+                                    keyTimes="0; 1"
+                                    keySplines="0.165, 0.84, 0.44, 1"
+                                    repeatCount="indefinite" />
+                                <animate attributeName="stroke-opacity"
+                                    begin="-0.9s" dur="1.8s"
+                                    values="1; 0"
+                                    calcMode="spline"
+                                    keyTimes="0; 1"
+                                    keySplines="0.3, 0.61, 0.355, 1"
+                                    repeatCount="indefinite" />
+                            </circle>
+                        </g>
+                    </svg>
                 )
             case 'ios':
                 return (
@@ -63,6 +96,20 @@ export class WuSpinner {
                       <path d="M25.998,12.499h-5.501c-0.552,0-1.001,0.448-1.001,1.001c0,0.552,0.447,1,1.001,1h5.501c0.554,0,1.002-0.448,1.002-1 C27,12.946,26.552,12.499,25.998,12.499z"/>
                     </svg>
                 )
+            case 'dots':
+                return (
+                <svg version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 70 100">
+                    <circle fill={this.color} stroke="none" cx="6" cy="50" r="6">
+                    <animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.1"></animate>    
+                    </circle>
+                    <circle fill={this.color} stroke="none" cx="26" cy="50" r="6">
+                    <animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.2"></animate>       
+                    </circle>
+                    <circle fill={this.color} stroke="none" cx="46" cy="50" r="6">
+                    <animate attributeName="opacity" dur="1s" values="0;1;0" repeatCount="indefinite" begin="0.3"></animate>     
+                    </circle>
+                </svg>
+              )
             default :
                 return (null);
         }

@@ -1,19 +1,32 @@
 <!DOCTYPE html><html dir="ltr" lang="en"><head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
   <title>WebUp Components</title>
 
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Inconsolata" rel="stylesheet">
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  
+
   <script src="/build/wu-components.js"></script>
+
   <style>
     body {
-      font-size: 14px;
-      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-family: 'Open Sans', sans-serif;
     }
-
+    @media (min-width: 768px) {
+      body{
+        max-width: 80%;
+        margin: 0 auto;
+      }     
+    }
+    
     h2 {
       margin-top: 40px;
       padding-top: 40px;
-      border-top: 1px solid #333;
+      font-family: 'Lato', sans-serif;
     }
 
     .grey {
@@ -27,7 +40,7 @@
     .text-center {
       text-align: center;
     }
-
+    
     wu-burger {
       color: #333;
     }
@@ -42,30 +55,65 @@
 
   <h1>WebUp Components Demo</h1>
   <p>Just some custom web components that'll make UI development a bit easier.</p>
-  <p>There's default styles in most components, you can easily overwrite them by applying a
-    <i>class</i>
+  <p>
+    There's default styling in most components, you can easily overwrite them by applying some custom css
   </p>
-  <h2>Better img tag</h2>
 
+  <h2>Better img tag</h2>
   <wu-row>
     <wu-col></wu-col>
-    <wu-col>
+    <wu-col basis="80%">
       <wu-img class="full-width" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text"></wu-img>
     </wu-col>
     <wu-col></wu-col>
   </wu-row>
+  <p>The image tag that does progressive load.</p>
+  
+  <code-block code="
+  <wu-img 
+    src=&quot;https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg&quot; 
+    thumb=&quot;https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg&quot;
+    alt=&quot;Cute dog being a good boy&quot;
+  ></wu-img>"></code-block>
+
 
   <h2>Spinner</h2>
-  <wu-spinner color="orange" type="android"></wu-spinner>
-  <wu-spinner color="blue" type="circle"></wu-spinner>
-  <wu-spinner color="green" type="ios"></wu-spinner>
-  <wu-spinner color="red" type="bars"></wu-spinner>
+  <style>
+    wu-spinner{
+      font-size: 50px;
+    }
+  </style>
+  <div class="text-center">
+    <wu-spinner color="#ff22ee" type="ring"></wu-spinner>
+    <wu-spinner color="blue" type="circle"></wu-spinner>
+    <wu-spinner color="green" type="ios"></wu-spinner>
+    <wu-spinner color="red" type="bars"></wu-spinner>
+    <wu-spinner color="purple" type="dots"></wu-spinner>
+  </div>
+  <code-block code="
+  <style>
+    wu-spinner{
+      font-size: 50px;
+    }
+  </style>
+  <wu-spinner color=&quot;#ff22ee&quot; type=&quot;ring&quot;></wu-spinner>
+  <wu-spinner color=&quot;blue&quot; type=&quot;circle&quot;></wu-spinner>
+  <wu-spinner color=&quot;green&quot; type=&quot;ios&quot;></wu-spinner>
+  <wu-spinner color=&quot;red&quot; type=&quot;bars&quot;></wu-spinner>
+  <wu-spinner color=&quot;purple&quot; type=&quot;dots&quot;></wu-spinner>"></code-block>
 
   <h2>Grid</h2>
+  <p>A grid system based on <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">flexbox</a></p>
+
   <wu-row class="grey text-center">
     <wu-col class="outline">1/2</wu-col>
     <wu-col class="outline">1/2</wu-col>
   </wu-row>
+  <code-block code="
+  <wu-row class=&quot;grey text-center&quot;>
+    <wu-col class=&quot;outline&quot;>1/2</wu-col>
+    <wu-col class=&quot;outline&quot;>1/2</wu-col>
+  </wu-row>"></code-block>
 
   <wu-row class="grey text-center">
     <wu-col class="outline">
@@ -78,7 +126,19 @@
     </wu-col>
     <wu-col class="outline">1/2</wu-col>
   </wu-row>
-
+  <code-block code="
+  <wu-row class=&quot;grey text-center&quot;>
+    <wu-col class=&quot;outline&quot;>
+      <p>1/2 with nested row</p>
+      <wu-row>
+        <wu-col class=&quot;outline&quot;>1</wu-col>
+        <wu-col class=&quot;outline&quot;>2</wu-col>
+        <wu-col class=&quot;outline&quot;>3</wu-col>
+      </wu-row>
+    </wu-col>
+    <wu-col class=&quot;outline&quot;>1/2</wu-col>
+  </wu-row>
+  "></code-block>
   <wu-row class="grey text-center">
     <wu-col class="outline">1/4</wu-col>
     <wu-col class="outline">1/4</wu-col>
@@ -95,31 +155,54 @@
     <wu-col class="outline">6</wu-col>
     <wu-col class="outline">7</wu-col>
   </wu-row>
+  <code-block code="
+  <wu-row class=&quot;grey text-center&quot;>
+    <wu-col class=&quot;outline&quot;>1</wu-col>
+    <wu-col class=&quot;outline&quot;>2</wu-col>
+    <wu-col class=&quot;outline&quot;>3</wu-col>
+    <wu-col class=&quot;outline&quot;>4</wu-col>
+    <wu-col class=&quot;outline&quot;>5</wu-col>
+    <wu-col class=&quot;outline&quot;>6</wu-col>
+    <wu-col class=&quot;outline&quot;>7</wu-col>
+  </wu-row>
+  "></code-block>
 
   <wu-row class="grey text-center">
     <wu-col basis="30%" class="outline">30%</wu-col>
     <wu-col class="outline">auto</wu-col>
   </wu-row>
 
+  <code-block code="
+  <wu-row class=&quot;grey text-center&quot;>
+    <wu-col basis=&quot;30%&quot; class=&quot;outline&quot;>30%</wu-col>
+    <wu-col class=&quot;outline&quot;>auto</wu-col>
+  </wu-row>"></code-block>
+
   <wu-row class="grey text-center">
     <wu-col class="outline">auto</wu-col>
     <wu-col basis="30%" class="outline">30%</wu-col>
   </wu-row>
+
+  <code-block code="
+  <wu-row class=&quot;grey text-center&quot;>
+    <wu-col class=&quot;outline&quot;>auto</wu-col>
+    <wu-col basis=&quot;30%&quot; class=&quot;outline&quot;>30%</wu-col>
+  </wu-row>"></code-block>
+
 
   <h2>Accordion</h2>
   <wu-row>
     <wu-col>
       <wu-accordion>
         <wu-accordion-header>Heading</wu-accordion-header>
-        <wu-content>
+        <div class="accordion-content">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim erat, egestas nec accumsan a, iaculis at
             magna. Suspendisse fringilla quis tortor vitae gravida. Mauris metus tortor, volutpat sit amet arcu at, ullamcorper
             hendrerit est. Cras aliquet orci dapibus malesuada semper. Duis condimentum, erat et porta elementum, eros mauris
             sodales augue, ac semper arcu neque at orci. Ut commodo, lacus in suscipit bibendum, quam eros rutrum erat, dapibus
             pharetra arcu odio in libero. Suspendisse sed sapien tortor. Suspendisse ornare libero vitae ornare elementum.
-
           </p>
-        </wu-content>
+        </div>
       </wu-accordion>
     </wu-col>
   </wu-row>
@@ -127,7 +210,7 @@
     <wu-col>
       <wu-accordion>
         <wu-accordion-header>Heading</wu-accordion-header>
-        <wu-content>
+        <div class="accordion-content">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim erat, egestas nec accumsan a, iaculis at
             magna. Suspendisse fringilla quis tortor vitae gravida. Mauris metus tortor, volutpat sit amet arcu at, ullamcorper
             hendrerit est. Cras aliquet orci dapibus malesuada semper. Duis condimentum, erat et porta elementum, eros mauris
@@ -135,7 +218,7 @@
             pharetra arcu odio in libero. Suspendisse sed sapien tortor. Suspendisse ornare libero vitae ornare elementum.
 
           </p>
-        </wu-content>
+        </div>
       </wu-accordion>
     </wu-col>
   </wu-row>
@@ -168,26 +251,30 @@
       console.log(e.target.value);
     })
   </script>
-  <h2>Card</h2>
-  <wu-card size="big">
-    <wu-title>Card title</wu-title>
-    <wu-content>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus aperiam magni, nam voluptas quod dolorem consequatur, quaerat
-      at incidunt magnam vero explicabo id dolor veniam suscipit quos pariatur quidem deserunt.
-    </wu-content>
-  </wu-card>
-
-
+  <h2>Tinder Card</h2>
+  
   <wu-tinder-card id="dog-card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" threshold="150">
   </wu-tinder-card>
-
-  <wu-tinder-card id="text-card">
-    <h1>yo</h1>
+  <wu-tinder-card id="text-card" left-btn-text="Nope" right-btn-text="Oh yeah">
+    <h1>This is a text card</h1>
+  </wu-tinder-card>
+  <wu-tinder-card id="text-card-2" left-btn-text="Nope" right-btn-text="Oh yeah">
+    <h1>This is another card</h1>
   </wu-tinder-card>
   <script>
       (function () {
-        var component = document.querySelector('#dog-card');
-        component.addEventListener("swipe", function (e) {
+        var dogCard = document.querySelector('#dog-card');
+        dogCard.addEventListener("swipe", function (e) {
+          var direction = e.detail.direction
+          if (direction === 'left') {
+            alert(`you miss 100% of the opportunities you don't try`)
+          }
+          if (direction === 'right') {
+            alert('nice work, we shall tell you when you have a match')
+          }
+        });
+        var textCard = document.querySelector('#text-card');
+        textCard.addEventListener("swipe", function (e) {
           var direction = e.detail.direction
           if (direction === 'left') {
             alert(`you miss 100% of the opportunities you don't try`)
@@ -198,7 +285,6 @@
         });
       })();
   </script>
-
 
 
 </body></html>

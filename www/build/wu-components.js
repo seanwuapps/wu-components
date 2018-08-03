@@ -1,6 +1,6 @@
 /*!
  * Built with http://stenciljs.com
- * 2018-06-08T23:21:59
+ * 2018-07-03T06:50:06
  */
 (function(win, doc, namespace, fsNamespace, resourcesUrl, appCore, appCoreSsr, appCorePolyfilled, hydratedCssClass, components) {
 
@@ -135,4 +135,4 @@ function createComponentOnReadyPrototype(win, namespace, HTMLElementPrototype) {
 
   init(win, doc, namespace, fsNamespace, resourcesUrl, appCore, appCoreSsr, appCorePolyfilled, hydratedCssClass, components);
 
-  })(window, document, "WuComponents","wu-components",0,"wu-components.core.js","es5-build-disabled.js","hydrated",[["code-block","code-block",1,[["code",1,0,1,2],["language",1,0,1,2]]],["wu-accordion","code-block",1],["wu-accordion-header","code-block",1,[["header",7]]],["wu-burger","code-block",1,[["burger",7]]],["wu-button","wu-button",1,[["button",7]]],["wu-card","wu-card",1],["wu-col","code-block",1,[["basis",1,0,1,2],["col",7]]],["wu-content","code-block",1],["wu-float-aside","wu-float-aside",1,[["trigger",1,0,1,2]]],["wu-img","wu-img",1,[["alt",1,0,1,2],["el",7],["loading",5],["src",1,0,1,2],["thumb",1,0,1,2]]],["wu-rating","code-block",1,[["currentFillStates",5],["el",7],["getVal",6],["icon",1,0,1,1],["iconOutline",1,0,"icon-outline",1],["max",1,0,1,4],["setVal",6],["value",2,0,1,4]]],["wu-row","code-block",1,[["maxCols",1,0,"max-cols",4]]],["wu-shadow","wu-shadow",1,[["depth",1,0,1,4],["type",1,0,1,2]]],["wu-spinner","code-block",1,[["color",1,0,1,2],["type",1,0,1,2]]],["wu-tinder-card","code-block",1,[["el",7],["src",1,0,1,2],["threshold",1,0,1,4],["thumb",1,0,1,2]]]],HTMLElement.prototype);
+  })(window, document, "WuComponents","wu-components",0,"wu-components.core.js","es5-build-disabled.js","hydrated",[["code-block","code-block",1,[["code",1,0,1,2],["el",7],["language",1,0,1,2]]],["wu-accordion","code-block",1],["wu-accordion-header","code-block",1,[["header",7]]],["wu-burger","code-block",1,[["burger",7]]],["wu-button","code-block",1,[["button",7]]],["wu-card","wu-card",1,[["title",1,0,1,2]]],["wu-col","code-block",1,[["basis",1,0,1,2],["col",7]]],["wu-img","code-block",1,[["alt",1,0,1,2],["el",7],["loading",5],["src",1,0,1,2],["thumb",1,0,1,2]]],["wu-menu","code-block",1,[["menuItems",1]]],["wu-rating","code-block",1,[["currentFillStates",5],["el",7],["getVal",6],["icon",1,0,1,1],["iconOutline",1,0,"icon-outline",1],["max",1,0,1,4],["setVal",6],["value",2,0,1,4]]],["wu-row","code-block",1,[["maxCols",1,0,"max-cols",4]]],["wu-shadow","wu-shadow",1,[["depth",1,0,1,4],["type",1,0,1,2]]],["wu-spinner","code-block",1,[["color",1,0,1,2],["type",1,0,1,2]]],["wu-tinder-card","code-block",1,[["el",7],["leftBtnText",1,0,"left-btn-text",2],["rightBtnText",1,0,"right-btn-text",2],["src",1,0,1,2],["threshold",1,0,1,4],["thumb",1,0,1,2]]]],HTMLElement.prototype);
