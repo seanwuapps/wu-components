@@ -48,6 +48,13 @@
     .full-width {
       width: 100%;
     }
+
+    p code {
+      background: #efefef;
+      color: red;
+      padding: 0 5px;
+      border-radius: 5px;
+    }
   </style>
 </head>
 
@@ -224,14 +231,25 @@
   </wu-row>
 
   <h2>Buttons</h2>
+
+  <p>Buttons are by default uppercase and shadowed. You can create a flat button by adding the `flat` attribute</p>
   <wu-button>default</wu-button>
   <wu-button type="outline">outline</wu-button>
   <wu-button secondary="">secondary</wu-button>
   <wu-button secondary="" type="outline">secondary outline</wu-button>
   <wu-button flat="">flat</wu-button>
   <wu-button flat="" type="outline">flat outline</wu-button>
-
   <wu-button style="background: red; border: none; color: white">custom</wu-button>
+
+  <code-block code="
+  <wu-button>default</wu-button>
+  <wu-button type=&quot;outline&quot;>outline</wu-button>
+  <wu-button secondary>secondary</wu-button>
+  <wu-button secondary type=&quot;outline&quot;>secondary outline</wu-button>
+  <wu-button flat>flat</wu-button>
+  <wu-button flat type=&quot;outline&quot;>flat outline</wu-button>
+  <wu-button style=&quot;background: red; border: none; color: white&quot;>custom</wu-button>
+"></code-block>
 
   <h2>Menu</h2>
   <h3>Hamburger menu toggle, control size with css using font-size</h3>
@@ -245,15 +263,31 @@
   <h3>Star rating</h3>
   <wu-rating value="3" style="font-size: 60px; color: gold" id="rating-test"></wu-rating>
   <wu-rating value="" max="4"></wu-rating>
+  <code-block code="
+  <wu-rating value=&quot;3&quot; style=&quot;font-size: 60px; color: gold&quot; id=&quot;rating-test&quot;></wu-rating>
+  <wu-rating value=&quot;&quot; max=&quot;4&quot;></wu-rating>
+  "></code-block>
+  <p>wu-rating emits a <code>change</code> event which you can handle in your normal js code.</p>
   <script>
     const ratingElement = document.getElementById('rating-test');
     ratingElement.addEventListener('change', function (e) {
       console.log(e.target.value);
     })
   </script>
+  <code-block code="
+  <script>
+    const ratingElement = document.getElementById('rating-test');
+    ratingElement.addEventListener('change', function (e) {
+      console.log(e.target.value);
+    })
+  </script>"></code-block>
+
+
+
   <h2>Tinder Card</h2>
   
   <wu-tinder-card id="dog-card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" threshold="150">
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, soluta. Sit asperiores suscipit quo ipsam eaque maiores, amet molestias possimus deserunt dolorem, nemo mollitia provident accusamus, iste alias explicabo ut?</p>
   </wu-tinder-card>
   <wu-tinder-card id="text-card" left-btn-text="Nope" right-btn-text="Oh yeah">
     <h1>This is a text card</h1>
@@ -285,6 +319,18 @@
         });
       })();
   </script>
+
+  <script>
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      // auto-unregister service worker during dev mode
+      navigator.serviceWorker.getRegistration().then(function(registration) {
+        if (registration) {
+          registration.unregister().then(function() { location.reload(true) });
+        }
+      });
+    }
+  </script>
+
 
 
 </body></html>

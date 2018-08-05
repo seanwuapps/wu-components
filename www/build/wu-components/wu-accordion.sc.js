@@ -1,0 +1,13 @@
+/*! Built with http://stenciljs.com */
+const { h } = window.WuComponents;
+
+class WuAccordion {
+    render() {
+        return h("slot", null);
+    }
+    static get is() { return "wu-accordion"; }
+    static get encapsulation() { return "shadow"; }
+    static get style() { return "wu-accordion {\n  display: block;\n  clear: both;\n  -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n  -webkit-transition: -webkit-box-shadow 0.3s ease-out;\n  transition: -webkit-box-shadow 0.3s ease-out;\n  transition: box-shadow 0.3s ease-out;\n  transition: box-shadow 0.3s ease-out, -webkit-box-shadow 0.3s ease-out; }\n  wu-accordion .accordion-content {\n    max-height: 0;\n    overflow: hidden;\n    display: block;\n    padding: 0 20px;\n    -webkit-transition: max-height 0.2s, padding 0.2s;\n    transition: max-height 0.2s, padding 0.2s; }\n  wu-accordion wu-accordion-header > div {\n    display: block;\n    position: relative;\n    -webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);\n    -webkit-transition: -webkit-box-shadow 0.3s ease-out;\n    transition: -webkit-box-shadow 0.3s ease-out;\n    transition: box-shadow 0.3s ease-out;\n    transition: box-shadow 0.3s ease-out, -webkit-box-shadow 0.3s ease-out;\n    background: #333;\n    color: white;\n    padding: 12px;\n    padding-left: 44px;\n    font-size: 14px;\n    cursor: pointer;\n    clear: both;\n    border-radius: 2px; }\n    wu-accordion wu-accordion-header > div:hover, wu-accordion wu-accordion-header > div:focus {\n      -webkit-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2), 0 10px 18px 0 rgba(0, 0, 0, 0.19);\n      box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.2), 0 10px 18px 0 rgba(0, 0, 0, 0.19); }\n    wu-accordion wu-accordion-header > div svg.arrow {\n      stroke: white;\n      fill: white;\n      background-size: cover;\n      width: 20px;\n      height: 20px;\n      font-family: Arial, Helvetica, sans-serif;\n      position: absolute;\n      top: 50%;\n      left: 15px;\n      margin-top: -10px;\n      font-size: 20px;\n      -webkit-transform-origin: center;\n      transform-origin: center;\n      -webkit-transition: -webkit-transform 0.2s;\n      transition: -webkit-transform 0.2s;\n      transition: transform 0.2s;\n      transition: transform 0.2s, -webkit-transform 0.2s; }\n  wu-accordion.open wu-accordion-header > div svg.arrow {\n    -webkit-transform: rotate(90deg);\n    transform: rotate(90deg); }\n  wu-accordion.open .accordion-content {\n    max-height: 400px;\n    padding: 10px 20px; }"; }
+}
+
+export { WuAccordion };

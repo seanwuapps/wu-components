@@ -80,8 +80,8 @@ export class WuTinderCard {
     return (
       <div class="tinder-card">
 
-        {this.src ? <wu-img thumb={this.thumb} src={this.src} /> : <slot />}
-
+        {this.src ? <wu-img thumb={this.thumb} src={this.src} /> : null}
+        <slot />
         <div class="tinder-card-controls">
           <button class="negative" onClick={ () => { this.triggerSwipe('left')} }>
             {this.leftBtnText ? this.leftBtnText : 'Left'}

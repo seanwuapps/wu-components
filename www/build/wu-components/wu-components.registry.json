@@ -7,46 +7,74 @@
   "core": "wu-components.core.js",
   "components": {
     "code-block": {
-      "$": "code-block"
+      "bundleIds": {
+        "$": "code-block"
+      }
     },
     "wu-accordion": {
-      "$": "code-block"
+      "bundleIds": {
+        "$": "code-block"
+      }
     },
     "wu-accordion-header": {
-      "$": "code-block"
+      "bundleIds": {
+        "$": "code-block"
+      }
     },
     "wu-burger": {
-      "$": "code-block"
+      "bundleIds": {
+        "$": "code-block"
+      }
     },
     "wu-button": {
-      "$": "code-block"
+      "bundleIds": {
+        "$": "code-block"
+      }
     },
     "wu-card": {
-      "$": "wu-card"
+      "bundleIds": {
+        "$": "wu-card"
+      }
     },
     "wu-col": {
-      "$": "code-block"
+      "bundleIds": {
+        "$": "code-block"
+      }
     },
     "wu-img": {
-      "$": "code-block"
+      "bundleIds": {
+        "$": "code-block"
+      }
     },
     "wu-menu": {
-      "$": "code-block"
+      "bundleIds": {
+        "$": "code-block"
+      }
     },
     "wu-rating": {
-      "$": "code-block"
+      "bundleIds": {
+        "$": "code-block"
+      }
     },
     "wu-row": {
-      "$": "code-block"
+      "bundleIds": {
+        "$": "code-block"
+      }
     },
     "wu-shadow": {
-      "$": "wu-shadow"
+      "bundleIds": {
+        "$": "wu-shadow"
+      }
     },
     "wu-spinner": {
-      "$": "code-block"
+      "bundleIds": {
+        "$": "code-block"
+      }
     },
     "wu-tinder-card": {
-      "$": "code-block"
+      "bundleIds": {
+        "$": "code-block"
+      }
     }
   }
 }

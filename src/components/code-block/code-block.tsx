@@ -1,5 +1,4 @@
 import { Component, Prop, Element } from '@stencil/core'
-
 @Component({
   tag: 'code-block',
   styleUrl: 'code-block.scss'
@@ -10,7 +9,7 @@ export class CodeBlock {
   @Element() el: HTMLElement
 
   componentDidLoad() {
-    window.hljs.highlightBlock(this.el.querySelector('pre'));
+    hljs.highlightBlock(this.el.querySelector('pre'));
   }
 
   render() {

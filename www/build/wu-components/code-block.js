@@ -7,7 +7,7 @@ class CodeBlock {
         this.code = '';
     }
     componentDidLoad() {
-        window.hljs.highlightBlock(this.el.querySelector('pre'));
+        hljs.highlightBlock(this.el.querySelector('pre'));
     }
     render() {
         return (h("div", null,
@@ -428,7 +428,8 @@ class WuTinderCard {
     }
     render() {
         return (h("div", { class: "tinder-card" },
-            this.src ? h("wu-img", { thumb: this.thumb, src: this.src }) : h("slot", null),
+            this.src ? h("wu-img", { thumb: this.thumb, src: this.src }) : null,
+            h("slot", null),
             h("div", { class: "tinder-card-controls" },
                 h("button", { class: "negative", onClick: () => { this.triggerSwipe('left'); } }, this.leftBtnText ? this.leftBtnText : 'Left'),
                 h("button", { class: "positive", onClick: () => { this.triggerSwipe('right'); } }, this.rightBtnText ? this.rightBtnText : 'Right'))));
