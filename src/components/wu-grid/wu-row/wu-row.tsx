@@ -1,11 +1,17 @@
-import { Component, Prop } from '@stencil/core'
+import { Component, Prop, Element } from '@stencil/core'
 
 @Component({
   tag: 'wu-row',
   styleUrl: 'wu-row.scss'
 })
 export class WuRow {
-  @Prop() maxCols: number
+  @Prop() gap: string = '0';
+  @Element() el: HTMLElement;
+
+  componentDidLoad(){
+    this.el.style.cssText = `--gap:${this.gap}`;
+  }
+
 
   render() {
     return <slot />

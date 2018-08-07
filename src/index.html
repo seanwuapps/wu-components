@@ -6,10 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
   <title>WebUp Components</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Inconsolata" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
 
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css"> -->
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script> -->
   
 
   <script src="build/wu-components.js"></script>
@@ -58,6 +58,10 @@
       padding: 0 5px;
       border-radius: 5px;
     }
+
+    .card {
+      border-width: 50px;
+    }
   </style>
 </head>
 
@@ -72,7 +76,7 @@
   <h2>Better img tag</h2>
   <wu-row>
     <wu-col></wu-col>
-    <wu-col basis="80%">
+    <wu-col portion="2">
       <wu-img class="full-width" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
         src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text"></wu-img>
     </wu-col>
@@ -179,30 +183,31 @@
   '></code-block>
 
   <wu-row class="grey text-center">
-    <wu-col basis="30%" class="outline">30%</wu-col>
-    <wu-col class="outline">auto</wu-col>
+    <wu-col portion="3" class="outline">Portion: 3</wu-col>
+    <wu-col portion="7" class="outline">Portion: 7</wu-col>
   </wu-row>
 
   <code-block code='
   <wu-row class="grey text-center">
-    <wu-col basis="30%" class="outline">30%</wu-col>
-    <wu-col class="outline">auto</wu-col>
+    <wu-col portion="3" class="outline">Portion: 3</wu-col>
+    <wu-col portion="7" class="outline">Portion: 7</wu-col>
   </wu-row>'></code-block>
-
-  <wu-row class="grey text-center">
-    <wu-col class="outline">auto</wu-col>
-    <wu-col basis="30%" class="outline">30%</wu-col>
-  </wu-row>
-
-  <code-block code='
-  <wu-row class="grey text-center">
-    <wu-col class="outline">auto</wu-col>
-    <wu-col basis="30%" class="outline">30%</wu-col>
-  </wu-row>'></code-block>
-
 
   <h2>Accordion</h2>
   <wu-row>
+    <wu-col>
+      <wu-accordion>
+        <wu-accordion-header>Heading</wu-accordion-header>
+        <div class="accordion-content">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim erat, egestas nec accumsan a, iaculis at
+            magna. Suspendisse fringilla quis tortor vitae gravida. Mauris metus tortor, volutpat sit amet arcu at, ullamcorper
+            hendrerit est. Cras aliquet orci dapibus malesuada semper. Duis condimentum, erat et porta elementum, eros mauris
+            sodales augue, ac semper arcu neque at orci. Ut commodo, lacus in suscipit bibendum, quam eros rutrum erat, dapibus
+            pharetra arcu odio in libero. Suspendisse sed sapien tortor. Suspendisse ornare libero vitae ornare elementum.
+          </p>
+        </div>
+      </wu-accordion>
+    </wu-col>
     <wu-col>
       <wu-accordion>
         <wu-accordion-header>Heading</wu-accordion-header>
@@ -278,14 +283,38 @@
       console.log(e.target.value);
     })
   </script>
-  <code-block code="
-  <script>
-    const ratingElement = document.getElementById('rating-test');
-    ratingElement.addEventListener('change', function (e) {
-      console.log(e.target.value);
-    })
-  </script>"></code-block>
+  <code-block language="javascript" code="
+  // Handle change event with JS
+  const ratingElement = document.getElementById('rating-test');
+  ratingElement.addEventListener('change', function (e) {
+    console.log(e.target.value);
+  })
+"></code-block>
 
+  <h2>Card</h2>
+
+  <wu-row gap="15px">
+    <wu-col portion="1">
+      <wu-card card-title="Text Card">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
+      </wu-card>
+    </wu-col>
+    <wu-col portion="2">
+      <wu-card card-title="Text Card with hover effect" hover>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
+      </wu-card>
+    </wu-col>
+    <wu-col portion="1">
+      <wu-card 
+      hover
+      card-title="Media Card" 
+      thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
+      src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" 
+      alt="text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
+      </wu-card>
+    </wu-col>
+  </wu-row>
 
 
   <h2>Tinder Card</h2>

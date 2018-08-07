@@ -1,10 +1,11 @@
 import { Component, Prop, Element } from '@stencil/core'
+import hljs from 'highlight.js/lib/index.js'
 @Component({
   tag: 'code-block',
-  styleUrl: 'code-block.scss'
+  styleUrls: ['code-block.scss','../../../node_modules/highlight.js/styles/dracula.css']
 })
 export class CodeBlock {
-  @Prop() language: string = 'markup'
+  @Prop() language: string = 'html'
   @Prop() code: string = ''
   @Element() el: HTMLElement
 
@@ -19,7 +20,7 @@ export class CodeBlock {
           <wu-accordion-header>View code</wu-accordion-header>
           <div class="accordion-content">
             <pre>
-              <code class="xml">{this.code ? this.code : <slot/> }</code>
+              <code class={this.language}>{this.code ? this.code : <slot/> }</code>
             </pre>
           </div>
         </wu-accordion>

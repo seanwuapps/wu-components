@@ -33,7 +33,7 @@
     },
     "wu-card": {
       "bundleIds": {
-        "$": "wu-card"
+        "$": "code-block"
       }
     },
     "wu-col": {
@@ -63,7 +63,7 @@
     },
     "wu-shadow": {
       "bundleIds": {
-        "$": "wu-shadow"
+        "$": "code-block"
       }
     },
     "wu-spinner": {

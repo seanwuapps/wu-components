@@ -164,7 +164,11 @@ declare global {
 
   namespace StencilComponents {
     interface WuCard {
-      'title': string;
+      'alt': string;
+      'cardTitle': string;
+      'hover': boolean;
+      'src': string;
+      'thumb': string;
     }
   }
 
@@ -187,7 +191,11 @@ declare global {
   }
   namespace JSXElements {
     export interface WuCardAttributes extends HTMLAttributes {
-      'title'?: string;
+      'alt'?: string;
+      'cardTitle'?: string;
+      'hover'?: boolean;
+      'src'?: string;
+      'thumb'?: string;
     }
   }
 }
@@ -198,6 +206,7 @@ declare global {
   namespace StencilComponents {
     interface WuCol {
       'basis': string;
+      'portion': string;
     }
   }
 
@@ -221,6 +230,7 @@ declare global {
   namespace JSXElements {
     export interface WuColAttributes extends HTMLAttributes {
       'basis'?: string;
+      'portion'?: string;
     }
   }
 }
@@ -230,7 +240,7 @@ declare global {
 
   namespace StencilComponents {
     interface WuRow {
-      'maxCols': number;
+      'gap': string;
     }
   }
 
@@ -253,7 +263,7 @@ declare global {
   }
   namespace JSXElements {
     export interface WuRowAttributes extends HTMLAttributes {
-      'maxCols'?: number;
+      'gap'?: string;
     }
   }
 }

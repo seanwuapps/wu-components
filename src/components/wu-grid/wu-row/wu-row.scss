@@ -1,10 +1,25 @@
 wu-row {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
+  justify-content: center;
   margin-bottom: 10px;
   align-items: stretch;
+  flex-wrap: wrap;
   @media screen and (min-width: 768px) {
+    justify-content: space-between;
     flex-direction: row;
+    wu-col{
+      margin-bottom: 10px;
+      margin-right: var(--gap);
+      &:last-of-type{
+        margin-right: 0;
+      }
+      padding: 5px;
+      width: 100%;
+      min-height: 1px;
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+    }
   }
 }

@@ -6,13 +6,15 @@ import { Component, Prop, Element } from '@stencil/core';
   styleUrl: 'wu-col.scss'
 })
 export class WuCol {
-  @Prop() basis: string = 'auto'
+  @Prop() basis: string = '';
+  @Prop() portion: string = '1';
   @Element() col: HTMLElement;
   
 
   componentDidLoad() {
-    if( this.basis !== 'auto') {
-      this.col.style['flex-basis'] = this.basis      
+    this.col.style.cssText = `flex-grow: ${this.portion}`
+    if(this.basis.length){
+      this.col.style.cssText += `flex-basis: ${this.basis}; flex-shrink: 0;`
     }
   }
 

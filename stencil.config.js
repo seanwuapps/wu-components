@@ -15,7 +15,9 @@ exports.config = {
       components: [
         'wu-row',
         'wu-col',
+        'wu-card',
         'wu-spinner',
+        'wu-shadow',
         'wu-burger',
         'wu-img',
         'wu-menu',

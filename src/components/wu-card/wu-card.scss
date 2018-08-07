@@ -1,2 +1,29 @@
+@import '../../global/variables';
+@import '../../global/mixins';
 wu-card {
+  display: block;
+  background: white;
+  @include raised(1);
+  font-size: 16px;
+  border-radius: 5px;
+  overflow: hidden;
+  .card-media{
+    width: 100%;
+    object-fit: cover;
+  }
+  .card-content{
+    padding: 20px;
+  }
+  .card-title{
+    font-size: 22px;
+    border-bottom: 1px solid #efefef;
+    display: block;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  &[hover]{
+    &:hover,&:focus{
+      @include raisedHover();
+    }
+  }
 }

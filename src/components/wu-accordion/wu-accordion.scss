@@ -44,7 +44,9 @@ wu-accordion {
       transition: transform $fast;
     }
   }
-
+  .accordion-content{
+    max-width: 100%;
+  }
   &.open {
     wu-accordion-header > div {
       svg.arrow {
