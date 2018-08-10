@@ -310,7 +310,7 @@ declare global {
 
   namespace StencilComponents {
     interface WuBurger {
-
+      'animation': string;
     }
   }
 
@@ -333,7 +333,7 @@ declare global {
   }
   namespace JSXElements {
     export interface WuBurgerAttributes extends HTMLAttributes {
-
+      'animation'?: string;
     }
   }
 }

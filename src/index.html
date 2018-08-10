@@ -73,6 +73,7 @@
     There's default styling in most components, you can easily overwrite them by applying some custom css
   </p>
 
+  <!-- 
   <h2>Better img tag</h2>
   <wu-row>
     <wu-col></wu-col>
@@ -90,8 +91,9 @@
     thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
     alt="Cute dog being a good boy"
   ></wu-img>'></code-block>
+ -->
 
-
+ <!-- 
   <h2>Spinner</h2>
   <style>
     wu-spinner{
@@ -116,7 +118,9 @@
   <wu-spinner color="green" type="ios"></wu-spinner>
   <wu-spinner color="red" type="bars"></wu-spinner>
   <wu-spinner color="purple" type="dots"></wu-spinner>'></code-block>
+ -->
 
+ <!-- 
   <h2>Grid</h2>
   <p>A grid system based on <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">flexbox</a></p>
 
@@ -238,7 +242,9 @@
       </wu-accordion>
     </wu-col>
   </wu-row>
+ -->
 
+ <!-- 
   <h2>Buttons</h2>
 
   <p>Buttons are by default uppercase and shadowed. You can create a flat button by adding the `flat` attribute</p>
@@ -259,13 +265,15 @@
   <wu-button flat type="outline">flat outline</wu-button>
   <wu-button style="background: red; border: none; color: white">custom</wu-button>
 '></code-block>
+ -->
+
 
   <h2>Menu</h2>
   <h3>Hamburger menu toggle, control size with css using font-size</h3>
 
   <wu-burger></wu-burger>
-  <wu-burger style="color: blue"></wu-burger>
-  <wu-burger style="color: green; font-size: 38px;"></wu-burger>
+  <wu-burger animation="spin-out" style="color: blue"></wu-burger>
+  <wu-burger animation="rotate" style="color: green; font-size: 38px;"></wu-burger>
   <wu-burger style="font-size: 64px;"></wu-burger>
 
   <h2>Inputs</h2>
@@ -314,9 +322,21 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
       </wu-card>
     </wu-col>
+    <wu-col portion="1">
+      <wu-card hover card-title="Card with actions"
+      thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
+      src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" 
+      alt="text">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dolorem aut architecto assumenda sapiente vero dolores distinctio molestias pariatur! Beatae vitae itaque maxime, deserunt odit repudiandae repellendus ea quo atque.
+        <div class="card-footer">
+          <a href="#" class="action">Link</a>
+          <button type="button" class="action">Button</button>
+        </div>
+      </wu-card>
+    </wu-col>
   </wu-row>
 
-
+<!-- 
   <h2>Tinder Card</h2>
   
   <wu-tinder-card 
@@ -357,6 +377,10 @@
         });
       })();
   </script>
+
+ -->
+
+
 </body>
 
 </html>

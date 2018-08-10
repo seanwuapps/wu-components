@@ -1,4 +1,4 @@
-import { Component, Element } from '@stencil/core'
+import { Component, Element, Prop } from '@stencil/core'
 
 @Component({
   tag: 'wu-burger',
@@ -6,6 +6,7 @@ import { Component, Element } from '@stencil/core'
 })
 export class WuBurger {
   @Element() burger: HTMLElement
+  @Prop() animation: string = 'middle-out'; 
 
   toggle() {
     if (this.burger.classList.contains('open')) {
@@ -17,7 +18,7 @@ export class WuBurger {
 
   render() {
     return (
-      <button type="button" onClick={() => this.toggle()}>
+      <button type="button" onClick={() => this.toggle()} class={this.animation}>
         <span />
         <span />
         <span />

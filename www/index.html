@@ -70,24 +70,27 @@
     There's default styling in most components, you can easily overwrite them by applying some custom css
   </p>
 
+  <!-- 
   <h2>Better img tag</h2>
   <wu-row>
     <wu-col></wu-col>
     <wu-col portion="2">
-      <wu-img class="full-width" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text"></wu-img>
+      <wu-img class="full-width" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
+        src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text"></wu-img>
     </wu-col>
     <wu-col></wu-col>
   </wu-row>
   <p>The image tag that does progressive load.</p>
   
-  <code-block code="
+  <code-block code='
   <wu-img 
-    src=&quot;https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg&quot; 
-    thumb=&quot;https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg&quot;
-    alt=&quot;Cute dog being a good boy&quot;
-  ></wu-img>"></code-block>
+    src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" 
+    thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
+    alt="Cute dog being a good boy"
+  ></wu-img>'></code-block>
+ -->
 
-
+ <!-- 
   <h2>Spinner</h2>
   <style>
     wu-spinner{
@@ -101,18 +104,20 @@
     <wu-spinner color="red" type="bars"></wu-spinner>
     <wu-spinner color="purple" type="dots"></wu-spinner>
   </div>
-  <code-block code="
+  <code-block code='
   <style>
     wu-spinner{
       font-size: 50px;
     }
   </style>
-  <wu-spinner color=&quot;#ff22ee&quot; type=&quot;ring&quot;></wu-spinner>
-  <wu-spinner color=&quot;blue&quot; type=&quot;circle&quot;></wu-spinner>
-  <wu-spinner color=&quot;green&quot; type=&quot;ios&quot;></wu-spinner>
-  <wu-spinner color=&quot;red&quot; type=&quot;bars&quot;></wu-spinner>
-  <wu-spinner color=&quot;purple&quot; type=&quot;dots&quot;></wu-spinner>"></code-block>
+  <wu-spinner color="#ff22ee" type="ring"></wu-spinner>
+  <wu-spinner color="blue" type="circle"></wu-spinner>
+  <wu-spinner color="green" type="ios"></wu-spinner>
+  <wu-spinner color="red" type="bars"></wu-spinner>
+  <wu-spinner color="purple" type="dots"></wu-spinner>'></code-block>
+ -->
 
+ <!-- 
   <h2>Grid</h2>
   <p>A grid system based on <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">flexbox</a></p>
 
@@ -120,11 +125,11 @@
     <wu-col class="outline">1/2</wu-col>
     <wu-col class="outline">1/2</wu-col>
   </wu-row>
-  <code-block code="
-  <wu-row class=&quot;grey text-center&quot;>
-    <wu-col class=&quot;outline&quot;>1/2</wu-col>
-    <wu-col class=&quot;outline&quot;>1/2</wu-col>
-  </wu-row>"></code-block>
+  <code-block code='
+  <wu-row class="grey text-center">
+    <wu-col class="outline">1/2</wu-col>
+    <wu-col class="outline">1/2</wu-col>
+  </wu-row>'></code-block>
 
   <wu-row class="grey text-center">
     <wu-col class="outline">
@@ -137,19 +142,19 @@
     </wu-col>
     <wu-col class="outline">1/2</wu-col>
   </wu-row>
-  <code-block code="
-  <wu-row class=&quot;grey text-center&quot;>
-    <wu-col class=&quot;outline&quot;>
+  <code-block code='
+  <wu-row class="grey text-center">
+    <wu-col class="outline">
       <p>1/2 with nested row</p>
       <wu-row>
-        <wu-col class=&quot;outline&quot;>1</wu-col>
-        <wu-col class=&quot;outline&quot;>2</wu-col>
-        <wu-col class=&quot;outline&quot;>3</wu-col>
+        <wu-col class="outline">1</wu-col>
+        <wu-col class="outline">2</wu-col>
+        <wu-col class="outline">3</wu-col>
       </wu-row>
     </wu-col>
-    <wu-col class=&quot;outline&quot;>1/2</wu-col>
+    <wu-col class="outline">1/2</wu-col>
   </wu-row>
-  "></code-block>
+  '></code-block>
   <wu-row class="grey text-center">
     <wu-col class="outline">1/4</wu-col>
     <wu-col class="outline">1/4</wu-col>
@@ -166,28 +171,28 @@
     <wu-col class="outline">6</wu-col>
     <wu-col class="outline">7</wu-col>
   </wu-row>
-  <code-block code="
-  <wu-row class=&quot;grey text-center&quot;>
-    <wu-col class=&quot;outline&quot;>1</wu-col>
-    <wu-col class=&quot;outline&quot;>2</wu-col>
-    <wu-col class=&quot;outline&quot;>3</wu-col>
-    <wu-col class=&quot;outline&quot;>4</wu-col>
-    <wu-col class=&quot;outline&quot;>5</wu-col>
-    <wu-col class=&quot;outline&quot;>6</wu-col>
-    <wu-col class=&quot;outline&quot;>7</wu-col>
+  <code-block code='
+  <wu-row class="grey text-center">
+    <wu-col class="outline">1</wu-col>
+    <wu-col class="outline">2</wu-col>
+    <wu-col class="outline">3</wu-col>
+    <wu-col class="outline">4</wu-col>
+    <wu-col class="outline">5</wu-col>
+    <wu-col class="outline">6</wu-col>
+    <wu-col class="outline">7</wu-col>
   </wu-row>
-  "></code-block>
+  '></code-block>
 
   <wu-row class="grey text-center">
     <wu-col portion="3" class="outline">Portion: 3</wu-col>
     <wu-col portion="7" class="outline">Portion: 7</wu-col>
   </wu-row>
 
-  <code-block code="
-  <wu-row class=&quot;grey text-center&quot;>
-    <wu-col portion=&quot;3&quot; class=&quot;outline&quot;>Portion: 3</wu-col>
-    <wu-col portion=&quot;7&quot; class=&quot;outline&quot;>Portion: 7</wu-col>
-  </wu-row>"></code-block>
+  <code-block code='
+  <wu-row class="grey text-center">
+    <wu-col portion="3" class="outline">Portion: 3</wu-col>
+    <wu-col portion="7" class="outline">Portion: 7</wu-col>
+  </wu-row>'></code-block>
 
   <h2>Accordion</h2>
   <wu-row>
@@ -234,34 +239,38 @@
       </wu-accordion>
     </wu-col>
   </wu-row>
+ -->
 
+ <!-- 
   <h2>Buttons</h2>
 
   <p>Buttons are by default uppercase and shadowed. You can create a flat button by adding the `flat` attribute</p>
   <wu-button>default</wu-button>
   <wu-button type="outline">outline</wu-button>
-  <wu-button secondary="">secondary</wu-button>
-  <wu-button secondary="" type="outline">secondary outline</wu-button>
-  <wu-button flat="">flat</wu-button>
-  <wu-button flat="" type="outline">flat outline</wu-button>
+  <wu-button secondary>secondary</wu-button>
+  <wu-button secondary type="outline">secondary outline</wu-button>
+  <wu-button flat>flat</wu-button>
+  <wu-button flat type="outline">flat outline</wu-button>
   <wu-button style="background: red; border: none; color: white">custom</wu-button>
 
-  <code-block code="
+  <code-block code='
   <wu-button>default</wu-button>
-  <wu-button type=&quot;outline&quot;>outline</wu-button>
+  <wu-button type="outline">outline</wu-button>
   <wu-button secondary>secondary</wu-button>
-  <wu-button secondary type=&quot;outline&quot;>secondary outline</wu-button>
+  <wu-button secondary type="outline">secondary outline</wu-button>
   <wu-button flat>flat</wu-button>
-  <wu-button flat type=&quot;outline&quot;>flat outline</wu-button>
-  <wu-button style=&quot;background: red; border: none; color: white&quot;>custom</wu-button>
-"></code-block>
+  <wu-button flat type="outline">flat outline</wu-button>
+  <wu-button style="background: red; border: none; color: white">custom</wu-button>
+'></code-block>
+ -->
+
 
   <h2>Menu</h2>
   <h3>Hamburger menu toggle, control size with css using font-size</h3>
 
   <wu-burger></wu-burger>
-  <wu-burger style="color: blue"></wu-burger>
-  <wu-burger style="color: green; font-size: 38px;"></wu-burger>
+  <wu-burger animation="spin-out" style="color: blue"></wu-burger>
+  <wu-burger animation="rotate" style="color: green; font-size: 38px;"></wu-burger>
   <wu-burger style="font-size: 64px;"></wu-burger>
 
   <h2>Inputs</h2>
@@ -305,12 +314,26 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
       </wu-card>
     </wu-col>
+    <wu-col portion="1">
+      <wu-card hover="" card-title="Card with actions" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dolorem aut architecto assumenda sapiente vero dolores distinctio molestias pariatur! Beatae vitae itaque maxime, deserunt odit repudiandae repellendus ea quo atque.
+        <div class="card-footer">
+          <a href="#" class="action">Link</a>
+          <button type="button" class="action">Button</button>
+        </div>
+      </wu-card>
+    </wu-col>
   </wu-row>
 
-
+<!-- 
   <h2>Tinder Card</h2>
   
-  <wu-tinder-card id="dog-card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" threshold="150">
+  <wu-tinder-card 
+    id="dog-card" 
+    thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
+    src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" 
+    threshold="150"
+  >
   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, soluta. Sit asperiores suscipit quo ipsam eaque maiores, amet molestias possimus deserunt dolorem, nemo mollitia provident accusamus, iste alias explicabo ut?</p>
   </wu-tinder-card>
   <wu-tinder-card id="text-card" left-btn-text="Nope" right-btn-text="Oh yeah">
@@ -343,6 +366,10 @@
         });
       })();
   </script>
+
+ -->
+
+
 
 
 </body></html>
