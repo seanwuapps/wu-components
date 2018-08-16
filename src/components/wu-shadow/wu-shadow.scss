@@ -1,4 +1,4 @@
-@import '../../global/_mixins.scss';
+@import '../../sass/_mixins.scss';
 wu-shadow {
   .box {
     @include raised(1);

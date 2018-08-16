@@ -1,35 +1,22 @@
-const sass = require('@stencil/sass')
+var sass = require('@stencil/sass');
+var postcss = require('@stencil/postcss');
+var autoprefixer = require('autoprefixer');
+
 exports.config = {
   namespace: 'wu-components',
-  plugins: [sass()],
-  outputTargets: [
-    {
-      type: 'dist',
-    },
-    {
-      type: 'www'
-    }
-  ],
-  bundles: [
-    {
-      components: [
-        'wu-row',
-        'wu-col',
-        'wu-card',
-        'wu-spinner',
-        'wu-shadow',
-        'wu-burger',
-        'wu-img',
-        'wu-menu',
-        'wu-accordion',
-        'wu-accordion-header',
-        'wu-rating',
-        'wu-button',
-        'wu-tinder-card',
-        'code-block',
+  plugins: [
+    sass.sass(),
+    postcss.postcss({
+      plugins: [
+        autoprefixer()
       ]
-    }
-  ]
+    })
+  ],
+  outputTargets: [
+    {type: 'dist'},
+    {type: 'www'}
+  ],
+  globalStyle: 'src/globals/vars.css'
 }
 
 exports.devServer = {

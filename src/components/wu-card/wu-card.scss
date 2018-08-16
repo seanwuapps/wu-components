@@ -1,5 +1,4 @@
-@import '../../global/variables';
-@import '../../global/mixins';
+@import '../../sass/mixins';
 wu-card {
   display: block;
   background: white;
@@ -34,7 +33,7 @@ wu-card {
     .action{
       border: none;
       background: white;
-      color: $button-theme;
+      color: var(--button-theme);
       text-decoration: none;
       text-transform: uppercase;
       font-size: 16px;

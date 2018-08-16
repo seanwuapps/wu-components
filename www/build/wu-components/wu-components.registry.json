@@ -23,57 +23,57 @@
     },
     "wu-burger": {
       "bundleIds": {
-        "$": "code-block"
+        "$": "wu-burger"
       }
     },
     "wu-button": {
       "bundleIds": {
-        "$": "code-block"
+        "$": "wu-button"
       }
     },
     "wu-card": {
       "bundleIds": {
-        "$": "code-block"
+        "$": "wu-card"
       }
     },
     "wu-col": {
       "bundleIds": {
-        "$": "code-block"
+        "$": "wu-col"
+      }
+    },
+    "wu-drawer-menu": {
+      "bundleIds": {
+        "$": "wu-drawer-menu"
       }
     },
     "wu-img": {
       "bundleIds": {
-        "$": "code-block"
-      }
-    },
-    "wu-menu": {
-      "bundleIds": {
-        "$": "code-block"
+        "$": "wu-img"
       }
     },
     "wu-rating": {
       "bundleIds": {
-        "$": "code-block"
+        "$": "wu-rating"
       }
     },
     "wu-row": {
       "bundleIds": {
-        "$": "code-block"
+        "$": "wu-row"
       }
     },
     "wu-shadow": {
       "bundleIds": {
-        "$": "code-block"
+        "$": "wu-shadow"
       }
     },
     "wu-spinner": {
       "bundleIds": {
-        "$": "code-block"
+        "$": "wu-spinner"
       }
     },
     "wu-tinder-card": {
       "bundleIds": {
-        "$": "code-block"
+        "$": "wu-tinder-card"
       }
     }
   }

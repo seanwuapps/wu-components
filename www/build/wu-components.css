@@ -1,0 +1,10 @@
+:root{
+  --blue: #2b98f0;
+  --grey: #a7dbd8;
+  --light-green: #e0e4cc;
+  --orange: #f38630;
+  --red: #fa6900;
+
+  --fast: 0.2s;
+  --slow: 0.5s;
+}

@@ -1,5 +1,4 @@
-@import '../../global/mixins';
-@import '../../global/variables';
+@import '../../sass/mixins';
 wu-accordion {
   display: block;
   clear: both;
@@ -9,7 +8,7 @@ wu-accordion {
     overflow: hidden;
     display: block;
     padding: 0 20px;
-    transition: max-height $fast, padding $fast;
+    transition: max-height var(--fast), padding var(--fast);
   }
 
   wu-accordion-header > div {
@@ -41,7 +40,7 @@ wu-accordion {
       margin-top: -10px;
       font-size: 20px;
       transform-origin: center;
-      transition: transform $fast;
+      transition: transform var(--fast);
     }
   }
   .accordion-content{

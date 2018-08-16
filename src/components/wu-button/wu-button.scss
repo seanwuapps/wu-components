@@ -1,15 +1,14 @@
-@import '../../global/_variables.scss';
-@import '../../global/_mixins.scss';
+@import '../../sass/_mixins.scss';
 
 wu-button {
   @include raised(1);
   min-width: 60px;
   max-width: 100%;
-  padding: $button-padding;
+  padding: var(--button-padding);
   display: inline-block;
   text-transform: uppercase;
   cursor: pointer;
-  background: $button-theme;
+  background: var(--button-theme);
   color: white;
   margin: 0 5px;
   text-align: center;
@@ -20,9 +19,9 @@ wu-button {
     filter: brightness(110%);
   }
   &[type='outline'] {
-    border: 1px solid $button-theme;
+    border: 1px solid var(--button-theme);
     background: white;
-    color: $button-theme;
+    color: var(--button-theme);
     &:hover {
       filter: brightness(95%);
     }
