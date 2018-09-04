@@ -240,7 +240,7 @@ declare global {
 
   namespace StencilComponents {
     interface WuDrawerMenu {
-      'items': Object;
+      'items': Object|String;
     }
   }
 
@@ -263,7 +263,40 @@ declare global {
   }
   namespace JSXElements {
     export interface WuDrawerMenuAttributes extends HTMLAttributes {
-      'items'?: Object;
+      'items'?: Object|String;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface WuMenuItem {
+
+    }
+  }
+
+  interface HTMLWuMenuItemElement extends StencilComponents.WuMenuItem, HTMLStencilElement {}
+
+  var HTMLWuMenuItemElement: {
+    prototype: HTMLWuMenuItemElement;
+    new (): HTMLWuMenuItemElement;
+  };
+  interface HTMLElementTagNameMap {
+    'wu-menu-item': HTMLWuMenuItemElement;
+  }
+  interface ElementTagNameMap {
+    'wu-menu-item': HTMLWuMenuItemElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'wu-menu-item': JSXElements.WuMenuItemAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuMenuItemAttributes extends HTMLAttributes {
+
     }
   }
 }

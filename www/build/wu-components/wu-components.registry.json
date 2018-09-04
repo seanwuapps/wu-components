@@ -2,9 +2,9 @@
   "namespace": "WuComponents",
   "fsNamespace": "wu-components",
   "loader": "../wu-components.js",
-  "corePolyfilled": "es5-build-disabled.js",
   "global": "wu-components.global.js",
   "core": "wu-components.core.js",
+  "corePolyfilled": "wu-components.core.pf.js",
   "components": {
     "code-block": {
       "bundleIds": {
@@ -49,6 +49,11 @@
     "wu-img": {
       "bundleIds": {
         "$": "wu-img"
+      }
+    },
+    "wu-menu-item": {
+      "bundleIds": {
+        "$": "wu-menu-item"
       }
     },
     "wu-rating": {

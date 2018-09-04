@@ -268,15 +268,20 @@
   <h2>Menu</h2>
   <h3>Hamburger menu toggle, control size with css using font-size</h3>
 
-  <wu-drawer-menu id="menu" position="left">
-    <wu-menu-item href="/">Home</wu-menu-item>
-    <wu-menu-item href="/about">About</wu-menu-item>
-  </wu-drawer-menu>
-  <wu-burger target="#menu"></wu-burger>
-  <wu-burger animation="spin-out" style="color: blue"></wu-burger>
-  <wu-burger animation="rotate" style="color: green; font-size: 38px;"></wu-burger>
-  <wu-burger style="font-size: 64px;"></wu-burger>
-
+  <div class="text-center">
+    <wu-drawer-menu id="menu" position="left">
+      <wu-menu-item href="/">Home</wu-menu-item>
+      <wu-menu-item href="/about">About</wu-menu-item>
+    </wu-drawer-menu>
+    <wu-drawer-menu id="menu2" position="right">
+      <wu-menu-item href="/">Home</wu-menu-item>
+      <wu-menu-item href="/about">About</wu-menu-item>
+    </wu-drawer-menu>
+    <wu-burger target="#menu"></wu-burger>
+    <wu-burger target="#menu2" animation="spin-out" style="color: blue"></wu-burger>
+    <wu-burger animation="rotate" style="color: green; font-size: 38px;"></wu-burger>
+    <wu-burger style="font-size: 64px;"></wu-burger>
+  </div>
   <!-- 
   <h2>Inputs</h2>
   <h3>Star rating</h3>
@@ -376,6 +381,18 @@
 
  -->
 
+
+
+  <script>
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      // auto-unregister service worker during dev mode
+      navigator.serviceWorker.getRegistration().then(function(registration) {
+        if (registration) {
+          registration.unregister().then(function() { location.reload(true) });
+        }
+      });
+    }
+  </script>
 
 
 

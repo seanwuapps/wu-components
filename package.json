@@ -15,11 +15,14 @@
     "serve": "stencil-dev-server",
     "start": "npm run dev",
     "test": "jest --no-cache",
-    "test.watch": "jest --watch --no-cache"
+    "test.watch": "jest --watch --no-cache",
+    "release:patch": "npm version patch & npm publish",
+    "release:minor": "npm version minor & npm publish",
+    "release:major": "npm version major & npm publish"
   },
   "dependencies": {},
   "devDependencies": {
-    "@stencil/core": "0.11.0",
+    "@stencil/core": "^0.11.0",
     "@stencil/dev-server": "latest",
     "@stencil/postcss": "^0.1.0",
     "@stencil/sass": "^0.1.0",

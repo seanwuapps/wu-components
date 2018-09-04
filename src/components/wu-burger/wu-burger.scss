@@ -1,5 +1,3 @@
-// @import '../../global/_variables.scss';
-
 wu-burger {
   font-size: 18px;
   button {
@@ -50,7 +48,7 @@ wu-burger {
     }
     &.rotate {
       span {
-        transition: transform var(--fast), top var(--fast), opacity var(--fast) / 2;
+        transition: transform var(--fast), top var(--fast), opacity calc(var(--fast) / 2);
       }
     }
   }
@@ -94,7 +92,7 @@ wu-burger {
       &.rotate {
         span {
           &:nth-child(1) {
-            transform: rotate(135deg);
+            transform: rotate(-135deg);
             top: calc(4 * var(--barTickness));
           }
 
@@ -103,7 +101,7 @@ wu-burger {
           }
 
           &:nth-child(3) {
-            transform: rotate(-135deg);
+            transform: rotate(135deg);
             top: calc(4 * var(--barTickness));
           }
         }
