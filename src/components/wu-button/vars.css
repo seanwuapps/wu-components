@@ -1,5 +1,4 @@
 :root{
-  --button-theme: var(--blue);
-  --button-padding: 10px 30px;
-
+  --button-padding-x: 30px;
+  --button-padding-y: 10px;
 }

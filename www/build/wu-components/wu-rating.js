@@ -109,7 +109,7 @@ class WuRating {
             "cancelable": true,
             "composed": true
         }]; }
-    static get style() { return "wu-rating {\n  font-size: 20px;\n  color: #666; }\n  wu-rating .rating-icon {\n    width: 1em;\n    height: 1em;\n    display: inline-block;\n    cursor: pointer; }\n    wu-rating .rating-icon svg {\n      fill: currentColor; }"; }
+    static get style() { return "wu-rating {\n  font-size: 20px;\n  font-size: 1.25rem;\n  color: #666; }\n  wu-rating .rating-icon {\n    width: 1em;\n    height: 1em;\n    display: inline-block;\n    cursor: pointer; }\n    wu-rating .rating-icon svg {\n      fill: currentColor; }"; }
 }
 
 export { WuRating };

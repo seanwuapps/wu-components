@@ -1,4 +1,4 @@
-import { Component, Element } from '@stencil/core'
+import { Component, Element, Prop } from '@stencil/core'
 
 @Component({
   tag: 'wu-button',
@@ -6,8 +6,26 @@ import { Component, Element } from '@stencil/core'
 })
 export class WuButton {
   @Element() button: HTMLElement
-
+  @Prop() href?: string;
+  @Prop() type: 'submit' | 'reset' | 'button' = 'button';
+  
+  @Prop({ reflectToAttr: true }) disabled = false;
+  onClick(){
+    
+  }
   render() {
-    return <slot />
+    const TagType = this.href ? 'a' : 'button';
+    const attrs = (TagType === 'button')
+      ? { type: this.type }
+      : { href: this.href };
+
+    return (
+      <TagType
+        {...attrs}
+        disabled={this.disabled}
+        onClick={this.onClick.bind(this)}>
+        <slot></slot>
+      </TagType>
+    )
   }
 }

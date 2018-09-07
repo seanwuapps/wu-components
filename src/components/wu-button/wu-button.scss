@@ -1,37 +1,40 @@
-@import '../../sass/_mixins.scss';
-
 wu-button {
   @include raised(1);
-  min-width: 60px;
+  @include themeable('button');
   max-width: 100%;
-  padding: var(--button-padding);
   display: inline-block;
-  text-transform: uppercase;
-  cursor: pointer;
-  background: var(--button-theme);
-  color: white;
   margin: 0 5px;
-  text-align: center;
-  transition: box-shadow 0.3s ease-out, filter 0.3s ease-in;
+  transition: box-shadow var(--fast) ease-out, filter var(--fast) ease-in;
+  width: auto;
+  height: auto;
   &:hover,
   &:focus {
     @include raisedHover();
-    filter: brightness(110%);
+    filter: brightness(105%);
   }
-  &[type='outline'] {
-    border: 1px solid var(--button-theme);
-    background: white;
-    color: var(--button-theme);
-    &:hover {
-      filter: brightness(95%);
-    }
-  }
-  &[type='block'] {
+  button,
+  a {
+    cursor: pointer;
+    height: 100%;
+    padding: var(--button-padding-y) var(--button-padding-x);
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 20px;
+    border: none;
     display: block;
-    width: 100%;
+    background: transparent;
+    color: currentColor;
     text-align: center;
-    padding-left: 0;
-    padding-right: 0;
+  }
+
+  &[block] {
+    display: block;
+    button,a{
+      width: 100%;
+      text-align: center;
+      padding-left: 0;
+      padding-right: 0;
+    }
   }
   &[flat] {
     box-shadow: none;
@@ -39,16 +42,12 @@ wu-button {
       box-shadow: none;
     }
   }
-  &[secondary] {
-    background: #ccc;
-    color: #333;
-    &[type='outline'] {
-      border-color: #ccc;
-      background: white;
-      color: #333;
-    }
-  }
-  &[circle] {
+  
+  // Shapes
+  &[shape="circle"] {
+    padding: 0;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
   }
 }

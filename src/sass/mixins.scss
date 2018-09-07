@@ -53,13 +53,12 @@ $baseline-px: 10px;
   }
 }
 
-
-@mixin bg-cover($overlay-direction:'', $overlay-colors...){
+@mixin bg-cover($overlay-direction: '', $overlay-colors...) {
   background-repeat: no-repeat;
   background-size: cover;
   @if $overlay-direction != '' {
     position: relative;
-    &::before{
+    &::before {
       content: ' ';
       position: absolute;
       top: 0;
@@ -107,5 +106,39 @@ $baseline-px: 10px;
     left: 0;
     right: 0;
     bottom: 0;
+  }
+}
+
+$themes: (
+  'primary',
+  'secondary',
+  'success',
+  'warning',
+  'danger',
+  'info',
+  'light',
+  'grey',
+  'dark'
+);
+
+@mixin themeable($name){
+  @each $theme in $themes {
+    @if ($name == 'button'){
+      background: white;
+      color: currentColor;
+      &[outline]{
+        border: 1px solid currentColor;
+      }
+      &[theme=#{$theme}]{
+        background: var(--color-#{$theme});
+        color: var(--color-#{$theme}-contrast);
+        mix-blend-mode: difference;
+        &[outline]{
+          background: white;
+          border: 1px solid var(--color-#{$theme});
+          color: currentColor;
+        }
+      }
+    }
   }
 }

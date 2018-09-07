@@ -1,5 +1,5 @@
 :root{
-  --burgerSize: 2.25em;
-  --barTickness: 0.25em;
-  --barColor: currentColor;
+  --wu-burger-size: 2.25em;
+  --wu-burger-thickness: 0.25em;
+  --wu-burger-color: currentColor;
 }

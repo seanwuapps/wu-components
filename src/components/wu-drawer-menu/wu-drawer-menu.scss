@@ -1,11 +1,9 @@
-// @import '../../global/_variables.scss';
-@import '../../sass/_mixins.scss';
 wu-drawer-menu{
   position: fixed;
   z-index: 9999;
   width: 300px;
   height: 100vh;
-  background: var(--menu-bg-color);
+  background: var(--wu-drawer-menu-bg-color);
   transition: transform var(--fast);  
   // default position
   top: 0;

@@ -5,8 +5,8 @@ class WuImg {
     constructor() {
         this.loading = true;
         this.onFullImageLoaded = () => {
-            let mainImg = this.el.querySelector('img.main');
-            let loaderImg = this.el.querySelector('img.loader');
+            const mainImg = this.el.querySelector('img.main');
+            const loaderImg = this.el.querySelector('img.loader');
             mainImg.src = loaderImg.src;
             loaderImg.parentNode.removeChild(loaderImg);
             this.loading = false;
@@ -28,6 +28,21 @@ class WuImg {
         },
         "loading": {
             "state": true
+        },
+        "positionX": {
+            "type": String,
+            "attr": "position-x",
+            "reflectToAttr": true
+        },
+        "positionY": {
+            "type": String,
+            "attr": "position-y",
+            "reflectToAttr": true
+        },
+        "shape": {
+            "type": String,
+            "attr": "shape",
+            "reflectToAttr": true
         },
         "src": {
             "type": String,

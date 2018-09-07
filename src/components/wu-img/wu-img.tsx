@@ -10,12 +10,15 @@ export class WuImg {
   @Prop() thumb: string
   @Prop() src: string
   @Prop() alt: string
+  @Prop({reflectToAttr:true}) shape?: string //'square'|'circle'|'16:9'|'5:4'
+  @Prop({reflectToAttr:true}) positionX?: string //'center'|'left'|'right'|...(css)
+  @Prop({reflectToAttr:true}) positionY?: string //'center'|'top'|'bottom'|...(css)
 
   @State() loading: boolean = true
 
   onFullImageLoaded = () => {
-    let mainImg: HTMLImageElement = this.el.querySelector('img.main')
-    let loaderImg: HTMLImageElement = this.el.querySelector('img.loader')
+    const mainImg: HTMLImageElement = this.el.querySelector('img.main')
+    const loaderImg: HTMLImageElement = this.el.querySelector('img.loader')
     mainImg.src = loaderImg.src
     loaderImg.parentNode.removeChild(loaderImg)
     this.loading = false

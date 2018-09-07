@@ -2,39 +2,39 @@ wu-burger {
   font-size: 18px;
   button {
     font-size: 1em;
-    color: currentColor;
+    color: var(--wu-burger-color);
     position: relative;
-    width: var(--burgerSize);
-    height: var(--burgerSize);
+    width: var(--wu-burger-size);
+    height: var(--wu-burger-size);
     cursor: pointer;
     background: none;
     border: none;
     display: inline-block;
-    padding: var(--barTickness) 0;
+    padding: var(--wu-burger-thickness) 0;
 
     &:focus {
       outline: none;
     }
     span {
       display: block;
-      left: calc(1 / 6 * var(--burgerSize));
-      width: calc(2 / 3 * var(--burgerSize));
-      height: var(--barTickness);
-      border-radius: var(--barTickness);
-      background: var(--barColor);
+      left: calc(1 / 6 * var(--wu-burger-size));
+      width: calc(2 / 3 * var(--wu-burger-size));
+      height: var(--wu-burger-thickness);
+      border-radius: var(--wu-burger-thickness);
+      background: var(--wu-burger-color);
       position: absolute;
       -webkit-transition: var(--fast) ease-in-out;
       -moz-transition: var(--fast) ease-in-out;
       -o-transition: var(--fast) ease-in-out;
       transition: var(--fast) ease-in-out;
       &:nth-child(1) {
-        top: calc(2 * var(--barTickness));
+        top: calc(2 * var(--wu-burger-thickness));
       }
       &:nth-child(2) {
-        top: calc(4 * var(--barTickness));
+        top: calc(4 * var(--wu-burger-thickness));
       }
       &:nth-child(3) {
-        top: calc(6 * var(--barTickness));
+        top: calc(6 * var(--wu-burger-thickness));
       }
     }
 
@@ -59,14 +59,14 @@ wu-burger {
         span {
           transition: top var(--fast), transform var(--fast) var(--fast), opacity var(--fast);
           &:nth-child(1) {
-            top: calc(4 * var(--barTickness));
+            top: calc(4 * var(--wu-burger-thickness));
             transform: rotate(45deg);
           }
           &:nth-child(2) {
             opacity: 0;
           }
           &:nth-child(3) {
-            top: calc(4 * var(--barTickness));
+            top: calc(4 * var(--wu-burger-thickness));
             transform: rotate(-45deg);
           }
         }
@@ -75,7 +75,7 @@ wu-burger {
       &.spin-out {
         span {
           &:nth-child(1) {
-            top: calc(4 * var(--barTickness));
+            top: calc(4 * var(--wu-burger-thickness));
             transform: rotate(135deg);
           }
           &:nth-child(2) {
@@ -83,7 +83,7 @@ wu-burger {
             transform: translateX(20px);
           }
           &:nth-child(3) {
-            top: calc(4 * var(--barTickness));
+            top: calc(4 * var(--wu-burger-thickness));
             transform: rotate(-135deg);
           }
         }
@@ -93,7 +93,7 @@ wu-burger {
         span {
           &:nth-child(1) {
             transform: rotate(-135deg);
-            top: calc(4 * var(--barTickness));
+            top: calc(4 * var(--wu-burger-thickness));
           }
 
           &:nth-child(2) {
@@ -102,7 +102,7 @@ wu-burger {
 
           &:nth-child(3) {
             transform: rotate(135deg);
-            top: calc(4 * var(--barTickness));
+            top: calc(4 * var(--wu-burger-thickness));
           }
         }
       }

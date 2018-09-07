@@ -7,7 +7,7 @@
 
   <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css"> -->
   <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script> -->
-  
+
 
   <link rel="stylesheet" href="/build/wu-components.css">
   <script src="build/wu-components.js"></script>
@@ -17,13 +17,14 @@
       font-size: 16px;
       font-family: 'Open Sans', sans-serif;
     }
+
     @media (min-width: 768px) {
-      body{
+      body {
         max-width: 80%;
         margin: 0 auto;
-      }     
+      }
     }
-    
+
     h2 {
       margin-top: 40px;
       padding-top: 40px;
@@ -41,7 +42,7 @@
     .text-center {
       text-align: center;
     }
-    
+
     wu-burger {
       color: #333;
     }
@@ -91,7 +92,7 @@
   ></wu-img>'></code-block>
  -->
 
- <!-- 
+  <!-- 
   <h2>Spinner</h2>
   <style>
     wu-spinner{
@@ -118,7 +119,7 @@
   <wu-spinner color="purple" type="dots"></wu-spinner>'></code-block>
  -->
 
- <!-- 
+  <!-- 
   <h2>Grid</h2>
   <p>A grid system based on <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">flexbox</a></p>
 
@@ -242,27 +243,57 @@
   </wu-row>
  -->
 
- 
+
   <h2>Buttons</h2>
 
   <p>Buttons are by default uppercase and shadowed. You can create a flat button by adding the `flat` attribute</p>
-  <wu-button>default</wu-button>
-  <wu-button type="outline">outline</wu-button>
-  <wu-button secondary="">secondary</wu-button>
-  <wu-button secondary="" type="outline">secondary outline</wu-button>
-  <wu-button flat="">flat</wu-button>
-  <wu-button flat="" type="outline">flat outline</wu-button>
-  <wu-button style="background: red; border: none; color: white">custom</wu-button>
+  <wu-row>
+    <wu-col>
+      <wu-button theme="primary">primary</wu-button>
+      <wu-button theme="secondary">secondary</wu-button>
+      <wu-button theme="success">success</wu-button>
+      <wu-button theme="warning">warning</wu-button>
+      <wu-button theme="danger">danger</wu-button>
+      <wu-button theme="info">info</wu-button>
+      <wu-button theme="light">light</wu-button>
+      <wu-button theme="grey">grey</wu-button>
+      <wu-button theme="dark">dark</wu-button>
+    </wu-col>
+  </wu-row>
+  <wu-row>
+    <wu-col>
+      <wu-button outline="" theme="primary">primary</wu-button>
+      <wu-button outline="" theme="secondary">secondary</wu-button>
+      <wu-button outline="" theme="success">success</wu-button>
+      <wu-button outline="" theme="warning">warning</wu-button>
+      <wu-button outline="" theme="danger">danger</wu-button>
+      <wu-button outline="" theme="info">info</wu-button>
+      <wu-button outline="" theme="light">light</wu-button>
+      <wu-button outline="" theme="grey">grey</wu-button>
+      <wu-button outline="" theme="dark">dark</wu-button>
+    </wu-col>
+  </wu-row>
 
-  <code-block code="
-  <wu-button>default</wu-button>
-  <wu-button type=&quot;outline&quot;>outline</wu-button>
-  <wu-button secondary>secondary</wu-button>
-  <wu-button secondary type=&quot;outline&quot;>secondary outline</wu-button>
-  <wu-button flat>flat</wu-button>
-  <wu-button flat type=&quot;outline&quot;>flat outline</wu-button>
-  <wu-button style=&quot;background: red; border: none; color: white&quot;>custom</wu-button>
-"></code-block>
+  <wu-row>
+    <wu-col>
+      <wu-button>Button</wu-button>
+      <wu-button href="#">Link</wu-button>
+      <wu-button outline="">Outline</wu-button>
+      <wu-button theme="primary" flat="">Flat</wu-button>
+      <wu-button theme="primary" flat="" outline="">Flat outline</wu-button>
+      <wu-button style="background: orange; border: none; color: white">Custom styles but button feel</wu-button>
+    </wu-col>
+  </wu-row>
+
+  <wu-row>
+    <wu-col>
+      <wu-button theme="secondary" block="">Block level buton</wu-button>
+    </wu-col>
+  </wu-row>
+  <wu-button theme="primary" shape="circle">
+
+  </wu-button>
+
 
 
   <h2>Menu</h2>
@@ -312,24 +343,28 @@
   <wu-row gap="5%">
     <wu-col portion="1">
       <wu-card card-title="Text Card">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus
+        autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
       </wu-card>
     </wu-col>
     <wu-col portion="2">
       <wu-card card-title="Text Card with hover effect" hover="">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus
+        autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
       </wu-card>
     </wu-col>
   </wu-row>
   <wu-row gap="10%">
     <wu-col portion="1">
       <wu-card hover="" card-title="Media Card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus
+        autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
       </wu-card>
     </wu-col>
     <wu-col portion="1">
       <wu-card hover="" card-title="Card with actions" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dolorem aut architecto assumenda sapiente vero dolores distinctio molestias pariatur! Beatae vitae itaque maxime, deserunt odit repudiandae repellendus ea quo atque.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dolorem aut architecto assumenda sapiente vero dolores distinctio
+        molestias pariatur! Beatae vitae itaque maxime, deserunt odit repudiandae repellendus ea quo atque.
         <div class="card-footer">
           <a href="#" class="action">Link</a>
           <button type="button" class="action">Button</button>
@@ -337,7 +372,7 @@
       </wu-card>
     </wu-col>
   </wu-row>
-<!-- 
+  <!-- 
   <h2>Tinder Card</h2>
   
   <wu-tinder-card 

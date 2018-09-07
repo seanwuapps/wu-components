@@ -166,7 +166,9 @@ declare global {
 
   namespace StencilComponents {
     interface WuButton {
-
+      'disabled': boolean;
+      'href': string;
+      'type': 'submit' | 'reset' | 'button';
     }
   }
 
@@ -189,7 +191,9 @@ declare global {
   }
   namespace JSXElements {
     export interface WuButtonAttributes extends HTMLAttributes {
-
+      'disabled'?: boolean;
+      'href'?: string;
+      'type'?: 'submit' | 'reset' | 'button';
     }
   }
 }
@@ -375,6 +379,9 @@ declare global {
   namespace StencilComponents {
     interface WuImg {
       'alt': string;
+      'positionX': string;
+      'positionY': string;
+      'shape': string;
       'src': string;
       'thumb': string;
     }
@@ -400,6 +407,9 @@ declare global {
   namespace JSXElements {
     export interface WuImgAttributes extends HTMLAttributes {
       'alt'?: string;
+      'positionX'?: string;
+      'positionY'?: string;
+      'shape'?: string;
       'src'?: string;
       'thumb'?: string;
     }
