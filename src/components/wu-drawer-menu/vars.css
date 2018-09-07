@@ -1,5 +1,3 @@
 :root{ 
-  --wu-drawer-menu-bg-color: var(--orange);
-  --wu-drawer-menu-text-color: #333;
-  --wu-drawer-menu-overlay-color: rgba(black,0.8)
+  --wu-drawer-menu-overlay-color: rgba(0,0,0,0.8)
 }

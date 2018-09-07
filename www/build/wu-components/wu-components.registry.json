@@ -51,6 +51,11 @@
         "$": "wu-img"
       }
     },
+    "wu-menu-header": {
+      "bundleIds": {
+        "$": "wu-menu-header"
+      }
+    },
     "wu-menu-item": {
       "bundleIds": {
         "$": "wu-menu-item"

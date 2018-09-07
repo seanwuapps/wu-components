@@ -1,6 +1,11 @@
 wu-button {
   @include raised(1);
   @include themeable('button');
+  background: white;
+  color: currentColor;
+  &[outline]{
+    border: 1px solid currentColor;
+  }
   max-width: 100%;
   display: inline-block;
   margin: 0 5px;
@@ -45,9 +50,17 @@ wu-button {
   
   // Shapes
   &[shape="circle"] {
-    padding: 0;
-    width: 32px;
-    height: 32px;
+    width: 3em;
+    height: 3em;
     border-radius: 50%;
+    a,button{
+      padding: 0;
+      width: 100%;
+      height: 3em;
+      line-height: 3em;
+      font-size: 1em;
+      text-align: center;
+      white-space: nowrap;
+    }
   }
 }

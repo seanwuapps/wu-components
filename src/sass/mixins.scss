@@ -124,20 +124,20 @@ $themes: (
 @mixin themeable($name){
   @each $theme in $themes {
     @if ($name == 'button'){
-      background: white;
-      color: currentColor;
-      &[outline]{
-        border: 1px solid currentColor;
-      }
       &[theme=#{$theme}]{
         background: var(--color-#{$theme});
         color: var(--color-#{$theme}-contrast);
-        mix-blend-mode: difference;
         &[outline]{
           background: white;
           border: 1px solid var(--color-#{$theme});
           color: currentColor;
         }
+      }
+    }
+    @if ($name == 'drawer-menu'){
+      &[theme=#{$theme}]{
+        background: var(--color-#{$theme});
+        color: var(--color-#{$theme}-contrast);
       }
     }
   }

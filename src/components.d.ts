@@ -276,6 +276,39 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface WuMenuHeader {
+
+    }
+  }
+
+  interface HTMLWuMenuHeaderElement extends StencilComponents.WuMenuHeader, HTMLStencilElement {}
+
+  var HTMLWuMenuHeaderElement: {
+    prototype: HTMLWuMenuHeaderElement;
+    new (): HTMLWuMenuHeaderElement;
+  };
+  interface HTMLElementTagNameMap {
+    'wu-menu-header': HTMLWuMenuHeaderElement;
+  }
+  interface ElementTagNameMap {
+    'wu-menu-header': HTMLWuMenuHeaderElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'wu-menu-header': JSXElements.WuMenuHeaderAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuMenuHeaderAttributes extends HTMLAttributes {
+
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface WuMenuItem {
 
     }

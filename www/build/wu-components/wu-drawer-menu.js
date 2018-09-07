@@ -6,32 +6,38 @@ class WuDrawerMenu {
         this.items = { "home": {
                 "label": 'Home'
             } };
+        this.closeMenu = this.closeMenu.bind(this);
     }
     componentDidLoad() {
-        console.log(this.items);
         if (typeof this.items === 'string') {
-            console.log('string items');
             this.items = JSON.parse(this.items);
         }
-        console.log(this.items);
+    }
+    closeMenu() {
+        this.el.classList.remove('open');
+        const triggers = document.querySelectorAll('wu-burger');
+        for (let i = 0; i < triggers.length; i++) {
+            triggers[i].classList.remove('open');
+        }
     }
     render() {
-        console.log(this.items);
-        return (h("nav", { class: "side-menu" },
-            h("slot", null),
-            Object.keys(this.items).map(key => {
-                let item = this.items[key];
-                return h("div", null, item.label);
-            })));
+        return [
+            h("nav", { class: "side-menu" },
+                h("slot", null)),
+            h("div", { class: "side-menu-overlay", onClick: () => this.closeMenu() })
+        ];
     }
     static get is() { return "wu-drawer-menu"; }
     static get properties() { return {
+        "el": {
+            "elementRef": true
+        },
         "items": {
             "type": "Any",
             "attr": "items"
         }
     }; }
-    static get style() { return ":root{ \n  --wu-drawer-menu-bg-color: var(--orange);\n  --wu-drawer-menu-text-color: #333;\n  --wu-drawer-menu-overlay-color: rgba(black,0.8)\n}\n\nwu-drawer-menu {\n  position: fixed;\n  z-index: 9999;\n  width: 300px;\n  height: 100vh;\n  background: var(--wu-drawer-menu-bg-color);\n  transition: -webkit-transform var(--fast);\n  -webkit-transition: -webkit-transform var(--fast);\n  transition: transform var(--fast);\n  transition: transform var(--fast), -webkit-transform var(--fast);\n  top: 0;\n  left: 0;\n  -webkit-transform: translate3d(-100%, 0, 0);\n          transform: translate3d(-100%, 0, 0); }\n  wu-drawer-menu[position=left] {\n    right: auto; }\n  wu-drawer-menu[position=right] {\n    top: 0;\n    left: auto;\n    right: 0;\n    -webkit-transform: translate3d(100%, 0, 0);\n            transform: translate3d(100%, 0, 0); }\n  wu-drawer-menu.open {\n    -webkit-transform: translate3d(0, 0, 0);\n            transform: translate3d(0, 0, 0); }"; }
+    static get style() { return ":root{ \n  --wu-drawer-menu-overlay-color: rgba(0,0,0,0.8)\n}\n\nwu-drawer-menu.open[position='left'] .side-menu, wu-drawer-menu.open[position='right'] .side-menu {\n  -webkit-transform: translate3d(0, 0, 0);\n          transform: translate3d(0, 0, 0);\n  opacity: 1; }\n\nwu-drawer-menu.open .side-menu-overlay {\n  opacity: 1;\n  z-index: 9; }\n\nwu-drawer-menu .side-menu {\n  -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);\n  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);\n  -webkit-transition: -webkit-box-shadow 0.3s ease-out;\n  transition: -webkit-box-shadow 0.3s ease-out;\n  transition: box-shadow 0.3s ease-out;\n  transition: box-shadow 0.3s ease-out, -webkit-box-shadow 0.3s ease-out;\n  position: fixed;\n  z-index: 9999;\n  width: 300px;\n  height: 100vh;\n  opacity: 0;\n  background: white;\n  color: currentColor;\n  transition: opacity var(--fast), -webkit-transform var(--fast);\n  -webkit-transition: opacity var(--fast), -webkit-transform var(--fast);\n  transition: transform var(--fast), opacity var(--fast);\n  transition: transform var(--fast), opacity var(--fast), -webkit-transform var(--fast);\n  top: 0;\n  left: 0;\n  -webkit-transform: translate3d(-100%, 0, 0);\n          transform: translate3d(-100%, 0, 0); }\n  wu-drawer-menu .side-menu[theme=primary] {\n    background: var(--color-primary);\n    color: var(--color-primary-contrast); }\n  wu-drawer-menu .side-menu[theme=secondary] {\n    background: var(--color-secondary);\n    color: var(--color-secondary-contrast); }\n  wu-drawer-menu .side-menu[theme=success] {\n    background: var(--color-success);\n    color: var(--color-success-contrast); }\n  wu-drawer-menu .side-menu[theme=warning] {\n    background: var(--color-warning);\n    color: var(--color-warning-contrast); }\n  wu-drawer-menu .side-menu[theme=danger] {\n    background: var(--color-danger);\n    color: var(--color-danger-contrast); }\n  wu-drawer-menu .side-menu[theme=info] {\n    background: var(--color-info);\n    color: var(--color-info-contrast); }\n  wu-drawer-menu .side-menu[theme=light] {\n    background: var(--color-light);\n    color: var(--color-light-contrast); }\n  wu-drawer-menu .side-menu[theme=grey] {\n    background: var(--color-grey);\n    color: var(--color-grey-contrast); }\n  wu-drawer-menu .side-menu[theme=dark] {\n    background: var(--color-dark);\n    color: var(--color-dark-contrast); }\n  wu-drawer-menu .side-menu wu-menu-header {\n    display: block;\n    height: 54px;\n    width: 100%;\n    border-bottom: 2px solid #ccc; }\n\nwu-drawer-menu[position='left'] .side-menu {\n  right: auto; }\n\nwu-drawer-menu[position='right'] .side-menu {\n  left: auto;\n  right: 0;\n  -webkit-transform: translate3d(100%, 0, 0);\n          transform: translate3d(100%, 0, 0); }\n\nwu-drawer-menu .side-menu-overlay {\n  background: var(--wu-drawer-menu-overlay-color);\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  width: 100vw;\n  height: 100%;\n  height: 100vh;\n  opacity: 0;\n  z-index: -1;\n  -webkit-transition: opacity var(--fast);\n  transition: opacity var(--fast); }"; }
 }
 
 export { WuDrawerMenu };
