@@ -82,7 +82,7 @@
 
   <div>
     <wu-drawer-menu id="menu" position="left" class="open">
-      <wu-menu-header theme="secondary" img="/assets/images/man.svg" img-shape="circle" img-href="">
+      <wu-menu-header theme="secondary" img="/assets/images/cap.svg" img-shape="circle" img-href="#">
         <span slot="title">
           <a href="#">Steve Rogers</a>
         </span>
@@ -153,7 +153,7 @@
       </wu-menu-list>
     </wu-drawer-menu>
     <wu-drawer-menu id="menu2" position="right">
-      <wu-menu-header theme="danger" img="/assets/images/man.svg" img-shape="circle" img-href="">
+      <wu-menu-header theme="danger" img="/assets/images/ironman.svg" img-shape="circle" img-href="">
         <span slot="title">
           <a href="#">Tony Stark</a>
         </span>
@@ -173,8 +173,8 @@
         <wu-menu-item theme="grey"><a href="#">Menu Item</a></wu-menu-item>
       </wu-menu-list>
     </wu-drawer-menu>
-    <wu-burger target="#menu"></wu-burger>
-    <wu-burger target="#menu2" animation="spin-out" style="color: blue"></wu-burger>
+    <wu-burger theme="secondary" target="#menu"></wu-burger>
+    <wu-burger target="#menu2" animation="spin-out" theme="danger"></wu-burger>
     <wu-burger animation="rotate" style="color: green; font-size: 38px;"></wu-burger>
     <wu-burger style="font-size: 64px;"></wu-burger>
   </div>
@@ -357,7 +357,7 @@
   <p>Buttons are by default uppercase and shadowed. You can create a flat button by adding the `flat` attribute</p>
   <wu-row>
     <wu-col>
-      <wu-button theme="primary">primary</wu-button>
+      <wu-button theme="primary" type="submit">primary</wu-button>
       <wu-button theme="secondary">secondary</wu-button>
       <wu-button theme="success">success</wu-button>
       <wu-button theme="warning">warning</wu-button>

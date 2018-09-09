@@ -130,6 +130,11 @@ $themes: ('primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light
         background: white;
       }
     }
+    @if ($name == 'burger'){
+      &[theme='#{$theme}'] {
+        color: var(--color-#{$theme});
+      }
+    }
     @if ($name == '') {
       &[theme='#{$theme}'] {
         background: var(--color-#{$theme});

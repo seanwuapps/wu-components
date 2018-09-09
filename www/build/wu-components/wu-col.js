@@ -29,7 +29,7 @@ class WuCol {
             "attr": "portion"
         }
     }; }
-    static get style() { return "wu-col {\n  max-width: 100%; }"; }
+    static get style() { return "wu-col {\n  max-width: 100%;\n  width: 100%;\n  padding: 5px;\n  -ms-flex-preferred-size: 0;\n  flex-basis: 0;\n  -webkit-box-flex: 1;\n  -ms-flex-positive: 1;\n  flex-grow: 1;\n  margin-bottom: var(--gap); }\n  wu-col[no-margin] {\n    margin: 0 !important; }\n  \@media screen and (min-width: 768px) {\n    wu-col {\n      margin-right: var(--gap); }\n      wu-col:last-of-type {\n        margin-right: 0; } }"; }
 }
 
 export { WuCol };

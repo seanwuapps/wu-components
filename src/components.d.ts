@@ -422,6 +422,7 @@ declare global {
   namespace StencilComponents {
     interface WuMenuHeader {
       'img': string;
+      'imgHref': string;
       'imgShape': 'circle' | 'square';
     }
   }
@@ -446,6 +447,7 @@ declare global {
   namespace JSXElements {
     export interface WuMenuHeaderAttributes extends HTMLAttributes {
       'img'?: string;
+      'imgHref'?: string;
       'imgShape'?: 'circle' | 'square';
     }
   }

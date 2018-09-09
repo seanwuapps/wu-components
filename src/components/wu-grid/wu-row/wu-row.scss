@@ -14,21 +14,5 @@ wu-row {
     &[v-center]{
       align-items: center;
     }
-    wu-col{
-      margin-bottom: 10px;       
-      &[no-margin]{
-        margin-bottom: 0
-      }
-      margin-right: var(--gap);
-      &:last-of-type{
-        margin-right: 0;
-      }
-      padding: 5px;
-      width: 100%;
-      min-height: 1px;
-      flex-basis: 0;
-      flex-grow: 1;
-      max-width: 100%;
-    }
   }
 }

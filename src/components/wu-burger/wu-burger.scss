@@ -1,8 +1,9 @@
 wu-burger {
   font-size: 18px;
+  @include themeable('burger');
   button {
     font-size: 1em;
-    color: var(--wu-burger-color);
+    color: currentColor;
     position: relative;
     width: var(--wu-burger-size);
     height: var(--wu-burger-size);

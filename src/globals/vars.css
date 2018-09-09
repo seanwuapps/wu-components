@@ -2,11 +2,11 @@
   --fast: 0.2s;
   --slow: 0.5s;
   
-  --color-primary: #3880ff;
+  --color-primary: #286DC1;
   --color-primary-contrast: #fff;
 
-  --color-secondary: #0cd1e8;
-  --color-secondary-contrast: #fff;
+  --color-secondary: #14406F;
+  --color-secondary-contrast: #F6F6F7;
 
   --color-success: #10dc60;
   --color-success-contrast: #fff;
@@ -14,7 +14,7 @@
   --color-warning: #ffce00;
   --color-warning-contrast: #fff;
 
-  --color-danger: #f04141;
+  --color-danger: #DA1F28;
   --color-danger-contrast: #fff;
 
   --color-info: #17a2b8;
