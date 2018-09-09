@@ -243,96 +243,30 @@ declare global {
 declare global {
 
   namespace StencilComponents {
-    interface WuDrawerMenu {
-      'items': Object|String;
+    interface WuDivider {
+
     }
   }
 
-  interface HTMLWuDrawerMenuElement extends StencilComponents.WuDrawerMenu, HTMLStencilElement {}
+  interface HTMLWuDividerElement extends StencilComponents.WuDivider, HTMLStencilElement {}
 
-  var HTMLWuDrawerMenuElement: {
-    prototype: HTMLWuDrawerMenuElement;
-    new (): HTMLWuDrawerMenuElement;
+  var HTMLWuDividerElement: {
+    prototype: HTMLWuDividerElement;
+    new (): HTMLWuDividerElement;
   };
   interface HTMLElementTagNameMap {
-    'wu-drawer-menu': HTMLWuDrawerMenuElement;
+    'wu-divider': HTMLWuDividerElement;
   }
   interface ElementTagNameMap {
-    'wu-drawer-menu': HTMLWuDrawerMenuElement;
+    'wu-divider': HTMLWuDividerElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'wu-drawer-menu': JSXElements.WuDrawerMenuAttributes;
+      'wu-divider': JSXElements.WuDividerAttributes;
     }
   }
   namespace JSXElements {
-    export interface WuDrawerMenuAttributes extends HTMLAttributes {
-      'items'?: Object|String;
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface WuMenuHeader {
-
-    }
-  }
-
-  interface HTMLWuMenuHeaderElement extends StencilComponents.WuMenuHeader, HTMLStencilElement {}
-
-  var HTMLWuMenuHeaderElement: {
-    prototype: HTMLWuMenuHeaderElement;
-    new (): HTMLWuMenuHeaderElement;
-  };
-  interface HTMLElementTagNameMap {
-    'wu-menu-header': HTMLWuMenuHeaderElement;
-  }
-  interface ElementTagNameMap {
-    'wu-menu-header': HTMLWuMenuHeaderElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'wu-menu-header': JSXElements.WuMenuHeaderAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface WuMenuHeaderAttributes extends HTMLAttributes {
-
-    }
-  }
-}
-
-
-declare global {
-
-  namespace StencilComponents {
-    interface WuMenuItem {
-
-    }
-  }
-
-  interface HTMLWuMenuItemElement extends StencilComponents.WuMenuItem, HTMLStencilElement {}
-
-  var HTMLWuMenuItemElement: {
-    prototype: HTMLWuMenuItemElement;
-    new (): HTMLWuMenuItemElement;
-  };
-  interface HTMLElementTagNameMap {
-    'wu-menu-item': HTMLWuMenuItemElement;
-  }
-  interface ElementTagNameMap {
-    'wu-menu-item': HTMLWuMenuItemElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'wu-menu-item': JSXElements.WuMenuItemAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface WuMenuItemAttributes extends HTMLAttributes {
+    export interface WuDividerAttributes extends HTMLAttributes {
 
     }
   }
@@ -445,6 +379,107 @@ declare global {
       'shape'?: string;
       'src'?: string;
       'thumb'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface WuDrawerMenu {
+      'items': Object|String;
+    }
+  }
+
+  interface HTMLWuDrawerMenuElement extends StencilComponents.WuDrawerMenu, HTMLStencilElement {}
+
+  var HTMLWuDrawerMenuElement: {
+    prototype: HTMLWuDrawerMenuElement;
+    new (): HTMLWuDrawerMenuElement;
+  };
+  interface HTMLElementTagNameMap {
+    'wu-drawer-menu': HTMLWuDrawerMenuElement;
+  }
+  interface ElementTagNameMap {
+    'wu-drawer-menu': HTMLWuDrawerMenuElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'wu-drawer-menu': JSXElements.WuDrawerMenuAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuDrawerMenuAttributes extends HTMLAttributes {
+      'items'?: Object|String;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface WuMenuHeader {
+      'img': string;
+      'imgShape': 'circle' | 'square';
+    }
+  }
+
+  interface HTMLWuMenuHeaderElement extends StencilComponents.WuMenuHeader, HTMLStencilElement {}
+
+  var HTMLWuMenuHeaderElement: {
+    prototype: HTMLWuMenuHeaderElement;
+    new (): HTMLWuMenuHeaderElement;
+  };
+  interface HTMLElementTagNameMap {
+    'wu-menu-header': HTMLWuMenuHeaderElement;
+  }
+  interface ElementTagNameMap {
+    'wu-menu-header': HTMLWuMenuHeaderElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'wu-menu-header': JSXElements.WuMenuHeaderAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuMenuHeaderAttributes extends HTMLAttributes {
+      'img'?: string;
+      'imgShape'?: 'circle' | 'square';
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface WuMenuItem {
+
+    }
+  }
+
+  interface HTMLWuMenuItemElement extends StencilComponents.WuMenuItem, HTMLStencilElement {}
+
+  var HTMLWuMenuItemElement: {
+    prototype: HTMLWuMenuItemElement;
+    new (): HTMLWuMenuItemElement;
+  };
+  interface HTMLElementTagNameMap {
+    'wu-menu-item': HTMLWuMenuItemElement;
+  }
+  interface ElementTagNameMap {
+    'wu-menu-item': HTMLWuMenuItemElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'wu-menu-item': JSXElements.WuMenuItemAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface WuMenuItemAttributes extends HTMLAttributes {
+
     }
   }
 }

@@ -19,6 +19,7 @@ export class WuBurger {
       // open menu
       this.burger.classList.add('open')
       menu.classList.add('open')
+      menu.focus();
     }
   }
 

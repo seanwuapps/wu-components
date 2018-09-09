@@ -8,12 +8,13 @@
 
   <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
 
-  <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/dracula.min.css"> -->
-  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script> -->
+  <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <link rel='stylesheet' href="/build/wu-components.css">
   <script src="build/wu-components.js"></script>
+
 
   <style>
     body {
@@ -74,6 +75,109 @@
   <p>
     There's default styling in most components, you can easily overwrite them by applying some custom css
   </p>
+
+  
+  <h2>Menu</h2>
+  <h3>Hamburger menu toggle, control size with css using font-size</h3>
+
+  <div>
+    <wu-drawer-menu id="menu" position="left" class="open">
+      <wu-menu-header theme="secondary" img="/assets/images/man.svg" img-shape="circle" img-href="">
+        <span slot="title">
+          <a href="#">Steve Rogers</a>
+        </span>
+        <span slot="sub-title">
+          <a href="#">Captain America</a>
+        </span>
+      </wu-menu-header>
+      
+      <wu-menu-list>
+        <wu-menu-item>
+            <a href="#">
+              <i class="material-icons">home</i>
+              Home
+            </a>
+        </wu-menu-item>
+        <wu-divider></wu-divider>
+        <wu-menu-sub-heading>
+          Themes
+        </wu-menu-sub-heading>
+        <wu-menu-item theme="primary">
+          <a href="#">
+            <i class="material-icons">star_rate</i>
+            Primary
+          </a>
+        </wu-menu-item>
+        <wu-menu-item theme="secondary">
+          <a href="#">
+            <i class="material-icons">star_rate</i>
+            Secondary
+          </a>
+        </wu-menu-item>
+        <wu-menu-item theme="success">
+          <a href="#">
+            <i class="material-icons">star_rate</i>
+            Success
+          </a>
+        </wu-menu-item>
+        <wu-menu-item theme="warning">
+          <a href="#">
+            <i class="material-icons">star_rate</i>
+            Warning
+          </a>
+        </wu-menu-item>
+        <wu-menu-item theme="danger">
+          <a href="#">
+            <i class="material-icons">star_rate</i>
+            Danger
+          </a>
+        </wu-menu-item>
+        <wu-menu-item theme="info">
+          <a href="#">
+            <i class="material-icons">star_rate</i>
+            Info
+          </a>
+        </wu-menu-item>
+        <wu-menu-item theme="dark">
+          <a href="#">
+            <i class="material-icons">star_rate</i>
+            Dark
+          </a>
+        </wu-menu-item>
+        <wu-menu-item theme="grey">
+          <a href="#">
+            <i class="material-icons">star_rate</i>
+            Grey
+          </a>
+        </wu-menu-item>
+      </wu-menu-list>
+    </wu-drawer-menu>
+    <wu-drawer-menu id="menu2" position="right">
+      <wu-menu-header theme="danger" img="/assets/images/man.svg" img-shape="circle" img-href="">
+        <span slot="title">
+          <a href="#">Tony Stark</a>
+        </span>
+        <span slot="sub-title">
+          <a href="#">Iron man</a>
+        </span>
+      </wu-menu-header>
+      <wu-menu-list>
+        <wu-menu-item><a href="#">Menu Item</a></wu-menu-item>
+        <wu-menu-item theme="primary"><a href="#">Menu Item</a></wu-menu-item>
+        <wu-menu-item theme="secondary"><a href="#">Menu Item</a></wu-menu-item>
+        <wu-menu-item theme="success"><a href="#">Menu Item</a></wu-menu-item>
+        <wu-menu-item theme="warning"><a href="#">Menu Item</a></wu-menu-item>
+        <wu-menu-item theme="danger"><a href="#">Menu Item</a></wu-menu-item>
+        <wu-menu-item theme="info"><a href="#">Menu Item</a></wu-menu-item>
+        <wu-menu-item theme="dark"><a href="#">Menu Item</a></wu-menu-item>
+        <wu-menu-item theme="grey"><a href="#">Menu Item</a></wu-menu-item>
+      </wu-menu-list>
+    </wu-drawer-menu>
+    <wu-burger target="#menu"></wu-burger>
+    <wu-burger target="#menu2" animation="spin-out" style="color: blue"></wu-burger>
+    <wu-burger animation="rotate" style="color: green; font-size: 38px;"></wu-burger>
+    <wu-burger style="font-size: 64px;"></wu-burger>
+  </div>
 
   <!-- 
   <h2>Better img tag</h2>
@@ -245,6 +349,8 @@
     </wu-col>
   </wu-row>
 
+ -->
+
 
   <h2>Buttons</h2>
 
@@ -301,29 +407,7 @@
     Aw
   </wu-button>
 
- -->
 
-
-  <h2>Menu</h2>
-  <h3>Hamburger menu toggle, control size with css using font-size</h3>
-
-  <div class="text-center">
-    <wu-drawer-menu id="menu" position="left" class="open" >
-      <wu-menu-header>
-        menu
-      </wu-menu-header>
-      <wu-menu-item><a href="#">Home</a></wu-menu-item>
-      <wu-menu-item><a href="#">About</a></wu-menu-item>
-    </wu-drawer-menu>
-    <wu-drawer-menu id="menu2" position="right">
-      <wu-menu-item><a href="#">Home</a></wu-menu-item>
-      <wu-menu-item><a href="#">About</a></wu-menu-item>
-    </wu-drawer-menu>
-    <wu-burger target="#menu"></wu-burger>
-    <wu-burger target="#menu2" animation="spin-out" style="color: blue"></wu-burger>
-    <wu-burger animation="rotate" style="color: green; font-size: 38px;"></wu-burger>
-    <wu-burger style="font-size: 64px;"></wu-burger>
-  </div>
   <!-- 
   <h2>Inputs</h2>
   <h3>Star rating</h3>
@@ -354,13 +438,15 @@
   <wu-row gap="5%">
     <wu-col portion="1">
       <wu-card card-title="Text Card">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima,
+        consequatur illo accusamus
         autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
       </wu-card>
     </wu-col>
     <wu-col portion="2">
       <wu-card card-title="Text Card with hover effect" hover>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima,
+        consequatur illo accusamus
         autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
       </wu-card>
     </wu-col>
@@ -369,14 +455,16 @@
     <wu-col portion="1">
       <wu-card hover card-title="Media Card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
         src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima,
+        consequatur illo accusamus
         autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
       </wu-card>
     </wu-col>
     <wu-col portion="1">
       <wu-card hover card-title="Card with actions" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
         src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dolorem aut architecto assumenda sapiente vero dolores distinctio
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dolorem aut architecto assumenda sapiente vero
+        dolores distinctio
         molestias pariatur! Beatae vitae itaque maxime, deserunt odit repudiandae repellendus ea quo atque.
         <div class="card-footer">
           <a href="#" class="action">Link</a>

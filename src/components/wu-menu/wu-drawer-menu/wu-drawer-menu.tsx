@@ -15,7 +15,22 @@ export class WuDrawerMenu {
   
   componentDidLoad(){
     if(typeof this.items === 'string'){
-      this.items = JSON.parse(this.items)
+      this.items = JSON.parse(this.items);
+    }
+    this.el.tabIndex = -1;
+    document.addEventListener('keyup', e => {
+      if(e.keyCode === 27){
+        this.closeMenu();
+      }
+    })
+    const focusable: NodeListOf<HTMLElement> = this.el.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
+    
+    if(focusable.length){
+      const lastChild:HTMLElement = focusable[focusable.length -1];
+      const firstChild:HTMLElement = focusable[0];
+      lastChild.addEventListener('blur', () => {
+        firstChild.focus();
+      })
     }
   }
 

@@ -109,33 +109,29 @@ $baseline-px: 10px;
   }
 }
 
-$themes: (
-  'primary',
-  'secondary',
-  'success',
-  'warning',
-  'danger',
-  'info',
-  'light',
-  'grey',
-  'dark'
-);
+$themes: ('primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light', 'grey', 'dark');
 
-@mixin themeable($name){
+@mixin themeable($name: '') {
   @each $theme in $themes {
-    @if ($name == 'button'){
-      &[theme=#{$theme}]{
+    @if ($name == 'button') {
+      &[theme='#{$theme}'] {
         background: var(--color-#{$theme});
         color: var(--color-#{$theme}-contrast);
-        &[outline]{
+        &[outline] {
           background: white;
           border: 1px solid var(--color-#{$theme});
           color: currentColor;
         }
       }
     }
-    @if ($name == 'drawer-menu'){
-      &[theme=#{$theme}]{
+    @if ($name == 'menu-item') {
+      &[theme='#{$theme}'] {
+        color: var(--color-#{$theme});
+        background: white;
+      }
+    }
+    @if ($name == '') {
+      &[theme='#{$theme}'] {
         background: var(--color-#{$theme});
         color: var(--color-#{$theme}-contrast);
       }

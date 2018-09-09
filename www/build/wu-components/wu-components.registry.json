@@ -41,6 +41,11 @@
         "$": "wu-col"
       }
     },
+    "wu-divider": {
+      "bundleIds": {
+        "$": "wu-divider"
+      }
+    },
     "wu-drawer-menu": {
       "bundleIds": {
         "$": "wu-drawer-menu"

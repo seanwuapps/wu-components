@@ -1,0 +1,35 @@
+wu-menu-item {
+  @include themeable('menu-item');
+  display: block;
+  position: relative;
+  &:hover,
+  &:focus {
+    &::before {
+      content: '';
+      background: currentColor;
+      opacity: 0.1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+    }
+  }
+  .menu-item{
+    position: relative;
+    z-index: 2;
+  }
+  [href] {
+    display: block;
+    text-decoration: none;
+    color: currentColor;
+    padding: 15px 10px 18px 20px;
+    i {
+      width: 1em;
+      max-width: 1em;
+      margin-right: 10px;
+      vertical-align: text-bottom;
+    }
+  }
+}

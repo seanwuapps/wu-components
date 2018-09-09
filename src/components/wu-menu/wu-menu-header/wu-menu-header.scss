@@ -1,0 +1,34 @@
+wu-menu-header{
+  @include themeable();
+  display: block;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  .img{
+    margin-top: 12px;
+    margin-bottom: 8px;
+    img{
+      @include raised(2);
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      padding: 2px;
+      border: 2px solid white;
+      &.circle{
+        border-radius: 50%;
+      }
+    }
+  }
+  .title{
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .sub-title{
+    font-size: 12px;
+  }
+  
+  a{
+    color: currentColor;
+    text-decoration: none;
+  }
+}
