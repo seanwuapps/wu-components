@@ -1,0 +1,50 @@
+{
+  "namespace": "App",
+  "fsNamespace": "app",
+  "loader": "../app.js",
+  "corePolyfilled": "es5-build-disabled.js",
+  "global": "app.global.js",
+  "core": "app.core.js",
+  "components": {
+    "app-home": {
+      "bundleIds": {
+        "$": "app-home"
+      }
+    },
+    "app-profile": {
+      "bundleIds": {
+        "$": "app-profile"
+      }
+    },
+    "app-root": {
+      "bundleIds": {
+        "$": "app-root"
+      }
+    },
+    "component-page": {
+      "bundleIds": {
+        "$": "component-page"
+      }
+    },
+    "stencil-route": {
+      "bundleIds": {
+        "$": "app-root"
+      }
+    },
+    "stencil-route-link": {
+      "bundleIds": {
+        "$": "app-home"
+      }
+    },
+    "stencil-route-switch": {
+      "bundleIds": {
+        "$": "app-root"
+      }
+    },
+    "stencil-router": {
+      "bundleIds": {
+        "$": "app-root"
+      }
+    }
+  }
+}
