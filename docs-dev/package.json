@@ -18,11 +18,7 @@
     "@types/jest": "^23.3.1",
     "jest": "^23.4.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ionic-team/stencil-app-starter.git"
-  },
-  "author": "Ionic Team",
+  "author": "Sean Wu",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ionic-team/stencil"

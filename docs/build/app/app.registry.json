@@ -11,6 +11,11 @@
         "$": "app-home"
       }
     },
+    "app-menu": {
+      "bundleIds": {
+        "$": "app-menu"
+      }
+    },
     "app-profile": {
       "bundleIds": {
         "$": "app-profile"
@@ -44,6 +49,26 @@
     "stencil-router": {
       "bundleIds": {
         "$": "app-root"
+      }
+    },
+    "wu-divider": {
+      "bundleIds": {
+        "$": "app-menu"
+      }
+    },
+    "wu-drawer-menu": {
+      "bundleIds": {
+        "$": "app-menu"
+      }
+    },
+    "wu-menu-header": {
+      "bundleIds": {
+        "$": "app-menu"
+      }
+    },
+    "wu-menu-item": {
+      "bundleIds": {
+        "$": "app-menu"
       }
     }
   }
