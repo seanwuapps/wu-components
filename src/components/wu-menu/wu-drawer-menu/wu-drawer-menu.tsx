@@ -4,6 +4,8 @@ import { Component, Prop, Element } from '@stencil/core'
   styleUrls: ['vars.css','wu-drawer-menu.scss']
 })
 export class WuDrawerMenu {
+  @Prop() theme?: string;
+  @Prop() position?: string;
   @Prop() items: Object|String = {"home" : {
     "label" : 'Home'
   }};

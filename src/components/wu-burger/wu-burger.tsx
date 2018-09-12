@@ -5,7 +5,8 @@ import { Component, Element, Prop } from '@stencil/core'
   styleUrls: ['vars.css','wu-burger.scss']
 })
 export class WuBurger {
-  @Element() burger: HTMLElement
+  @Element() burger: HTMLElement;
+  @Prop() theme?: string;
   @Prop() animation: string = 'middle-out'; 
   @Prop() target: string;
 

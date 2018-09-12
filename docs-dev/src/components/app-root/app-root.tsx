@@ -11,14 +11,14 @@ export class AppRoot {
     return (
       <div>
         <header>
-          <h1>Wu Components Docs</h1>
+          <h1>Stencil App Starter</h1>
         </header>
-
+        <app-menu></app-menu>
         <main>
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url='/' component='app-home' exact={true} />
-              <stencil-route url='/component/:name' component='component-page' />
+              <stencil-route url='/profile/:name' component='app-profile' />
             </stencil-route-switch>
           </stencil-router>
         </main>

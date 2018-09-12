@@ -1,6 +1,6 @@
 /*! Built with http://stenciljs.com */
 (function(Context,namespace,hydratedCssClass,resourcesUrl,s){"use strict";
-s=document.querySelector("script[data-namespace='app']");if(s){resourcesUrl=s.getAttribute('data-resources-url');}
+s=document.querySelector("script[data-namespace='wu-components']");if(s){resourcesUrl=s.getAttribute('data-resources-url');}
 (function(window, document, Context, namespace) {
   'use strict';
   /**
@@ -264,7 +264,13 @@ s=document.querySelector("script[data-namespace='app']");if(s){resourcesUrl=s.ge
     false;
     false;
     domApi.$dispatchEvent = ((elm, eventName, data) => elm && elm.dispatchEvent(new win.CustomEvent(eventName, data)));
-    false, false;
+    true;
+    // test if this browser supports event options or not
+    try {
+      win.addEventListener('e', null, Object.defineProperty({}, 'passive', {
+        get: () => domApi.$supportsEventOptions = true
+      }));
+    } catch (e) {}
     domApi.$parentElement = ((elm, parentNode) => 
     // if the parent node is a document fragment (shadow root)
     // then use the "host" property on it
@@ -340,6 +346,23 @@ s=document.querySelector("script[data-namespace='app']");if(s){resourcesUrl=s.ge
     // so no need to change to a different type
         return propValue;
   }
+  function initEventEmitters(plt, cmpEvents, instance) {
+    if (cmpEvents) {
+      const elm = plt.hostElementMap.get(instance);
+      cmpEvents.forEach(eventMeta => {
+        instance[eventMeta.method] = {
+          emit: data => {
+            plt.emitEvent(elm, eventMeta.name, {
+              bubbles: eventMeta.bubbles,
+              composed: eventMeta.composed,
+              cancelable: eventMeta.cancelable,
+              detail: data
+            });
+          }
+        };
+      });
+    }
+  }
   function proxyComponentInstance(plt, cmpConstructor, elm, instance, hostSnapshot, properties, memberName) {
     // at this point we've got a specific node of a host element, and created a component class instance
     // and we've already created getters/setters on both the host element and component class prototypes
@@ -374,7 +397,10 @@ s=document.querySelector("script[data-namespace='app']");if(s){resourcesUrl=s.ge
       // let's upgrade the data on the host element
       // and let the getters/setters do their jobs
             proxyComponentInstance(plt, componentConstructor, elm, instance, hostSnapshot);
-      false;
+      true;
+      // add each of the event emitters which wire up instance methods
+      // to fire off dom events from the host element
+      initEventEmitters(plt, componentConstructor.events, instance);
       false;
     } catch (e) {
       // something done went wrong trying to create a component instance
@@ -549,7 +575,8 @@ s=document.querySelector("script[data-namespace='app']");if(s){resourcesUrl=s.ge
             const useNativeShadowDom = 'shadow' === encapsulation && plt.domApi.$supportsShadowDom;
       let reflectHostAttr;
       let rootElm;
-      false;
+      true;
+      reflectHostAttr = reflectInstanceValuesToHostAttributes(cmpMeta.componentConstructor.properties, instance);
       !useNativeShadowDom && (
       // not using, or can't use shadow dom
       // set the root element, which will be the shadow root when enabled
@@ -574,10 +601,10 @@ s=document.querySelector("script[data-namespace='app']");if(s){resourcesUrl=s.ge
         const vnodeChildren = instance.render && instance.render();
         let vnodeHostData;
         false;
-        false;
+        (true, reflectHostAttr) && (vnodeHostData = vnodeHostData ? Object.assign(vnodeHostData, reflectHostAttr) : reflectHostAttr);
         // tell the platform we're done rendering
         // now any changes will again queue
-        plt.activeRender = false;
+                plt.activeRender = false;
         false;
         // looks like we've got child nodes to render into this host element
         // or we need to update the css class/attrs on the host element
@@ -586,7 +613,9 @@ s=document.querySelector("script[data-namespace='app']");if(s){resourcesUrl=s.ge
         const oldVNode = plt.vnodeMap.get(hostElm) || {};
         oldVNode.elm = rootElm;
         const hostVNode = h(null, vnodeHostData, vnodeChildren);
-        false;
+        true;
+        // only care if we're reflecting values to the host element
+        hostVNode.ishost = true;
         // each patch always gets a new vnode
         // the host element itself isn't patched because it already exists
         // kick off the actual render and any DOM updates
@@ -610,6 +639,15 @@ s=document.querySelector("script[data-namespace='app']");if(s){resourcesUrl=s.ge
       plt.activeRender = false;
       plt.onError(e, 8 /* RenderError */ , hostElm, true);
     }
+  }
+  function reflectInstanceValuesToHostAttributes(properties, instance, reflectHostAttr) {
+    properties && Object.keys(properties).forEach(memberName => {
+      if (properties[memberName].reflectToAttr) {
+        reflectHostAttr = reflectHostAttr || {};
+        reflectHostAttr[memberName] = instance[memberName];
+      }
+    });
+    return reflectHostAttr;
   }
   function queueUpdate(plt, elm) {
     // only run patch if it isn't queued already
@@ -700,11 +738,7 @@ s=document.querySelector("script[data-namespace='app']");if(s){resourcesUrl=s.ge
       elm['s-init']();
       // componentDidLoad just fired off
        else {
-        true;
-        // fire off the user's componentDidUpdate method (if one was provided)
-        // componentDidUpdate runs AFTER render() has been called
-        // but only AFTER an UPDATE and not after the intial render
-        instance.componentDidUpdate && instance.componentDidUpdate();
+        false;
         callNodeRefs(plt.vnodeMap.get(elm));
       }
       true;
@@ -772,13 +806,13 @@ s=document.querySelector("script[data-namespace='app']");if(s){resourcesUrl=s.ge
     // @Element()
     // add a getter to the element reference using
     // the member name the component meta provided
-    definePropertyValue(instance, memberName, elm); else {
+    definePropertyValue(instance, memberName, elm); else if (true, property.method) 
+    // @Method()
+    // add a property "value" on the host element
+    // which we'll bind to the instance's method
+    definePropertyValue(elm, memberName, instance[memberName].bind(instance)); else {
       false;
-      if (true, property.context) {
-        // @Prop({ context: 'config' })
-        const contextObj = plt.getContextItem(property.context);
-        void 0 !== contextObj && definePropertyValue(instance, memberName, contextObj.getContext && contextObj.getContext(elm) || contextObj);
-      } else false;
+      false;
     }
   }
   function setValue(plt, elm, memberName, newVal, values, instance, watchMethods) {
@@ -796,15 +830,8 @@ s=document.querySelector("script[data-namespace='app']");if(s){resourcesUrl=s.ge
       instance = plt.instanceMap.get(elm);
       if (instance) {
         // get an array of method names of watch functions to call
-        watchMethods = values[WATCH_CB_PREFIX + memberName];
-        if (true, watchMethods) 
-        // this instance is watching for when this property changed
-        for (let i = 0; i < watchMethods.length; i++) try {
-          // fire off each of the watch methods that are watching this property
-          instance[watchMethods[i]].call(instance, newVal, oldVal, memberName);
-        } catch (e) {
-          console.error(e);
-        }
+        values[WATCH_CB_PREFIX + memberName];
+        false;
         !plt.activeRender && elm['s-rn'] && 
         // looks like this value actually changed, so we've got work to do!
         // but only if we've already rendered, otherwise just chill out
@@ -855,7 +882,9 @@ s=document.querySelector("script[data-namespace='app']");if(s){resourcesUrl=s.ge
         // let's set the known @Prop on this element
         // set it directly as property on the element
         setProperty(elm, memberName, newValue);
-        false;
+        (true, isHostElement) && cmpMeta.membersMeta[memberName].reflectToAttrib && 
+        // we also want to set this data to the attribute
+        updateAttribute(elm, cmpMeta.membersMeta[memberName].attribName, newValue, 3 /* Boolean */ === cmpMeta.membersMeta[memberName].propType);
       } else if ('ref' !== memberName) {
         // this member name is a property on this element, but it's not a component
         // this is a native property like "value" or something
@@ -1935,7 +1964,8 @@ s=document.querySelector("script[data-namespace='app']");if(s){resourcesUrl=s.ge
     Context.document = doc;
     Context.resourcesUrl = Context.publicPath = resourcesUrl;
     false;
-    false;
+    true;
+    Context.emit = ((elm, eventName, data) => domApi.$dispatchEvent(elm, Context.eventNameFn ? Context.eventNameFn(eventName) : eventName, data));
     // add the h() fn to the app's global namespace
     App.h = h;
     App.Context = Context;
@@ -2074,4 +2104,4 @@ s=document.querySelector("script[data-namespace='app']");if(s){resourcesUrl=s.ge
   // esm build which uses es module imports and dynamic imports
   createPlatformMain(namespace, Context, window, document, resourcesUrl, hydratedCssClass);
 })(window, document, Context, namespace);
-})({},"App","hydrated");
+})({},"WuComponents","hydrated");

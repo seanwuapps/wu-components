@@ -10,15 +10,19 @@
     "test.watch": "jest --watch"
   },
   "dependencies": {
-    "@stencil/core": "^0.11.0",
-    "@stencil/router": "^0.2.5",
+    "@stencil/core": "^0.12.4",
+    "@stencil/router": "^0.2.6",
     "wu-components": "file:.."
   },
   "devDependencies": {
     "@types/jest": "^23.3.1",
     "jest": "^23.4.2"
   },
-  "author": "Sean Wu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ionic-team/stencil-app-starter.git"
+  },
+  "author": "Ionic Team",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ionic-team/stencil"

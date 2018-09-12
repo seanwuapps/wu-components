@@ -23,7 +23,7 @@
     },
     "app-root": {
       "bundleIds": {
-        "$": "app-root"
+        "$": "app-menu"
       }
     },
     "component-page": {
@@ -33,7 +33,7 @@
     },
     "stencil-route": {
       "bundleIds": {
-        "$": "app-root"
+        "$": "app-menu"
       }
     },
     "stencil-route-link": {
@@ -43,30 +43,20 @@
     },
     "stencil-route-switch": {
       "bundleIds": {
-        "$": "app-root"
+        "$": "app-menu"
       }
     },
     "stencil-router": {
       "bundleIds": {
-        "$": "app-root"
+        "$": "app-menu"
       }
     },
-    "wu-divider": {
+    "wu-burger": {
       "bundleIds": {
         "$": "app-menu"
       }
     },
     "wu-drawer-menu": {
-      "bundleIds": {
-        "$": "app-menu"
-      }
-    },
-    "wu-menu-header": {
-      "bundleIds": {
-        "$": "app-menu"
-      }
-    },
-    "wu-menu-item": {
       "bundleIds": {
         "$": "app-menu"
       }

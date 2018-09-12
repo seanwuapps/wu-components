@@ -4,6 +4,7 @@ import { Component, Prop } from '@stencil/core'
   styleUrl: 'wu-menu-header.scss'
 })
 export class WuMenuHeader {
+  @Prop() theme?: string;
   @Prop()
   img?: string = ''
   @Prop()

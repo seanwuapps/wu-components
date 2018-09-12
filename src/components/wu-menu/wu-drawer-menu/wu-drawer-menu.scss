@@ -1,11 +1,8 @@
 wu-drawer-menu {
-  &.open {   
-    &[position='left'] ,
-    &[position='right'] {
-      .side-menu {
-        transform: translate3d(0, 0, 0);
-        opacity: 1;
-      }
+  &.open {
+    .side-menu {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
     }
     .side-menu-overlay{  
       opacity: 1;
@@ -17,7 +14,7 @@ wu-drawer-menu {
     @include raised(4);
     position: fixed;
     z-index: 9999;
-    width: 300px;
+    width: 280px;
     height: 100vh;
     opacity: 0;
     background: white;

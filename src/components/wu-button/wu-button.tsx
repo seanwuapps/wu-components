@@ -6,6 +6,7 @@ import { Component, Element, Prop } from '@stencil/core'
 })
 export class WuButton {
   @Element() button: HTMLElement
+  @Prop() theme?: string;
   @Prop() href?: string;
   @Prop() type: 'submit' | 'reset' | 'button' = 'button';
   

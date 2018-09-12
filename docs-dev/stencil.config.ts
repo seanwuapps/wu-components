@@ -4,11 +4,10 @@ import { Config } from '@stencil/core';
 
 export const config: Config = {
   globalStyle: 'src/global/app.css',
-  copy:[
-    {src: 'demo-pages/'}
-  ],
-  outputTargets: [{
-    type: 'www',
-    dir: '../docs'
-  }]
+  outputTargets: [
+    {
+      type: 'www',
+      dir: '../docs/'
+    }
+  ]
 };
