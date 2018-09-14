@@ -19,8 +19,12 @@ export namespace Components {
   interface AppHome {}
   interface AppHomeAttributes extends StencilHTMLAttributes {}
 
-  interface AppMenu {}
-  interface AppMenuAttributes extends StencilHTMLAttributes {}
+  interface AppMenu {
+    'menuId': string;
+  }
+  interface AppMenuAttributes extends StencilHTMLAttributes {
+    'menuId'?: string;
+  }
 
   interface AppProfile {
     'match': MatchResults;

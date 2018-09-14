@@ -6,7 +6,6 @@ import { Component } from '@stencil/core';
   styleUrl: 'app-home.css'
 })
 export class AppHome {
-
   render() {
     return (
       <div class='app-home'>
@@ -18,9 +17,7 @@ export class AppHome {
         </p>
 
         <stencil-route-link url='/profile/stencil'>
-          <button>
-            Profile page
-          </button>
+          <wu-button theme="secondary">Do it</wu-button>
         </stencil-route-link>
       </div>
     );

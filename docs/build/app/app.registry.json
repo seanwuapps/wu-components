@@ -56,7 +56,27 @@
         "$": "app-menu"
       }
     },
+    "wu-button": {
+      "bundleIds": {
+        "$": "app-home"
+      }
+    },
+    "wu-divider": {
+      "bundleIds": {
+        "$": "app-menu"
+      }
+    },
     "wu-drawer-menu": {
+      "bundleIds": {
+        "$": "app-menu"
+      }
+    },
+    "wu-menu-header": {
+      "bundleIds": {
+        "$": "app-menu"
+      }
+    },
+    "wu-menu-item": {
       "bundleIds": {
         "$": "app-menu"
       }

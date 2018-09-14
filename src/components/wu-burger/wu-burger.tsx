@@ -6,9 +6,9 @@ import { Component, Element, Prop } from '@stencil/core'
 })
 export class WuBurger {
   @Element() burger: HTMLElement;
-  @Prop() theme?: string;
-  @Prop() animation: string = 'middle-out'; 
-  @Prop() target: string;
+  @Prop({reflectToAttr: true}) theme?: string;
+  @Prop({reflectToAttr: true}) animation: string = 'middle-out'; 
+  @Prop({reflectToAttr: true}) target: string;
 
   toggle() {
     let menu:HTMLElement = document.querySelector(this.target);

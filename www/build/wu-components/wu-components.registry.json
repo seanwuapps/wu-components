@@ -2,93 +2,93 @@
   "namespace": "WuComponents",
   "fsNamespace": "wu-components",
   "loader": "../wu-components.js",
-  "corePolyfilled": "es5-build-disabled.js",
   "global": "wu-components.global.js",
-  "core": "wu-components.core.js",
+  "core": "wu-components.lblbglif.js",
+  "corePolyfilled": "wu-components.gvyuigqo.js",
   "components": {
     "code-block": {
       "bundleIds": {
-        "$": "code-block"
+        "$": "t3ha6zpg"
       }
     },
     "wu-accordion": {
       "bundleIds": {
-        "$": "code-block"
+        "$": "t3ha6zpg"
       }
     },
     "wu-accordion-header": {
       "bundleIds": {
-        "$": "code-block"
+        "$": "t3ha6zpg"
       }
     },
     "wu-burger": {
       "bundleIds": {
-        "$": "wu-burger"
+        "$": "gcmu4vp5"
       }
     },
     "wu-button": {
       "bundleIds": {
-        "$": "wu-button"
+        "$": "iu3fjp6z"
       }
     },
     "wu-card": {
       "bundleIds": {
-        "$": "wu-card"
+        "$": "jw4rocls"
       }
     },
     "wu-col": {
       "bundleIds": {
-        "$": "wu-col"
+        "$": "s0i9dayv"
       }
     },
     "wu-divider": {
       "bundleIds": {
-        "$": "wu-divider"
+        "$": "ndgvc0ns"
       }
     },
     "wu-drawer-menu": {
       "bundleIds": {
-        "$": "wu-drawer-menu"
+        "$": "tfu0ersh"
       }
     },
     "wu-img": {
       "bundleIds": {
-        "$": "wu-img"
+        "$": "k1kf9dy7"
       }
     },
     "wu-menu-header": {
       "bundleIds": {
-        "$": "wu-menu-header"
+        "$": "1hgkeag1"
       }
     },
     "wu-menu-item": {
       "bundleIds": {
-        "$": "wu-menu-item"
+        "$": "0gikz8fj"
       }
     },
     "wu-rating": {
       "bundleIds": {
-        "$": "wu-rating"
+        "$": "fwaklv3f"
       }
     },
     "wu-row": {
       "bundleIds": {
-        "$": "wu-row"
+        "$": "rxqiegbd"
       }
     },
     "wu-shadow": {
       "bundleIds": {
-        "$": "wu-shadow"
+        "$": "tnooss7d"
       }
     },
     "wu-spinner": {
       "bundleIds": {
-        "$": "wu-spinner"
+        "$": "vlmrw1mm"
       }
     },
     "wu-tinder-card": {
       "bundleIds": {
-        "$": "wu-tinder-card"
+        "$": "104dndfu"
       }
     }
   }
