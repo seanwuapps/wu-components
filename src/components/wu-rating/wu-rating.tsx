@@ -39,7 +39,7 @@ export class WuRating {
   }
 
   @Method()
-  reset = () => {
+  reset(){
     this.setVal(this.resetToValue)
   }
 
@@ -52,8 +52,8 @@ export class WuRating {
   }
 
   @Watch('value')
-  valueChanged = () => {
-    console.log('prop did change: value')
+  valueChanged(){
+    console.log('prop did change: ', this.value)
     if (this.el.value !== String(this.value)) {
       this.el.value = String(this.value)
       console.log(this.el.value)

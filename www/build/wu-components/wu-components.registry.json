@@ -3,8 +3,8 @@
   "fsNamespace": "wu-components",
   "loader": "../wu-components.js",
   "global": "wu-components.global.js",
-  "core": "wu-components.lblbglif.js",
-  "corePolyfilled": "wu-components.gvyuigqo.js",
+  "core": "wu-components.iybx00py.js",
+  "corePolyfilled": "wu-components.cu9jeahi.js",
   "components": {
     "code-block": {
       "bundleIds": {
@@ -23,7 +23,7 @@
     },
     "wu-burger": {
       "bundleIds": {
-        "$": "rsq9t5ra"
+        "$": "gcmu4vp5"
       }
     },
     "wu-button": {
@@ -51,6 +51,11 @@
         "$": "tfu0ersh"
       }
     },
+    "wu-header": {
+      "bundleIds": {
+        "$": "721edxte"
+      }
+    },
     "wu-img": {
       "bundleIds": {
         "$": "k1kf9dy7"
@@ -68,7 +73,7 @@
     },
     "wu-rating": {
       "bundleIds": {
-        "$": "fwaklv3f"
+        "$": "lx2d3fsf"
       }
     },
     "wu-row": {

@@ -1,7 +1,7 @@
 /*! Built with http://stenciljs.com */
 const { h } = window.App;
 
-import { a as matchPath, u as isModifiedEvent, c as ActiveRouter } from './chunk-feee7b6f.js';
+import { a as matchPath, b as isModifiedEvent, c as ActiveRouter } from './chunk-8aa89ec5.js';
 import './chunk-f5f83825.js';
 
 class AppHome {
@@ -12,7 +12,7 @@ class AppHome {
                 h("a", { href: 'https://stenciljs.com' }, "stenciljs.com"),
                 " to get started."),
             h("stencil-route-link", { url: '/profile/stencil' },
-                h("wu-button", { theme: "secondary" }, "Do it"))));
+                h("wu-button", null, "Do it"))));
     }
     static get is() { return "app-home"; }
     static get style() { return ""; }
