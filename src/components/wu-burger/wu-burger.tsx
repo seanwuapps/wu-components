@@ -1,4 +1,5 @@
 import { Component, Element, Prop } from '@stencil/core'
+
 @Component({
   tag: 'wu-burger',
   styleUrls: ['vars.css','wu-burger.scss']
@@ -6,7 +7,7 @@ import { Component, Element, Prop } from '@stencil/core'
 export class WuBurger {
   @Element() burger: HTMLElement;
   @Prop({reflectToAttr: true}) theme?: string;
-  @Prop({reflectToAttr: true}) animation: string = 'middle-out';
+  @Prop({reflectToAttr: true, mutable: true}) animation: string = 'middle-out';
   @Prop({reflectToAttr: true}) target: string;
 
   toggle() {

@@ -37,7 +37,7 @@ self.__precacheManifest = [
   },
   {
     "url": "build/wu-components.js",
-    "revision": "c509c9c0fdef4043870140d2a37006dc"
+    "revision": "824da8157cdff1be80b6b84fa0802d52"
   },
   {
     "url": "build/wu-components/0gikz8fj.es5.js",
@@ -70,14 +70,6 @@ self.__precacheManifest = [
   {
     "url": "build/wu-components/721edxte.js",
     "revision": "ef6d7f783c6d7ae20f4af5f99730ea9b"
-  },
-  {
-    "url": "build/wu-components/gcmu4vp5.es5.js",
-    "revision": "22132c1c5c0941e727b710014f485441"
-  },
-  {
-    "url": "build/wu-components/gcmu4vp5.js",
-    "revision": "1be0a6538bcfe66becb0447e141a1039"
   },
   {
     "url": "build/wu-components/index.es5.js",
@@ -184,8 +176,16 @@ self.__precacheManifest = [
     "revision": "2186d7d343f2a65abac96b090098ef47"
   },
   {
+    "url": "build/wu-components/wy1xztfc.es5.js",
+    "revision": "46ab7055878276524a6ce39851a875f5"
+  },
+  {
+    "url": "build/wu-components/wy1xztfc.js",
+    "revision": "c32d57ced15ce67d379358829931fca0"
+  },
+  {
     "url": "index.html",
-    "revision": "85e5801c21a024d325077e7956f97ad2"
+    "revision": "c6f991371f655ed0c4768dd620800beb"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
