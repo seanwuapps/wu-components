@@ -14,8 +14,13 @@ export class WuDrawerMenu {
   constructor(){
     this.closeMenu = this.closeMenu.bind(this);
   }
-  
+
   componentDidLoad(){
+
+    if(this.theme){
+      this.el.setAttribute('theme', this.theme);
+    }
+
     if(typeof this.items === 'string'){
       this.items = JSON.parse(this.items);
     }
@@ -26,7 +31,7 @@ export class WuDrawerMenu {
       }
     })
     const focusable: NodeListOf<HTMLElement> = this.el.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])')
-    
+
     if(focusable.length){
       const lastChild:HTMLElement = focusable[focusable.length -1];
       const firstChild:HTMLElement = focusable[0];
@@ -48,7 +53,7 @@ export class WuDrawerMenu {
     return [
       <nav class="side-menu">
         <slot />
-      </nav>, 
+      </nav>,
       <div class="side-menu-overlay" onClick={() => this.closeMenu()}></div>
     ]
   }

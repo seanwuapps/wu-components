@@ -1,2 +1,0 @@
-/*! Built with http://stenciljs.com */
-const{h:t}=window.WuComponents;class e{render(){return t("slot",null)}static get is(){return"wu-header"}static get properties(){return{theme:{type:String,attr:"theme",reflectToAttr:!0}}}static get style(){return""}}export{e as WuHeader};

@@ -1,16 +1,22 @@
-import { Component, Prop } from '@stencil/core'
+import { Component, Prop, Element } from '@stencil/core'
 @Component({
   tag: 'wu-menu-header',
   styleUrl: 'wu-menu-header.scss'
 })
 export class WuMenuHeader {
+  @Element() el: HTMLElement;
   @Prop() theme?: string;
-  @Prop()
-  img?: string = ''
-  @Prop()
-  imgShape?: 'circle' | 'square' = 'square'
-  @Prop()
-  imgHref?: string = ''
+  @Prop() img?: string;
+  @Prop() imgHref?: string;
+  @Prop({mutable: true}) imgShape?: 'circle' | 'square' = 'square'
+
+  componentDidLoad() {
+    if(this.theme){
+      this.el.setAttribute('theme', this.theme);
+    }
+  }
+
+
   render() {
     return (
       <div>

@@ -1,7 +1,9 @@
 :root{
+  /* Animation speed */
   --fast: 0.2s;
   --slow: 0.5s;
-  
+
+  /* Themes/ Colors */
   --color-primary: #286DC1;
   --color-primary-contrast: #fff;
 
@@ -28,5 +30,8 @@
 
   --color-dark: #333;
   --color-dark-contrast: #fff;
+
+  /* Container width  */
+
 
 }

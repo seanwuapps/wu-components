@@ -9,10 +9,18 @@ export class WuButton {
   @Prop() theme?: string;
   @Prop() href?: string;
   @Prop() type: 'submit' | 'reset' | 'button' = 'button';
-  
+
   @Prop({ reflectToAttr: true }) disabled = false;
+
+
+  componentDidLoad() {
+    if(this.theme){
+      this.button.setAttribute('theme', this.theme);
+    }
+  }
+
   onClick(){
-    
+
   }
   render() {
     const TagType = this.href ? 'a' : 'button';

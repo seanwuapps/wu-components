@@ -10,6 +10,11 @@ export class WuBurger {
   @Prop({reflectToAttr: true, mutable: true}) animation: string = 'middle-out';
   @Prop({reflectToAttr: true}) target: string;
 
+  componentDidLoad() {
+    if(this.theme){
+      this.burger.setAttribute('theme', this.theme);
+    }
+  }
   toggle() {
     let menu:HTMLElement = document.querySelector(this.target);
 
