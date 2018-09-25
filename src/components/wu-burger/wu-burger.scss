@@ -1,12 +1,13 @@
 wu-burger {
-  font-size: 18px;
   @include themeable('burger');
+  font-size: 18px;
+
   button {
     font-size: 1em;
     color: currentColor;
     position: relative;
     width: var(--wu-burger-size);
-    height: var(--wu-burger-size);
+    height: calc(9 * var(--wu-burger-thickness));
     cursor: pointer;
     background: none;
     border: none;
@@ -18,8 +19,8 @@ wu-burger {
     }
     span {
       display: block;
-      left: calc(1 / 6 * var(--wu-burger-size));
-      width: calc(2 / 3 * var(--wu-burger-size));
+      left: 0;
+      width: var(--wu-burger-size);
       height: var(--wu-burger-thickness);
       border-radius: var(--wu-burger-thickness);
       background: var(--wu-burger-color);

@@ -1,0 +1,46 @@
+wu-header {
+  @include themeable('');
+  @include raised(1);
+  display: block;
+  padding: 0 8px;
+  overflow: hidden;
+  wu-row,
+  wu-col {
+    margin: 0;
+    padding: 0;
+  }
+  wu-burger {
+    --wu-burger-size: 30px;
+    --wu-burger-thickness: 3px;
+  }
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    height: var(--wu-header-height);
+    & + wu-page {
+      margin-top: var(--wu-header-height);
+    }
+    wu-drawer-menu {
+      .side-menu {
+        top: var(--wu-header-height);
+      }
+      .side-menu-overlay {
+        top: var(--wu-header-height);
+      }
+    }
+  }
+
+  // resize heading
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+}

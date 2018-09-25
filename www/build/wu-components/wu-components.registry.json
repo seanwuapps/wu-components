@@ -2,98 +2,103 @@
   "namespace": "WuComponents",
   "fsNamespace": "wu-components",
   "loader": "../wu-components.js",
+  "corePolyfilled": "es5-build-disabled.js",
   "global": "wu-components.global.js",
-  "core": "wu-components.iybx00py.js",
-  "corePolyfilled": "wu-components.cu9jeahi.js",
+  "core": "wu-components.core.js",
   "components": {
     "code-block": {
       "bundleIds": {
-        "$": "t3ha6zpg"
+        "$": "code-block"
       }
     },
     "wu-accordion": {
       "bundleIds": {
-        "$": "t3ha6zpg"
+        "$": "code-block"
       }
     },
     "wu-accordion-header": {
       "bundleIds": {
-        "$": "t3ha6zpg"
+        "$": "code-block"
       }
     },
     "wu-burger": {
       "bundleIds": {
-        "$": "nivczeaq"
+        "$": "wu-burger"
       }
     },
     "wu-button": {
       "bundleIds": {
-        "$": "qbtwpv2c"
+        "$": "wu-button"
       }
     },
     "wu-card": {
       "bundleIds": {
-        "$": "jw4rocls"
+        "$": "wu-card"
       }
     },
     "wu-col": {
       "bundleIds": {
-        "$": "s0i9dayv"
+        "$": "wu-col"
       }
     },
     "wu-divider": {
       "bundleIds": {
-        "$": "ndgvc0ns"
+        "$": "wu-divider"
       }
     },
     "wu-drawer-menu": {
       "bundleIds": {
-        "$": "lqhfuf0s"
+        "$": "wu-drawer-menu"
       }
     },
     "wu-header": {
       "bundleIds": {
-        "$": "tdifgj3y"
+        "$": "wu-header"
       }
     },
     "wu-img": {
       "bundleIds": {
-        "$": "k1kf9dy7"
+        "$": "wu-img"
       }
     },
     "wu-menu-header": {
       "bundleIds": {
-        "$": "g30sedvj"
+        "$": "wu-menu-header"
       }
     },
     "wu-menu-item": {
       "bundleIds": {
-        "$": "oapsitrh"
+        "$": "wu-menu-item"
+      }
+    },
+    "wu-page": {
+      "bundleIds": {
+        "$": "wu-page"
       }
     },
     "wu-rating": {
       "bundleIds": {
-        "$": "lx2d3fsf"
+        "$": "wu-rating"
       }
     },
     "wu-row": {
       "bundleIds": {
-        "$": "rxqiegbd"
+        "$": "wu-row"
       }
     },
     "wu-shadow": {
       "bundleIds": {
-        "$": "tnooss7d"
+        "$": "wu-shadow"
       }
     },
     "wu-spinner": {
       "bundleIds": {
-        "$": "vlmrw1mm"
+        "$": "wu-spinner"
       }
     },
     "wu-tinder-card": {
       "bundleIds": {
-        "$": "104dndfu"
+        "$": "wu-tinder-card"
       }
     }
   }

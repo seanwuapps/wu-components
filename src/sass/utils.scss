@@ -1,0 +1,47 @@
+/**
+  CSS Utilities
+*/
+
+$position-horizontal: (left, center, right);
+$position-vertical: (top, center, bottom);
+
+// text align
+@each $pos in $position-horizontal {
+  .text-#{$pos} {
+    text-align: #{$pos};
+  }
+}
+
+// float
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+
+// flex align
+.f-align-start {
+  align-items: flex-start;
+}
+.f-align-end {
+  align-items: flex-end;
+}
+.f-align-center {
+  align-items: center;
+}
+
+// margin
+.no-margin {
+  margin: 0;
+}
+
+// padding
+.no-padding {
+  padding: 0;
+}
+
+// show/hide
+.hidden {
+  display: none;
+}

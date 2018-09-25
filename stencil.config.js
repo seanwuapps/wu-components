@@ -1,8 +1,8 @@
-var sass = require('@stencil/sass');
-var postcss = require('@stencil/postcss');
-var autoprefixer = require('autoprefixer');
-var pxtorem = require('postcss-pxtorem');
-var postcssNormalize = require('postcss-normalize');
+var sass = require('@stencil/sass')
+var postcss = require('@stencil/postcss')
+var autoprefixer = require('autoprefixer')
+var pxtorem = require('postcss-pxtorem')
+var postcssNormalize = require('postcss-normalize')
 
 exports.config = {
   namespace: 'wu-components',
@@ -10,6 +10,7 @@ exports.config = {
     sass.sass({
       injectGlobalPaths: [
         'src/sass/mixins.scss',
+        'src/sass/utils.scss'
       ]
     }),
     postcss.postcss({
@@ -23,8 +24,8 @@ exports.config = {
     })
   ],
   outputTargets: [
-    {type: 'dist'},
-    {type: 'www'}
+    { type: 'dist' },
+    { type: 'www' }
   ],
   globalStyle: 'src/globals/vars.css'
 }

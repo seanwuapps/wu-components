@@ -1,20 +1,27 @@
-import { Component, Prop, Element } from '@stencil/core';
+import { Component, Prop, Element } from '@stencil/core'
 
 @Component({
   tag: 'wu-header',
-  styleUrl: 'wu-header.scss'
-})
+  styleUrls: ['vars.css', 'wu-header.scss']
+  })
 export class WuHeader {
-  @Element() el: HTMLElement;
-  @Prop({reflectToAttr: true}) theme?:string;
+  @Element()
+  el: HTMLElement
+  @Prop({ reflectToAttr: true })
+  theme?: string
+  @Prop({ reflectToAttr: true })
+  fixed?: boolean
 
-  componentDidLoad() {
-    if(this.theme){
-      this.el.setAttribute('theme', this.theme);
+  componentDidLoad () {
+    if (this.theme) {
+      this.el.setAttribute('theme', this.theme)
+    }
+    if (this.fixed) {
+      this.el.classList.add('fixed')
     }
   }
 
-  render() {
+  render () {
     return <slot />
   }
 }

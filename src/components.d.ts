@@ -85,9 +85,11 @@ export namespace Components {
   }
 
   interface WuHeader {
+    'fixed': boolean;
     'theme': string;
   }
   interface WuHeaderAttributes extends StencilHTMLAttributes {
+    'fixed'?: boolean;
     'theme'?: string;
   }
 
@@ -109,12 +111,12 @@ export namespace Components {
   }
 
   interface WuDrawerMenu {
-    'items': Object|String;
+    'items': Object | String;
     'position': string;
     'theme': string;
   }
   interface WuDrawerMenuAttributes extends StencilHTMLAttributes {
-    'items'?: Object|String;
+    'items'?: Object | String;
     'position'?: string;
     'theme'?: string;
   }
@@ -138,6 +140,9 @@ export namespace Components {
   interface WuMenuItemAttributes extends StencilHTMLAttributes {
     'theme'?: string;
   }
+
+  interface WuPage {}
+  interface WuPageAttributes extends StencilHTMLAttributes {}
 
   interface WuRating {
     'getVal': () => number;
@@ -207,6 +212,7 @@ declare global {
     'WuDrawerMenu': Components.WuDrawerMenu;
     'WuMenuHeader': Components.WuMenuHeader;
     'WuMenuItem': Components.WuMenuItem;
+    'WuPage': Components.WuPage;
     'WuRating': Components.WuRating;
     'WuShadow': Components.WuShadow;
     'WuSpinner': Components.WuSpinner;
@@ -228,6 +234,7 @@ declare global {
     'wu-drawer-menu': Components.WuDrawerMenuAttributes;
     'wu-menu-header': Components.WuMenuHeaderAttributes;
     'wu-menu-item': Components.WuMenuItemAttributes;
+    'wu-page': Components.WuPageAttributes;
     'wu-rating': Components.WuRatingAttributes;
     'wu-shadow': Components.WuShadowAttributes;
     'wu-spinner': Components.WuSpinnerAttributes;
@@ -319,6 +326,12 @@ declare global {
     new (): HTMLWuMenuItemElement;
   };
 
+  interface HTMLWuPageElement extends Components.WuPage, HTMLStencilElement {}
+  var HTMLWuPageElement: {
+    prototype: HTMLWuPageElement;
+    new (): HTMLWuPageElement;
+  };
+
   interface HTMLWuRatingElement extends Components.WuRating, HTMLStencilElement {}
   var HTMLWuRatingElement: {
     prototype: HTMLWuRatingElement;
@@ -358,6 +371,7 @@ declare global {
     'wu-drawer-menu': HTMLWuDrawerMenuElement
     'wu-menu-header': HTMLWuMenuHeaderElement
     'wu-menu-item': HTMLWuMenuItemElement
+    'wu-page': HTMLWuPageElement
     'wu-rating': HTMLWuRatingElement
     'wu-shadow': HTMLWuShadowElement
     'wu-spinner': HTMLWuSpinnerElement
@@ -379,6 +393,7 @@ declare global {
     'wu-drawer-menu': HTMLWuDrawerMenuElement;
     'wu-menu-header': HTMLWuMenuHeaderElement;
     'wu-menu-item': HTMLWuMenuItemElement;
+    'wu-page': HTMLWuPageElement;
     'wu-rating': HTMLWuRatingElement;
     'wu-shadow': HTMLWuShadowElement;
     'wu-spinner': HTMLWuSpinnerElement;

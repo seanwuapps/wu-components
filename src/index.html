@@ -18,69 +18,31 @@
 
   <style>
     body {
+      margin: 0;
       font-size: 16px;
       font-family: 'Open Sans', sans-serif;
-    }
-
-    @media (min-width: 768px) {
-      body {
-        max-width: 80%;
-        margin: 0 auto;
-      }
-    }
-
-    h2 {
-      margin-top: 40px;
-      padding-top: 40px;
-      font-family: 'Lato', sans-serif;
-    }
-
-    .grey {
-      background: #ccc;
-    }
-
-    .outline {
-      outline: 1px dashed black;
-    }
-
-    .text-center {
-      text-align: center;
-    }
-
-    wu-burger {
-      color: #333;
-    }
-
-    .full-width {
-      width: 100%;
-    }
-
-    p code {
-      background: #efefef;
-      color: red;
-      padding: 0 5px;
-      border-radius: 5px;
-    }
-
-    .card {
-      border-width: 50px;
     }
   </style>
 </head>
 
 <body>
 
-  <h1>WebUp Components Demo</h1>
-  <p>Just some custom web components that'll make UI development a bit easier.</p>
-  <p>
-    There's default styling in most components, you can easily overwrite them by applying some custom css
-  </p>
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <wu-header fixed="true" theme="primary">
+    <wu-row class="f-align-center">
+      <wu-col class="text-left">
+        <wu-burger animation="rotate" target="#menu"></wu-burger>
+      </wu-col>
+      <wu-col class="text-center">
+        <h1>Demo site</h1>
+      </wu-col>
+      <wu-col class="text-right">
+        <a class="github-button" href="https://github.com/seanwuapps/wu-components" data-size="large" data-show-count="true"
+          aria-label="Star seanwuapps/wu-components on GitHub">Star</a>
+      </wu-col>
+    </wu-row>
 
-  
-  <h2>Menu</h2>
-  <h3>Hamburger menu toggle, control size with css using font-size</h3>
 
-  <div>
     <wu-drawer-menu id="menu" position="left" class="open">
       <wu-menu-header theme="secondary" img="/assets/images/cap.svg" img-shape="circle" img-href="#">
         <span slot="title">
@@ -90,13 +52,13 @@
           <a href="#">Captain America</a>
         </span>
       </wu-menu-header>
-      
+
       <wu-menu-list>
         <wu-menu-item>
-            <a href="#">
-              <i class="material-icons">home</i>
-              Home
-            </a>
+          <a href="#">
+            <i class="material-icons">home</i>
+            Home
+          </a>
         </wu-menu-item>
         <wu-divider></wu-divider>
         <wu-menu-sub-heading>
@@ -173,13 +135,22 @@
         <wu-menu-item theme="grey"><a href="#">Menu Item</a></wu-menu-item>
       </wu-menu-list>
     </wu-drawer-menu>
-    <wu-burger theme="secondary" target="#menu"></wu-burger>
-    <wu-burger target="#menu2" animation="spin-out" theme="danger"></wu-burger>
-    <wu-burger animation="rotate" style="color: green; font-size: 38px;"></wu-burger>
-    <wu-burger style="font-size: 64px;"></wu-burger>
-  </div>
 
-  <!-- 
+  </wu-header>
+
+  <wu-page>
+    <h2>Menu</h2>
+    <h3>Hamburger menu toggle, control size with css variables</h3>
+
+    <div>
+      <wu-burger theme="secondary" target="#menu"></wu-burger>
+      <wu-burger target="#menu2" animation="spin-out" theme="danger"></wu-burger>
+      <wu-burger animation="rotate" style="color: green; font-size: 38px;"></wu-burger>
+      <wu-burger style="font-size: 64px;"></wu-burger>
+    </div>
+  </wu-page>
+
+  <!--
   <h2>Better img tag</h2>
   <wu-row>
     <wu-col></wu-col>
@@ -190,16 +161,16 @@
     <wu-col></wu-col>
   </wu-row>
   <p>The image tag that does progressive load.</p>
-  
+
   <code-block code='
-  <wu-img 
-    src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" 
+  <wu-img
+    src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg"
     thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
     alt="Cute dog being a good boy"
   ></wu-img>'></code-block>
  -->
 
-  <!-- 
+  <!--
   <h2>Spinner</h2>
   <style>
     wu-spinner{
@@ -226,7 +197,7 @@
   <wu-spinner color="purple" type="dots"></wu-spinner>'></code-block>
  -->
 
-  <!-- 
+  <!--
   <h2>Grid</h2>
   <p>A grid system based on <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">flexbox</a></p>
 
@@ -309,11 +280,16 @@
       <wu-accordion>
         <wu-accordion-header>Heading</wu-accordion-header>
         <div class="accordion-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim erat, egestas nec accumsan a, iaculis at
-            magna. Suspendisse fringilla quis tortor vitae gravida. Mauris metus tortor, volutpat sit amet arcu at, ullamcorper
-            hendrerit est. Cras aliquet orci dapibus malesuada semper. Duis condimentum, erat et porta elementum, eros mauris
-            sodales augue, ac semper arcu neque at orci. Ut commodo, lacus in suscipit bibendum, quam eros rutrum erat, dapibus
-            pharetra arcu odio in libero. Suspendisse sed sapien tortor. Suspendisse ornare libero vitae ornare elementum.
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim erat, egestas nec accumsan a,
+            iaculis at
+            magna. Suspendisse fringilla quis tortor vitae gravida. Mauris metus tortor, volutpat sit amet arcu at,
+            ullamcorper
+            hendrerit est. Cras aliquet orci dapibus malesuada semper. Duis condimentum, erat et porta elementum, eros
+            mauris
+            sodales augue, ac semper arcu neque at orci. Ut commodo, lacus in suscipit bibendum, quam eros rutrum erat,
+            dapibus
+            pharetra arcu odio in libero. Suspendisse sed sapien tortor. Suspendisse ornare libero vitae ornare
+            elementum.
           </p>
         </div>
       </wu-accordion>
@@ -322,11 +298,16 @@
       <wu-accordion>
         <wu-accordion-header>Heading</wu-accordion-header>
         <div class="accordion-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim erat, egestas nec accumsan a, iaculis at
-            magna. Suspendisse fringilla quis tortor vitae gravida. Mauris metus tortor, volutpat sit amet arcu at, ullamcorper
-            hendrerit est. Cras aliquet orci dapibus malesuada semper. Duis condimentum, erat et porta elementum, eros mauris
-            sodales augue, ac semper arcu neque at orci. Ut commodo, lacus in suscipit bibendum, quam eros rutrum erat, dapibus
-            pharetra arcu odio in libero. Suspendisse sed sapien tortor. Suspendisse ornare libero vitae ornare elementum.
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim erat, egestas nec accumsan a,
+            iaculis at
+            magna. Suspendisse fringilla quis tortor vitae gravida. Mauris metus tortor, volutpat sit amet arcu at,
+            ullamcorper
+            hendrerit est. Cras aliquet orci dapibus malesuada semper. Duis condimentum, erat et porta elementum, eros
+            mauris
+            sodales augue, ac semper arcu neque at orci. Ut commodo, lacus in suscipit bibendum, quam eros rutrum erat,
+            dapibus
+            pharetra arcu odio in libero. Suspendisse sed sapien tortor. Suspendisse ornare libero vitae ornare
+            elementum.
           </p>
         </div>
       </wu-accordion>
@@ -337,11 +318,16 @@
       <wu-accordion>
         <wu-accordion-header>Heading</wu-accordion-header>
         <div class="accordion-content">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim erat, egestas nec accumsan a, iaculis at
-            magna. Suspendisse fringilla quis tortor vitae gravida. Mauris metus tortor, volutpat sit amet arcu at, ullamcorper
-            hendrerit est. Cras aliquet orci dapibus malesuada semper. Duis condimentum, erat et porta elementum, eros mauris
-            sodales augue, ac semper arcu neque at orci. Ut commodo, lacus in suscipit bibendum, quam eros rutrum erat, dapibus
-            pharetra arcu odio in libero. Suspendisse sed sapien tortor. Suspendisse ornare libero vitae ornare elementum.
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus enim erat, egestas nec accumsan a,
+            iaculis at
+            magna. Suspendisse fringilla quis tortor vitae gravida. Mauris metus tortor, volutpat sit amet arcu at,
+            ullamcorper
+            hendrerit est. Cras aliquet orci dapibus malesuada semper. Duis condimentum, erat et porta elementum, eros
+            mauris
+            sodales augue, ac semper arcu neque at orci. Ut commodo, lacus in suscipit bibendum, quam eros rutrum erat,
+            dapibus
+            pharetra arcu odio in libero. Suspendisse sed sapien tortor. Suspendisse ornare libero vitae ornare
+            elementum.
 
           </p>
         </div>
@@ -424,13 +410,13 @@
   <wu-button theme="primary" shape="circle" style="font-size: 42px">
     Yo!
   </wu-button>
-  
+
   <wu-button href="#" theme="primary" shape="circle">
     Aw
   </wu-button>
 
 
-  <!-- 
+  <!--
   <h2>Inputs</h2>
   <h3>Star rating</h3>
   <wu-rating value="3" style="font-size: 60px; color: gold" id="rating-test"></wu-rating>
@@ -495,16 +481,14 @@
       </wu-card>
     </wu-col>
   </wu-row>
-  
+
   <h2>Tinder Card</h2>
-  
-  <wu-tinder-card 
-    id="dog-card" 
-    thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
-    src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" 
-    threshold="150"
-  >
-  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, soluta. Sit asperiores suscipit quo ipsam eaque maiores, amet molestias possimus deserunt dolorem, nemo mollitia provident accusamus, iste alias explicabo ut?</p>
+
+  <wu-tinder-card id="dog-card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
+    src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" threshold="150">
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, soluta. Sit asperiores suscipit quo ipsam
+      eaque maiores, amet molestias possimus deserunt dolorem, nemo mollitia provident accusamus, iste alias explicabo
+      ut?</p>
   </wu-tinder-card>
   <wu-tinder-card id="text-card" left-btn-text="Nope" right-btn-text="Oh yeah">
     <h1>This is a text card</h1>
@@ -513,28 +497,28 @@
     <h1>This is another card</h1>
   </wu-tinder-card>
   <script>
-      (function () {
-        var dogCard = document.querySelector('#dog-card');
-        dogCard.addEventListener("swipe", function (e) {
-          var direction = e.detail.direction
-          if (direction === 'left') {
-            alert(`you miss 100% of the opportunities you don't try`)
-          }
-          if (direction === 'right') {
-            alert('nice work, we shall tell you when you have a match')
-          }
-        });
-        var textCard = document.querySelector('#text-card');
-        textCard.addEventListener("swipe", function (e) {
-          var direction = e.detail.direction
-          if (direction === 'left') {
-            alert(`you miss 100% of the opportunities you don't try`)
-          }
-          if (direction === 'right') {
-            alert('nice work, we shall tell you when you have a match')
-          }
-        });
-      })();
+    (function () {
+      var dogCard = document.querySelector('#dog-card');
+      dogCard.addEventListener("swipe", function (e) {
+        var direction = e.detail.direction
+        if (direction === 'left') {
+          alert(`you miss 100% of the opportunities you don't try`)
+        }
+        if (direction === 'right') {
+          alert('nice work, we shall tell you when you have a match')
+        }
+      });
+      var textCard = document.querySelector('#text-card');
+      textCard.addEventListener("swipe", function (e) {
+        var direction = e.detail.direction
+        if (direction === 'left') {
+          alert(`you miss 100% of the opportunities you don't try`)
+        }
+        if (direction === 'right') {
+          alert('nice work, we shall tell you when you have a match')
+        }
+      });
+    })();
   </script>
 
 

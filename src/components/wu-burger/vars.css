@@ -1,5 +1,5 @@
-:root{
-  --wu-burger-size: 2.25em;
-  --wu-burger-thickness: 0.25em;
+:root {
+  --wu-burger-size: 40px;
+  --wu-burger-thickness: 4px;
   --wu-burger-color: currentColor;
 }
