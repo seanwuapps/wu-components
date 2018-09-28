@@ -111,13 +111,13 @@ export namespace Components {
   }
 
   interface WuDrawerMenu {
-    'items': Object | String;
-    'position': string;
+    'closeMenu': (trigger?: HTMLElement) => void;
+    'openMenu': (trigger: HTMLElement) => void;
+    'position': 'left' | 'right';
     'theme': string;
   }
   interface WuDrawerMenuAttributes extends StencilHTMLAttributes {
-    'items'?: Object | String;
-    'position'?: string;
+    'position'?: 'left' | 'right';
     'theme'?: string;
   }
 

@@ -1,4 +1,4 @@
-import { Component, Prop, Element } from '@stencil/core'
+import { Component, Prop, Element, Method } from '@stencil/core'
 import { detectTransitionEnd } from '../../../utils/animation'
 
 @Component({
@@ -9,30 +9,21 @@ export class WuDrawerMenu {
   @Prop()
   theme?: string
   @Prop()
-  position?: string
-  @Prop()
-  items: Object | String = {
-    home: {
-      label: 'Home'
-    }
-  }
+  position?: 'left' | 'right'
+
   @Element()
   el: HTMLElement
+
+  overlay: HTMLElement
 
   constructor () {
     this.closeMenu = this.closeMenu.bind(this)
   }
 
   componentDidLoad () {
+    this.overlay = this.el.querySelector('.side-menu-overlay')
     if (this.theme) {
       this.el.setAttribute('theme', this.theme)
-    }
-
-    // remove overlay after fade out transition
-    let overlay: HTMLElement = this.el.querySelector('.side-menu-overlay')
-
-    if (typeof this.items === 'string') {
-      this.items = JSON.parse(this.items)
     }
     this.el.tabIndex = -1
     document.addEventListener('keyup', e => {
@@ -53,12 +44,36 @@ export class WuDrawerMenu {
     }
   }
 
-  closeMenu () {
+  @Method()
+  closeMenu (trigger?: HTMLElement) {
     this.el.classList.remove('open')
-    const triggers = document.querySelectorAll('wu-burger')
-    for (let i = 0; i < triggers.length; i++) {
-      triggers[i].classList.remove('open')
+    if (trigger) {
+      trigger.classList.remove('open')
+    } else {
+      const triggers = document.querySelectorAll('wu-burger')
+      for (let i = 0; i < triggers.length; i++) {
+        triggers[i].classList.remove('open')
+      }
     }
+    // remove overlay after fade out transition
+    detectTransitionEnd(this.overlay, () => {
+      this.overlay.style.cssText = 'display:none'
+    })
+  }
+
+  @Method()
+  openMenu (trigger: HTMLElement) {
+    this.overlay.style.cssText = 'display:block'
+    if (trigger) {
+      trigger.classList.add('open')
+    } else {
+      const triggers = document.querySelectorAll('wu-burger')
+      for (let i = 0; i < triggers.length; i++) {
+        triggers[i].classList.add('open')
+      }
+    }
+    this.el.classList.add('open')
+    this.el.focus()
   }
 
   render () {

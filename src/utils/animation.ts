@@ -1,12 +1,7 @@
 /**
  * detect animation end
  */
-
-/**
- * get browser event name
- */
-export function detectTransitionEnd (element: HTMLElement, callback: () => void) {
-  /* Listen for a transition! */
+export function transitionEndEvent () {
   var el = document.createElement('fakeelement')
   var transitions = {
     transition: 'transitionend',
@@ -20,6 +15,12 @@ export function detectTransitionEnd (element: HTMLElement, callback: () => void)
       return transitions[t]
     }
   }
-
-  t && element.addEventListener(t, callback)
+}
+/**
+ * get browser event name
+ */
+export function detectTransitionEnd (element: Element, callback: () => void) {
+  /* Listen for a transition! */
+  let event = transitionEndEvent()
+  event && element.addEventListener(event, callback)
 }

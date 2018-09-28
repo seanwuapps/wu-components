@@ -39,7 +39,7 @@
     </wu-row>
 
 
-    <wu-drawer-menu id="menu" position="left" class="open">
+    <wu-drawer-menu id="menu">
       <wu-menu-header theme="secondary" img="/assets/images/cap.svg" img-shape="circle" img-href="#">
         <span slot="title">
           <a href="#">Steve Rogers</a>
@@ -110,7 +110,7 @@
         </wu-menu-item>
       </wu-menu-list>
     </wu-drawer-menu>
-    <wu-drawer-menu id="menu2" position="right">
+    <wu-drawer-menu id="menu2">
       <wu-menu-header theme="danger" img="/assets/images/ironman.svg" img-shape="circle" img-href="">
         <span slot="title">
           <a href="#">Tony Stark</a>
@@ -514,6 +514,18 @@
     })();
   </script>
 
+
+
+  <script>
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      // auto-unregister service worker during dev mode
+      navigator.serviceWorker.getRegistration().then(function(registration) {
+        if (registration) {
+          registration.unregister().then(function() { location.reload(true) });
+        }
+      });
+    }
+  </script>
 
 
 
