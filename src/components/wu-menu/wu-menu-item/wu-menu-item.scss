@@ -2,6 +2,7 @@ wu-menu-item {
   @include themeable('menu-item');
   display: block;
   position: relative;
+  color: #333;
   &:hover,
   &:focus {
     &::before {
@@ -16,7 +17,7 @@ wu-menu-item {
       z-index: 1;
     }
   }
-  .menu-item{
+  .menu-item {
     position: relative;
     z-index: 2;
   }
