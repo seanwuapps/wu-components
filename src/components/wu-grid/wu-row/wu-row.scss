@@ -5,13 +5,14 @@ wu-row {
   margin-bottom: 10px;
   align-items: stretch;
   flex-wrap: wrap;
-  &[no-margin]{
-    margin-bottom: 0
+  height: 100%;
+  &[no-margin] {
+    margin-bottom: 0;
   }
   @media screen and (min-width: 768px) {
     justify-content: space-between;
-    flex-direction: row;   
-    &[v-center]{
+    flex-direction: row;
+    &[v-center] {
       align-items: center;
     }
   }
