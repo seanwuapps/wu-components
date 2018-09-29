@@ -141,8 +141,12 @@ export namespace Components {
     'theme'?: string;
   }
 
-  interface WuPage {}
-  interface WuPageAttributes extends StencilHTMLAttributes {}
+  interface WuPage {
+    'reflectFixedHeader': boolean;
+  }
+  interface WuPageAttributes extends StencilHTMLAttributes {
+    'reflectFixedHeader'?: boolean;
+  }
 
   interface WuRating {
     'getVal': () => number;

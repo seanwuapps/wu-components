@@ -11,7 +11,7 @@ export class WuPage {
   reflectFixedHeader?: boolean
   componentDidLoad () {
     if (this.reflectFixedHeader) {
-      this.el.classList.add('.reflect-fixed-header')
+      this.el.classList.add('reflect-fixed-header')
     }
   }
   render () {
