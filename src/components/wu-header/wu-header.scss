@@ -20,9 +20,6 @@ wu-header {
     right: 0;
     z-index: 9999;
     height: var(--wu-header-height);
-    & ~ wu-page {
-      margin-top: var(--wu-header-height);
-    }
     wu-drawer-menu {
       .side-menu {
         top: var(--wu-header-height);

@@ -1,4 +1,7 @@
 wu-page {
   display: block;
   padding: 20px;
+  &.reflect-fixed-header {
+    margin-top: var(--wu-header-height);
+  }
 }
