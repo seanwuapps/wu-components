@@ -45,3 +45,8 @@ $position-vertical: (top, center, bottom);
 .hidden {
   display: none;
 }
+
+// Material Icons helper
+.material-icons {
+  line-height: inherit !important;
+}
