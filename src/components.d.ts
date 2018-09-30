@@ -78,9 +78,11 @@ export namespace Components {
   }
 
   interface WuRow {
+    'autoMobile': boolean;
     'gap': string;
   }
   interface WuRowAttributes extends StencilHTMLAttributes {
+    'autoMobile'?: boolean;
     'gap'?: string;
   }
 
