@@ -11,6 +11,9 @@ export class WuDrawerMenu {
   @Prop()
   position?: 'left' | 'right'
 
+  @Prop()
+  autoClose?: boolean = true
+
   @Element()
   el: HTMLElement
 
@@ -41,6 +44,14 @@ export class WuDrawerMenu {
       lastChild.addEventListener('blur', () => {
         firstChild.focus()
       })
+      if (this.autoClose) {
+        for (let i = 0; i < focusable.length; i++) {
+          const item = focusable[i]
+          item.addEventListener('click', () => {
+            this.closeMenu()
+          })
+        }
+      }
     }
   }
 

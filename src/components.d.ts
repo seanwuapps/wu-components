@@ -111,12 +111,14 @@ export namespace Components {
   }
 
   interface WuDrawerMenu {
+    'autoClose': boolean;
     'closeMenu': (trigger?: HTMLElement) => void;
     'openMenu': (trigger: HTMLElement) => void;
     'position': 'left' | 'right';
     'theme': string;
   }
   interface WuDrawerMenuAttributes extends StencilHTMLAttributes {
+    'autoClose'?: boolean;
     'position'?: 'left' | 'right';
     'theme'?: string;
   }

@@ -8,10 +8,7 @@ exports.config = {
   namespace: 'wu-components',
   plugins: [
     sass.sass({
-      injectGlobalPaths: [
-        'src/sass/mixins.scss',
-        'src/sass/utils.scss'
-      ]
+      injectGlobalPaths: ['src/sass/mixins.scss', 'src/sass/utils.scss']
     }),
     postcss.postcss({
       plugins: [
@@ -23,10 +20,7 @@ exports.config = {
       ]
     })
   ],
-  outputTargets: [
-    { type: 'dist' },
-    { type: 'www' }
-  ],
+  outputTargets: [{ type: 'dist' }, { type: 'www' }],
   globalStyle: 'src/globals/vars.css'
 }
 
