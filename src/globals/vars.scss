@@ -1,22 +1,32 @@
-:root{
+/*
+  Global App CSS
+  ----------------------
+  Use this file for styles that should be applied to all components.
+  For example, "font-family" within the "body" selector is a CSS property
+  most apps will want applied to all components.
+
+  Any global CSS variables should also be applied here.
+*/
+
+:root {
   /* Animation speed */
   --fast: 0.2s;
   --slow: 0.5s;
 
   /* Themes/ Colors */
-  --color-primary: #286DC1;
+  --color-primary: #286dc1;
   --color-primary-contrast: #fff;
 
-  --color-secondary: #14406F;
-  --color-secondary-contrast: #F6F6F7;
+  --color-secondary: #14406f;
+  --color-secondary-contrast: #f6f6f7;
 
-  --color-success: #10dc60;
+  --color-success: #0cb74f;
   --color-success-contrast: #fff;
 
   --color-warning: #ffce00;
   --color-warning-contrast: #fff;
 
-  --color-danger: #DA1F28;
+  --color-danger: #da1f28;
   --color-danger-contrast: #fff;
 
   --color-info: #17a2b8;
@@ -32,6 +42,4 @@
   --color-dark-contrast: #fff;
 
   /* Container width  */
-
-
 }
