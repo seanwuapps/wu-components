@@ -1,0 +1,75 @@
+<h2>Grid</h2>
+<p>A grid system based on <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">flexbox</a></p>
+
+<wu-row class="grey text-center">
+  <wu-col class="outline">1/2</wu-col>
+  <wu-col class="outline">1/2</wu-col>
+</wu-row>
+<code-block code='
+  <wu-row class="grey text-center">
+    <wu-col class="outline">1/2</wu-col>
+    <wu-col class="outline">1/2</wu-col>
+  </wu-row>'></code-block>
+
+<wu-row class="grey text-center">
+  <wu-col class="outline">
+    <p>1/2 with nested row</p>
+    <wu-row>
+      <wu-col class="outline">1</wu-col>
+      <wu-col class="outline">2</wu-col>
+      <wu-col class="outline">3</wu-col>
+    </wu-row>
+  </wu-col>
+  <wu-col class="outline">1/2</wu-col>
+</wu-row>
+<code-block code='
+  <wu-row class="grey text-center">
+    <wu-col class="outline">
+      <p>1/2 with nested row</p>
+      <wu-row>
+        <wu-col class="outline">1</wu-col>
+        <wu-col class="outline">2</wu-col>
+        <wu-col class="outline">3</wu-col>
+      </wu-row>
+    </wu-col>
+    <wu-col class="outline">1/2</wu-col>
+  </wu-row>
+  '></code-block>
+<wu-row class="grey text-center">
+  <wu-col class="outline">1/4</wu-col>
+  <wu-col class="outline">1/4</wu-col>
+  <wu-col class="outline">1/4</wu-col>
+  <wu-col class="outline">1/4</wu-col>
+</wu-row>
+
+<wu-row class="grey text-center">
+  <wu-col class="outline">1</wu-col>
+  <wu-col class="outline">2</wu-col>
+  <wu-col class="outline">3</wu-col>
+  <wu-col class="outline">4</wu-col>
+  <wu-col class="outline">5</wu-col>
+  <wu-col class="outline">6</wu-col>
+  <wu-col class="outline">7</wu-col>
+</wu-row>
+<code-block code='
+  <wu-row class="grey text-center">
+    <wu-col class="outline">1</wu-col>
+    <wu-col class="outline">2</wu-col>
+    <wu-col class="outline">3</wu-col>
+    <wu-col class="outline">4</wu-col>
+    <wu-col class="outline">5</wu-col>
+    <wu-col class="outline">6</wu-col>
+    <wu-col class="outline">7</wu-col>
+  </wu-row>
+  '></code-block>
+
+<wu-row class="grey text-center">
+  <wu-col portion="3" class="outline">Portion: 3</wu-col>
+  <wu-col portion="7" class="outline">Portion: 7</wu-col>
+</wu-row>
+
+<code-block code='
+  <wu-row class="grey text-center">
+    <wu-col portion="3" class="outline">Portion: 3</wu-col>
+    <wu-col portion="7" class="outline">Portion: 7</wu-col>
+  </wu-row>'></code-block>

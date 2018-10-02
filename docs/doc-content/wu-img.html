@@ -1,0 +1,21 @@
+<h2>wu-img</h2>
+<p>A better <code>img</code> tag that does progressive load automatically.</p>
+<p>You'll need to specify a <code>thumb</code> attribute and along with the <code>src</code> attribute.</p>
+<p>The component will load the <code>thumb</code> url first, display it, then load the full-size <code>src</code> url
+  in the background, once the full-size image is loaded, it transitions the display to the full-sized image, providing
+  a much nicer user experience.</p>
+<wu-row>
+  <wu-col></wu-col>
+  <wu-col portion="2">
+    <wu-img class="full-width" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
+      src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text"></wu-img>
+  </wu-col>
+  <wu-col></wu-col>
+</wu-row>
+
+<code-block code='
+  <wu-img
+    src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg"
+    thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
+    alt="Cute dog being a good boy"
+  ></wu-img>'></code-block>

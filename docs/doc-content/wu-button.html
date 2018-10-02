@@ -1,0 +1,86 @@
+<h2>Buttons</h2>
+
+<p>Buttons are by default shadowed. You can create a flat button by adding the `flat` attribute</p>
+<p>
+  You can make it a link element by providing a <code>href</code> attribute.
+</p>
+<h3>
+  Default buttons
+</h3>
+<wu-row>
+  <wu-col>
+    <wu-button theme="primary" type="submit">primary</wu-button>
+    <wu-button theme="secondary">secondary</wu-button>
+    <wu-button theme="success">success</wu-button>
+    <wu-button theme="warning">warning</wu-button>
+    <wu-button theme="danger">danger</wu-button>
+    <wu-button theme="info">info</wu-button>
+    <wu-button theme="light">light</wu-button>
+    <wu-button theme="grey">grey</wu-button>
+    <wu-button theme="dark">dark</wu-button>
+  </wu-col>
+</wu-row>
+<code-block code='
+<wu-button theme="primary" type="submit">primary</wu-button>
+<wu-button theme="secondary">secondary</wu-button>
+<wu-button theme="success">success</wu-button>
+<wu-button theme="warning">warning</wu-button>
+<wu-button theme="danger">danger</wu-button>
+<wu-button theme="info">info</wu-button>
+<wu-button theme="light">light</wu-button>
+<wu-button theme="grey">grey</wu-button>
+<wu-button theme="dark">dark</wu-button>
+'></code-block>
+
+<h3>Outline buttons</h3>
+<wu-row>
+  <wu-col>
+    <wu-button outline theme="primary">primary</wu-button>
+    <wu-button outline theme="secondary">secondary</wu-button>
+    <wu-button outline theme="success">success</wu-button>
+    <wu-button outline theme="warning">warning</wu-button>
+    <wu-button outline theme="danger">danger</wu-button>
+    <wu-button outline theme="info">info</wu-button>
+    <wu-button outline theme="light">light</wu-button>
+    <wu-button outline theme="grey">grey</wu-button>
+    <wu-button outline theme="dark">dark</wu-button>
+  </wu-col>
+</wu-row>
+<code-block code='
+<wu-button outline theme="primary">primary</wu-button>
+<wu-button outline theme="secondary">secondary</wu-button>
+<wu-button outline theme="success">success</wu-button>
+<wu-button outline theme="warning">warning</wu-button>
+<wu-button outline theme="danger">danger</wu-button>
+<wu-button outline theme="info">info</wu-button>
+<wu-button outline theme="light">light</wu-button>
+<wu-button outline theme="grey">grey</wu-button>
+<wu-button outline theme="dark">dark</wu-button>
+'></code-block>
+
+<h3>Flat buttons</h3>
+<wu-row>
+  <wu-col>
+    <wu-button theme="primary" flat>Flat</wu-button>
+    <wu-button theme="secondary" outline flat>Flat outline</wu-button>
+  </wu-col>
+</wu-row>
+<code-block code='
+<wu-button theme="primary" flat>Flat</wu-button>
+<wu-button theme="secondary" outline flat>Flat outline</wu-button>
+'></code-block>
+
+<wu-row>
+  <wu-col>
+    <wu-button theme="secondary" block>Block level buton</wu-button>
+  </wu-col>
+</wu-row>
+<code-block code='
+<wu-button theme="secondary" block>Block level buton</wu-button>'></code-block>
+
+<wu-button theme="primary" shape="circle" style="font-size: 42px">Yo!</wu-button>
+<wu-button href="#" theme="primary" shape="circle"><i class="material-icons">home</i></wu-button>
+
+<code-block code='
+<wu-button theme="primary" shape="circle" style="font-size: 42px">Yo!</wu-button>
+<wu-button href="#" theme="primary" shape="circle"><i class="material-icons">home</i></wu-button>'></code-block>

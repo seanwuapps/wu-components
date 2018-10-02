@@ -11,11 +11,6 @@
         "$": "app-home"
       }
     },
-    "app-menu": {
-      "bundleIds": {
-        "$": "app-menu"
-      }
-    },
     "app-profile": {
       "bundleIds": {
         "$": "app-profile"
@@ -23,62 +18,47 @@
     },
     "app-root": {
       "bundleIds": {
-        "$": "app-menu"
+        "$": "app-root"
+      }
+    },
+    "component-content": {
+      "bundleIds": {
+        "$": "component-content"
+      }
+    },
+    "component-index": {
+      "bundleIds": {
+        "$": "component-index"
       }
     },
     "component-page": {
       "bundleIds": {
-        "$": "component-page"
+        "$": "component-content"
+      }
+    },
+    "docs-menu": {
+      "bundleIds": {
+        "$": "app-root"
       }
     },
     "stencil-route": {
       "bundleIds": {
-        "$": "app-menu"
+        "$": "app-root"
       }
     },
     "stencil-route-link": {
       "bundleIds": {
-        "$": "app-home"
+        "$": "stencil-route-link"
       }
     },
     "stencil-route-switch": {
       "bundleIds": {
-        "$": "app-menu"
+        "$": "app-root"
       }
     },
     "stencil-router": {
       "bundleIds": {
-        "$": "app-menu"
-      }
-    },
-    "wu-burger": {
-      "bundleIds": {
-        "$": "app-menu"
-      }
-    },
-    "wu-button": {
-      "bundleIds": {
-        "$": "app-home"
-      }
-    },
-    "wu-divider": {
-      "bundleIds": {
-        "$": "app-menu"
-      }
-    },
-    "wu-drawer-menu": {
-      "bundleIds": {
-        "$": "app-menu"
-      }
-    },
-    "wu-menu-header": {
-      "bundleIds": {
-        "$": "app-menu"
-      }
-    },
-    "wu-menu-item": {
-      "bundleIds": {
-        "$": "app-menu"
+        "$": "app-root"
       }
     }
   }

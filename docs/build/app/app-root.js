@@ -1,91 +1,64 @@
 /*! Built with http://stenciljs.com */
 const { h } = window.App;
 
-import { a as matchPath, d as matchesAreEqual, c as ActiveRouter, e as storageAvailable, f as createLocation, g as addLeadingSlash, h as stripTrailingSlash, i as hasBasename, j as stripBasename, k as createPath, l as canUseDOM, m as addEventListener, n as removeEventListener, o as getConfirmation, p as supportsHistory, q as supportsPopStateOnHashChange, r as isExtraneousPopstateEvent, s as locationsAreEqual, t as stripLeadingSlash, u as supportsGoWithoutReloadUsingHash } from './chunk-8aa89ec5.js';
+import { a as components } from './chunk-3269e3cd.js';
+import { a as matchPath, b as matchesAreEqual, c as ActiveRouter, d as storageAvailable, e as createLocation, f as addLeadingSlash, g as stripTrailingSlash, h as hasBasename, i as stripBasename, j as createPath, k as canUseDOM, l as addEventListener, m as removeEventListener, n as getConfirmation, o as supportsHistory, p as supportsPopStateOnHashChange, q as isExtraneousPopstateEvent, r as locationsAreEqual, s as stripLeadingSlash, t as supportsGoWithoutReloadUsingHash } from './chunk-feee7b6f.js';
 import './chunk-f5f83825.js';
-
-class AppMenu {
-    constructor() {
-        this.menuItems = [
-            {}
-        ];
-    }
-    render() {
-        return h("wu-drawer-menu", { id: this.menuId },
-            h("wu-menu-header", { theme: "secondary", img: "/assets/images/cap.svg", "img-shape": "circle", "img-href": "#" },
-                h("span", { slot: "title" },
-                    h("a", { href: "#" }, "Steve Rogers")),
-                h("span", { slot: "sub-title" },
-                    h("a", { href: "#" }, "Captain America"))),
-            h("wu-menu-list", null,
-                h("wu-menu-item", null,
-                    h("a", { href: "#" },
-                        h("i", { class: "material-icons" }, "home"),
-                        "Home")),
-                h("wu-divider", null),
-                h("wu-menu-sub-heading", null, "Themes"),
-                h("wu-menu-item", { theme: "primary" },
-                    h("a", { href: "#" },
-                        h("i", { class: "material-icons" }, "star_rate"),
-                        "Primary")),
-                h("wu-menu-item", { theme: "secondary" },
-                    h("a", { href: "#" },
-                        h("i", { class: "material-icons" }, "star_rate"),
-                        "Secondary")),
-                h("wu-menu-item", { theme: "success" },
-                    h("a", { href: "#" },
-                        h("i", { class: "material-icons" }, "star_rate"),
-                        "Success")),
-                h("wu-menu-item", { theme: "warning" },
-                    h("a", { href: "#" },
-                        h("i", { class: "material-icons" }, "star_rate"),
-                        "Warning")),
-                h("wu-menu-item", { theme: "danger" },
-                    h("a", { href: "#" },
-                        h("i", { class: "material-icons" }, "star_rate"),
-                        "Danger")),
-                h("wu-menu-item", { theme: "info" },
-                    h("a", { href: "#" },
-                        h("i", { class: "material-icons" }, "star_rate"),
-                        "Info")),
-                h("wu-menu-item", { theme: "dark" },
-                    h("a", { href: "#" },
-                        h("i", { class: "material-icons" }, "star_rate"),
-                        "Dark")),
-                h("wu-menu-item", { theme: "grey" },
-                    h("a", { href: "#" },
-                        h("i", { class: "material-icons" }, "star_rate"),
-                        "Grey"))));
-    }
-    static get is() { return "app-menu"; }
-    static get properties() { return {
-        "menuId": {
-            "type": String,
-            "attr": "menu-id"
-        }
-    }; }
-}
 
 class AppRoot {
     render() {
         return (h("div", null,
-            h("header", null,
-                h("wu-burger", { theme: "primary", animation: "middle-out", target: "#menu" }),
-                h("h1", null, "Stencil App Starter")),
-            h("app-menu", { "menu-id": "menu" }),
+            h("script", { async: true, defer: true, src: "https://buttons.github.io/buttons.js" }),
+            h("wu-header", { fixed: true, theme: "primary" },
+                h("wu-row", { class: "f-align-center" },
+                    h("wu-col", { class: "text-left" },
+                        h("wu-burger", { animation: "rotate", target: "#menu" })),
+                    h("wu-col", { class: "text-center" },
+                        h("h1", null,
+                            h("a", { href: "/" }, "Demo site"))),
+                    h("wu-col", { class: "text-right" },
+                        h("a", { class: "github-button", href: "https://github.com/seanwuapps/wu-components", "data-size": "large", "data-show-count": "true", "aria-label": "Star seanwuapps/wu-components on GitHub" }, "Star"))),
+                h("docs-menu", null)),
             h("main", null,
                 h("stencil-router", null,
                     h("stencil-route-switch", { scrollTopOffset: 0 },
-                        h("stencil-route", { url: '/', component: 'app-home', exact: true }),
-                        h("stencil-route", { url: '/profile/:name', component: 'app-profile' }))))));
+                        h("stencil-route", { url: "/", component: "app-home", exact: true }),
+                        h("stencil-route", { url: "/profile/:name", component: "app-profile" }),
+                        h("stencil-route", { url: "/component", component: "component-index", exact: true }),
+                        h("stencil-route", { url: "/component/:name", component: "component-page" }))))));
     }
     static get is() { return "app-root"; }
-    static get properties() { return {
-        "el": {
-            "elementRef": true
-        }
-    }; }
-    static get style() { return "header {\n  background: #5851ff;\n  color: white;\n  height: 56px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);\n  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);\n}\n\nh1 {\n  font-size: 1.4rem;\n  font-weight: 500;\n  color: #fff;\n  padding: 0 12px;\n}"; }
+    static get style() { return "wu-header h1 a {\n  color: currentColor;\n  text-decoration: none; }"; }
+}
+
+class DocsMenu {
+    constructor() {
+        this.menu = [
+            {
+                to: '/',
+                label: 'Home',
+                icon: '<i class="material-icons">home</i>'
+            }
+        ];
+    }
+    render() {
+        return (h("wu-drawer-menu", { "auto-close": true, id: "menu", position: "left" },
+            h("wu-menu-header", { theme: "secondary", img: "/assets/images/cap.svg", "img-shape": "circle", "img-href": "#" },
+                h("span", { slot: "title" }, "Wu Components"),
+                h("span", { slot: "sub-title" }, "A simple set of reusable web components")),
+            h("wu-menu-list", null,
+                h("wu-menu-item", { theme: "primary" },
+                    h("stencil-route-link", { url: "/" },
+                        h("i", { class: "material-icons" }, "home"),
+                        " Home")),
+                h("wu-divider", null),
+                h("wu-menu-sub-heading", null, "Components"),
+                components.map(component => {
+                    return (h("wu-menu-item", { theme: "secondary" },
+                        h("stencil-route-link", { url: '/component/' + component }, component)));
+                }))));
+    }
+    static get is() { return "docs-menu"; }
 }
 
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -1057,183 +1030,4 @@ class Router {
     }
 }
 
-// import { Attr } from '../../utils/helpers'
-class WuBurger {
-    constructor() {
-        this.animation = 'middle-out';
-    }
-    // componentDidLoad() {
-    //   console.log(this.theme);
-    //   this.burger.setAttribute('theme', this.theme);
-    // }
-    toggle() {
-        let menu = document.querySelector(this.target);
-        if (this.burger.classList.contains('open')) {
-            // close menu
-            this.burger.classList.remove('open');
-            if (menu) {
-                menu.classList.remove('open');
-            }
-        }
-        else {
-            // open menu
-            this.burger.classList.add('open');
-            if (menu) {
-                menu.classList.add('open');
-                menu.focus();
-            }
-        }
-    }
-    render() {
-        return (h("button", { type: "button", onClick: () => this.toggle(), class: this.animation },
-            h("span", null),
-            h("span", null),
-            h("span", null),
-            "asdf"));
-    }
-    static get is() { return "wu-burger"; }
-    static get properties() { return {
-        "animation": {
-            "type": String,
-            "attr": "animation",
-            "reflectToAttr": true
-        },
-        "burger": {
-            "elementRef": true
-        },
-        "target": {
-            "type": String,
-            "attr": "target",
-            "reflectToAttr": true
-        },
-        "theme": {
-            "type": String,
-            "attr": "theme",
-            "reflectToAttr": true
-        }
-    }; }
-    static get style() { return ":root{\n  --wu-burger-size: 2.25em;\n  --wu-burger-thickness: 0.25em;\n  --wu-burger-color: currentColor;\n}\n\nwu-burger {\n  font-size: 18px;\n  font-size: 1.125rem; }\n  wu-burger[theme='primary'] {\n    color: var(--color-primary); }\n  wu-burger[theme='secondary'] {\n    color: var(--color-secondary); }\n  wu-burger[theme='success'] {\n    color: var(--color-success); }\n  wu-burger[theme='warning'] {\n    color: var(--color-warning); }\n  wu-burger[theme='danger'] {\n    color: var(--color-danger); }\n  wu-burger[theme='info'] {\n    color: var(--color-info); }\n  wu-burger[theme='light'] {\n    color: var(--color-light); }\n  wu-burger[theme='grey'] {\n    color: var(--color-grey); }\n  wu-burger[theme='dark'] {\n    color: var(--color-dark); }\n  wu-burger button {\n    font-size: 1em;\n    color: currentColor;\n    position: relative;\n    width: var(--wu-burger-size);\n    height: var(--wu-burger-size);\n    cursor: pointer;\n    background: none;\n    border: none;\n    display: inline-block;\n    padding: var(--wu-burger-thickness) 0;\n    /* Animations */ }\n    wu-burger button:focus {\n      outline: none; }\n    wu-burger button span {\n      display: block;\n      left: calc(1 / 6 * var(--wu-burger-size));\n      width: calc(2 / 3 * var(--wu-burger-size));\n      height: var(--wu-burger-thickness);\n      border-radius: var(--wu-burger-thickness);\n      background: var(--wu-burger-color);\n      position: absolute;\n      -webkit-transition: var(--fast) ease-in-out;\n      transition: var(--fast) ease-in-out; }\n      wu-burger button span:nth-child(1) {\n        top: calc(2 * var(--wu-burger-thickness)); }\n      wu-burger button span:nth-child(2) {\n        top: calc(4 * var(--wu-burger-thickness)); }\n      wu-burger button span:nth-child(3) {\n        top: calc(6 * var(--wu-burger-thickness)); }\n    wu-burger button.middle-out span {\n      transition: top var(--fast) var(--fast), opacity var(--fast), -webkit-transform var(--fast);\n      -webkit-transition: top var(--fast) var(--fast), opacity var(--fast), -webkit-transform var(--fast);\n      transition: transform var(--fast), top var(--fast) var(--fast), opacity var(--fast);\n      transition: transform var(--fast), top var(--fast) var(--fast), opacity var(--fast), -webkit-transform var(--fast); }\n    wu-burger button.rotate span {\n      transition: top var(--fast), opacity calc(var(--fast) / 2), -webkit-transform var(--fast);\n      -webkit-transition: top var(--fast), opacity calc(var(--fast) / 2), -webkit-transform var(--fast);\n      transition: transform var(--fast), top var(--fast), opacity calc(var(--fast) / 2);\n      transition: transform var(--fast), top var(--fast), opacity calc(var(--fast) / 2), -webkit-transform var(--fast); }\n  wu-burger.open button {\n    /* Animations */ }\n    wu-burger.open button.middle-out span {\n      transition: top var(--fast), opacity var(--fast), -webkit-transform var(--fast) var(--fast);\n      -webkit-transition: top var(--fast), opacity var(--fast), -webkit-transform var(--fast) var(--fast);\n      transition: top var(--fast), transform var(--fast) var(--fast), opacity var(--fast);\n      transition: top var(--fast), transform var(--fast) var(--fast), opacity var(--fast), -webkit-transform var(--fast) var(--fast); }\n      wu-burger.open button.middle-out span:nth-child(1) {\n        top: calc(4 * var(--wu-burger-thickness));\n        -webkit-transform: rotate(45deg);\n                transform: rotate(45deg); }\n      wu-burger.open button.middle-out span:nth-child(2) {\n        opacity: 0; }\n      wu-burger.open button.middle-out span:nth-child(3) {\n        top: calc(4 * var(--wu-burger-thickness));\n        -webkit-transform: rotate(-45deg);\n                transform: rotate(-45deg); }\n    wu-burger.open button.spin-out span:nth-child(1) {\n      top: calc(4 * var(--wu-burger-thickness));\n      -webkit-transform: rotate(135deg);\n              transform: rotate(135deg); }\n    wu-burger.open button.spin-out span:nth-child(2) {\n      opacity: 0;\n      -webkit-transform: translateX(20px);\n              transform: translateX(20px); }\n    wu-burger.open button.spin-out span:nth-child(3) {\n      top: calc(4 * var(--wu-burger-thickness));\n      -webkit-transform: rotate(-135deg);\n              transform: rotate(-135deg); }\n    wu-burger.open button.rotate span:nth-child(1) {\n      -webkit-transform: rotate(-135deg);\n              transform: rotate(-135deg);\n      top: calc(4 * var(--wu-burger-thickness)); }\n    wu-burger.open button.rotate span:nth-child(2) {\n      opacity: 0; }\n    wu-burger.open button.rotate span:nth-child(3) {\n      -webkit-transform: rotate(135deg);\n              transform: rotate(135deg);\n      top: calc(4 * var(--wu-burger-thickness)); }"; }
-}
-
-class WuDivider {
-    render() {
-        return h("slot", null);
-    }
-    static get is() { return "wu-divider"; }
-    static get style() { return ":root{\n  --wu-divider-spacing: 10px;\n}\n\nwu-divider {\n  border-top: 1px solid #dedede;\n  margin-top: var(--wu-divider-spacing);\n  height: var(--wu-divider-spacing);\n  display: block;\n  width: 100%; }"; }
-}
-
-class WuDrawerMenu {
-    constructor() {
-        this.items = { "home": {
-                "label": 'Home'
-            } };
-        this.closeMenu = this.closeMenu.bind(this);
-    }
-    componentDidLoad() {
-        if (typeof this.items === 'string') {
-            this.items = JSON.parse(this.items);
-        }
-        this.el.tabIndex = -1;
-        document.addEventListener('keyup', e => {
-            if (e.keyCode === 27) {
-                this.closeMenu();
-            }
-        });
-        const focusable = this.el.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-        if (focusable.length) {
-            const lastChild = focusable[focusable.length - 1];
-            const firstChild = focusable[0];
-            lastChild.addEventListener('blur', () => {
-                firstChild.focus();
-            });
-        }
-    }
-    closeMenu() {
-        this.el.classList.remove('open');
-        const triggers = document.querySelectorAll('wu-burger');
-        for (let i = 0; i < triggers.length; i++) {
-            triggers[i].classList.remove('open');
-        }
-    }
-    render() {
-        return [
-            h("nav", { class: "side-menu" },
-                h("slot", null)),
-            h("div", { class: "side-menu-overlay", onClick: () => this.closeMenu() })
-        ];
-    }
-    static get is() { return "wu-drawer-menu"; }
-    static get properties() { return {
-        "el": {
-            "elementRef": true
-        },
-        "items": {
-            "type": "Any",
-            "attr": "items"
-        },
-        "position": {
-            "type": String,
-            "attr": "position"
-        },
-        "theme": {
-            "type": String,
-            "attr": "theme"
-        }
-    }; }
-    static get style() { return ":root{ \n  --wu-drawer-menu-overlay-color: rgba(0,0,0,0.4)\n}\n\nwu-drawer-menu.open .side-menu {\n  -webkit-transform: translate3d(0, 0, 0);\n          transform: translate3d(0, 0, 0);\n  opacity: 1; }\n\nwu-drawer-menu.open .side-menu-overlay {\n  opacity: 1;\n  z-index: 9; }\n\nwu-drawer-menu .side-menu {\n  -webkit-box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);\n  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);\n  -webkit-transition: -webkit-box-shadow 0.3s ease-out;\n  transition: -webkit-box-shadow 0.3s ease-out;\n  transition: box-shadow 0.3s ease-out;\n  transition: box-shadow 0.3s ease-out, -webkit-box-shadow 0.3s ease-out;\n  position: fixed;\n  z-index: 9999;\n  width: 280px;\n  height: 100vh;\n  opacity: 0;\n  background: white;\n  color: currentColor;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  transition: opacity var(--fast), -webkit-transform var(--fast);\n  -webkit-transition: opacity var(--fast), -webkit-transform var(--fast);\n  transition: transform var(--fast), opacity var(--fast);\n  transition: transform var(--fast), opacity var(--fast), -webkit-transform var(--fast);\n  top: 0;\n  left: 0;\n  -webkit-transform: translate3d(-100%, 0, 0);\n          transform: translate3d(-100%, 0, 0); }\n  wu-drawer-menu .side-menu[theme='primary'] {\n    background: var(--color-primary);\n    color: var(--color-primary-contrast); }\n  wu-drawer-menu .side-menu[theme='secondary'] {\n    background: var(--color-secondary);\n    color: var(--color-secondary-contrast); }\n  wu-drawer-menu .side-menu[theme='success'] {\n    background: var(--color-success);\n    color: var(--color-success-contrast); }\n  wu-drawer-menu .side-menu[theme='warning'] {\n    background: var(--color-warning);\n    color: var(--color-warning-contrast); }\n  wu-drawer-menu .side-menu[theme='danger'] {\n    background: var(--color-danger);\n    color: var(--color-danger-contrast); }\n  wu-drawer-menu .side-menu[theme='info'] {\n    background: var(--color-info);\n    color: var(--color-info-contrast); }\n  wu-drawer-menu .side-menu[theme='light'] {\n    background: var(--color-light);\n    color: var(--color-light-contrast); }\n  wu-drawer-menu .side-menu[theme='grey'] {\n    background: var(--color-grey);\n    color: var(--color-grey-contrast); }\n  wu-drawer-menu .side-menu[theme='dark'] {\n    background: var(--color-dark);\n    color: var(--color-dark-contrast); }\n  wu-drawer-menu .side-menu wu-menu-list {\n    overflow: auto; }\n  wu-drawer-menu .side-menu wu-divider {\n    --wu-divider-spacing: 5px; }\n  wu-drawer-menu .side-menu wu-menu-sub-heading {\n    display: block;\n    color: #999;\n    padding: 10px;\n    font-size: 14px;\n    font-size: 0.875rem; }\n\nwu-drawer-menu[position='left'] .side-menu {\n  right: auto; }\n\nwu-drawer-menu[position='right'] .side-menu {\n  left: auto;\n  right: 0;\n  -webkit-transform: translate3d(100%, 0, 0);\n          transform: translate3d(100%, 0, 0); }\n\nwu-drawer-menu .side-menu-overlay {\n  background: var(--wu-drawer-menu-overlay-color);\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  width: 100vw;\n  height: 100%;\n  height: 100vh;\n  opacity: 0;\n  z-index: -1;\n  -webkit-transition: opacity var(--fast);\n  transition: opacity var(--fast); }"; }
-}
-
-class WuMenuHeader {
-    constructor() {
-        this.img = '';
-        this.imgShape = 'square';
-        this.imgHref = '';
-    }
-    render() {
-        return (h("div", null,
-            this.img.length > 0 ? (h("div", { class: "img" }, this.imgHref.length ? (h("a", { href: this.imgHref },
-                h("img", { src: this.img, class: this.imgShape === 'circle' ? 'circle' : null }))) : (h("img", { src: this.img, class: this.imgShape === 'circle' ? 'circle' : null })))) : null,
-            h("div", { class: "title" },
-                h("slot", { name: "title" })),
-            h("div", { class: "sub-title" },
-                h("slot", { name: "sub-title" }))));
-    }
-    static get is() { return "wu-menu-header"; }
-    static get properties() { return {
-        "img": {
-            "type": String,
-            "attr": "img"
-        },
-        "imgHref": {
-            "type": String,
-            "attr": "img-href"
-        },
-        "imgShape": {
-            "type": String,
-            "attr": "img-shape"
-        },
-        "theme": {
-            "type": String,
-            "attr": "theme"
-        }
-    }; }
-    static get style() { return "wu-menu-header {\n  display: block;\n  padding: 20px;\n  border-bottom: 1px solid #ccc;\n  position: relative; }\n  wu-menu-header[theme='primary'] {\n    background: var(--color-primary);\n    color: var(--color-primary-contrast); }\n  wu-menu-header[theme='secondary'] {\n    background: var(--color-secondary);\n    color: var(--color-secondary-contrast); }\n  wu-menu-header[theme='success'] {\n    background: var(--color-success);\n    color: var(--color-success-contrast); }\n  wu-menu-header[theme='warning'] {\n    background: var(--color-warning);\n    color: var(--color-warning-contrast); }\n  wu-menu-header[theme='danger'] {\n    background: var(--color-danger);\n    color: var(--color-danger-contrast); }\n  wu-menu-header[theme='info'] {\n    background: var(--color-info);\n    color: var(--color-info-contrast); }\n  wu-menu-header[theme='light'] {\n    background: var(--color-light);\n    color: var(--color-light-contrast); }\n  wu-menu-header[theme='grey'] {\n    background: var(--color-grey);\n    color: var(--color-grey-contrast); }\n  wu-menu-header[theme='dark'] {\n    background: var(--color-dark);\n    color: var(--color-dark-contrast); }\n  wu-menu-header .img {\n    margin-top: 16px;\n    margin-bottom: 4px; }\n    wu-menu-header .img img {\n      -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);\n      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);\n      -webkit-transition: -webkit-box-shadow 0.3s ease-out;\n      transition: -webkit-box-shadow 0.3s ease-out;\n      transition: box-shadow 0.3s ease-out;\n      transition: box-shadow 0.3s ease-out, -webkit-box-shadow 0.3s ease-out;\n      width: 54px;\n      height: 54px;\n      -o-object-fit: cover;\n         object-fit: cover;\n      padding: 2px;\n      border: 2px solid white; }\n      wu-menu-header .img img.circle {\n        border-radius: 50%; }\n  wu-menu-header .title {\n    font-size: 22px;\n    font-size: 1.375rem;\n    font-weight: bold; }\n  wu-menu-header .sub-title {\n    font-size: 14px;\n    font-size: 0.875rem; }\n  wu-menu-header a {\n    color: currentColor;\n    text-decoration: none; }"; }
-}
-
-class WuMenuItem {
-    render() {
-        return (h("div", { class: "menu-item" },
-            h("slot", null)));
-    }
-    static get is() { return "wu-menu-item"; }
-    static get properties() { return {
-        "theme": {
-            "type": String,
-            "attr": "theme"
-        }
-    }; }
-    static get style() { return "wu-menu-item {\n  display: block;\n  position: relative; }\n  wu-menu-item[theme='primary'] {\n    color: var(--color-primary);\n    background: white; }\n  wu-menu-item[theme='secondary'] {\n    color: var(--color-secondary);\n    background: white; }\n  wu-menu-item[theme='success'] {\n    color: var(--color-success);\n    background: white; }\n  wu-menu-item[theme='warning'] {\n    color: var(--color-warning);\n    background: white; }\n  wu-menu-item[theme='danger'] {\n    color: var(--color-danger);\n    background: white; }\n  wu-menu-item[theme='info'] {\n    color: var(--color-info);\n    background: white; }\n  wu-menu-item[theme='light'] {\n    color: var(--color-light);\n    background: white; }\n  wu-menu-item[theme='grey'] {\n    color: var(--color-grey);\n    background: white; }\n  wu-menu-item[theme='dark'] {\n    color: var(--color-dark);\n    background: white; }\n  wu-menu-item:hover::before, wu-menu-item:focus::before {\n    content: '';\n    background: currentColor;\n    opacity: 0.1;\n    position: absolute;\n    top: 0;\n    left: 0;\n    right: 0;\n    bottom: 0;\n    z-index: 1; }\n  wu-menu-item .menu-item {\n    position: relative;\n    z-index: 2; }\n  wu-menu-item [href] {\n    display: block;\n    text-decoration: none;\n    color: currentColor;\n    padding: 15px 10px 18px 20px; }\n    wu-menu-item [href] i {\n      width: 1em;\n      max-width: 1em;\n      margin-right: 10px;\n      vertical-align: text-bottom; }"; }
-}
-
-export { AppMenu, AppRoot, Route as StencilRoute, RouteSwitch as StencilRouteSwitch, Router as StencilRouter, WuBurger, WuDivider, WuDrawerMenu, WuMenuHeader, WuMenuItem };
+export { AppRoot, DocsMenu, Route as StencilRoute, RouteSwitch as StencilRouteSwitch, Router as StencilRouter };

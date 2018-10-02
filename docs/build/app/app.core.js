@@ -1,11 +1,6 @@
 /*! Built with http://stenciljs.com */
 (function(Context,namespace,hydratedCssClass,resourcesUrl,s){"use strict";
 s=document.querySelector("script[data-namespace='app']");if(s){resourcesUrl=s.getAttribute('data-resources-url');}
-(function(resourcesUrl){
-    /** App global **/
-
-
-})(resourcesUrl);
 (function(window, document, Context, namespace) {
   'use strict';
   /**
