@@ -5,6 +5,10 @@ wu-card {
   font-size: 16px;
   border-radius: 5px;
   overflow: hidden;
+  border: 1px solid #efefef;
+  &[flat] {
+    box-shadow: none;
+  }
   .card-media {
     width: 100%;
     object-fit: cover;
@@ -40,6 +44,7 @@ wu-card {
       cursor: pointer;
       padding: 3px 0;
       margin-right: 5px;
+      text-decoration: none;
       &:hover,
       &:focus {
         text-decoration: none;

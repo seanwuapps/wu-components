@@ -9,7 +9,7 @@ class AppHome {
             h("p", null, "It provides a good set of commonly used components that can be configured and used in modern web browsers."),
             h("stencil-route-link", { url: "/getting-started" },
                 h("wu-button", { theme: "success" }, "Getting Started")),
-            h("stencil-route-link", { url: "/component" },
+            h("stencil-route-link", { url: "/components" },
                 h("wu-button", { theme: "primary" }, "Components"))));
     }
     static get is() { return "app-home"; }

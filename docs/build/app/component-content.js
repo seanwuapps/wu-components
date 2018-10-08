@@ -1,6 +1,8 @@
 /*! Built with http://stenciljs.com */
 const { h } = window.App;
 
+import { b as getComponent } from './chunk-2771fb0b.js';
+
 class ComponentContent {
     constructor() {
         this.isLoading = true;
@@ -68,17 +70,31 @@ class ComponentContent {
 
 class ComponentPage {
     componentDidLoad() {
-        document.title = this.match.params.name ? this.match.params.name + ' | Wu Components' : 'Wu Components';
+        this.updateTitle();
+    }
+    updateTitle() {
+        const item = getComponent(this.match.params.name);
+        if (item) {
+            this.loadedComponent = item;
+            document.title = item.name + ' | Wu Components';
+        }
+        document.title = 'Wu Components';
     }
     render() {
-        return (h("wu-page", { "reflect-fixed-header": true },
-            h("component-content", { name: this.match.params.name })));
+        return this.loadedComponent ? (h("wu-page", { "reflect-fixed-header": true },
+            h("h2", null, this.loadedComponent.name),
+            h("p", null, this.loadedComponent.description ? this.loadedComponent.description : null),
+            h("component-content", { name: this.loadedComponent.key }))) : (h("p", null, "Component cannot be loaded."));
     }
     static get is() { return "component-page"; }
     static get properties() { return {
+        "loadedComponent": {
+            "state": true
+        },
         "match": {
             "type": "Any",
-            "attr": "match"
+            "attr": "match",
+            "watchCallbacks": ["updateTitle"]
         }
     }; }
     static get style() { return ""; }

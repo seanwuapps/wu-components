@@ -1,7 +1,7 @@
 /*! Built with http://stenciljs.com */
 const { h } = window.App;
 
-import { a as components } from './chunk-f779d299.js';
+import { a as components } from './chunk-2771fb0b.js';
 import { a as matchPath, b as matchesAreEqual, c as ActiveRouter, d as storageAvailable, e as createLocation, f as addLeadingSlash, g as stripTrailingSlash, h as hasBasename, i as stripBasename, j as createPath, k as canUseDOM, l as addEventListener, m as removeEventListener, n as getConfirmation, o as supportsHistory, p as supportsPopStateOnHashChange, q as isExtraneousPopstateEvent, r as locationsAreEqual, s as stripLeadingSlash, t as supportsGoWithoutReloadUsingHash } from './chunk-feee7b6f.js';
 import './chunk-f5f83825.js';
 
@@ -15,7 +15,7 @@ class AppRoot {
                         h("wu-burger", { animation: "rotate", target: "#menu" })),
                     h("wu-col", { class: "text-center" },
                         h("h1", null,
-                            h("a", { href: "/" }, "Demo site"))),
+                            h("stencil-route-link", { url: "/" }, "Demo"))),
                     h("wu-col", { class: "text-right" },
                         h("a", { class: "github-button", href: "https://github.com/seanwuapps/wu-components", "data-size": "large", "data-show-count": "true", "aria-label": "Star seanwuapps/wu-components on GitHub" }, "Star"))),
                 h("docs-menu", null)),
@@ -23,8 +23,7 @@ class AppRoot {
                 h("stencil-router", null,
                     h("stencil-route-switch", { scrollTopOffset: 0 },
                         h("stencil-route", { url: "/", component: "app-home", exact: true }),
-                        h("stencil-route", { url: "/profile/:name", component: "app-profile" }),
-                        h("stencil-route", { url: "/component", component: "component-index", exact: true }),
+                        h("stencil-route", { url: "/components", component: "component-index", exact: true }),
                         h("stencil-route", { url: "/component/:name", component: "component-page" }))))));
     }
     static get is() { return "app-root"; }
@@ -55,7 +54,11 @@ class DocsMenu {
                 h("wu-menu-sub-heading", null, "Components"),
                 components.map(component => {
                     return (h("wu-menu-item", { theme: "secondary" },
-                        h("stencil-route-link", { url: '/component/' + component }, component)));
+                        h("stencil-route-link", { url: '/component/' + component.key },
+                            component.name,
+                            " [",
+                            component.key,
+                            "]")));
                 }))));
     }
     static get is() { return "docs-menu"; }
