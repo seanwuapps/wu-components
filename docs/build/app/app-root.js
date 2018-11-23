@@ -56,10 +56,18 @@ class DocsMenu {
                     return (h("wu-menu-item", { theme: "secondary" },
                         h("stencil-route-link", { url: '/component/' + component.key },
                             component.name,
-                            " [",
+                            " <",
                             component.key,
-                            "]")));
-                }))));
+                            ">")));
+                }),
+                h("wu-divider", null),
+                h("wu-menu-sub-heading", null, "Theming"),
+                h("wu-menu-item", null,
+                    h("stencil-route-link", { url: '/theming/themes' }, "Themes")),
+                h("wu-menu-item", null,
+                    h("stencil-route-link", { url: '/theming/css-vars' }, "CSS Variables")),
+                h("wu-menu-item", null,
+                    h("stencil-route-link", { url: '/theming/util-classes' }, "Utility classes")))));
     }
     static get is() { return "docs-menu"; }
 }

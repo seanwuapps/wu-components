@@ -1,13 +1,13 @@
 wu-card {
   display: block;
-  background: white;
+  @include themeable('');
   @include raised(1);
   font-size: 16px;
-  border-radius: 5px;
+  border-radius: var(--wu-card-radius);
   overflow: hidden;
-  border: 1px solid #efefef;
   &[flat] {
     box-shadow: none;
+    border: 1px solid #efefef;
   }
   .card-media {
     width: 100%;

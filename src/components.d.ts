@@ -77,6 +77,9 @@ export namespace Components {
     'portion'?: string;
   }
 
+  interface WuContainer {}
+  interface WuContainerAttributes extends StencilHTMLAttributes {}
+
   interface WuRow {
     'autoMobile': boolean;
     'gap': string;
@@ -214,6 +217,7 @@ declare global {
     'WuCard': Components.WuCard;
     'WuDivider': Components.WuDivider;
     'WuCol': Components.WuCol;
+    'WuContainer': Components.WuContainer;
     'WuRow': Components.WuRow;
     'WuHeader': Components.WuHeader;
     'WuImg': Components.WuImg;
@@ -236,6 +240,7 @@ declare global {
     'wu-card': Components.WuCardAttributes;
     'wu-divider': Components.WuDividerAttributes;
     'wu-col': Components.WuColAttributes;
+    'wu-container': Components.WuContainerAttributes;
     'wu-row': Components.WuRowAttributes;
     'wu-header': Components.WuHeaderAttributes;
     'wu-img': Components.WuImgAttributes;
@@ -296,6 +301,12 @@ declare global {
   var HTMLWuColElement: {
     prototype: HTMLWuColElement;
     new (): HTMLWuColElement;
+  };
+
+  interface HTMLWuContainerElement extends Components.WuContainer, HTMLStencilElement {}
+  var HTMLWuContainerElement: {
+    prototype: HTMLWuContainerElement;
+    new (): HTMLWuContainerElement;
   };
 
   interface HTMLWuRowElement extends Components.WuRow, HTMLStencilElement {}
@@ -373,6 +384,7 @@ declare global {
     'wu-card': HTMLWuCardElement
     'wu-divider': HTMLWuDividerElement
     'wu-col': HTMLWuColElement
+    'wu-container': HTMLWuContainerElement
     'wu-row': HTMLWuRowElement
     'wu-header': HTMLWuHeaderElement
     'wu-img': HTMLWuImgElement
@@ -395,6 +407,7 @@ declare global {
     'wu-card': HTMLWuCardElement;
     'wu-divider': HTMLWuDividerElement;
     'wu-col': HTMLWuColElement;
+    'wu-container': HTMLWuContainerElement;
     'wu-row': HTMLWuRowElement;
     'wu-header': HTMLWuHeaderElement;
     'wu-img': HTMLWuImgElement;

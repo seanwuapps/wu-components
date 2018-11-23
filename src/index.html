@@ -1,265 +1,236 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+        <title>WebUp Components</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-  <title>WebUp Components</title>
+        <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet"/>
 
-  <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet">
+        <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet"/>
 
-  <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="/build/wu-components.css"/>
+        <script src="build/wu-components.js"></script>
 
-  <link rel='stylesheet' href="/build/wu-components.css">
-  <script src="build/wu-components.js"></script>
+        <style>
+            body {
+                margin: 0;
+                font-size: 16px;
+                font-family: 'Open Sans', sans-serif;
+            }
+        </style>
+    </head>
 
+    <body>
+        <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+        <wu-header fixed="true" theme="primary">
+            <wu-row auto-mobile="false" class="f-align-center">
+                <wu-col class="text-left">
+                    <wu-burger animation="rotate" target="#menu"></wu-burger>
+                </wu-col>
+                <wu-col class="text-center">
+                    <h1>Demo site</h1>
+                </wu-col>
+                <wu-col class="text-right">
+                    <a class="github-button" href="https://github.com/seanwuapps/wu-components" data-size="large" data-show-count="true" aria-label="Star seanwuapps/wu-components on GitHub">Star</a >
+                </wu-col>
+            </wu-row>
 
-  <style>
-    body {
-      margin: 0;
-      font-size: 16px;
-      font-family: 'Open Sans', sans-serif;
-    }
-  </style>
-</head>
+            <wu-drawer-menu auto-close="false" id="menu">
+                <wu-menu-header theme="secondary" img="/assets/images/cap.svg" img-shape="circle" img-href="#">
+                    <span slot="title">
+                        <a href="#">Steve Rogers</a>
+                    </span>
+                    <span slot="sub-title">
+                        <a href="#">Captain America</a>
+                    </span>
+                </wu-menu-header>
 
-<body>
+                <wu-menu-list>
+                    <wu-menu-item>
+                        <a href="#">
+                            <i class="material-icons">home</i>
+                            Home
+                        </a>
+                    </wu-menu-item>
+                    <wu-divider></wu-divider>
+                    <wu-menu-sub-heading>
+                        Themes
+                    </wu-menu-sub-heading>
+                    <wu-menu-item theme="primary">
+                        <a href="#">
+                            <i class="material-icons">star_rate</i>
+                            Primary
+                        </a>
+                    </wu-menu-item>
+                    <wu-menu-item theme="secondary">
+                        <a href="#">
+                            <i class="material-icons">star_rate</i>
+                            Secondary
+                        </a>
+                    </wu-menu-item>
+                    <wu-menu-item theme="success">
+                        <a href="#">
+                            <i class="material-icons">star_rate</i>
+                            Success
+                        </a>
+                    </wu-menu-item>
+                    <wu-menu-item theme="warning">
+                        <a href="#">
+                            <i class="material-icons">star_rate</i>
+                            Warning
+                        </a>
+                    </wu-menu-item>
+                    <wu-menu-item theme="danger">
+                        <a href="#">
+                            <i class="material-icons">star_rate</i>
+                            Danger
+                        </a>
+                    </wu-menu-item>
+                    <wu-menu-item theme="info">
+                        <a href="#">
+                            <i class="material-icons">star_rate</i>
+                            Info
+                        </a>
+                    </wu-menu-item>
+                    <wu-menu-item theme="dark">
+                        <a href="#">
+                            <i class="material-icons">star_rate</i>
+                            Dark
+                        </a>
+                    </wu-menu-item>
+                    <wu-menu-item theme="grey">
+                        <a href="#">
+                            <i class="material-icons">star_rate</i>
+                            Grey
+                        </a>
+                    </wu-menu-item>
+                </wu-menu-list>
+            </wu-drawer-menu>
+            <wu-drawer-menu id="menu2">
+                <wu-menu-header theme="danger" img="/assets/images/ironman.svg" img-shape="circle" img-href="">
+                    <span slot="title">
+                        <a href="#">Tony Stark</a>
+                    </span>
+                    <span slot="sub-title">
+                        <a href="#">Iron man</a>
+                    </span>
+                </wu-menu-header>
+                <wu-menu-list>
+                    <wu-menu-item>
+                        <a href="#">Menu Item</a>
+                    </wu-menu-item>
+                    <wu-menu-item theme="primary">
+                        <a href="#">Menu Item</a>
+                    </wu-menu-item>
+                    <wu-menu-item theme="secondary">
+                        <a href="#">Menu Item</a>
+                    </wu-menu-item>
+                    <wu-menu-item theme="success">
+                        <a href="#">Menu Item</a>
+                    </wu-menu-item>
+                    <wu-menu-item theme="warning">
+                        <a href="#">Menu Item</a>
+                    </wu-menu-item>
+                    <wu-menu-item theme="danger">
+                        <a href="#">Menu Item</a>
+                    </wu-menu-item>
+                    <wu-menu-item theme="info">
+                        <a href="#">Menu Item</a>
+                    </wu-menu-item>
+                    <wu-menu-item theme="dark">
+                        <a href="#">Menu Item</a>
+                    </wu-menu-item>
+                    <wu-menu-item theme="grey">
+                        <a href="#">Menu Item</a>
+                    </wu-menu-item>
+                </wu-menu-list>
+            </wu-drawer-menu>
+        </wu-header>
 
-  <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <wu-header fixed="true" theme="primary">
-    <wu-row class="f-align-center">
-      <wu-col class="text-left">
-        <wu-burger animation="rotate" target="#menu"></wu-burger>
-      </wu-col>
-      <wu-col class="text-center">
-        <h1>Demo site</h1>
-      </wu-col>
-      <wu-col class="text-right">
-        <a class="github-button" href="https://github.com/seanwuapps/wu-components" data-size="large" data-show-count="true"
-          aria-label="Star seanwuapps/wu-components on GitHub">Star</a>
-      </wu-col>
-    </wu-row>
+        <wu-page reflect-fixed-header="reflect-fixed-header">
+            <wu-container>
+                <h2>Card</h2>
+                <wu-row gap="5%">
+                    <wu-col portion="1">
+                        <wu-card theme="secondary" card-title="Text Card">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
+                        </wu-card>
+                    </wu-col>
+                    <wu-col portion="2">
+                        <wu-card flat="flat" card-title="Text Card with hover effect" hover="hover">
+                            Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
+                        </wu-card>
+                    </wu-col>
+                </wu-row>
+                <wu-row gap="5%">
+                    <wu-col portion="1">
+                        <wu-card hover="hover" card-title="Media Card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
+                        </wu-card>
+                    </wu-col>
+                    <wu-col portion="1">
+                        <wu-card hover="hover" card-title="Card with actions" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dolorem aut architecto assumenda sapiente vero dolores distinctio molestias pariatur! Beatae vitae itaque maxime, deserunt odit repudiandae repellendus ea quo atque.
+                            <div slot="footer">
+                                <a href="#">Link</a>
+                                <button type="button">Button</button>
+                                <button type="button" class="action">Button.action</button>
+                                <wu-button type="button">Wu Button</wu-button>
+                            </div>
+                        </wu-card>
+                    </wu-col>
+                </wu-row>
+            </wu-container>
+        </wu-page>
 
+        <!---->
 
-    <wu-drawer-menu auto-close="false" id="menu">
-      <wu-menu-header theme="secondary" img="/assets/images/cap.svg" img-shape="circle" img-href="#">
-        <span slot="title">
-          <a href="#">Steve Rogers</a>
-        </span>
-        <span slot="sub-title">
-          <a href="#">Captain America</a>
-        </span>
-      </wu-menu-header>
+        <!---->
 
-      <wu-menu-list>
-        <wu-menu-item>
-          <a href="#">
-            <i class="material-icons">home</i>
-            Home
-          </a>
-        </wu-menu-item>
-        <wu-divider></wu-divider>
-        <wu-menu-sub-heading>
-          Themes
-        </wu-menu-sub-heading>
-        <wu-menu-item theme="primary">
-          <a href="#">
-            <i class="material-icons">star_rate</i>
-            Primary
-          </a>
-        </wu-menu-item>
-        <wu-menu-item theme="secondary">
-          <a href="#">
-            <i class="material-icons">star_rate</i>
-            Secondary
-          </a>
-        </wu-menu-item>
-        <wu-menu-item theme="success">
-          <a href="#">
-            <i class="material-icons">star_rate</i>
-            Success
-          </a>
-        </wu-menu-item>
-        <wu-menu-item theme="warning">
-          <a href="#">
-            <i class="material-icons">star_rate</i>
-            Warning
-          </a>
-        </wu-menu-item>
-        <wu-menu-item theme="danger">
-          <a href="#">
-            <i class="material-icons">star_rate</i>
-            Danger
-          </a>
-        </wu-menu-item>
-        <wu-menu-item theme="info">
-          <a href="#">
-            <i class="material-icons">star_rate</i>
-            Info
-          </a>
-        </wu-menu-item>
-        <wu-menu-item theme="dark">
-          <a href="#">
-            <i class="material-icons">star_rate</i>
-            Dark
-          </a>
-        </wu-menu-item>
-        <wu-menu-item theme="grey">
-          <a href="#">
-            <i class="material-icons">star_rate</i>
-            Grey
-          </a>
-        </wu-menu-item>
-      </wu-menu-list>
-    </wu-drawer-menu>
-    <wu-drawer-menu id="menu2">
-      <wu-menu-header theme="danger" img="/assets/images/ironman.svg" img-shape="circle" img-href="">
-        <span slot="title">
-          <a href="#">Tony Stark</a>
-        </span>
-        <span slot="sub-title">
-          <a href="#">Iron man</a>
-        </span>
-      </wu-menu-header>
-      <wu-menu-list>
-        <wu-menu-item><a href="#">Menu Item</a></wu-menu-item>
-        <wu-menu-item theme="primary"><a href="#">Menu Item</a></wu-menu-item>
-        <wu-menu-item theme="secondary"><a href="#">Menu Item</a></wu-menu-item>
-        <wu-menu-item theme="success"><a href="#">Menu Item</a></wu-menu-item>
-        <wu-menu-item theme="warning"><a href="#">Menu Item</a></wu-menu-item>
-        <wu-menu-item theme="danger"><a href="#">Menu Item</a></wu-menu-item>
-        <wu-menu-item theme="info"><a href="#">Menu Item</a></wu-menu-item>
-        <wu-menu-item theme="dark"><a href="#">Menu Item</a></wu-menu-item>
-        <wu-menu-item theme="grey"><a href="#">Menu Item</a></wu-menu-item>
-      </wu-menu-list>
-    </wu-drawer-menu>
+        <!---->
 
-  </wu-header>
+        <!-- <h2>Inputs</h2> <h3>Star rating</h3> <wu-rating value="3" style="font-size: 60px; color: gold" id="rating-test"></wu-rating> <wu-rating value="" max="4"></wu-rating> <code-block code=' <wu-rating value="3" style="font-size: 60px; color: gold" id="rating-test"></wu-rating> <wu-rating value="" max="4"></wu-rating> '></code-block> <p>wu-rating emits a <code>change</code> event which you can handle in your normal js code.</p> <script> const ratingElement = document.getElementById('rating-test'); ratingElement.addEventListener('change', function (e) { console.log(e.target.value); }) </script> <code-block language="javascript" code=" // Handle change event with JS const ratingElement = document.getElementById('rating-test'); ratingElement.addEventListener('change', function (e) { console.log(e.target.value); }) "></code-block> -->
 
-  <wu-page reflect-fixed-header>
-  </wu-page>
+        <h2>Tinder Card</h2>
 
-  <!--
-
- -->
-
-  <!--
-
- -->
-
-  <!--
--->
-
-  <!--
-  <h2>Inputs</h2>
-  <h3>Star rating</h3>
-  <wu-rating value="3" style="font-size: 60px; color: gold" id="rating-test"></wu-rating>
-  <wu-rating value="" max="4"></wu-rating>
-  <code-block code='
-  <wu-rating value="3" style="font-size: 60px; color: gold" id="rating-test"></wu-rating>
-  <wu-rating value="" max="4"></wu-rating>
-  '></code-block>
-  <p>wu-rating emits a <code>change</code> event which you can handle in your normal js code.</p>
-  <script>
-    const ratingElement = document.getElementById('rating-test');
-    ratingElement.addEventListener('change', function (e) {
-      console.log(e.target.value);
-    })
-  </script>
-  <code-block language="javascript" code="
-  // Handle change event with JS
-  const ratingElement = document.getElementById('rating-test');
-  ratingElement.addEventListener('change', function (e) {
-    console.log(e.target.value);
-  })
-"></code-block>
- -->
-
-  <h2>Card</h2>
-
-  <wu-row gap="5%">
-    <wu-col portion="1">
-      <wu-card card-title="Text Card">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima,
-        consequatur illo accusamus
-        autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
-      </wu-card>
-    </wu-col>
-    <wu-col portion="2">
-      <wu-card flat card-title="Text Card with hover effect" hover>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima,
-        consequatur illo accusamus
-        autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
-      </wu-card>
-    </wu-col>
-  </wu-row>
-  <wu-row gap="5%">
-    <wu-col portion="1">
-      <wu-card hover card-title="Media Card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
-        src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima,
-        consequatur illo accusamus
-        autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
-      </wu-card>
-    </wu-col>
-    <wu-col portion="1">
-      <wu-card hover card-title="Card with actions" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
-        src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dolorem aut architecto assumenda sapiente vero
-        dolores distinctio
-        molestias pariatur! Beatae vitae itaque maxime, deserunt odit repudiandae repellendus ea quo atque.
-        <div slot="footer">
-          <a href="#">Link</a>
-          <button type="button">Button</button>
-          <button type="button" class="action">Button.action</button>
-          <wu-button type="button">Wu Button</wu-button>
-        </div>
-      </wu-card>
-    </wu-col>
-  </wu-row>
-
-  <h2>Tinder Card</h2>
-
-  <wu-tinder-card id="dog-card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
-    src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" threshold="150">
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, soluta. Sit asperiores suscipit quo ipsam
-      eaque maiores, amet molestias possimus deserunt dolorem, nemo mollitia provident accusamus, iste alias explicabo
-      ut?</p>
-  </wu-tinder-card>
-  <wu-tinder-card id="text-card" left-btn-text="Nope" right-btn-text="Oh yeah">
-    <h1>This is a text card</h1>
-  </wu-tinder-card>
-  <wu-tinder-card id="text-card-2" left-btn-text="Nope" right-btn-text="Oh yeah">
-    <h1>This is another card</h1>
-  </wu-tinder-card>
-  <script>
-    (function () {
-      var dogCard = document.querySelector('#dog-card');
-      dogCard.addEventListener("swipe", function (e) {
-        var direction = e.detail.direction
-        if (direction === 'left') {
-          alert(`you miss 100% of the opportunities you don't try`)
-        }
-        if (direction === 'right') {
-          alert('nice work, we shall tell you when you have a match')
-        }
-      });
-      var textCard = document.querySelector('#text-card');
-      textCard.addEventListener("swipe", function (e) {
-        var direction = e.detail.direction
-        if (direction === 'left') {
-          alert(`you miss 100% of the opportunities you don't try`)
-        }
-        if (direction === 'right') {
-          alert('nice work, we shall tell you when you have a match')
-        }
-      });
-    })();
-  </script>
-
-
-</body>
-
+        <wu-tinder-card id="dog-card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" threshold="150">
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, soluta. Sit asperiores suscipit quo ipsam eaque maiores, amet molestias possimus deserunt dolorem, nemo mollitia provident accusamus, iste alias explicabo ut?
+            </p>
+        </wu-tinder-card>
+        <wu-tinder-card id="text-card" left-btn-text="Nope" right-btn-text="Oh yeah">
+            <h1>This is a text card</h1>
+        </wu-tinder-card>
+        <wu-tinder-card id="text-card-2" left-btn-text="Nope" right-btn-text="Oh yeah">
+            <h1>This is another card</h1>
+        </wu-tinder-card>
+        <script>
+            ;
+            (function () {
+                var dogCard = document.querySelector('#dog-card')
+                dogCard.addEventListener('swipe', function (e) {
+                    var direction = e.detail.direction
+                    if (direction === 'left') {
+                        alert(`you miss 100% of the opportunities you don't try`)
+                    }
+                    if (direction === 'right') {
+                        alert('nice work, we shall tell you when you have a match')
+                    }
+                })
+                var textCard = document.querySelector('#text-card')
+                textCard.addEventListener('swipe', function (e) {
+                    var direction = e.detail.direction
+                    if (direction === 'left') {
+                        alert(`you miss 100% of the opportunities you don't try`)
+                    }
+                    if (direction === 'right') {
+                        alert('nice work, we shall tell you when you have a match')
+                    }
+                })
+            })()
+        </script>
+    </body>
 </html>

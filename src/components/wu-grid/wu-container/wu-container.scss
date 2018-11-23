@@ -1,0 +1,9 @@
+wu-container {
+  display: block;
+  max-width: 1000px;
+  margin: 0 auto;
+  &[fluid] {
+    width: 100%;
+    max-width: none;
+  }
+}
