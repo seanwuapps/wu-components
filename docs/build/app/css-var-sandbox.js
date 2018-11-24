@@ -3,17 +3,20 @@ const { h } = window.App;
 
 class CssVarSandbox {
     constructor() {
-        this.css = `
-  :root {
-    --wu-somthing: 40px;
-  }`;
+        this.css = '';
     }
     componentWillLoad() {
         this.variableList = JSON.parse(this.vars);
-        // this.css = this.toCssString(this.variableList)
+        this.css = this.toCssString(this.variableList);
     }
     toCssString(styles) {
-        return ':roott' + styles.replace(/\"/g, '');
+        let str = ':root {\n';
+        Object.keys(styles).map(key => {
+            const value = styles[key];
+            str += `  ${key}: ${value};\n`;
+        });
+        str += '}';
+        return str;
     }
     updateVar(key, e) {
         let styles = Object.assign({}, this.variableList);

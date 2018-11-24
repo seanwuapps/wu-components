@@ -2,7 +2,7 @@ import { Component, Prop, Element } from '@stencil/core'
 import hljs from 'highlight.js/lib/index.js'
 @Component({
   tag: 'code-block',
-  styleUrls: ['code-block.scss', '../../../node_modules/highlight.js/styles/dracula.css']
+  styleUrls: ['vars.css','code-block.scss', '../../../node_modules/highlight.js/styles/dracula.css']
   })
 export class CodeBlock {
   @Prop()
