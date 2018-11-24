@@ -1,8 +1,8 @@
-code-block{
+code-block {
   display: block;
   margin: 20px 0;
-  .accordion-header{
-    text-transform: uppercase;
-    background: #30425a;
+  pre.hljs {
+    padding: 1.2em;
+    border-radius: 15px;
   }
 }

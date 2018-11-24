@@ -1,0 +1,18 @@
+<h2>wu-burger</h2>
+<h3>Hamburger menu toggle, control size with css variables</h3>
+<div>
+    <wu-burger theme="secondary" target="#menu"></wu-burger>
+    <wu-burger target="#menu2" animation="spin-out" theme="danger"></wu-burger>
+    <wu-burger animation="rotate" style="color: green; font-size: 38px;"></wu-burger>
+    <wu-burger style="font-size: 64px;"></wu-burger>
+</div>
+<code-block code='
+<wu-burger theme="secondary" target="#menu"></wu-burger>
+<wu-burger target="#menu2" animation="spin-out" theme="danger"></wu-burger>
+<wu-burger animation="rotate" style="color: green; font-size: 38px;"></wu-burger>
+<wu-burger style="font-size: 64px;"></wu-burger>
+'></code-block>
+
+<css-var-sandbox code='<wu-burger theme="primary"></wu-burger>' vars='{"--wu-burger-size": "40px",
+  "--wu-burger-thickness": "4px",
+  "--wu-burger-color": "currentColor"}'></css-var-sandbox>

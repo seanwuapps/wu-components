@@ -19,14 +19,9 @@ export class CodeBlock {
   render () {
     return (
       <div>
-        <wu-accordion>
-          <wu-accordion-header>View code</wu-accordion-header>
-          <div class="accordion-content">
-            <pre>
-              <code class={this.language}>{this.code ? this.code.trim() : <slot />}</code>
-            </pre>
-          </div>
-        </wu-accordion>
+        <pre>
+          <code class={this.language}>{this.code ? this.code.trim() : <slot />}</code>
+        </pre>
       </div>
     )
   }

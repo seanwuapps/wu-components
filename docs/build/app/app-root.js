@@ -10,21 +10,23 @@ class AppRoot {
         return (h("div", null,
             h("script", { async: true, defer: true, src: "https://buttons.github.io/buttons.js" }),
             h("wu-header", { fixed: true, theme: "primary" },
-                h("wu-row", { class: "f-align-center" },
-                    h("wu-col", { class: "text-left" },
-                        h("wu-burger", { animation: "rotate", target: "#menu" })),
-                    h("wu-col", { class: "text-center" },
-                        h("h1", null,
-                            h("stencil-route-link", { url: "/" }, "Demo"))),
-                    h("wu-col", { class: "text-right" },
-                        h("a", { class: "github-button", href: "https://github.com/seanwuapps/wu-components", "data-size": "large", "data-show-count": "true", "aria-label": "Star seanwuapps/wu-components on GitHub" }, "Star"))),
+                h("wu-container", { fluid: true },
+                    h("wu-row", { "auto-mobile": "false", class: "f-align-center" },
+                        h("wu-col", { class: "text-left" },
+                            h("wu-burger", { animation: "rotate", target: "#menu" })),
+                        h("wu-col", { class: "text-center" },
+                            h("h1", null,
+                                h("stencil-route-link", { url: "/" }, "Wu Components"))),
+                        h("wu-col", { class: "text-right" },
+                            h("a", { class: "github-button", href: "https://github.com/seanwuapps/wu-components", "data-size": "large", "data-show-count": "true", "aria-label": "Star seanwuapps/wu-components on GitHub" }, "Star")))),
                 h("docs-menu", null)),
             h("main", null,
                 h("stencil-router", null,
                     h("stencil-route-switch", { scrollTopOffset: 0 },
                         h("stencil-route", { url: "/", component: "app-home", exact: true }),
                         h("stencil-route", { url: "/components", component: "component-index", exact: true }),
-                        h("stencil-route", { url: "/component/:name", component: "component-page" }))))));
+                        h("stencil-route", { url: "/components/:name", component: "component-page" }),
+                        h("stencil-route", { url: "/:category/:pageName", component: "docs-page" }))))));
     }
     static get is() { return "app-root"; }
     static get style() { return "wu-header h1 a {\n  color: currentColor;\n  text-decoration: none; }"; }
@@ -54,7 +56,7 @@ class DocsMenu {
                 h("wu-menu-sub-heading", null, "Components"),
                 components.map(component => {
                     return (h("wu-menu-item", { theme: "secondary" },
-                        h("stencil-route-link", { url: '/component/' + component.key },
+                        h("stencil-route-link", { url: '/components/' + component.key },
                             component.name,
                             " <",
                             component.key,
@@ -65,9 +67,9 @@ class DocsMenu {
                 h("wu-menu-item", null,
                     h("stencil-route-link", { url: '/theming/themes' }, "Themes")),
                 h("wu-menu-item", null,
-                    h("stencil-route-link", { url: '/theming/css-vars' }, "CSS Variables")),
+                    h("stencil-route-link", { url: '/theming/css-variables' }, "CSS Variables")),
                 h("wu-menu-item", null,
-                    h("stencil-route-link", { url: '/theming/util-classes' }, "Utility classes")))));
+                    h("stencil-route-link", { url: '/theming/utility-classes' }, "Utility classes")))));
     }
     static get is() { return "docs-menu"; }
 }

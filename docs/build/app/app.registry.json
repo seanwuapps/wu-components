@@ -21,11 +21,6 @@
         "$": "app-root"
       }
     },
-    "component-content": {
-      "bundleIds": {
-        "$": "component-content"
-      }
-    },
     "component-index": {
       "bundleIds": {
         "$": "component-index"
@@ -33,12 +28,27 @@
     },
     "component-page": {
       "bundleIds": {
-        "$": "component-content"
+        "$": "component-page"
+      }
+    },
+    "css-var-sandbox": {
+      "bundleIds": {
+        "$": "css-var-sandbox"
+      }
+    },
+    "doc-content": {
+      "bundleIds": {
+        "$": "doc-content"
       }
     },
     "docs-menu": {
       "bundleIds": {
         "$": "app-root"
+      }
+    },
+    "docs-page": {
+      "bundleIds": {
+        "$": "docs-page"
       }
     },
     "stencil-route": {
