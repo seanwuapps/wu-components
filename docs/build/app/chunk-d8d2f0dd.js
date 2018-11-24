@@ -550,7 +550,7 @@ var ActiveRouter = createProviderConsumer({
 });
 
 const canUseDOM = !!(typeof window !== 'undefined' && window.document && window.document.createElement);
-const addEventListener = (node, event, listener) => (node.addEventListener
+const addEventListener$1 = (node, event, listener) => (node.addEventListener
     ? node.addEventListener(event, listener, false)
     : node.attachEvent('on' + event, listener));
 const removeEventListener = (node, event, listener) => (node.removeEventListener
@@ -609,4 +609,4 @@ const storageAvailable = (type) => {
     }
 };
 
-export { matchPath as a, matchesAreEqual as b, ActiveRouter as c, storageAvailable as d, createLocation as e, addLeadingSlash as f, stripTrailingSlash as g, hasBasename as h, stripBasename as i, createPath as j, canUseDOM as k, addEventListener as l, removeEventListener as m, getConfirmation as n, supportsHistory as o, supportsPopStateOnHashChange as p, isExtraneousPopstateEvent as q, locationsAreEqual as r, stripLeadingSlash as s, supportsGoWithoutReloadUsingHash as t, isModifiedEvent as u };
+export { matchPath as a, matchesAreEqual as b, ActiveRouter as c, storageAvailable as d, createLocation as e, addLeadingSlash as f, stripTrailingSlash as g, hasBasename as h, stripBasename as i, createPath as j, canUseDOM as k, addEventListener$1 as l, removeEventListener as m, getConfirmation as n, supportsHistory as o, supportsPopStateOnHashChange as p, isExtraneousPopstateEvent as q, locationsAreEqual as r, stripLeadingSlash as s, supportsGoWithoutReloadUsingHash as t, isModifiedEvent as u };

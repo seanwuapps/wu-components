@@ -21,6 +21,11 @@
         "$": "app-root"
       }
     },
+    "code-block": {
+      "bundleIds": {
+        "$": "code-block"
+      }
+    },
     "component-index": {
       "bundleIds": {
         "$": "component-index"
@@ -33,7 +38,7 @@
     },
     "css-var-sandbox": {
       "bundleIds": {
-        "$": "css-var-sandbox"
+        "$": "code-block"
       }
     },
     "doc-content": {

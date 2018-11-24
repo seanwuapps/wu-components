@@ -11,15 +11,6 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface CodeBlock {
-    'code': string;
-    'language': string;
-  }
-  interface CodeBlockAttributes extends StencilHTMLAttributes {
-    'code'?: string;
-    'language'?: string;
-  }
-
   interface WuAccordionHeader {}
   interface WuAccordionHeaderAttributes extends StencilHTMLAttributes {}
 
@@ -209,7 +200,6 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
-    'CodeBlock': Components.CodeBlock;
     'WuAccordionHeader': Components.WuAccordionHeader;
     'WuAccordion': Components.WuAccordion;
     'WuBurger': Components.WuBurger;
@@ -232,7 +222,6 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
-    'code-block': Components.CodeBlockAttributes;
     'wu-accordion-header': Components.WuAccordionHeaderAttributes;
     'wu-accordion': Components.WuAccordionAttributes;
     'wu-burger': Components.WuBurgerAttributes;
@@ -254,12 +243,6 @@ declare global {
     'wu-tinder-card': Components.WuTinderCardAttributes;
   }
 
-
-  interface HTMLCodeBlockElement extends Components.CodeBlock, HTMLStencilElement {}
-  var HTMLCodeBlockElement: {
-    prototype: HTMLCodeBlockElement;
-    new (): HTMLCodeBlockElement;
-  };
 
   interface HTMLWuAccordionHeaderElement extends Components.WuAccordionHeader, HTMLStencilElement {}
   var HTMLWuAccordionHeaderElement: {
@@ -376,7 +359,6 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
-    'code-block': HTMLCodeBlockElement
     'wu-accordion-header': HTMLWuAccordionHeaderElement
     'wu-accordion': HTMLWuAccordionElement
     'wu-burger': HTMLWuBurgerElement
@@ -399,7 +381,6 @@ declare global {
   }
 
   interface ElementTagNameMap {
-    'code-block': HTMLCodeBlockElement;
     'wu-accordion-header': HTMLWuAccordionHeaderElement;
     'wu-accordion': HTMLWuAccordionElement;
     'wu-burger': HTMLWuBurgerElement;

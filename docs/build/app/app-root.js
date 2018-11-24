@@ -2,7 +2,7 @@
 const { h } = window.App;
 
 import { a as components } from './chunk-2771fb0b.js';
-import { a as matchPath, b as matchesAreEqual, c as ActiveRouter, d as storageAvailable, e as createLocation, f as addLeadingSlash, g as stripTrailingSlash, h as hasBasename, i as stripBasename, j as createPath, k as canUseDOM, l as addEventListener, m as removeEventListener, n as getConfirmation, o as supportsHistory, p as supportsPopStateOnHashChange, q as isExtraneousPopstateEvent, r as locationsAreEqual, s as stripLeadingSlash, t as supportsGoWithoutReloadUsingHash } from './chunk-feee7b6f.js';
+import { a as matchPath, b as matchesAreEqual, c as ActiveRouter, d as storageAvailable, e as createLocation, f as addLeadingSlash, g as stripTrailingSlash, h as hasBasename, i as stripBasename, j as createPath, k as canUseDOM, l as addEventListener$1, m as removeEventListener, n as getConfirmation, o as supportsHistory, p as supportsPopStateOnHashChange, q as isExtraneousPopstateEvent, r as locationsAreEqual, s as stripLeadingSlash, t as supportsGoWithoutReloadUsingHash } from './chunk-d8d2f0dd.js';
 import './chunk-f5f83825.js';
 
 class AppRoot {
@@ -651,9 +651,9 @@ const createBrowserHistory = (props = {}) => {
     const checkDOMListeners = (delta) => {
         listenerCount += delta;
         if (listenerCount === 1) {
-            addEventListener(window, PopStateEvent, handlePopState);
+            addEventListener$1(window, PopStateEvent, handlePopState);
             if (needsHashChangeListener) {
-                addEventListener(window, HashChangeEvent, handleHashChange);
+                addEventListener$1(window, HashChangeEvent, handleHashChange);
             }
         }
         else if (listenerCount === 0) {
@@ -884,7 +884,7 @@ const createHashHistory = (props = {}) => {
     const checkDOMListeners = (delta) => {
         listenerCount += delta;
         if (listenerCount === 1) {
-            addEventListener(window, HashChangeEvent$1, handleHashChange);
+            addEventListener$1(window, HashChangeEvent$1, handleHashChange);
         }
         else if (listenerCount === 0) {
             removeEventListener(window, HashChangeEvent$1, handleHashChange);
