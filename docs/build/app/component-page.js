@@ -1,7 +1,7 @@
 /*! Built with http://stenciljs.com */
 const { h } = window.App;
 
-import { b as getComponent } from './chunk-2771fb0b.js';
+import { b as getComponent } from './chunk-a62d72b3.js';
 
 class ComponentPage {
     componentDidLoad() {

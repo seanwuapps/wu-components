@@ -21,7 +21,8 @@ exports.config = {
     })
   ],
   outputTargets: [{ type: 'dist' }, { type: 'www' }],
-  globalStyle: 'src/globals/globals.scss'
+  globalStyle: 'src/globals/globals.scss',
+  enableCache: false
 }
 
 exports.devServer = {

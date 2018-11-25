@@ -27,15 +27,17 @@ export class WuCard {
     return (
       <div class="card">
         {this.src ? <wu-img class="card-media" src={this.src} thumb={this.thumb} alt={this.alt} /> : null}
-        <div class="card-body">
+        <div>
           <div class="card-title">{this.cardTitle}</div>
-          <slot />
-          {this.hasFooter ? (
-            <div class="card-footer">
-              <slot name="footer" />
-            </div>
-          ) : null}
+          <div class="card-body">
+            <slot />
+          </div>
         </div>
+        {this.hasFooter ? (
+          <div class="card-footer">
+            <slot name="footer" />
+          </div>
+        ) : null}
       </div>
     )
   }

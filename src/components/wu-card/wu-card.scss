@@ -9,6 +9,18 @@ wu-card {
     box-shadow: none;
     border: 1px solid #efefef;
   }
+  &[hover] {
+    &:hover,
+    &:focus {
+      @include raisedHover();
+    }
+  }
+  .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   .card-media {
     width: 100%;
     object-fit: cover;
@@ -20,19 +32,13 @@ wu-card {
     font-size: 22px;
     border-bottom: 1px solid #efefef;
     display: block;
+    padding: 20px;
     padding-bottom: 10px;
-    margin-bottom: 10px;
   }
-  &[hover] {
-    &:hover,
-    &:focus {
-      @include raisedHover();
-    }
-  }
-
   .card-footer {
     border-top: 1px solid #efefef;
     margin-top: 10px;
+    padding: 20px;
     padding-top: 10px;
     .action {
       border: none;
