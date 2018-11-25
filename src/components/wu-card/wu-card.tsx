@@ -6,7 +6,7 @@ import { isSlotEmpty } from '../../utils'
   })
 export class WuCard {
   @Prop()
-  cardTitle: string = ''
+  cardTitle?: string = ''
   @Element()
   el: HTMLElement
 
@@ -26,18 +26,18 @@ export class WuCard {
   render () {
     return (
       <div class="card">
-        {this.src ? <wu-img class="card-media" src={this.src} thumb={this.thumb} alt={this.alt} /> : null}
+        {this.src && <wu-img class="card-media" src={this.src} thumb={this.thumb} alt={this.alt} />}
         <div>
-          <div class="card-title">{this.cardTitle}</div>
+          {this.cardTitle && <div class="card-title" innerHTML={this.cardTitle} />}
           <div class="card-body">
             <slot />
           </div>
         </div>
-        {this.hasFooter ? (
+        {this.hasFooter && (
           <div class="card-footer">
             <slot name="footer" />
           </div>
-        ) : null}
+        )}
       </div>
     )
   }
