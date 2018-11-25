@@ -44,14 +44,12 @@ export namespace Components {
   interface WuCard {
     'alt': string;
     'cardTitle': string;
-    'hover': boolean;
     'src': string;
     'thumb': string;
   }
   interface WuCardAttributes extends StencilHTMLAttributes {
     'alt'?: string;
     'cardTitle'?: string;
-    'hover'?: boolean;
     'src'?: string;
     'thumb'?: string;
   }

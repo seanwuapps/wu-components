@@ -2,13 +2,11 @@ import { Component, Prop, Element, State } from '@stencil/core'
 import { isSlotEmpty } from '../../utils'
 @Component({
   tag: 'wu-card',
-  styleUrls: ['vars.css','wu-card.scss']
+  styleUrls: ['vars.css', 'wu-card.scss']
   })
 export class WuCard {
   @Prop()
   cardTitle: string = ''
-  @Prop()
-  hover: boolean = false
   @Element()
   el: HTMLElement
 

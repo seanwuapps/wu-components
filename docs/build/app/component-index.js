@@ -7,9 +7,9 @@ class ComponentIndex {
     render() {
         return (h("wu-page", { "reflect-fixed-header": true, class: "component-index-page" },
             h("wu-container", null,
-                h("wu-row", { gap: "20px", "fill-height": true }, components.map(component => {
+                h("wu-row", { gap: "20px", "fill-height": true, "equal-height": "wu-card" }, components.map(component => {
                     return (h("wu-col", null,
-                        h("wu-card", { hover: true, "card-title": component.name, style: { width: '300px' } },
+                        h("wu-card", { hover: "hover", "card-title": component.name },
                             h("code", null,
                                 "<",
                                 component.key,
