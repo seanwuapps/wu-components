@@ -11,7 +11,7 @@ class AppRoot {
             h("script", { async: true, defer: true, src: "https://buttons.github.io/buttons.js" }),
             h("wu-header", { fixed: true, theme: "primary" },
                 h("wu-container", { fluid: true },
-                    h("wu-row", { "auto-mobile": "false", class: "f-align-center" },
+                    h("wu-row", { class: "f-align-center" },
                         h("wu-col", { class: "text-left" },
                             h("wu-burger", { animation: "rotate", target: "#menu" })),
                         h("wu-col", { class: "text-center" },

@@ -22283,70 +22283,7 @@ class CodeBlock {
             "attr": "options"
         }
     }; }
-    static get style() { return ":root {\n  --wu-code-block-border-radius: 10px;\n}\n\n\ncode-block {\n  display: block;\n  margin: 20px 0; }\n  code-block pre.hljs {\n    padding: 1.2em;\n    border-radius: var(--wu-code-block-border-radius); }\n\n\n/*\n\ngithub.com style (c) Vasily Polovnyov <vast\@whiteants.net>\n\n*/\n\n.hljs {\n  display: block;\n  overflow-x: auto;\n  padding: 0.5em;\n  color: #333;\n  background: #f8f8f8;\n}\n\n.hljs-comment,\n.hljs-quote {\n  color: #998;\n  font-style: italic;\n}\n\n.hljs-keyword,\n.hljs-selector-tag,\n.hljs-subst {\n  color: #333;\n  font-weight: bold;\n}\n\n.hljs-number,\n.hljs-literal,\n.hljs-variable,\n.hljs-template-variable,\n.hljs-tag .hljs-attr {\n  color: #008080;\n}\n\n.hljs-string,\n.hljs-doctag {\n  color: #d14;\n}\n\n.hljs-title,\n.hljs-section,\n.hljs-selector-id {\n  color: #900;\n  font-weight: bold;\n}\n\n.hljs-subst {\n  font-weight: normal;\n}\n\n.hljs-type,\n.hljs-class .hljs-title {\n  color: #458;\n  font-weight: bold;\n}\n\n.hljs-tag,\n.hljs-name,\n.hljs-attribute {\n  color: #000080;\n  font-weight: normal;\n}\n\n.hljs-regexp,\n.hljs-link {\n  color: #009926;\n}\n\n.hljs-symbol,\n.hljs-bullet {\n  color: #990073;\n}\n\n.hljs-built_in,\n.hljs-builtin-name {\n  color: #0086b3;\n}\n\n.hljs-meta {\n  color: #999;\n  font-weight: bold;\n}\n\n.hljs-deletion {\n  background: #fdd;\n}\n\n.hljs-addition {\n  background: #dfd;\n}\n\n.hljs-emphasis {\n  font-style: italic;\n}\n\n.hljs-strong {\n  font-weight: bold;\n}"; }
+    static get style() { return ":root {\n  --wu-code-block-border-radius: 10px;\n}\n\n\ncode-block {\n  display: block;\n  margin: 20px 0;\n  margin: 1.25rem 0; }\n  code-block pre.hljs {\n    padding: 20px 15px;\n    padding: 1.25rem 0.9375rem;\n    border-radius: var(--wu-code-block-border-radius); }\n\n\n/*\n\ngithub.com style (c) Vasily Polovnyov <vast\@whiteants.net>\n\n*/\n\n.hljs {\n  display: block;\n  overflow-x: auto;\n  padding: 0.5em;\n  color: #333;\n  background: #f8f8f8;\n}\n\n.hljs-comment,\n.hljs-quote {\n  color: #998;\n  font-style: italic;\n}\n\n.hljs-keyword,\n.hljs-selector-tag,\n.hljs-subst {\n  color: #333;\n  font-weight: bold;\n}\n\n.hljs-number,\n.hljs-literal,\n.hljs-variable,\n.hljs-template-variable,\n.hljs-tag .hljs-attr {\n  color: #008080;\n}\n\n.hljs-string,\n.hljs-doctag {\n  color: #d14;\n}\n\n.hljs-title,\n.hljs-section,\n.hljs-selector-id {\n  color: #900;\n  font-weight: bold;\n}\n\n.hljs-subst {\n  font-weight: normal;\n}\n\n.hljs-type,\n.hljs-class .hljs-title {\n  color: #458;\n  font-weight: bold;\n}\n\n.hljs-tag,\n.hljs-name,\n.hljs-attribute {\n  color: #000080;\n  font-weight: normal;\n}\n\n.hljs-regexp,\n.hljs-link {\n  color: #009926;\n}\n\n.hljs-symbol,\n.hljs-bullet {\n  color: #990073;\n}\n\n.hljs-built_in,\n.hljs-builtin-name {\n  color: #0086b3;\n}\n\n.hljs-meta {\n  color: #999;\n  font-weight: bold;\n}\n\n.hljs-deletion {\n  background: #fdd;\n}\n\n.hljs-addition {\n  background: #dfd;\n}\n\n.hljs-emphasis {\n  font-style: italic;\n}\n\n.hljs-strong {\n  font-weight: bold;\n}"; }
 }
 
-class CssVarSandbox {
-    constructor() {
-        this.css = '';
-    }
-    componentWillLoad() {
-        this.variableList = JSON.parse(this.vars);
-        this.css = this.toCssString(this.variableList);
-    }
-    toCssString(styles) {
-        let str = ':root {\n';
-        Object.keys(styles).map(key => {
-            const value = styles[key];
-            str += `  ${key}: ${value};\n`;
-        });
-        str += '}';
-        return str;
-    }
-    updateVar(key, e) {
-        let styles = Object.assign({}, this.variableList);
-        styles[key] = e.target.value;
-        this.variableList = styles;
-    }
-    render() {
-        return (h("div", null,
-            h("h2", null, "CSS Variables"),
-            h("div", null, Object.keys(this.variableList).map(key => {
-                if (key === 'elm') {
-                    return;
-                }
-                const value = this.variableList[key];
-                return (h("wu-row", null,
-                    h("wu-col", null),
-                    h("wu-col", null,
-                        h("label", { htmlFor: key }, key)),
-                    h("wu-col", null,
-                        h("input", { type: "text", id: key, value: value, onInput: e => this.updateVar(key, e) })),
-                    h("wu-col", null)));
-            })),
-            h("h3", null, "CSS Code"),
-            h("code-block", { language: "css", code: this.css }),
-            h("h3", null, "Preview"),
-            h("div", { innerHTML: this.code, style: this.variableList })));
-    }
-    static get is() { return "css-var-sandbox"; }
-    static get properties() { return {
-        "code": {
-            "type": String,
-            "attr": "code"
-        },
-        "css": {
-            "state": true
-        },
-        "variableList": {
-            "state": true
-        },
-        "vars": {
-            "type": String,
-            "attr": "vars"
-        }
-    }; }
-    static get style() { return ""; }
-}
-
-export { CodeBlock, CssVarSandbox };
+export { CodeBlock };

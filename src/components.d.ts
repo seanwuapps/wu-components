@@ -72,11 +72,11 @@ export namespace Components {
   interface WuContainerAttributes extends StencilHTMLAttributes {}
 
   interface WuRow {
-    'autoMobile': boolean;
+    'equalHeight': string;
     'gap': string;
   }
   interface WuRowAttributes extends StencilHTMLAttributes {
-    'autoMobile'?: boolean;
+    'equalHeight'?: string;
     'gap'?: string;
   }
 

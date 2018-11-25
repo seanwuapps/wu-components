@@ -18,7 +18,7 @@ class AppProfile {
             "attr": "match"
         }
     }; }
-    static get style() { return ".app-profile {\n  padding: 10px;\n}"; }
+    static get style() { return ".app-profile {\n  padding: 10px;\n  padding: 0.625rem;\n}"; }
 }
 
 export { AppProfile };

@@ -6,10 +6,15 @@ wu-row {
     margin-bottom: 0;
   }
 
+  &[fill-height] {
+    height: 100%;
+  }
+
   &[v-center] {
     align-items: center;
   }
-  &.auto-mobile {
+
+  &[auto-mobile] {
     @media screen and (max-width: 768px) {
       justify-content: space-between;
       flex-direction: column;

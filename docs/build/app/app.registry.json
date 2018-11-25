@@ -38,7 +38,7 @@
     },
     "css-var-sandbox": {
       "bundleIds": {
-        "$": "code-block"
+        "$": "css-var-sandbox"
       }
     },
     "doc-content": {

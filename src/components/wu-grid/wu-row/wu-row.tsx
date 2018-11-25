@@ -10,12 +10,27 @@ export class WuRow {
   @Prop({ mutable: true })
   gap: string = '0'
   @Prop({ mutable: true })
-  autoMobile: boolean = true
+  equalHeight: string = ''
   componentDidLoad () {
     this.el.style.cssText = `--gap:${this.gap}`
-    if (this.autoMobile) {
-      this.el.classList.add('auto-mobile')
+    if (this.equalHeight.length) {
+      const elmList = this.el.querySelectorAll(this.equalHeight)
+      const maxHeight = this.getMaxHeight(elmList)
+      for (let i = 0; i < elmList.length; i++) {
+        ;(elmList[i] as HTMLElement).style.height = maxHeight + 'px'
+      }
     }
+  }
+  getMaxHeight (els) {
+    let result = 0
+    for (let i = 0; i < els.length; i++) {
+      const el = els[i]
+      const height = parseFloat(window.getComputedStyle(el).height)
+      if (height > result) {
+        result = height
+      }
+    }
+    return result
   }
 
   render () {
