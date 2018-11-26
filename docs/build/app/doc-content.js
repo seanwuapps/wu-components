@@ -13,6 +13,9 @@ class DocContent {
     }
     fetchContent() {
         this.startLoading();
+        if (!this.name) {
+            return;
+        }
         return fetch(`/doc-content${this.type ? '/' + this.type : ''}/${this.name}.html`)
             .then(res => {
             if (res.ok) {
@@ -66,7 +69,7 @@ class DocContent {
             "attr": "type"
         }
     }; }
-    static get style() { return ".fade-in {\n  -webkit-animation: fade-in var(--slow);\n  animation: fade-in var(--slow); }\n\n\@-webkit-keyframes fade-in {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n\@keyframes fade-in {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }"; }
+    static get style() { return ".fade-in {\n  -webkit-animation: fade-in var(--slow);\n  animation: fade-in var(--slow); }\n\n\@-webkit-keyframes fade-in {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n\@keyframes fade-in {\n  from {\n    opacity: 0; }\n  to {\n    opacity: 1; } }\n\n.grid-docs wu-col {\n  background: var(--color-primary);\n  color: var(--color-primary-contrast);\n  border-radius: 5px; }\n  .grid-docs wu-col wu-col {\n    background: var(--color-success);\n    color: var(--color-success-contrast); }"; }
 }
 
 export { DocContent };

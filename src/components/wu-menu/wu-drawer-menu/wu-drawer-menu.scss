@@ -20,7 +20,7 @@ wu-drawer-menu {
     @include raised(4);
     position: fixed;
     z-index: 9999;
-    width: 280px;
+    width: var(--wu-drawer-menu-width);
     height: 100vh;
     opacity: 0;
     background: white;

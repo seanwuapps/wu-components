@@ -11,12 +11,11 @@ class AppRoot {
             h("script", { async: true, defer: true, src: "https://buttons.github.io/buttons.js" }),
             h("wu-header", { fixed: true, theme: "primary" },
                 h("wu-container", { fluid: true },
-                    h("wu-row", { class: "f-align-center" },
+                    h("wu-row", { "fill-height": true, class: "f-align-center" },
                         h("wu-col", { class: "text-left" },
                             h("wu-burger", { animation: "rotate", target: "#menu" })),
                         h("wu-col", { class: "text-center" },
-                            h("h1", null,
-                                h("stencil-route-link", { url: "/" }, "Wu Components"))),
+                            h("stencil-route-link", { url: "/", class: "site-title" }, "Wu Components")),
                         h("wu-col", { class: "text-right" },
                             h("a", { class: "github-button", href: "https://github.com/seanwuapps/wu-components", "data-size": "large", "data-show-count": "true", "aria-label": "Star seanwuapps/wu-components on GitHub" }, "Star")))),
                 h("docs-menu", null)),
@@ -29,7 +28,7 @@ class AppRoot {
                         h("stencil-route", { url: "/:category/:pageName", component: "docs-page" }))))));
     }
     static get is() { return "app-root"; }
-    static get style() { return "wu-header h1 a {\n  color: currentColor;\n  text-decoration: none; }"; }
+    static get style() { return "wu-header wu-container {\n  height: 100%; }\n\nwu-header .site-title a {\n  color: currentColor;\n  text-decoration: none;\n  font-family: 'Open Sans', sans-serif;\n  font-weight: bold;\n  font-size: 20px;\n  font-size: 1.25rem;\n  display: block;\n  padding: 5px 0;\n  padding: 0.3125rem 0; }"; }
 }
 
 class DocsMenu {
