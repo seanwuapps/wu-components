@@ -1,7 +1,7 @@
 /*! Built with http://stenciljs.com */
 const { h } = window.App;
 
-import { b as getComponent } from './chunk-a62d72b3.js';
+import { b as getComponent } from './chunk-6c6a8d45.js';
 
 class ComponentPage {
     componentDidLoad() {
@@ -18,8 +18,6 @@ class ComponentPage {
     render() {
         return this.loadedComponent ? (h("wu-page", { "reflect-fixed-header": true },
             h("wu-container", null,
-                h("h2", null, this.loadedComponent.name),
-                h("p", null, this.loadedComponent.description ? this.loadedComponent.description : null),
                 h("doc-content", { type: "components", name: this.loadedComponent.key })))) : (h("p", null, "Component cannot be loaded."));
     }
     static get is() { return "component-page"; }

@@ -1,7 +1,7 @@
 /*! Built with http://stenciljs.com */
 const { h } = window.App;
 
-import { a as components } from './chunk-a62d72b3.js';
+import { a as components } from './chunk-6c6a8d45.js';
 
 class ComponentIndex {
     render() {
@@ -10,15 +10,17 @@ class ComponentIndex {
                 h("wu-row", { gap: "20px", "fill-height": true, "equal-height": "wu-card" }, components.map(component => {
                     return (h("wu-col", null,
                         h("wu-card", { hover: "hover", "card-title": component.name },
-                            h("code", null,
+                            component.tags ? (component.tags.map(tag => (h("div", null,
+                                h("code", null,
+                                    "<",
+                                    tag,
+                                    ">"))))) : (h("code", null,
                                 "<",
                                 component.key,
-                                ">"),
-                            h("br", null),
+                                ">")),
                             h("p", null, component.description ? component.description : 'No description.'),
-                            h("div", { class: "text-right", slot: "footer" },
-                                h("stencil-route-link", { url: '/components/' + component.key },
-                                    h("wu-button", { outline: true, flat: true, theme: "primary" }, "Details"))))));
+                            h("div", { slot: "footer" },
+                                h("stencil-route-link", { url: '/components/' + component.key }, "Details")))));
                 })))));
     }
     static get is() { return "component-index"; }
