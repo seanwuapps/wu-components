@@ -1,4 +1,4 @@
-import { Component, Prop, Element } from '@stencil/core'
+import { Component, Prop, Element, Listen } from '@stencil/core'
 
 @Component({
   tag: 'wu-row',
@@ -13,6 +13,9 @@ export class WuRow {
   equalHeight: string = ''
   componentDidLoad () {
     this.el.style.cssText = `--gap:${this.gap}`
+  }
+  @Listen('window:load')
+  doEqualHeight () {
     if (this.equalHeight.length) {
       const elmList = this.el.querySelectorAll(this.equalHeight)
       const maxHeight = this.getMaxHeight(elmList)
@@ -21,6 +24,7 @@ export class WuRow {
       }
     }
   }
+
   getMaxHeight (els) {
     let result = 0
     for (let i = 0; i < els.length; i++) {

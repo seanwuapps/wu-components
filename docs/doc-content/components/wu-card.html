@@ -1,39 +1,59 @@
 <h2>Card</h2>
-
-<wu-container>
-    <css-var-sandbox code='<wu-burger theme="primary"></wu-burger>' vars='{
-    --wu-card-radius: 1rem;
-    --wu-card-outer-padding: 20px;
-    --wu-card-inner-padding: 10px;
+<style>
+    wu-col {
+        width: 50%;
     }
-'></css-var-sandbox>
-
-    <wu-row class="f-align-center ">
-        <wu-col></wu-col>
+</style>
+<wu-container>
+    <wu-row equal-height="wu-card">
+        <wu-col portion="1">
+            <wu-card flat="flat" card-title="Flat Text Card">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
+            </wu-card>
+            <code-block code='
+<wu-card flat card-title="Flat Text Card">
+  ...
+</wu-card>'></code-block>
+        </wu-col>
+        <wu-col portion="1">
+            <wu-card card-title="Text Card with hover effect" hover="hover">
+                Lorem ipsum dolor sit amet,
+                <a href="#">consectetur adipisicing elit</a>. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
+                <div slot="footer">
+                    <wu-button flat="flat" theme="success">Wu Button</wu-button>
+                </div>
+            </wu-card>
+            <code-block code='
+<wu-card card-title="Text Card with hover effect" hover="hover">
+  ...
+  <!-- Card footer -->
+  <div slot="footer">
+    <wu-button flat="flat" theme="success">Wu Button</wu-button>
+  </div>
+</wu-card>'></code-block>
+        </wu-col>
     </wu-row>
-</wu-container>
+    <wu-row>
+        <wu-col>
+            <wu-card hover="hover" card-title="Card with actions" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dolorem aut architecto assumenda sapiente vero dolores distinctio molestias pariatur! Beatae vitae itaque maxime, deserunt odit repudiandae repellendus ea quo atque.
+                <div slot="footer">
+                    <a href="#">Link</a>
+                </div>
+            </wu-card>
+        </wu-col>
+    </wu-row>
 
-<wu-row equal-height="wu-card">
-    <wu-col>
-        <wu-card flat="flat" theme="secondary" card-title="Flat Text Card">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
-        </wu-card>
-    </wu-col>
-    <wu-col>
-        <wu-card card-title="Text Card with hover effect" hover="hover">
-            Lorem ipsum dolor sit amet,
-            <a href="#">consectetur adipisicing elit</a>. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
-            <div slot="footer">
-                <wu-button flat="flat" theme="success">Wu Button</wu-button>
-            </div>
-        </wu-card>
-    </wu-col>
-    <wu-col>
-        <wu-card hover="hover" card-title="Card with actions" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dolorem aut architecto assumenda sapiente vero dolores distinctio molestias pariatur! Beatae vitae itaque maxime, deserunt odit repudiandae repellendus ea quo atque.
-            <div slot="footer">
-                <a href="#">Link</a>
-            </div>
-        </wu-card>
-    </wu-col>
-</wu-row>
+    <css-var-sandbox code='
+                <wu-card card-title="Text Card with hover effect" hover="hover">
+                    Lorem ipsum dolor sit amet,
+                    <a href="#">consectetur adipisicing elit</a>. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
+                    <div slot="footer">
+                        <wu-button flat="flat" theme="success">Wu Button</wu-button>
+                    </div>
+                </wu-card>' vars='{
+        "--wu-card-radius": "1rem",
+        "--wu-card-outer-padding": "20px",
+        "--wu-card-inner-padding": "10px"
+        }'></css-var-sandbox>
+</wu-container>
