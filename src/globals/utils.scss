@@ -30,6 +30,29 @@ $position-vertical: (top, center, bottom);
 .f-align-center {
   align-items: center;
 }
+.f-align-stretch {
+  align-items: stretch;
+}
+
+// flex justify
+.f-justify-start {
+  justify-content: flex-start;
+}
+.f-justify-end {
+  justify-content: flex-end;
+}
+.f-justify-center {
+  justify-content: center;
+}
+.f-justify-space-around {
+  justify-content: space-around;
+}
+.f-justify-space-evenly {
+  justify-content: space-evenly;
+}
+.f-justify-space-between {
+  justify-content: space-between;
+}
 
 // margin
 .no-margin {
