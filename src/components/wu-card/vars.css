@@ -1,3 +1,5 @@
 :root {
   --wu-card-radius: 1rem;
+  --wu-card-outer-padding: 20px;
+  --wu-card-inner-padding: 10px;
 }

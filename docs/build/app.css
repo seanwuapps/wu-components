@@ -23,3 +23,11 @@ h6 {
     font-size: calc(10px + 0.6vw);
   }
 }
+
+input {
+  padding: 5px;
+  padding: 0.3125rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: white;
+}

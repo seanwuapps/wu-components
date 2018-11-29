@@ -2,7 +2,6 @@ wu-card {
   display: block;
   @include themeable('');
   @include raised(1);
-  font-size: 16px;
   border-radius: var(--wu-card-radius);
   overflow: hidden;
   &[flat] {
@@ -28,20 +27,20 @@ wu-card {
     }
   }
   .card-body {
-    padding: 20px;
+    padding: var(--wu-card-outer-padding);
   }
   .card-title {
     font-size: 22px;
     border-bottom: 1px solid #efefef;
     display: block;
-    padding: 20px;
-    padding-bottom: 10px;
+    padding: var(--wu-card-outer-padding);
+    padding-bottom: var(--wu-card-outer-padding);
   }
   .card-footer {
     border-top: 1px solid #efefef;
-    margin-top: 10px;
-    padding: 20px;
-    padding-top: 10px;
+    // margin-top: var(--wu-card-outer-padding);
+    padding: var(--wu-card-outer-padding);
+    padding-top: var(--wu-card-outer-padding);
     .action {
       border: none;
       background: white;
