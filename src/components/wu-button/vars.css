@@ -1,4 +1,5 @@
-:root{
-  --button-padding-x: 30px;
-  --button-padding-y: 10px;
+:root {
+  --wu-button-padding-x: 30px;
+  --wu-button-padding-y: 10px;
+  --wu-button-radius: 5px;
 }
