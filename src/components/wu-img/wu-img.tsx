@@ -26,7 +26,7 @@ export class WuImg {
 
   render() {
     return (
-      <div>
+      <div class="full-width">
         <img src={this.thumb} alt={this.alt} class={this.loading ? 'main' : 'main loaded'} />
         <img src={this.src} alt={this.alt} class="loader" onLoad={() => this.onFullImageLoaded()} />
       </div>
