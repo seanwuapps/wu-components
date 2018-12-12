@@ -21,7 +21,9 @@
     "release:major": "npm run build --prod & npm version major & npm publish",
     "docs:dev": "cd docs-dev && npm start"
   },
-  "dependencies": {},
+  "dependencies": {
+    "rellax": "^1.7.1"
+  },
   "devDependencies": {
     "@stencil/core": "^0.12.4",
     "@stencil/dev-server": "latest",

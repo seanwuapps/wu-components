@@ -24,6 +24,11 @@ $position-vertical: (top, center, bottom);
   clear: both;
 }
 
+// flex
+.flex {
+  display: flex;
+}
+
 // flex align
 .f-align-start {
   align-items: flex-start;

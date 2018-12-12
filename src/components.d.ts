@@ -71,10 +71,12 @@ export namespace Components {
 
   interface WuRow {
     'equalHeight': string;
+    'fillHeight': any;
     'gap': string;
   }
   interface WuRowAttributes extends StencilHTMLAttributes {
     'equalHeight'?: string;
+    'fillHeight'?: any;
     'gap'?: string;
   }
 
@@ -142,6 +144,19 @@ export namespace Components {
   }
   interface WuPageAttributes extends StencilHTMLAttributes {
     'reflectFixedHeader'?: boolean;
+  }
+
+  interface WuParallax {
+    'center': boolean;
+    'imgSrc': string;
+    'imgThumb': string;
+    'speed': number;
+  }
+  interface WuParallaxAttributes extends StencilHTMLAttributes {
+    'center'?: boolean;
+    'imgSrc'?: string;
+    'imgThumb'?: string;
+    'speed'?: number;
   }
 
   interface WuRating {
@@ -213,6 +228,7 @@ declare global {
     'WuMenuHeader': Components.WuMenuHeader;
     'WuMenuItem': Components.WuMenuItem;
     'WuPage': Components.WuPage;
+    'WuParallax': Components.WuParallax;
     'WuRating': Components.WuRating;
     'WuShadow': Components.WuShadow;
     'WuSpinner': Components.WuSpinner;
@@ -235,6 +251,7 @@ declare global {
     'wu-menu-header': Components.WuMenuHeaderAttributes;
     'wu-menu-item': Components.WuMenuItemAttributes;
     'wu-page': Components.WuPageAttributes;
+    'wu-parallax': Components.WuParallaxAttributes;
     'wu-rating': Components.WuRatingAttributes;
     'wu-shadow': Components.WuShadowAttributes;
     'wu-spinner': Components.WuSpinnerAttributes;
@@ -332,6 +349,12 @@ declare global {
     new (): HTMLWuPageElement;
   };
 
+  interface HTMLWuParallaxElement extends Components.WuParallax, HTMLStencilElement {}
+  var HTMLWuParallaxElement: {
+    prototype: HTMLWuParallaxElement;
+    new (): HTMLWuParallaxElement;
+  };
+
   interface HTMLWuRatingElement extends Components.WuRating, HTMLStencilElement {}
   var HTMLWuRatingElement: {
     prototype: HTMLWuRatingElement;
@@ -372,6 +395,7 @@ declare global {
     'wu-menu-header': HTMLWuMenuHeaderElement
     'wu-menu-item': HTMLWuMenuItemElement
     'wu-page': HTMLWuPageElement
+    'wu-parallax': HTMLWuParallaxElement
     'wu-rating': HTMLWuRatingElement
     'wu-shadow': HTMLWuShadowElement
     'wu-spinner': HTMLWuSpinnerElement
@@ -394,6 +418,7 @@ declare global {
     'wu-menu-header': HTMLWuMenuHeaderElement;
     'wu-menu-item': HTMLWuMenuItemElement;
     'wu-page': HTMLWuPageElement;
+    'wu-parallax': HTMLWuParallaxElement;
     'wu-rating': HTMLWuRatingElement;
     'wu-shadow': HTMLWuShadowElement;
     'wu-spinner': HTMLWuSpinnerElement;

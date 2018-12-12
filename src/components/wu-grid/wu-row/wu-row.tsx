@@ -11,6 +11,7 @@ export class WuRow {
   gap: string = '0'
   @Prop({ mutable: true })
   equalHeight: string = ''
+  @Prop({ reflectToAttr: true }) fillHeight
   componentDidLoad () {
     this.el.style.cssText = `--gap:${this.gap}`
   }
