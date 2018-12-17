@@ -1,0 +1,48 @@
+.toggle {
+  @include themeable('toggle');
+  margin-right: 5px;
+  input {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    &:focus {
+      & + .toggle-slider {
+        @include raised(1);
+      }
+    }
+    &:checked {
+      & + .toggle-slider {
+        background: var(--wu-toggle-default-active-color);
+        &::after {
+          left: 50%;
+        }
+      }
+    }
+  }
+  .toggle-slider {
+    cursor: pointer;
+    display: inline-block;
+    width: var(--wu-toggle-width);
+    height: calc(var(--wu-toggle-width) / 2);
+    border-radius: calc(var(--wu-toggle-width) / 2);
+    vertical-align: middle;
+    padding: var(--wu-toggle-padding);
+    background: #ccc;
+    margin-right: 5px;
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      width: 50%;
+      height: 100%;
+      border-radius: 50%;
+      background: var(--wu-toggle-default-slider-color);
+      position: relative;
+      left: 0;
+    }
+  }
+}

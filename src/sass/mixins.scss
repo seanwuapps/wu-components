@@ -135,11 +135,50 @@ $themes: ('primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light
         color: var(--color-#{$theme});
       }
     }
+
+    @if ($name == 'toggle') {
+      &[theme='#{$theme}'] {
+        input {
+          &:checked {
+            & + .toggle-slider {
+              background: var(--color-#{$theme});
+              &::after {
+                background: var(--color-#{$theme}-contrast);
+              }
+            }
+          }
+        }
+      }
+    }
     @if ($name == '') {
       &[theme='#{$theme}'] {
         background: var(--color-#{$theme});
         color: var(--color-#{$theme}-contrast);
       }
     }
+  }
+}
+
+/* Media queries */
+$breakpoints: (
+  sm: 768px,
+  md: 1024px,
+  lg: 1260px
+);
+
+@mixin media($breakpoint, $min-or-max: '') {
+  @if $min-or-max == '' {
+    $min-or-max: 'min';
+  }
+  @if map-has-key($breakpoints, $breakpoint) {
+    $width: map-get($breakpoints, $breakpoint);
+
+    $query: '(#{$min-or-max}-width: #{$width})';
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint #{$breakpoint}.';
   }
 }

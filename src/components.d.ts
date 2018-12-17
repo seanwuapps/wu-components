@@ -57,6 +57,25 @@ export namespace Components {
   interface WuDivider {}
   interface WuDividerAttributes extends StencilHTMLAttributes {}
 
+  interface WuForm {}
+  interface WuFormAttributes extends StencilHTMLAttributes {}
+
+  interface WuToggle {
+    'label': string;
+    'name': string;
+    'required': boolean;
+    'theme': string;
+    'value': any;
+  }
+  interface WuToggleAttributes extends StencilHTMLAttributes {
+    'label'?: string;
+    'name'?: string;
+    'onChanged'?: (event: CustomEvent) => void;
+    'required'?: boolean;
+    'theme'?: string;
+    'value'?: any;
+  }
+
   interface WuCol {
     'basis': string;
     'portion': string;
@@ -71,12 +90,10 @@ export namespace Components {
 
   interface WuRow {
     'equalHeight': string;
-    'fillHeight': any;
     'gap': string;
   }
   interface WuRowAttributes extends StencilHTMLAttributes {
     'equalHeight'?: string;
-    'fillHeight'?: any;
     'gap'?: string;
   }
 
@@ -219,6 +236,8 @@ declare global {
     'WuButton': Components.WuButton;
     'WuCard': Components.WuCard;
     'WuDivider': Components.WuDivider;
+    'WuForm': Components.WuForm;
+    'WuToggle': Components.WuToggle;
     'WuCol': Components.WuCol;
     'WuContainer': Components.WuContainer;
     'WuRow': Components.WuRow;
@@ -242,6 +261,8 @@ declare global {
     'wu-button': Components.WuButtonAttributes;
     'wu-card': Components.WuCardAttributes;
     'wu-divider': Components.WuDividerAttributes;
+    'wu-form': Components.WuFormAttributes;
+    'wu-toggle': Components.WuToggleAttributes;
     'wu-col': Components.WuColAttributes;
     'wu-container': Components.WuContainerAttributes;
     'wu-row': Components.WuRowAttributes;
@@ -293,6 +314,18 @@ declare global {
   var HTMLWuDividerElement: {
     prototype: HTMLWuDividerElement;
     new (): HTMLWuDividerElement;
+  };
+
+  interface HTMLWuFormElement extends Components.WuForm, HTMLStencilElement {}
+  var HTMLWuFormElement: {
+    prototype: HTMLWuFormElement;
+    new (): HTMLWuFormElement;
+  };
+
+  interface HTMLWuToggleElement extends Components.WuToggle, HTMLStencilElement {}
+  var HTMLWuToggleElement: {
+    prototype: HTMLWuToggleElement;
+    new (): HTMLWuToggleElement;
   };
 
   interface HTMLWuColElement extends Components.WuCol, HTMLStencilElement {}
@@ -386,6 +419,8 @@ declare global {
     'wu-button': HTMLWuButtonElement
     'wu-card': HTMLWuCardElement
     'wu-divider': HTMLWuDividerElement
+    'wu-form': HTMLWuFormElement
+    'wu-toggle': HTMLWuToggleElement
     'wu-col': HTMLWuColElement
     'wu-container': HTMLWuContainerElement
     'wu-row': HTMLWuRowElement
@@ -409,6 +444,8 @@ declare global {
     'wu-button': HTMLWuButtonElement;
     'wu-card': HTMLWuCardElement;
     'wu-divider': HTMLWuDividerElement;
+    'wu-form': HTMLWuFormElement;
+    'wu-toggle': HTMLWuToggleElement;
     'wu-col': HTMLWuColElement;
     'wu-container': HTMLWuContainerElement;
     'wu-row': HTMLWuRowElement;

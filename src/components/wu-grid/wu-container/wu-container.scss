@@ -1,9 +1,20 @@
 wu-container {
   display: block;
-  max-width: 1000px;
   margin: 0 auto;
   &[fluid] {
     width: 100%;
     max-width: none;
+  }
+  padding: 0 2%;
+  @include media(sm) {
+    // tablet
+    max-width: 750px;
+  }
+  @include media(md) {
+    // desktop
+    max-width: 970px;
+  }
+  @include media(lg) {
+    max-width: 1170px;
   }
 }

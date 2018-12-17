@@ -1,0 +1,189 @@
+wu-form {
+  * {
+    box-sizing: border-box;
+  }
+  fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    // Chrome and Firefox set a `min-width: min-content;` on fieldsets,
+    // so we reset that to ensure it behaves more like a standard block element.
+    // See https://github.com/twbs/bootstrap/issues/12359.
+    min-width: 0;
+  }
+
+  legend {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin-bottom: var(--wu-form-legend-mb);
+    font-size: var(--wu-form-label-font-size);
+    line-height: inherit;
+    color: var(--wu-form-legend-color);
+    border: 0;
+    border-bottom: 1px solid inherit;
+  }
+
+  label {
+    display: inline-block;
+    max-width: 100%; // Force IE8 to wrap long content (see https://github.com/twbs/bootstrap/issues/13141)
+    margin-top: var(--wu-form-label-spacing-top);
+    margin-bottom: var(--wu-form-label-spacing-bottom);
+    input {
+      margin-top: var(--wu-form-label-spacing-bottom);
+    }
+  }
+
+  // Normalize form controls
+  //
+  // While most of our form styles require extra classes, some basic normalization
+  // is required to ensure optimum display with or without those classes to better
+  // address browser inconsistencies.
+
+  // Override content-box in Normalize (* isn't specific enough)
+  // input[type='search'] {
+  //   @include box-sizing(border-box);
+  // }
+
+  // Position radios and checkboxes better
+  input[type='radio'],
+  input[type='checkbox'] {
+    margin: 4px 0 0;
+    margin-top: 1px \9; // IE8-9
+    line-height: normal;
+  }
+
+  input[type='file'] {
+    display: block;
+  }
+
+  // Make range inputs behave like textual form controls
+  input[type='range'] {
+    display: block;
+    width: 100%;
+  }
+
+  textarea {
+    display: block;
+    width: 100%;
+    border-radius: var(--wu-form-input-border-radius);
+  }
+
+  // select
+  select {
+    display: block;
+    padding: var(--wu-form-input-padding-y) var(--wu-form-input-padding-x);
+    width: 100%;
+    border-radius: var(--wu-form-input-border-radius);
+  }
+
+  // Make multiple select elements height not fixed
+  select[multiple],
+  select[size] {
+    height: auto;
+  }
+
+  // Focus for file, radio, and checkbox
+  // input[type='file']:focus,
+  // input[type='radio']:focus,
+  // input[type='checkbox']:focus {
+  //   @include tab-focus;
+  // }
+
+  // Common form controls
+  //
+  // Shared size and type resets for form controls. Apply `.form-control` to any
+  // of the following form controls:
+  //
+  // select
+  // textarea
+  // input[type="text"]
+  // input[type="password"]
+  // input[type="datetime"]
+  // input[type="datetime-local"]
+  // input[type="date"]
+  // input[type="month"]
+  // input[type="time"]
+  // input[type="week"]
+  // input[type="number"]
+  // input[type="email"]
+  // input[type="url"]
+  // input[type="search"]
+  // input[type="tel"]
+  // input[type="color"]
+
+  input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']) {
+    display: block;
+    width: 100%;
+    padding: var(--wu-form-input-padding-y) var(--wu-form-input-padding-x);
+    line-height: 1;
+    background-color: var(--wu-form-input-bg-color);
+    background-image: none;
+    border: 1px solid var(--wu-form-input-border-color);
+    border-radius: var(--wu-form-input-border-radius);
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+
+    // Placeholder
+    &::placeholder {
+      color: var(--wu-form-input-placeholder-color);
+    }
+
+    // Unstyle the caret on `<select>`s in IE10+.
+    &::-ms-expand {
+      border: 0;
+      background-color: transparent;
+    }
+
+    // Disabled and read-only inputs
+    //
+    // HTML5 says that controls under a fieldset > legend:first-child won't be
+    // disabled if the fieldset is disabled. Due to implementation difficulty, we
+    // don't honor that edge case; we style them as disabled anyway.
+    &[disabled],
+    &[readonly],
+    fieldset[disabled] & {
+      background-color: var(--wu-form-input-bg-color-disabled);
+      color: var(--wu-form-input-color-disabled);
+      opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+    }
+
+    &[disabled],
+    fieldset[disabled] & {
+      cursor: not-allowed;
+    }
+
+    // [converter] extracted textarea& to textarea.form-control
+  }
+
+  // Reset height for `textarea`s
+  textarea {
+    display: block;
+    height: auto;
+    min-height: 4rem;
+  }
+
+  // Search inputs in iOS
+  //
+  // This overrides the extra rounded corners on search inputs in iOS so that our
+  // `.form-control` class can properly style them. Note that this cannot simply
+  // be added to `.form-control` as it's not specific enough. For details, see
+  // https://github.com/twbs/bootstrap/issues/11586.
+
+  input[type='search'] {
+    -webkit-appearance: none;
+  }
+
+  // Checkboxes
+  input[type='checkbox'] {
+  }
+
+  // Note: Neither radios nor checkboxes can be readonly.
+  input[type='radio'],
+  input[type='checkbox'] {
+    &[disabled],
+    &.disabled,
+    fieldset[disabled] & {
+      cursor: not-allowed;
+    }
+  }
+}

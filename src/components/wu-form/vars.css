@@ -1,0 +1,25 @@
+:root {
+  /* legend */
+  --wu-form-legend-mb: 20px;
+  --wu-form-label-font-size: 16px;
+  --wu-form-legend-color: #ccc;
+  /* label */
+  --wu-form-label-spacing-top: 10px;
+  --wu-form-label-spacing-bottom: 5px;
+  /* input */
+  --wu-form-input-height: 40px;
+  --wu-form-input-padding-x: 5px;
+  --wu-form-input-padding-y: 8px;
+  --wu-form-input-bg-color: white;
+  --wu-form-input-color-disabled: #000;
+  --wu-form-input-bg-color-disabled: #efefef;
+  --wu-form-input-border-color: #dbdbdb;
+  --wu-form-input-placeholder-color: #aaa;
+  --wu-form-input-border-radius: 4px;
+
+  /* wu-toggle */
+  --wu-toggle-width: 40px;
+  --wu-toggle-padding: 2px;
+  --wu-toggle-default-active-color: rgb(25, 129, 22);
+  --wu-toggle-default-slider-color: white;
+}

@@ -15,7 +15,7 @@ wu-row {
   }
 
   &[auto-mobile] {
-    @media screen and (max-width: 768px) {
+    @include media(sm, 'max') {
       justify-content: space-between;
       flex-direction: column;
       align-items: stretch;

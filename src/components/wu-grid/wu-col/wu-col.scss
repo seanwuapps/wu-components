@@ -9,7 +9,8 @@ wu-col {
   &[no-margin] {
     margin: 0 !important;
   }
-  @media screen and (min-width: 768px) {
+
+  @include media(sm) {
     margin-bottom: inherit;
     margin-right: var(--gap);
     &:last-of-type {
