@@ -17,6 +17,8 @@
   --wu-form-input-placeholder-color: #aaa;
   --wu-form-input-border-radius: 4px;
 
+  /* checkbox */
+  --wu-form-checkbox-size: 20px;
   /* wu-toggle */
   --wu-toggle-width: 40px;
   --wu-toggle-padding: 2px;

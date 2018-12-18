@@ -150,6 +150,12 @@ $themes: ('primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light
         }
       }
     }
+    @if ($name== 'checkbox') {
+      &[theme='#{$theme}'] {
+        border-color: var(--color-#{$theme});
+        background: var(--color-#{$theme}-contrast);
+      }
+    }
     @if ($name == '') {
       &[theme='#{$theme}'] {
         background: var(--color-#{$theme});

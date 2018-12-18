@@ -173,11 +173,40 @@ wu-form {
     -webkit-appearance: none;
   }
 
+  input[type='radio'] {
+    width: 20px;
+    height: 20px;
+  }
   // Checkboxes
   input[type='checkbox'] {
+    @include themeable('checkbox');
+    cursor: pointer;
+    line-height: var(--wu-form-checkbox-size);
+    width: var(--wu-form-checkbox-size);
+    height: var(--wu-form-checkbox-size);
+    margin-top: 0;
+    margin-right: 5px;
+    -webkit-appearance: none;
+    border: 2px solid grey;
+    background: white;
+    transition: all 0.2s;
+    vertical-align: middle;
+    &:checked {
+      height: calc(var(--wu-form-checkbox-size) / 2);
+      margin-top: calc(var(--wu-form-checkbox-size) / -2);
+      border-top-color: transparent;
+      border-right-color: transparent;
+      border-left: 2px solid;
+      border-bottom: 2px solid;
+      transform: rotate(-45deg);
+      outline: none;
+    }
   }
 
-  // Note: Neither radios nor checkboxes can be readonly.
+  input[type='submit'] {
+  }
+
+  // Note: Neither radios nor checckboxes can be readonly.
   input[type='radio'],
   input[type='checkbox'] {
     &[disabled],
