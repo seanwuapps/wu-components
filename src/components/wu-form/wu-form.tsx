@@ -5,7 +5,17 @@ import { Component } from '@stencil/core'
   styleUrls: ['vars.css', 'wu-form.scss']
   })
 export class WuForm {
+  onToggleChange (e) {
+    console.log(e.detail)
+  }
   render () {
-    return <slot />
+    return (
+      <div>
+        <wu-toggle onChange={e => this.onToggleChange(e)} value="test">
+          Test
+        </wu-toggle>
+        <slot />
+      </div>
+    )
   }
 }

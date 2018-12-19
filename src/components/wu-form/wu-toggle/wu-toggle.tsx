@@ -8,15 +8,19 @@ import { Component, Prop, Event, EventEmitter, Element } from '@stencil/core'
 export class WuToggle {
   @Element() el: HTMLElement
   @Prop() label: string
-  @Prop({ reflectToAttr: true }) name: string
-  @Prop({ reflectToAttr: true }) required: boolean
-  @Prop({ reflectToAttr: true }) value: any
+  @Prop({ reflectToAttr: true }) name?: string
+  @Prop({ reflectToAttr: true }) required?: boolean
+  @Prop({ reflectToAttr: true }) value?: any
   @Prop({ reflectToAttr: true }) theme?: string
-  @Event() changed: EventEmitter
+  @Prop({ reflectToAttr: true }) checked?: boolean
+  @Event() change: EventEmitter
 
   handleChange (e) {
-    console.log(e.target.checked)
-    this.changed.emit({ value: this.value, checked: e.target.checked })
+    this.change.emit({
+      target: e.target,
+      value: e.target.value,
+      checked: e.target.checked
+    })
   }
 
   componentDidLoad () {

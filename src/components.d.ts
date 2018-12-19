@@ -61,6 +61,7 @@ export namespace Components {
   interface WuFormAttributes extends StencilHTMLAttributes {}
 
   interface WuToggle {
+    'checked': boolean;
     'label': string;
     'name': string;
     'required': boolean;
@@ -68,9 +69,10 @@ export namespace Components {
     'value': any;
   }
   interface WuToggleAttributes extends StencilHTMLAttributes {
+    'checked'?: boolean;
     'label'?: string;
     'name'?: string;
-    'onChanged'?: (event: CustomEvent) => void;
+    'onChange'?: (event: CustomEvent) => void;
     'required'?: boolean;
     'theme'?: string;
     'value'?: any;

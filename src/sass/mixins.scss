@@ -154,6 +154,10 @@ $themes: ('primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light
       &[theme='#{$theme}'] {
         border-color: var(--color-#{$theme});
         background: var(--color-#{$theme}-contrast);
+        &:checked {
+          border-left-color: var(--color-#{$theme});
+          border-bottom-color: var(--color-#{$theme});
+        }
       }
     }
     @if ($name == '') {

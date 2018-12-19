@@ -28,99 +28,94 @@
             <wu-container>
                 <wu-row>
                     <wu-col>
-                        <wu-form>
-                            <form action="#" method="post">
-                                <div>
-                                    <label for="name">Text Input:</label>
-                                    <input type="text" placeholder="Enter text" name="name" id="name" value="" required="required"/>
-                                </div>
-                                <div>
-                                    <label for="name">Email Input:</label>
-                                    <input type="email" placeholder="Enter email" required="required"/>
-                                </div>
-                                <div>
-                                    <label for="name">Search Input:</label>
-                                    <input type="search" placeholder="Enter text" name="search" id="search" value=""/>
-                                </div>
-                                <div>
-                                    <label for="name">File Input:
-                                        <input type="file"/>
-                                    </label>
-                                </div>
-                                <div>
-                                    <label for="name">Disabled Input:</label>
-                                    <input type="text" placeholder="ASDF" disabled="disabled" name="name" id="name" value=""/>
-                                </div>
-                                <div>
-                                    <input type="range" id="start" name="volume" min="0" max="11">
-                                    <label for="volume">Volume</label>
-                                </div>
-                                <hr>
-                                <div>
-                                    <wu-toggle theme="primary" name="toggle-1" id="toggle-1" value="1" onchange="test(this.checked)">Toggle switch 1</wu-toggle>
-                                    <wu-toggle theme="secondary" name="toggle-2" id="toggle-2" value="1" onchange="test(this.checked)">Toggle switch 2</wu-toggle>
-                                </div>
-                                <div>
-                                    <label for="radio-choice-1">Choice 1
-                                        <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1"/>
-                                    </label>
+                        <wu-form action="#" method="post">
+                            <div>
+                                <label for="name">Text Input:</label>
+                                <input type="text" placeholder="Enter text" name="name" id="name" value="" required="required"/>
+                            </div>
+                            <div>
+                                <label for="name">Email Input:</label>
+                                <input type="email" placeholder="Enter email" required="required"/>
+                            </div>
+                            <div>
+                                <label for="name">Search Input:</label>
+                                <input type="search" placeholder="Enter text" name="search" id="search" value=""/>
+                            </div>
+                            <div>
+                                <label for="name">File Input:
+                                    <input type="file"/>
+                                </label>
+                            </div>
+                            <div>
+                                <label for="name">Disabled Input:</label>
+                                <input type="text" placeholder="ASDF" disabled="disabled" name="name" id="name" value=""/>
+                            </div>
+                            <div>
+                                <input type="range" id="start" name="volume" min="0" max="11">
+                                <label for="volume">Volume</label>
+                            </div>
+                            <hr>
+                            <div>
+                                <wu-toggle theme="primary" name="toggle-1" id="toggle-1" value="1">Toggle switch 1</wu-toggle>
+                                <wu-toggle theme="secondary" name="toggle-2" id="toggle-2" value="1">Toggle switch 2</wu-toggle>
+                            </div>
+                            <script>
+                                document.getElementById('toggle-1').addEventListener('change', function (e) {
+                                    console.log(e.detail)
+                                });
+                            </script>
+                            <div>
+                                <label for="radio-choice-1">Choice 1
+                                    <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1"/>
+                                </label>
 
-                                    <label for="radio-choice-2">Choice 2
-                                        <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"/>
-                                    </label>
-                                </div>
+                                <label for="radio-choice-2">Choice 2
+                                    <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"/>
+                                </label>
+                            </div>
 
-                                <div>
-                                    <script>
-                                        function test(e) {
-                                            //console.log(e.target.checked)
-                                            console.log({test: e})
-                                        }
-                                    </script>
-                                </div>
-                                <div class="toggle">
-                                    <input type="checkbox" theme="primary" name="checkbox-choice" onchange="test(this.checked)" id="checkbox-choice-1" value="choice-1"/>
-                                    <label for="checkbox-choice-1">Checkbox 1</label>
-                                </div>
-                                <div class="toggle">
-                                    <input type="checkbox" theme="danger" name="checkbox-choice" id="checkbox-choice-2" value="choice-2"/>
-                                    <label for="checkbox-choice-2">Checkbox 2</label>
-                                </div>
-                                <div>
-                                    <label for="select-choice">Select Dropdown Choice:</label>
-                                    <select name="select-choice" id="select-choice">
-                                        <option value="Choice 1">Choice 1</option>
-                                        <option value="Choice 2">Choice 2</option>
-                                        <option value="Choice 3">Choice 3</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="exampleFormControlSelect2">Example multiple select</label>
-                                    <select multiple="multiple" id="exampleFormControlSelect2">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <label for="textarea">Textarea:</label>
-                                    <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
-                                </div>
+                            <div class="toggle">
+                                <input type="checkbox" theme="primary" name="checkbox-choice" onchange="test(this.checked)" id="checkbox-choice-1" value="choice-1"/>
+                                <label for="checkbox-choice-1">Checkbox 1</label>
+                            </div>
+                            <div class="toggle">
+                                <input type="checkbox" theme="danger" name="checkbox-choice" id="checkbox-choice-2" value="choice-2"/>
+                                <label for="checkbox-choice-2">Checkbox 2</label>
+                            </div>
+                            <div>
+                                <label for="select-choice">Select Dropdown Choice:</label>
+                                <select name="select-choice" id="select-choice">
+                                    <option value="Choice 1">Choice 1</option>
+                                    <option value="Choice 2">Choice 2</option>
+                                    <option value="Choice 3">Choice 3</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="exampleFormControlSelect2">Example multiple select</label>
+                                <select multiple="multiple" id="exampleFormControlSelect2">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="textarea">Textarea:</label>
+                                <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+                            </div>
 
-                                <div>
-                                    <label for="checkbox">Checkbox:
-                                        <input type="checkbox" name="checkbox" id="checkbox"/>
-                                    </label>
-                                </div>
+                            <div>
+                                <label for="checkbox">Checkbox:
+                                    <input type="checkbox" name="checkbox" id="checkbox"/>
+                                </label>
+                            </div>
 
-                                <div></div>
+                            <div></div>
 
-                                <div>
-                                    <input type="submit" value="Submit"/>
-                                </div>
-                            </form>
+                            <div>
+                                <input type="submit" value="Submit"/>
+                            </div>
                         </wu-form>
                     </wu-col>
                 </wu-row>
