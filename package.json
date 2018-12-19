@@ -1,6 +1,6 @@
 {
   "name": "wu-components",
-  "version": "0.1.30",
+  "version": "0.1.31",
   "description": "Web Up Components",
   "module": "dist/esm/es5/index.js",
   "main": "dist/index.js",
