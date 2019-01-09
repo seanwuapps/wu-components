@@ -17,6 +17,8 @@ export class WuCard {
   @Prop()
   alt: string = ''
 
+  @Prop({ reflectToAttr: true }) hover: boolean
+
   @State()
   hasFooter: boolean
 

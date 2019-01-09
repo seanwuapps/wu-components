@@ -10,9 +10,10 @@ export class WuDrawerMenu {
   theme?: string
   @Prop()
   position?: 'left' | 'right'
-
-  @Prop()
+  @Prop({ mutable: true, reflectToAttr: true })
   autoClose?: boolean = true
+  @Prop({ mutable: true, reflectToAttr: true })
+  panel?: 'xs' | 'sm' | 'md' | 'lg'
 
   @Element()
   el: HTMLElement

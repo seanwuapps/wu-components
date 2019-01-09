@@ -28,11 +28,14 @@ wu-drawer-menu {
     flex-direction: column;
     transition: transform var(--fast), opacity var(--fast);
     // default position
-    top: 0;
+    top: var(--wu-header-height);
     bottom: 0;
     left: 0;
+    height: 100%;
     transform: translate3d(-100%, 0, 0);
+
     wu-menu-list {
+      height: 100%;
       overflow: auto;
     }
     wu-divider {
@@ -43,6 +46,11 @@ wu-drawer-menu {
       color: #999;
       padding: 10px;
       font-size: 14px;
+    }
+  }
+  &[cover-header] {
+    .side-menu {
+      top: 0;
     }
   }
   &[position='left'] {
@@ -72,4 +80,6 @@ wu-drawer-menu {
     z-index: -9;
     transition: opacity var(--fast);
   }
+
+  @include panelMenu();
 }

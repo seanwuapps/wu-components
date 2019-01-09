@@ -4,4 +4,5 @@ wu-page {
   &.reflect-fixed-header {
     margin-top: var(--wu-header-height);
   }
+  @include panelPage();
 }

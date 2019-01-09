@@ -6,6 +6,9 @@ wu-container {
     width: 100%;
     max-width: none;
   }
+  &[fill-height] {
+    height: 100%;
+  }
   padding: 0 2%;
   @include media(sm) {
     // tablet

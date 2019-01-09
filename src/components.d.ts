@@ -44,12 +44,14 @@ export namespace Components {
   interface WuCard {
     'alt': string;
     'cardTitle': string;
+    'hover': boolean;
     'src': string;
     'thumb': string;
   }
   interface WuCardAttributes extends StencilHTMLAttributes {
     'alt'?: string;
     'cardTitle'?: string;
+    'hover'?: boolean;
     'src'?: string;
     'thumb'?: string;
   }
@@ -87,8 +89,14 @@ export namespace Components {
     'portion'?: string;
   }
 
-  interface WuContainer {}
-  interface WuContainerAttributes extends StencilHTMLAttributes {}
+  interface WuContainer {
+    'fillHeight': boolean;
+    'fluid': boolean;
+  }
+  interface WuContainerAttributes extends StencilHTMLAttributes {
+    'fillHeight'?: boolean;
+    'fluid'?: boolean;
+  }
 
   interface WuRow {
     'equalHeight': string;
@@ -129,11 +137,13 @@ export namespace Components {
     'autoClose': boolean;
     'closeMenu': (trigger?: HTMLElement) => void;
     'openMenu': (trigger: HTMLElement) => void;
+    'panel': 'xs' | 'sm' | 'md' | 'lg';
     'position': 'left' | 'right';
     'theme': string;
   }
   interface WuDrawerMenuAttributes extends StencilHTMLAttributes {
     'autoClose'?: boolean;
+    'panel'?: 'xs' | 'sm' | 'md' | 'lg';
     'position'?: 'left' | 'right';
     'theme'?: string;
   }

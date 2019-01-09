@@ -1,254 +1,331 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
-        <title>WebUp Components</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>WebUp Components</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans" rel="stylesheet" />
 
-        <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet"/>
+    <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet" />
 
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 
-        <link rel="stylesheet" href="/build/wu-components.css"/>
-        <script src="build/wu-components.js"></script>
+    <link rel="stylesheet" href="/build/wu-components.css" />
+    <script src="build/wu-components.js"></script>
 
-        <style>
-            body {
-                margin: 0;
-                font-size: 16px;
-                font-family: 'Open Sans', sans-serif;
-            }
-        </style>
-    </head>
+    <style>
+      body {
+        margin: 0;
+        font-size: 16px;
+        font-family: 'Open Sans', sans-serif;
+      }
+    </style>
+  </head>
 
-    <body>
-        <wu-page >
-            <wu-container>
-                <wu-row>
-                    <wu-col>
-                        <wu-form action="#" method="post">
-                            <div>
-                                <label for="name">Text Input:</label>
-                                <input type="text" placeholder="Enter text" name="name" id="name" value="" required="required"/>
-                            </div>
-                            <div>
-                                <label for="name">Email Input:</label>
-                                <input type="email" placeholder="Enter email" required="required"/>
-                            </div>
-                            <div>
-                                <label for="name">Search Input:</label>
-                                <input type="search" placeholder="Enter text" name="search" id="search" value=""/>
-                            </div>
-                            <div>
-                                <label for="name">File Input:
-                                    <input type="file"/>
-                                </label>
-                            </div>
-                            <div>
-                                <label for="name">Disabled Input:</label>
-                                <input type="text" placeholder="ASDF" disabled="disabled" name="name" id="name" value=""/>
-                            </div>
-                            <div>
-                                <input type="range" id="start" name="volume" min="0" max="11">
-                                <label for="volume">Volume</label>
-                            </div>
-                            <hr>
-                            <div>
-                                <wu-toggle theme="primary" name="toggle-1" id="toggle-1" value="1">Toggle switch 1</wu-toggle>
-                                <wu-toggle theme="secondary" name="toggle-2" id="toggle-2" value="1">Toggle switch 2</wu-toggle>
-                            </div>
-                            <script>
-                                document.getElementById('toggle-1').addEventListener('change', function (e) {
-                                    console.log(e.detail)
-                                });
-                            </script>
-                            <div>
-                                <label for="radio-choice-1">Choice 1
-                                    <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1"/>
-                                </label>
+  <body>
+    <wu-header fixed theme="primary">
+      <wu-container fluid fill-height>
+        <wu-row fill-height class="f-align-center">
+          <wu-col class="text-left">
+            <wu-burger animation="rotate" target="#menu" />
+          </wu-col>
+          <wu-col class="text-center">
+              Wu Components
+          </wu-col>
+          <wu-col class="text-right">
+          </wu-col>
+        </wu-row>
+      </wu-container>
+    </wu-header>
+    <wu-drawer-menu auto-close="true" id="menu" position="left" panel="lg">
+      <wu-menu-header theme="secondary" img="/assets/images/cap.svg" img-shape="circle" img-href="#">
+        <span slot="title">Wu Components</span>
+        <span slot="sub-title">A simple set of reusable web components</span>
+      </wu-menu-header>
 
-                                <label for="radio-choice-2">Choice 2
-                                    <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2"/>
-                                </label>
-                            </div>
+      <wu-menu-list>
+        <wu-menu-item theme="primary">
+          <i class="material-icons">home</i> Home
+        </wu-menu-item>
+        <wu-divider />
+        <wu-menu-sub-heading>Components</wu-menu-sub-heading>
+        <wu-menu-item theme="secondary">Component</wu-menu-item>
+        <wu-divider />
+        <wu-menu-sub-heading>Theming</wu-menu-sub-heading>
+        <wu-menu-item>Themes</wu-menu-item>
+        <wu-menu-item>Link</wu-menu-item>
+      </wu-menu-list>
+    </wu-drawer-menu>
+    <wu-page reflect-fixed-header panel="lg">
+      <wu-container>
+        <wu-row>
+          <wu-col>
+            <wu-form action="#" method="post">
+              <div>
+                <label for="name">Text Input:</label>
+                <input type="text" placeholder="Enter text" name="name" id="name" value="" required="required" />
+              </div>
+              <div>
+                <label for="name">Email Input:</label>
+                <input type="email" placeholder="Enter email" required="required" />
+              </div>
+              <div>
+                <label for="name">Search Input:</label>
+                <input type="search" placeholder="Enter text" name="search" id="search" value="" />
+              </div>
+              <div>
+                <label for="name">File Input: <input type="file" /> </label>
+              </div>
+              <div>
+                <label for="name">Disabled Input:</label>
+                <input type="text" placeholder="ASDF" disabled="disabled" name="name" id="name" value="" />
+              </div>
+              <div>
+                <input type="range" id="start" name="volume" min="0" max="11" /> <label for="volume">Volume</label>
+              </div>
+              <hr />
+              <div>
+                <wu-toggle theme="primary" name="toggle-1" id="toggle-1" value="1">Toggle switch 1</wu-toggle>
+                <wu-toggle theme="secondary" name="toggle-2" id="toggle-2" value="1">Toggle switch 2</wu-toggle>
+              </div>
+              <script>
+                document.getElementById('toggle-1').addEventListener('change', function(e) {
+                  console.log(e.detail)
+                })
+              </script>
+              <div>
+                <label for="radio-choice-1"
+                  >Choice 1 <input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" />
+                </label>
 
-                            <div class="toggle">
-                                <input type="checkbox" theme="primary" name="checkbox-choice" onchange="test(this.checked)" id="checkbox-choice-1" value="choice-1"/>
-                                <label for="checkbox-choice-1">Checkbox 1</label>
-                            </div>
-                            <div class="toggle">
-                                <input type="checkbox" theme="danger" name="checkbox-choice" id="checkbox-choice-2" value="choice-2"/>
-                                <label for="checkbox-choice-2">Checkbox 2</label>
-                            </div>
-                            <div>
-                                <label for="select-choice">Select Dropdown Choice:</label>
-                                <select name="select-choice" id="select-choice">
-                                    <option value="Choice 1">Choice 1</option>
-                                    <option value="Choice 2">Choice 2</option>
-                                    <option value="Choice 3">Choice 3</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="exampleFormControlSelect2">Example multiple select</label>
-                                <select multiple="multiple" id="exampleFormControlSelect2">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="textarea">Textarea:</label>
-                                <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
-                            </div>
+                <label for="radio-choice-2"
+                  >Choice 2 <input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2" />
+                </label>
+              </div>
 
-                            <div>
-                                <label for="checkbox">Checkbox:
-                                    <input type="checkbox" name="checkbox" id="checkbox"/>
-                                </label>
-                            </div>
+              <div class="toggle">
+                <input
+                  type="checkbox"
+                  theme="primary"
+                  name="checkbox-choice"
+                  onchange="test(this.checked)"
+                  id="checkbox-choice-1"
+                  value="choice-1"
+                />
+                <label for="checkbox-choice-1">Checkbox 1</label>
+              </div>
+              <div class="toggle">
+                <input type="checkbox" theme="danger" name="checkbox-choice" id="checkbox-choice-2" value="choice-2" />
+                <label for="checkbox-choice-2">Checkbox 2</label>
+              </div>
+              <div>
+                <label for="select-choice">Select Dropdown Choice:</label>
+                <select name="select-choice" id="select-choice">
+                  <option value="Choice 1">Choice 1</option>
+                  <option value="Choice 2">Choice 2</option>
+                  <option value="Choice 3">Choice 3</option>
+                </select>
+              </div>
+              <div>
+                <label for="exampleFormControlSelect2">Example multiple select</label>
+                <select multiple="multiple" id="exampleFormControlSelect2">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div>
+                <label for="textarea">Textarea:</label>
+                <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+              </div>
 
-                            <div></div>
+              <div>
+                <label for="checkbox">Checkbox: <input type="checkbox" name="checkbox" id="checkbox" /> </label>
+              </div>
 
-                            <div>
-                                <input type="submit" value="Submit"/>
-                            </div>
-                        </wu-form>
-                    </wu-col>
-                </wu-row>
-            </wu-container>
-        </wu-page>
-        <wu-page style="display:none">
-            <wu-container>
-                <h2>Card</h2>
-                <wu-row equal-height="wu-card">
-                    <wu-col portion="1">
-                        <wu-card theme="secondary" card-title="Text Card">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
-                        </wu-card>
-                    </wu-col>
-                    <wu-col portion="1">
-                        <wu-card flat="flat" card-title="Text Card with hover effect" hover="hover">
-                            Lorem ipsum dolor sit amet,
-                            <a href="#">consectetur adipisicing elit</a>. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
-                            <div slot="footer">
-                                <a href="#">Link</a>
-                                <button type="button">Button</button>
-                                <button type="button" class="action">Button.action</button>
-                                <wu-button type="button">Wu Button</wu-button>
-                            </div>
-                        </wu-card>
-                    </wu-col>
-                    <wu-col portion="1">
-                        <wu-card hover="hover" card-title="Media Card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo enim voluptates?
-                        </wu-card>
-                    </wu-col>
-                    <wu-col portion="1">
-                        <wu-card hover="hover" card-title="Card with actions" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dolorem aut architecto assumenda sapiente vero dolores distinctio molestias pariatur! Beatae vitae itaque maxime, deserunt odit repudiandae repellendus ea quo atque.
-                            <div slot="footer">
-                                <a href="#">Link</a>
-                                <button type="button">Button</button>
-                                <button type="button" class="action">Button.action</button>
-                                <wu-button type="button">Wu Button</wu-button>
-                            </div>
-                        </wu-card>
-                    </wu-col>
-                </wu-row>
-            </wu-container>
-        </wu-page>
-        <!-- <wu-parallax speed="-4" img-src="http://prototype.cordelta.digital/_assets/img/bg.jpg" style="height: 100vh"></wu-parallax> -->
-        <div style="display: none; background:white">
-            <wu-container>
-                <wu-row>
-                    <wu-col>
-                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, qui.</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error vitae culpa, dolorum amet soluta maxime dignissimos ad voluptates dicta odio fugiat eos accusamus porro quisquam ab velit excepturi ea cumque.
-                        </p>
-                        <h2>Nostrum officia laboriosam illo nobis numquam delectus praesentium velit iusto?</h2>
-                        <p>
-                            Aut ipsa magnam hic maiores rem quia minus error consequatur, voluptas, laboriosam aspernatur eligendi neque. Quo unde reprehenderit maiores fugit nulla, iure laborum delectus illo aperiam eum, at, rem mollitia.
-                        </p>
-                        <h2>Incidunt deserunt id cupiditate dignissimos asperiores architecto praesentium ullam rerum!</h2>
-                        <p>
-                            Non officiis ullam sint suscipit rem quibusdam, accusantium, fugit ducimus, consectetur porro voluptatum unde quos sit quasi. Perferendis quia quam cupiditate inventore laudantium corrupti labore, molestias voluptate in! Eaque, minus?
-                        </p>
-                        <h2>Qui illo quae rem molestiae accusamus tempora voluptatibus enim omnis.</h2>
-                        <p>
-                            Deleniti laudantium quisquam alias optio adipisci repudiandae ex aliquam voluptatum voluptas eos non voluptatem, earum assumenda, iure, voluptatibus sapiente similique vero incidunt modi officia dignissimos praesentium aliquid iusto veniam? Consequuntur.
-                        </p>
-                        <h2>Incidunt, nihil. Eligendi possimus saepe quibusdam accusantium et illum aspernatur?</h2>
-                        <p>
-                            Similique ex enim excepturi commodi, aliquid assumenda, ipsa aspernatur necessitatibus repellat reiciendis ipsam, obcaecati placeat consequuntur facilis optio voluptates impedit id cumque cupiditate iure adipisci? Exercitationem delectus consequatur iste voluptatibus?
-                        </p>
-                    </wu-col>
-                </wu-row>
-                <wu-row>
-                    <wu-col>
-                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, qui.</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error vitae culpa, dolorum amet soluta maxime dignissimos ad voluptates dicta odio fugiat eos accusamus porro quisquam ab velit excepturi ea cumque.
-                        </p>
-                        <h2>Nostrum officia laboriosam illo nobis numquam delectus praesentium velit iusto?</h2>
-                        <p>
-                            Aut ipsa magnam hic maiores rem quia minus error consequatur, voluptas, laboriosam aspernatur eligendi neque. Quo unde reprehenderit maiores fugit nulla, iure laborum delectus illo aperiam eum, at, rem mollitia.
-                        </p>
-                        <h2>Incidunt deserunt id cupiditate dignissimos asperiores architecto praesentium ullam rerum!</h2>
-                        <p>
-                            Non officiis ullam sint suscipit rem quibusdam, accusantium, fugit ducimus, consectetur porro voluptatum unde quos sit quasi. Perferendis quia quam cupiditate inventore laudantium corrupti labore, molestias voluptate in! Eaque, minus?
-                        </p>
-                        <h2>Qui illo quae rem molestiae accusamus tempora voluptatibus enim omnis.</h2>
-                        <p>
-                            Deleniti laudantium quisquam alias optio adipisci repudiandae ex aliquam voluptatum voluptas eos non voluptatem, earum assumenda, iure, voluptatibus sapiente similique vero incidunt modi officia dignissimos praesentium aliquid iusto veniam? Consequuntur.
-                        </p>
-                        <h2>Incidunt, nihil. Eligendi possimus saepe quibusdam accusantium et illum aspernatur?</h2>
-                        <p>
-                            Similique ex enim excepturi commodi, aliquid assumenda, ipsa aspernatur necessitatibus repellat reiciendis ipsam, obcaecati placeat consequuntur facilis optio voluptates impedit id cumque cupiditate iure adipisci? Exercitationem delectus consequatur iste voluptatibus?
-                        </p>
-                    </wu-col>
-                </wu-row>
-                <wu-row>
-                    <wu-col>
-                        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, qui.</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error vitae culpa, dolorum amet soluta maxime dignissimos ad voluptates dicta odio fugiat eos accusamus porro quisquam ab velit excepturi ea cumque.
-                        </p>
-                        <h2>Nostrum officia laboriosam illo nobis numquam delectus praesentium velit iusto?</h2>
-                        <p>
-                            Aut ipsa magnam hic maiores rem quia minus error consequatur, voluptas, laboriosam aspernatur eligendi neque. Quo unde reprehenderit maiores fugit nulla, iure laborum delectus illo aperiam eum, at, rem mollitia.
-                        </p>
-                        <h2>Incidunt deserunt id cupiditate dignissimos asperiores architecto praesentium ullam rerum!</h2>
-                        <p>
-                            Non officiis ullam sint suscipit rem quibusdam, accusantium, fugit ducimus, consectetur porro voluptatum unde quos sit quasi. Perferendis quia quam cupiditate inventore laudantium corrupti labore, molestias voluptate in! Eaque, minus?
-                        </p>
-                        <h2>Qui illo quae rem molestiae accusamus tempora voluptatibus enim omnis.</h2>
-                        <p>
-                            Deleniti laudantium quisquam alias optio adipisci repudiandae ex aliquam voluptatum voluptas eos non voluptatem, earum assumenda, iure, voluptatibus sapiente similique vero incidunt modi officia dignissimos praesentium aliquid iusto veniam? Consequuntur.
-                        </p>
-                        <h2>Incidunt, nihil. Eligendi possimus saepe quibusdam accusantium et illum aspernatur?</h2>
-                        <p>
-                            Similique ex enim excepturi commodi, aliquid assumenda, ipsa aspernatur necessitatibus repellat reiciendis ipsam, obcaecati placeat consequuntur facilis optio voluptates impedit id cumque cupiditate iure adipisci? Exercitationem delectus consequatur iste voluptatibus?
-                        </p>
-                    </wu-col>
-                </wu-row>
-            </wu-container>
-        </div>
-        <!---->
+              <div></div>
 
-        <!---->
+              <div><input type="submit" value="Submit" /></div>
+            </wu-form>
+          </wu-col>
+        </wu-row>
+      </wu-container>
+    </wu-page>
+    <wu-page style="display:none">
+      <wu-container>
+        <h2>Card</h2>
+        <wu-row equal-height="wu-card">
+          <wu-col portion="1">
+            <wu-card theme="secondary" card-title="Text Card">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima,
+              consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo
+              enim voluptates?
+            </wu-card>
+          </wu-col>
+          <wu-col portion="1">
+            <wu-card flat="flat" card-title="Text Card with hover effect" hover="hover">
+              Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>. Assumenda, sit illum nam
+              blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam
+              provident. Sed quo enim voluptates?
+              <div slot="footer">
+                <a href="#">Link</a> <button type="button">Button</button>
+                <button type="button" class="action">Button.action</button>
+                <wu-button type="button">Wu Button</wu-button>
+              </div>
+            </wu-card>
+          </wu-col>
+          <wu-col portion="1">
+            <wu-card
+              hover="hover"
+              card-title="Media Card"
+              thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
+              src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg"
+              alt="text"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima,
+              consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo
+              enim voluptates?
+            </wu-card>
+          </wu-col>
+          <wu-col portion="1">
+            <wu-card
+              hover="hover"
+              card-title="Card with actions"
+              thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
+              src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg"
+              alt="text"
+            >
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dolorem aut architecto assumenda sapiente
+              vero dolores distinctio molestias pariatur! Beatae vitae itaque maxime, deserunt odit repudiandae
+              repellendus ea quo atque.
+              <div slot="footer">
+                <a href="#">Link</a> <button type="button">Button</button>
+                <button type="button" class="action">Button.action</button>
+                <wu-button type="button">Wu Button</wu-button>
+              </div>
+            </wu-card>
+          </wu-col>
+        </wu-row>
+      </wu-container>
+    </wu-page>
+    <!-- <wu-parallax speed="-4" img-src="http://prototype.cordelta.digital/_assets/img/bg.jpg" style="height: 100vh"></wu-parallax> -->
+    <div style="display: none; background:white">
+      <wu-container>
+        <wu-row>
+          <wu-col>
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, qui.</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error vitae culpa, dolorum amet soluta maxime
+              dignissimos ad voluptates dicta odio fugiat eos accusamus porro quisquam ab velit excepturi ea cumque.
+            </p>
+            <h2>Nostrum officia laboriosam illo nobis numquam delectus praesentium velit iusto?</h2>
+            <p>
+              Aut ipsa magnam hic maiores rem quia minus error consequatur, voluptas, laboriosam aspernatur eligendi
+              neque. Quo unde reprehenderit maiores fugit nulla, iure laborum delectus illo aperiam eum, at, rem
+              mollitia.
+            </p>
+            <h2>Incidunt deserunt id cupiditate dignissimos asperiores architecto praesentium ullam rerum!</h2>
+            <p>
+              Non officiis ullam sint suscipit rem quibusdam, accusantium, fugit ducimus, consectetur porro voluptatum
+              unde quos sit quasi. Perferendis quia quam cupiditate inventore laudantium corrupti labore, molestias
+              voluptate in! Eaque, minus?
+            </p>
+            <h2>Qui illo quae rem molestiae accusamus tempora voluptatibus enim omnis.</h2>
+            <p>
+              Deleniti laudantium quisquam alias optio adipisci repudiandae ex aliquam voluptatum voluptas eos non
+              voluptatem, earum assumenda, iure, voluptatibus sapiente similique vero incidunt modi officia dignissimos
+              praesentium aliquid iusto veniam? Consequuntur.
+            </p>
+            <h2>Incidunt, nihil. Eligendi possimus saepe quibusdam accusantium et illum aspernatur?</h2>
+            <p>
+              Similique ex enim excepturi commodi, aliquid assumenda, ipsa aspernatur necessitatibus repellat reiciendis
+              ipsam, obcaecati placeat consequuntur facilis optio voluptates impedit id cumque cupiditate iure adipisci?
+              Exercitationem delectus consequatur iste voluptatibus?
+            </p>
+          </wu-col>
+        </wu-row>
+        <wu-row>
+          <wu-col>
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, qui.</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error vitae culpa, dolorum amet soluta maxime
+              dignissimos ad voluptates dicta odio fugiat eos accusamus porro quisquam ab velit excepturi ea cumque.
+            </p>
+            <h2>Nostrum officia laboriosam illo nobis numquam delectus praesentium velit iusto?</h2>
+            <p>
+              Aut ipsa magnam hic maiores rem quia minus error consequatur, voluptas, laboriosam aspernatur eligendi
+              neque. Quo unde reprehenderit maiores fugit nulla, iure laborum delectus illo aperiam eum, at, rem
+              mollitia.
+            </p>
+            <h2>Incidunt deserunt id cupiditate dignissimos asperiores architecto praesentium ullam rerum!</h2>
+            <p>
+              Non officiis ullam sint suscipit rem quibusdam, accusantium, fugit ducimus, consectetur porro voluptatum
+              unde quos sit quasi. Perferendis quia quam cupiditate inventore laudantium corrupti labore, molestias
+              voluptate in! Eaque, minus?
+            </p>
+            <h2>Qui illo quae rem molestiae accusamus tempora voluptatibus enim omnis.</h2>
+            <p>
+              Deleniti laudantium quisquam alias optio adipisci repudiandae ex aliquam voluptatum voluptas eos non
+              voluptatem, earum assumenda, iure, voluptatibus sapiente similique vero incidunt modi officia dignissimos
+              praesentium aliquid iusto veniam? Consequuntur.
+            </p>
+            <h2>Incidunt, nihil. Eligendi possimus saepe quibusdam accusantium et illum aspernatur?</h2>
+            <p>
+              Similique ex enim excepturi commodi, aliquid assumenda, ipsa aspernatur necessitatibus repellat reiciendis
+              ipsam, obcaecati placeat consequuntur facilis optio voluptates impedit id cumque cupiditate iure adipisci?
+              Exercitationem delectus consequatur iste voluptatibus?
+            </p>
+          </wu-col>
+        </wu-row>
+        <wu-row>
+          <wu-col>
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, qui.</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error vitae culpa, dolorum amet soluta maxime
+              dignissimos ad voluptates dicta odio fugiat eos accusamus porro quisquam ab velit excepturi ea cumque.
+            </p>
+            <h2>Nostrum officia laboriosam illo nobis numquam delectus praesentium velit iusto?</h2>
+            <p>
+              Aut ipsa magnam hic maiores rem quia minus error consequatur, voluptas, laboriosam aspernatur eligendi
+              neque. Quo unde reprehenderit maiores fugit nulla, iure laborum delectus illo aperiam eum, at, rem
+              mollitia.
+            </p>
+            <h2>Incidunt deserunt id cupiditate dignissimos asperiores architecto praesentium ullam rerum!</h2>
+            <p>
+              Non officiis ullam sint suscipit rem quibusdam, accusantium, fugit ducimus, consectetur porro voluptatum
+              unde quos sit quasi. Perferendis quia quam cupiditate inventore laudantium corrupti labore, molestias
+              voluptate in! Eaque, minus?
+            </p>
+            <h2>Qui illo quae rem molestiae accusamus tempora voluptatibus enim omnis.</h2>
+            <p>
+              Deleniti laudantium quisquam alias optio adipisci repudiandae ex aliquam voluptatum voluptas eos non
+              voluptatem, earum assumenda, iure, voluptatibus sapiente similique vero incidunt modi officia dignissimos
+              praesentium aliquid iusto veniam? Consequuntur.
+            </p>
+            <h2>Incidunt, nihil. Eligendi possimus saepe quibusdam accusantium et illum aspernatur?</h2>
+            <p>
+              Similique ex enim excepturi commodi, aliquid assumenda, ipsa aspernatur necessitatibus repellat reiciendis
+              ipsam, obcaecati placeat consequuntur facilis optio voluptates impedit id cumque cupiditate iure adipisci?
+              Exercitationem delectus consequatur iste voluptatibus?
+            </p>
+          </wu-col>
+        </wu-row>
+      </wu-container>
+    </div>
+    <!---->
 
-        <!---->
+    <!---->
 
-        <!-- <h2>Inputs</h2> <h3>Star rating</h3> <wu-rating value="3" style="font-size: 60px; color: gold" id="rating-test"></wu-rating> <wu-rating value="" max="4"></wu-rating> <code-block code=' <wu-rating value="3" style="font-size: 60px; color: gold" id="rating-test"></wu-rating> <wu-rating value="" max="4"></wu-rating> '></code-block> <p>wu-rating emits a <code>change</code> event which you can handle in your normal js code.</p> <script> const ratingElement = document.getElementById('rating-test'); ratingElement.addEventListener('change', function (e) { console.log(e.target.value); }) </script> <code-block language="javascript" code=" // Handle change event with JS const ratingElement = document.getElementById('rating-test'); ratingElement.addEventListener('change', function (e) { console.log(e.target.value); }) "></code-block> -->
+    <!---->
 
-        <!-- <h2>Tinder Card</h2> <wu-tinder-card id="dog-card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" threshold="150" > <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, soluta. Sit asperiores suscipit quo ipsam eaque maiores, amet molestias possimus deserunt dolorem, nemo mollitia provident accusamus, iste alias explicabo ut? </p> </wu-tinder-card> <wu-tinder-card id="text-card" left-btn-text="Nope" right-btn-text="Oh yeah"> <h1>This is a text card</h1> </wu-tinder-card> <wu-tinder-card id="text-card-2" left-btn-text="Nope" right-btn-text="Oh yeah"> <h1>This is another card</h1> </wu-tinder-card> -->
-        <script>
-            /*
+    <!-- <h2>Inputs</h2> <h3>Star rating</h3> <wu-rating value="3" style="font-size: 60px; color: gold" id="rating-test"></wu-rating> <wu-rating value="" max="4"></wu-rating> <code-block code=' <wu-rating value="3" style="font-size: 60px; color: gold" id="rating-test"></wu-rating> <wu-rating value="" max="4"></wu-rating> '></code-block> <p>wu-rating emits a <code>change</code> event which you can handle in your normal js code.</p> <script> const ratingElement = document.getElementById('rating-test'); ratingElement.addEventListener('change', function (e) { console.log(e.target.value); }) </script> <code-block language="javascript" code=" // Handle change event with JS const ratingElement = document.getElementById('rating-test'); ratingElement.addEventListener('change', function (e) { console.log(e.target.value); }) "></code-block> -->
+
+    <!-- <h2>Tinder Card</h2> <wu-tinder-card id="dog-card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg" src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" threshold="150" > <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae, soluta. Sit asperiores suscipit quo ipsam eaque maiores, amet molestias possimus deserunt dolorem, nemo mollitia provident accusamus, iste alias explicabo ut? </p> </wu-tinder-card> <wu-tinder-card id="text-card" left-btn-text="Nope" right-btn-text="Oh yeah"> <h1>This is a text card</h1> </wu-tinder-card> <wu-tinder-card id="text-card-2" left-btn-text="Nope" right-btn-text="Oh yeah"> <h1>This is another card</h1> </wu-tinder-card> -->
+    <script>
+      /*
             ;
             (function () {
                 var dogCard = document.querySelector('#dog-card')
@@ -273,6 +350,6 @@
                 })
             })()
             */
-        </script>
-    </body>
+    </script>
+  </body>
 </html>

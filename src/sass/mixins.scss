@@ -171,6 +171,7 @@ $themes: ('primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light
 
 /* Media queries */
 $breakpoints: (
+  xs: 0,
   sm: 768px,
   md: 1024px,
   lg: 1260px
@@ -190,5 +191,31 @@ $breakpoints: (
     }
   } @else {
     @warn 'Invalid breakpoint #{$breakpoint}.';
+  }
+}
+
+@mixin panelMenu() {
+  @each $bp, $width in $breakpoints {
+    &[panel='#{$bp}'] {
+      .side-menu {
+        @include media($bp) {
+          @include raised(0);
+          transform: none;
+          opacity: 1;
+          border-right: 1px solid #dedede;
+          margin-left: 2%;
+        }
+      }
+    }
+  }
+}
+
+@mixin panelPage() {
+  @each $bp, $width in $breakpoints {
+    &[panel='#{$bp}'] {
+      @include media($bp) {
+        margin-left: var(--wu-drawer-menu-width);
+      }
+    }
   }
 }

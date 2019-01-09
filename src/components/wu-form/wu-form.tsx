@@ -11,9 +11,6 @@ export class WuForm {
   render () {
     return (
       <div>
-        <wu-toggle onChange={e => this.onToggleChange(e)} value="test">
-          Test
-        </wu-toggle>
         <slot />
       </div>
     )
