@@ -1,3 +1,8 @@
+/**
+ * @prop --wu-button-padding-x: Horizontal padding
+ * @prop --wu-button-padding-y: Vertical padding
+ * @prop --wu-button-radius: How rounded you want the corners to be
+ */
 :root {
   --wu-button-padding-x: 30px;
   --wu-button-padding-y: 10px;

@@ -20,7 +20,7 @@ exports.config = {
       ]
     })
   ],
-  outputTargets: [{ type: 'dist' }, { type: 'www' }],
+  outputTargets: [{ type: 'dist' }, { type: 'www' }, { type: 'docs' }],
   globalStyle: 'src/globals/globals.scss',
   enableCache: false,
   hashFileNames: true

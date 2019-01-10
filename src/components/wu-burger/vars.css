@@ -1,3 +1,8 @@
+/**
+ * @prop --wu-burger-size: Width of the lines in burger icon
+ * @prop --wu-burger-thickness: Thickness of the lines in burger icon
+ * @prop --wu-burger-color: Color of the burger icon
+ */
 :root {
   --wu-burger-size: 40px;
   --wu-burger-thickness: 4px;

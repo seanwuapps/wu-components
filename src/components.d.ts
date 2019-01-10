@@ -18,26 +18,108 @@ export namespace Components {
   interface WuAccordionAttributes extends StencilHTMLAttributes {}
 
   interface WuBurger {
-    'animation': string;
+    /**
+    * animation used to transition from burger icon to close icon
+    */
+    'animation': 'middle-out' | 'spin-out' | 'rotate';
+    /**
+    * if specified, burger icon will disappear at the screen size to accomodate "panel layout"
+    */
+    'panel': 'xs' | 'sm' | 'md' | 'lg';
+    /**
+    * id of the target wu-drawer-menu element
+    */
     'target': string;
+    /**
+    * Change the color of the burger using a theme
+    */
     'theme': string;
   }
   interface WuBurgerAttributes extends StencilHTMLAttributes {
-    'animation'?: string;
+    /**
+    * animation used to transition from burger icon to close icon
+    */
+    'animation'?: 'middle-out' | 'spin-out' | 'rotate';
+    /**
+    * if specified, burger icon will disappear at the screen size to accomodate "panel layout"
+    */
+    'panel'?: 'xs' | 'sm' | 'md' | 'lg';
+    /**
+    * id of the target wu-drawer-menu element
+    */
     'target'?: string;
+    /**
+    * Change the color of the burger using a theme
+    */
     'theme'?: string;
   }
 
   interface WuButton {
+    /**
+    * If button will extend to full width
+    */
+    'block': boolean;
+    /**
+    * If this button is disabled
+    */
     'disabled': boolean;
+    /**
+    * If the button will use flat style
+    */
+    'flat': boolean;
+    /**
+    * If `href` attribute is specified, the button will be output as an `a` tag
+    */
     'href': string;
+    /**
+    * If use outline styles
+    */
+    'outline': boolean;
+    /**
+    * Shape of the button
+    */
+    'shape': 'circle' | 'round';
+    /**
+    * Button theme
+    */
     'theme': string;
+    /**
+    * Html type of the button
+    */
     'type': 'submit' | 'reset' | 'button';
   }
   interface WuButtonAttributes extends StencilHTMLAttributes {
+    /**
+    * If button will extend to full width
+    */
+    'block'?: boolean;
+    /**
+    * If this button is disabled
+    */
     'disabled'?: boolean;
+    /**
+    * If the button will use flat style
+    */
+    'flat'?: boolean;
+    /**
+    * If `href` attribute is specified, the button will be output as an `a` tag
+    */
     'href'?: string;
+    /**
+    * If use outline styles
+    */
+    'outline'?: boolean;
+    /**
+    * Shape of the button
+    */
+    'shape'?: 'circle' | 'round';
+    /**
+    * Button theme
+    */
     'theme'?: string;
+    /**
+    * Html type of the button
+    */
     'type'?: 'submit' | 'reset' | 'button';
   }
 

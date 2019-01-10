@@ -7,12 +7,29 @@ import { Component, Element, Prop } from '@stencil/core'
 export class WuBurger {
   @Element()
   burger: HTMLElement
+
+  /**
+   * Change the color of the burger using a theme
+   */
   @Prop({ reflectToAttr: true })
   theme?: string
+
+  /**
+   * animation used to transition from burger icon to close icon
+   */
   @Prop({ reflectToAttr: true, mutable: true })
-  animation: string = 'middle-out'
+  animation: 'middle-out' | 'spin-out' | 'rotate' = 'middle-out'
+
+  /**
+   * id of the target wu-drawer-menu element
+   */
   @Prop({ reflectToAttr: true })
   target: string
+
+  /**
+   * if specified, burger icon will disappear at the screen size to accomodate "panel layout"
+   */
+  @Prop({ reflectToAttr: true }) panel?: 'xs' | 'sm' | 'md' | 'lg'
 
   targetMenu: Element
 

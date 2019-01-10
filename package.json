@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "build": "stencil build",
-    "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
+    "dev": "sd concurrent \"stencil build --dev --docs --watch\" \"stencil-dev-server\" ",
     "serve": "stencil-dev-server",
     "start": "npm run dev",
     "test": "jest --no-cache",
@@ -19,7 +19,7 @@
     "release:patch": "npm run build --prod & npm version patch & npm publish",
     "release:minor": "npm run build --prod & npm version minor & npm publish",
     "release:major": "npm run build --prod & npm version major & npm publish",
-    "docs:dev": "cd docs-dev && npm start"
+    "docs.data": "stencil build --docs-json ./docs.json"
   },
   "dependencies": {
     "rellax": "^1.7.1"

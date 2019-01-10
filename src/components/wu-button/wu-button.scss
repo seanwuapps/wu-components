@@ -1,21 +1,19 @@
 wu-button {
   @include raised(1);
   @include themeable('button');
-  background: white;
-  color: currentColor;
-  &[outline] {
-    border: 1px solid currentColor;
-  }
   max-width: 100%;
   display: inline-block;
   margin: 5px;
-  transition: box-shadow var(--fast) ease-out, filter var(--fast) ease-in;
+  transition: all var(--fast);
   width: auto;
   height: auto;
   &:hover,
   &:focus {
     @include raisedHover();
     filter: brightness(105%);
+  }
+  &[outline] {
+    border: 1px solid currentColor;
   }
   button,
   a {
@@ -64,6 +62,13 @@ wu-button {
       font-size: 1em;
       text-align: center;
       white-space: nowrap;
+    }
+  }
+  &[shape='round'] {
+    height: 3em;
+    border-radius: 1.5em;
+    a,
+    button {
     }
   }
 }
