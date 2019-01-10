@@ -110,4 +110,12 @@ wu-burger {
       }
     }
   }
+
+  @each $bp, $width in $breakpoints {
+    &[panel='#{$bp}'] {
+      @include media($bp) {
+        display: none;
+      }
+    }
+  }
 }

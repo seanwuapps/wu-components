@@ -160,6 +160,11 @@ $themes: ('primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light
         }
       }
     }
+    @if ($name == 'text') {
+      &[theme='#{$theme}'] {
+        color: var(--color-#{$theme});
+      }
+    }
     @if ($name == '') {
       &[theme='#{$theme}'] {
         background: var(--color-#{$theme});
@@ -203,7 +208,6 @@ $breakpoints: (
           transform: none;
           opacity: 1;
           border-right: 1px solid #dedede;
-          margin-left: 2%;
         }
       }
     }

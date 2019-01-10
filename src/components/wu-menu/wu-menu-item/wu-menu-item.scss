@@ -20,17 +20,18 @@ wu-menu-item {
   .menu-item {
     position: relative;
     z-index: 2;
-  }
-  [href] {
-    display: block;
-    text-decoration: none;
-    color: currentColor;
     padding: 15px 10px 18px 20px;
+    display: block;
     i {
       width: 1em;
       max-width: 1em;
       margin-right: 10px;
       vertical-align: text-bottom;
     }
+  }
+  [href] {
+    display: block;
+    text-decoration: none;
+    color: currentColor;
   }
 }

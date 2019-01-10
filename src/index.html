@@ -28,7 +28,7 @@
       <wu-container fluid fill-height>
         <wu-row fill-height class="f-align-center">
           <wu-col class="text-left">
-            <wu-burger animation="rotate" target="#menu" />
+            <wu-burger panel="lg" animation="rotate" target="#menu" />
           </wu-col>
           <wu-col class="text-center">
               Wu Components
@@ -39,7 +39,7 @@
       </wu-container>
     </wu-header>
     <wu-drawer-menu auto-close="true" id="menu" position="left" panel="lg">
-      <wu-menu-header theme="secondary" img="/assets/images/cap.svg" img-shape="circle" img-href="#">
+      <wu-menu-header theme="primary" img="/assets/images/cap.svg" img-shape="circle" img-href="#">
         <span slot="title">Wu Components</span>
         <span slot="sub-title">A simple set of reusable web components</span>
       </wu-menu-header>
@@ -62,10 +62,11 @@
         <wu-row>
           <wu-col>
             <wu-form action="#" method="post">
-              <div>
+              <wu-field-stacked>
                 <label for="name">Text Input:</label>
                 <input type="text" placeholder="Enter text" name="name" id="name" value="" required="required" />
-              </div>
+                <wu-field-helper theme="danger">This field is required.</wu-field-helper>
+              </wu-field-stacked>
               <div>
                 <label for="name">Email Input:</label>
                 <input type="email" placeholder="Enter email" required="required" />

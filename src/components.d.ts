@@ -59,6 +59,12 @@ export namespace Components {
   interface WuDivider {}
   interface WuDividerAttributes extends StencilHTMLAttributes {}
 
+  interface WuFieldHelper {}
+  interface WuFieldHelperAttributes extends StencilHTMLAttributes {}
+
+  interface WuFieldStacked {}
+  interface WuFieldStackedAttributes extends StencilHTMLAttributes {}
+
   interface WuForm {}
   interface WuFormAttributes extends StencilHTMLAttributes {}
 
@@ -248,6 +254,8 @@ declare global {
     'WuButton': Components.WuButton;
     'WuCard': Components.WuCard;
     'WuDivider': Components.WuDivider;
+    'WuFieldHelper': Components.WuFieldHelper;
+    'WuFieldStacked': Components.WuFieldStacked;
     'WuForm': Components.WuForm;
     'WuToggle': Components.WuToggle;
     'WuCol': Components.WuCol;
@@ -273,6 +281,8 @@ declare global {
     'wu-button': Components.WuButtonAttributes;
     'wu-card': Components.WuCardAttributes;
     'wu-divider': Components.WuDividerAttributes;
+    'wu-field-helper': Components.WuFieldHelperAttributes;
+    'wu-field-stacked': Components.WuFieldStackedAttributes;
     'wu-form': Components.WuFormAttributes;
     'wu-toggle': Components.WuToggleAttributes;
     'wu-col': Components.WuColAttributes;
@@ -326,6 +336,18 @@ declare global {
   var HTMLWuDividerElement: {
     prototype: HTMLWuDividerElement;
     new (): HTMLWuDividerElement;
+  };
+
+  interface HTMLWuFieldHelperElement extends Components.WuFieldHelper, HTMLStencilElement {}
+  var HTMLWuFieldHelperElement: {
+    prototype: HTMLWuFieldHelperElement;
+    new (): HTMLWuFieldHelperElement;
+  };
+
+  interface HTMLWuFieldStackedElement extends Components.WuFieldStacked, HTMLStencilElement {}
+  var HTMLWuFieldStackedElement: {
+    prototype: HTMLWuFieldStackedElement;
+    new (): HTMLWuFieldStackedElement;
   };
 
   interface HTMLWuFormElement extends Components.WuForm, HTMLStencilElement {}
@@ -431,6 +453,8 @@ declare global {
     'wu-button': HTMLWuButtonElement
     'wu-card': HTMLWuCardElement
     'wu-divider': HTMLWuDividerElement
+    'wu-field-helper': HTMLWuFieldHelperElement
+    'wu-field-stacked': HTMLWuFieldStackedElement
     'wu-form': HTMLWuFormElement
     'wu-toggle': HTMLWuToggleElement
     'wu-col': HTMLWuColElement
@@ -456,6 +480,8 @@ declare global {
     'wu-button': HTMLWuButtonElement;
     'wu-card': HTMLWuCardElement;
     'wu-divider': HTMLWuDividerElement;
+    'wu-field-helper': HTMLWuFieldHelperElement;
+    'wu-field-stacked': HTMLWuFieldStackedElement;
     'wu-form': HTMLWuFormElement;
     'wu-toggle': HTMLWuToggleElement;
     'wu-col': HTMLWuColElement;
