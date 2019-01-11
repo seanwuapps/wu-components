@@ -1,5 +1,16 @@
+/**
+ * @prop --wu-card-radius-top-left: Corner radius
+ * @prop --wu-card-radius-top-right: Corner radius
+ * @prop --wu-card-radius-bottom-left: Corner radius
+ * @prop --wu-card-radius-bottom-right: Corner radius
+ * @prop --wu-card-outer-padding: Outer padding for the card
+ * @prop --wu-card-inner-padding: Padding inside card between sections
+ */
 :root {
-  --wu-card-radius: 1rem;
+  --wu-card-radius-top-left: 1rem;
+  --wu-card-radius-top-right: 1rem;
+  --wu-card-radius-bottom-left: 1rem;
+  --wu-card-radius-bottom-right: 1rem;
   --wu-card-outer-padding: 20px;
   --wu-card-inner-padding: 10px;
 }

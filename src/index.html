@@ -31,7 +31,7 @@
             <wu-burger panel="lg" animation="rotate" target="#menu" />
           </wu-col>
           <wu-col class="text-center">
-              Wu Components
+              Web Up Components
           </wu-col>
           <wu-col class="text-right">
           </wu-col>
@@ -39,9 +39,11 @@
       </wu-container>
     </wu-header>
     <wu-drawer-menu auto-close="true" id="menu" position="left" panel="lg">
-      <wu-menu-header theme="primary" img="/assets/images/cap.svg" img-shape="circle" img-href="#">
-        <span slot="title">Wu Components</span>
-        <span slot="sub-title">A simple set of reusable web components</span>
+      <wu-menu-header theme="info" img="/assets/images/cap.svg" img-shape="circle" img-href="#">
+        <span slot="title">Hi, Sean</span>
+        <span slot="sub-title">
+          Lorem, ipsum dolor.
+        </span>
       </wu-menu-header>
 
       <wu-menu-list>
@@ -59,6 +61,7 @@
     </wu-drawer-menu>
     <wu-page reflect-fixed-header panel="lg">
       <wu-button theme="primary" shape="round">Test</wu-button>
+      <wu-divider><div slot="divider-text">This is divider</div></wu-divider>
       <wu-container>
         <wu-row>
           <wu-col>
@@ -155,63 +158,53 @@
           </wu-col>
         </wu-row>
       </wu-container>
-    </wu-page>
-    <wu-page style="display:none">
-      <wu-container>
-        <h2>Card</h2>
-        <wu-row equal-height="wu-card">
-          <wu-col portion="1">
-            <wu-card theme="secondary" card-title="Text Card">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima,
-              consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo
-              enim voluptates?
-            </wu-card>
-          </wu-col>
-          <wu-col portion="1">
-            <wu-card flat="flat" card-title="Text Card with hover effect" hover="hover">
-              Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>. Assumenda, sit illum nam
-              blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam
-              provident. Sed quo enim voluptates?
-              <div slot="footer">
-                <a href="#">Link</a> <button type="button">Button</button>
-                <button type="button" class="action">Button.action</button>
-                <wu-button type="button">Wu Button</wu-button>
-              </div>
-            </wu-card>
-          </wu-col>
-          <wu-col portion="1">
-            <wu-card
-              hover="hover"
-              card-title="Media Card"
-              thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
-              src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg"
-              alt="text"
-            >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima,
-              consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo
-              enim voluptates?
-            </wu-card>
-          </wu-col>
-          <wu-col portion="1">
-            <wu-card
-              hover="hover"
-              card-title="Card with actions"
-              thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
-              src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg"
-              alt="text"
-            >
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dolorem aut architecto assumenda sapiente
-              vero dolores distinctio molestias pariatur! Beatae vitae itaque maxime, deserunt odit repudiandae
-              repellendus ea quo atque.
-              <div slot="footer">
-                <a href="#">Link</a> <button type="button">Button</button>
-                <button type="button" class="action">Button.action</button>
-                <wu-button type="button">Wu Button</wu-button>
-              </div>
-            </wu-card>
-          </wu-col>
-        </wu-row>
-      </wu-container>
+      <wu-page>
+        <wu-container>
+          <h2>Card</h2>
+          <wu-row>
+            <wu-col portion="1">
+              <wu-card theme="secondary" card-title="Text Card">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima,
+                consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo
+                enim voluptates?
+              </wu-card>
+            </wu-col>
+            <wu-col portion="1">
+              <wu-card flat="flat" card-title="Text Card with hover effect" hover="hover">
+                Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>. Assumenda, sit illum nam
+                blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam
+                provident. Sed quo enim voluptates?
+                <div slot="footer">
+                  <a href="#">Link</a> <button type="button">Button</button>
+                  <button type="button" class="action">Button.action</button>
+                  <wu-button type="button">Wu Button</wu-button>
+                </div>
+              </wu-card>
+            </wu-col>
+            <wu-col portion="1">
+              <wu-card hover="hover" card-title="Media Card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
+                src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima,
+                consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo
+                enim voluptates?
+              </wu-card>
+            </wu-col>
+            <wu-col portion="1">
+              <wu-card hover="hover" card-title="Card with actions" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
+                src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dolorem aut architecto assumenda sapiente
+                vero dolores distinctio molestias pariatur! Beatae vitae itaque maxime, deserunt odit repudiandae
+                repellendus ea quo atque.
+                <div slot="footer">
+                  <a href="#">Link</a> <button type="button">Button</button>
+                  <button type="button" class="action">Button.action</button>
+                  <wu-button type="button">Wu Button</wu-button>
+                </div>
+              </wu-card>
+            </wu-col>
+          </wu-row>
+        </wu-container>
+      </wu-page>
     </wu-page>
     <!-- <wu-parallax speed="-4" img-src="http://prototype.cordelta.digital/_assets/img/bg.jpg" style="height: 100vh"></wu-parallax> -->
     <div style="display: none; background:white">

@@ -5,19 +5,42 @@ import { isSlotEmpty } from '../../utils'
   styleUrls: ['vars.css', 'wu-card.scss']
   })
 export class WuCard {
-  @Prop()
-  cardTitle?: string = ''
   @Element()
   el: HTMLElement
 
+  /**
+   * Title of the card
+   */
   @Prop()
-  thumb: string = ''
-  @Prop()
-  src: string = ''
-  @Prop()
-  alt: string = ''
+  cardTitle?: string = ''
 
-  @Prop({ reflectToAttr: true }) hover: boolean
+  /**
+   * Card image source url, if specified, image will display on top of the card.
+   */
+  @Prop()
+  src?: string = ''
+
+  /**
+   * Thumbnail version of the card image, image will be loaded progressively if `thumb` is specified
+   */
+  @Prop()
+  thumb?: string = ''
+
+  /**
+   * Card image alt text
+   */
+  @Prop()
+  alt?: string = ''
+
+  /**
+   * If this card is hoverable
+   */
+  @Prop({ reflectToAttr: true }) hover?: boolean
+
+  /**
+   * If this card has flat (border) style
+   */
+  @Prop({ reflectToAttr: true }) flat?: boolean
 
   @State()
   hasFooter: boolean

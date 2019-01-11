@@ -124,17 +124,55 @@ export namespace Components {
   }
 
   interface WuCard {
+    /**
+    * Card image alt text
+    */
     'alt': string;
+    /**
+    * Title of the card
+    */
     'cardTitle': string;
+    /**
+    * If this card has flat (border) style
+    */
+    'flat': boolean;
+    /**
+    * If this card is hoverable
+    */
     'hover': boolean;
+    /**
+    * Card image source url, if specified, image will display on top of the card.
+    */
     'src': string;
+    /**
+    * Thumbnail version of the card image, image will be loaded progressively if `thumb` is specified
+    */
     'thumb': string;
   }
   interface WuCardAttributes extends StencilHTMLAttributes {
+    /**
+    * Card image alt text
+    */
     'alt'?: string;
+    /**
+    * Title of the card
+    */
     'cardTitle'?: string;
+    /**
+    * If this card has flat (border) style
+    */
+    'flat'?: boolean;
+    /**
+    * If this card is hoverable
+    */
     'hover'?: boolean;
+    /**
+    * Card image source url, if specified, image will display on top of the card.
+    */
     'src'?: string;
+    /**
+    * Thumbnail version of the card image, image will be loaded progressively if `thumb` is specified
+    */
     'thumb'?: string;
   }
 

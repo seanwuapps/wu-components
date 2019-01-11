@@ -75,6 +75,9 @@ wu-form {
     padding: var(--wu-form-input-padding-y) var(--wu-form-input-padding-x);
     width: 100%;
     border-radius: var(--wu-form-input-border-radius);
+    option {
+      padding: 0.3em;
+    }
   }
 
   // Make multiple select elements height not fixed

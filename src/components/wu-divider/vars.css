@@ -1,3 +1,14 @@
-:root{
-  --wu-divider-spacing: 10px;
+/**
+ * @prop --wu-divider-spacing: Spacing on top and bottom side of divider
+ * @prop --wu-divider-line-color: Color of divider line
+ * @prop --wu-divider-text-bg: Background of text that sits on the divider line
+ * @prop --wu-divider-text-color: Color of divider text
+ * @prop --wu-divider-text-spacing: Left/right side spacing between text and divider line
+ */
+:root {
+  --wu-divider-spacing: 20px;
+  --wu-divider-line-color: #dedede;
+  --wu-divider-text-bg: white;
+  --wu-divider-text-color: #333;
+  --wu-divider-text-spacing: 15px;
 }

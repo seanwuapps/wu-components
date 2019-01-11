@@ -1,7 +1,20 @@
-wu-divider{
-  border-top: 1px solid #dedede;
+wu-divider {
+  clear: both;
+  float: none;
+  border-top: 1px solid var(--wu-divider-line-color);
   margin-top: var(--wu-divider-spacing);
   height: var(--wu-divider-spacing);
   display: block;
   width: 100%;
+  position: relative;
+  .wu-divider-content {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: var(--wu-divider-text-bg);
+    color: var(--wu-divider-text-color);
+    padding: 0 var(--wu-divider-text-spacing);
+  }
 }
