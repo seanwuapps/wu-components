@@ -17,6 +17,18 @@
 | `thumb`     | `thumb`      | Thumbnail version of the card image, image will be loaded progressively if `thumb` is specified | `string`  |
 
 
+## CSS Custom Properties
+
+| Name                            | Description                          |
+| ------------------------------- | ------------------------------------ |
+| `--wu-card-inner-padding`       | Padding inside card between sections |
+| `--wu-card-outer-padding`       | Outer padding for the card           |
+| `--wu-card-radius-bottom-left`  | Corner radius                        |
+| `--wu-card-radius-bottom-right` | Corner radius                        |
+| `--wu-card-radius-top-left`     | Corner radius                        |
+| `--wu-card-radius-top-right`    | Corner radius                        |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
