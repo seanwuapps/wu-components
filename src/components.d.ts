@@ -316,12 +316,12 @@ export namespace Components {
   }
 
   interface WuRating {
-    'getVal': () => number;
+    'getVal': () => Promise<number>;
     'icon': any;
     'iconOutline': any;
     'max': number;
-    'reset': () => void;
-    'setVal': (val: any) => number;
+    'reset': () => Promise<void>;
+    'setVal': (val: any) => Promise<number>;
     'value': number;
   }
   interface WuRatingAttributes extends StencilHTMLAttributes {
