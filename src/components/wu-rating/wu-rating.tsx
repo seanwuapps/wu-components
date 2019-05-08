@@ -16,7 +16,7 @@ export class WuRating {
   @Event() change: EventEmitter
 
   @Method()
-  setVal(val) {
+  async setVal(val) {
     this.currentFillStates = this.currentFillStates.map((state, i) => {
       if (state) {
       } // to dismiss tslint complaining about state not read
@@ -30,7 +30,7 @@ export class WuRating {
   }
 
   @Method()
-  getVal() {
+  async getVal() {
     return this.value
   }
 
@@ -39,7 +39,7 @@ export class WuRating {
   }
 
   @Method()
-  reset(){
+  async reset(){
     this.setVal(this.resetToValue)
   }
 
