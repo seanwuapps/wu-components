@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property      | Attribute      | Description | Type     |
-| ------------- | -------------- | ----------- | -------- |
-| `equalHeight` | `equal-height` |             | `string` |
-| `gap`         | `gap`          |             | `string` |
+| Property      | Attribute      | Description | Type     | Default |
+| ------------- | -------------- | ----------- | -------- | ------- |
+| `equalHeight` | `equal-height` |             | `string` | `''`    |
+| `gap`         | `gap`          |             | `string` | `'0'`   |
 
 
 ----------------------------------------------

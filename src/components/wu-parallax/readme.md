@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type      |
-| ---------- | ----------- | ----------- | --------- |
-| `center`   | `center`    |             | `boolean` |
-| `imgSrc`   | `img-src`   |             | `string`  |
-| `imgThumb` | `img-thumb` |             | `string`  |
-| `speed`    | `speed`     |             | `number`  |
+| Property   | Attribute   | Description | Type      | Default     |
+| ---------- | ----------- | ----------- | --------- | ----------- |
+| `center`   | `center`    |             | `boolean` | `undefined` |
+| `imgSrc`   | `img-src`   |             | `string`  | `undefined` |
+| `imgThumb` | `img-thumb` |             | `string`  | `undefined` |
+| `speed`    | `speed`     |             | `number`  | `-2`        |
 
 
 ----------------------------------------------

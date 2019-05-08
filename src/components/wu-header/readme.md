@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type      |
-| -------- | --------- | ----------- | --------- |
-| `fixed`  | `fixed`   |             | `boolean` |
-| `theme`  | `theme`   |             | `string`  |
+| Property | Attribute | Description | Type      | Default     |
+| -------- | --------- | ----------- | --------- | ----------- |
+| `fixed`  | `fixed`   |             | `boolean` | `undefined` |
+| `theme`  | `theme`   |             | `string`  | `undefined` |
 
 
 ----------------------------------------------

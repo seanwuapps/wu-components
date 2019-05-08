@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     |
-| -------- | --------- | ----------- | -------- |
-| `color`  | `color`   |             | `string` |
-| `type`   | `type`    |             | `string` |
+| Property | Attribute | Description | Type     | Default          |
+| -------- | --------- | ----------- | -------- | ---------------- |
+| `color`  | `color`   |             | `string` | `'currentColor'` |
+| `type`   | `type`    |             | `string` | `'circle'`       |
 
 
 ----------------------------------------------
