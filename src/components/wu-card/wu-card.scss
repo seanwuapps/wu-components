@@ -7,11 +7,11 @@ wu-card {
   border-bottom-left-radius: var(--wu-card-radius-bottom-left);
   border-bottom-right-radius: var(--wu-card-radius-bottom-right);
   overflow: hidden;
-  &[flat] {
+  &.flat {
     box-shadow: none;
     border: 1px solid #efefef;
   }
-  &[hover] {
+  &.hoverable {
     &:hover,
     &:focus {
       @include raisedHover();
