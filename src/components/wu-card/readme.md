@@ -14,7 +14,7 @@
 | `flat`      | `flat`       | If this card has flat (border) style                                                            | `boolean` | `undefined` |
 | `hover`     | `hover`      | If this card is hoverable                                                                       | `boolean` | `undefined` |
 | `src`       | `src`        | Card image source url, if specified, image will display on top of the card.                     | `string`  | `""`        |
-| `theme`     | `theme`      | Make card themable                                                                              | `boolean` | `undefined` |
+| `theme`     | `theme`      | Make card themable                                                                              | `string`  | `undefined` |
 | `thumb`     | `thumb`      | Thumbnail version of the card image, image will be loaded progressively if `thumb` is specified | `string`  | `""`        |
 
 

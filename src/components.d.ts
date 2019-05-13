@@ -148,7 +148,7 @@ export namespace Components {
     /**
     * Make card themable
     */
-    'theme'?: boolean;
+    'theme'?: string;
     /**
     * Thumbnail version of the card image, image will be loaded progressively if `thumb` is specified
     */
@@ -178,7 +178,7 @@ export namespace Components {
     /**
     * Make card themable
     */
-    'theme'?: boolean;
+    'theme'?: string;
     /**
     * Thumbnail version of the card image, image will be loaded progressively if `thumb` is specified
     */
