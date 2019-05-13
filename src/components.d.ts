@@ -79,7 +79,7 @@ export namespace Components {
     /**
     * Shape of the button
     */
-    'shape'?: 'circle' | 'round';
+    'shape'?: "circle" | "round";
     /**
     * Button theme
     */
@@ -87,7 +87,7 @@ export namespace Components {
     /**
     * Html type of the button
     */
-    'type': 'submit' | 'reset' | 'button';
+    'type': "submit" | "reset" | "button";
   }
   interface WuButtonAttributes extends StencilHTMLAttributes {
     /**
@@ -113,7 +113,7 @@ export namespace Components {
     /**
     * Shape of the button
     */
-    'shape'?: 'circle' | 'round';
+    'shape'?: "circle" | "round";
     /**
     * Button theme
     */
@@ -121,7 +121,7 @@ export namespace Components {
     /**
     * Html type of the button
     */
-    'type'?: 'submit' | 'reset' | 'button';
+    'type'?: "submit" | "reset" | "button";
   }
 
   interface WuCard {
@@ -145,6 +145,10 @@ export namespace Components {
     * Card image source url, if specified, image will display on top of the card.
     */
     'src'?: string;
+    /**
+    * Make card themable
+    */
+    'theme'?: boolean;
     /**
     * Thumbnail version of the card image, image will be loaded progressively if `thumb` is specified
     */
@@ -171,6 +175,10 @@ export namespace Components {
     * Card image source url, if specified, image will display on top of the card.
     */
     'src'?: string;
+    /**
+    * Make card themable
+    */
+    'theme'?: boolean;
     /**
     * Thumbnail version of the card image, image will be loaded progressively if `thumb` is specified
     */
