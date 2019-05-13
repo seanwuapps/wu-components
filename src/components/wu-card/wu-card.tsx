@@ -45,7 +45,7 @@ export class WuCard {
   /**
    * Make card themable
    */
-  @Prop({ reflectToAttr: true }) theme?: boolean;
+  @Prop({ reflectToAttr: true }) theme?: string;
 
   @State()
   hasFooter: boolean;
