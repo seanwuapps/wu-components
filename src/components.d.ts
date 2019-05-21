@@ -210,6 +210,9 @@ export namespace Components {
   interface WuDivider {}
   interface WuDividerAttributes extends StencilHTMLAttributes {}
 
+  interface WuDropMenu {}
+  interface WuDropMenuAttributes extends StencilHTMLAttributes {}
+
   interface WuFieldHelper {}
   interface WuFieldHelperAttributes extends StencilHTMLAttributes {}
 
@@ -405,6 +408,7 @@ declare global {
     'WuButton': Components.WuButton;
     'WuCard': Components.WuCard;
     'WuDivider': Components.WuDivider;
+    'WuDropMenu': Components.WuDropMenu;
     'WuFieldHelper': Components.WuFieldHelper;
     'WuFieldStacked': Components.WuFieldStacked;
     'WuForm': Components.WuForm;
@@ -432,6 +436,7 @@ declare global {
     'wu-button': Components.WuButtonAttributes;
     'wu-card': Components.WuCardAttributes;
     'wu-divider': Components.WuDividerAttributes;
+    'wu-drop-menu': Components.WuDropMenuAttributes;
     'wu-field-helper': Components.WuFieldHelperAttributes;
     'wu-field-stacked': Components.WuFieldStackedAttributes;
     'wu-form': Components.WuFormAttributes;
@@ -487,6 +492,12 @@ declare global {
   var HTMLWuDividerElement: {
     prototype: HTMLWuDividerElement;
     new (): HTMLWuDividerElement;
+  };
+
+  interface HTMLWuDropMenuElement extends Components.WuDropMenu, HTMLStencilElement {}
+  var HTMLWuDropMenuElement: {
+    prototype: HTMLWuDropMenuElement;
+    new (): HTMLWuDropMenuElement;
   };
 
   interface HTMLWuFieldHelperElement extends Components.WuFieldHelper, HTMLStencilElement {}
@@ -604,6 +615,7 @@ declare global {
     'wu-button': HTMLWuButtonElement
     'wu-card': HTMLWuCardElement
     'wu-divider': HTMLWuDividerElement
+    'wu-drop-menu': HTMLWuDropMenuElement
     'wu-field-helper': HTMLWuFieldHelperElement
     'wu-field-stacked': HTMLWuFieldStackedElement
     'wu-form': HTMLWuFormElement
@@ -631,6 +643,7 @@ declare global {
     'wu-button': HTMLWuButtonElement;
     'wu-card': HTMLWuCardElement;
     'wu-divider': HTMLWuDividerElement;
+    'wu-drop-menu': HTMLWuDropMenuElement;
     'wu-field-helper': HTMLWuFieldHelperElement;
     'wu-field-stacked': HTMLWuFieldStackedElement;
     'wu-form': HTMLWuFormElement;

@@ -1,0 +1,49 @@
+wu-drop-menu {
+  position: relative;
+  display: block;
+  .menu-trigger {
+    color: currentColor;
+    text-align: center;
+    width: var(--wu-drop-menu-trigger-size);
+    height: var(--wu-drop-menu-trigger-size);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  .menu-content {
+    position: absolute;
+    display: none;
+    top: var(--wu-drop-menu-trigger-size);
+    right: calc(var(--wu-drop-menu-trigger-size) / 3);
+    @include raised(1);
+    background: white;
+    width: auto;
+    border-radius: 5px;
+    overflow: hidden;
+    max-width: 320px;
+    a {
+      display: block;
+      width: auto;
+      white-space: nowrap;
+      padding: 1em 2em;
+      text-decoration: none;
+      color: #333;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      &:hover,
+      &:focus {
+        background: #efefef;
+      }
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+      li {
+        list-style: none;
+      }
+    }
+    &.open {
+      display: block;
+    }
+  }
+}

@@ -78,7 +78,6 @@ export class WuCard {
     }
   }
   handleClick(e: Event) {
-    console.log('card click')
     if (this.onCardClick) {
       this.onCardClick(e)
     }
@@ -87,53 +86,74 @@ export class WuCard {
   render() {
     return (
       <div>
-        {this.mediaSrc && this.mediaAbove ? (
-          <wu-img
-            class='card-media'
-            src={this.mediaSrc}
-            thumb={this.mediaThumb}
-            alt={this.mediaAlt}
-            onClick={e => this.handleClick(e)}
-          />
-        ) : null}
-
-        <div class={this.mediaAbove ? 'title-row media-above' : 'title-row'}>
-          {this.cardTitle && (
-            <div
-              class='card-title'
-              innerHTML={this.cardTitle}
+        <div
+          class={this.mediaAbove ? 'overflow-menu on-media' : 'overflow-menu'}>
+          <wu-drop-menu>
+            <div slot='trigger'>
+              <i class='material-icons'>more_vert</i>
+            </div>
+            <nav>
+              <ul>
+                <li>
+                  <a href='#'>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.{' '}
+                  </a>
+                </li>
+                <li>
+                  <a href='#'>Action 2</a>
+                </li>
+                <li>
+                  <a href='#'>Action 3</a>
+                </li>
+              </ul>
+            </nav>
+          </wu-drop-menu>
+        </div>
+        <div class='card'>
+          {this.mediaSrc && this.mediaAbove ? (
+            <wu-img
+              class='card-media'
+              src={this.mediaSrc}
+              thumb={this.mediaThumb}
+              alt={this.mediaAlt}
               onClick={e => this.handleClick(e)}
             />
-          )}
+          ) : null}
 
-          {this.cardSubtitle && (
-            <div
-              class='card-subtitle'
-              innerHTML={this.cardSubtitle}
-              onClick={e => this.handleClick(e)}
-            />
-          )}
-        </div>
+          <div class={this.mediaAbove ? 'title-row media-above' : 'title-row'}>
+            {this.cardTitle && (
+              <div
+                class='card-title'
+                innerHTML={this.cardTitle}
+                onClick={e => this.handleClick(e)}
+              />
+            )}
 
-        {this.mediaSrc && !this.mediaAbove ? (
-          <wu-img
-            class='card-media'
-            src={this.mediaSrc}
-            thumb={this.mediaThumb}
-            alt={this.mediaAlt}
-            onClick={e => this.handleClick(e)}
-          />
-        ) : null}
-
-        <div class='card-body'>
-          <slot />
-        </div>
-        <div class='card-footer'>
-          <div class='footer-left'>
-            <slot name='footer-left' />
+            {this.cardSubtitle && (
+              <div class='card-subtitle' innerHTML={this.cardSubtitle} />
+            )}
           </div>
-          <div class='footer-right'>
-            <slot name='footer-right' />
+
+          {this.mediaSrc && !this.mediaAbove ? (
+            <wu-img
+              class='card-media'
+              src={this.mediaSrc}
+              thumb={this.mediaThumb}
+              alt={this.mediaAlt}
+              onClick={e => this.handleClick(e)}
+            />
+          ) : null}
+
+          <div class='card-body'>
+            <slot />
+          </div>
+          <div class='card-footer'>
+            <div class='footer-left'>
+              <slot name='footer-left' />
+            </div>
+            <div class='footer-right'>
+              <slot name='footer-right' />
+            </div>
           </div>
         </div>
       </div>
