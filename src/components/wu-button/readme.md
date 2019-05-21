@@ -15,8 +15,9 @@
 | `href`     | `href`     | If `href` attribute is specified, the button will be output as an `a` tag | `string`                          | `undefined` |
 | `outline`  | `outline`  | If use outline styles                                                     | `boolean`                         | `undefined` |
 | `shape`    | `shape`    | Shape of the button                                                       | `"circle" \| "round"`             | `undefined` |
+| `target`   | `target`   |                                                                           | `string`                          | `undefined` |
 | `theme`    | `theme`    | Button theme                                                              | `string`                          | `undefined` |
-| `type`     | `type`     | Html type of the button                                                   | `"button" \| "reset" \| "submit"` | `"button"`  |
+| `type`     | `type`     | Html type of the button                                                   | `"button" \| "reset" \| "submit"` | `'button'`  |
 
 
 ## CSS Custom Properties
