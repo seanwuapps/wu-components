@@ -79,7 +79,8 @@ export namespace Components {
     /**
     * Shape of the button
     */
-    'shape'?: "circle" | "round";
+    'shape'?: 'circle' | 'round';
+    'target'?: string;
     /**
     * Button theme
     */
@@ -87,7 +88,7 @@ export namespace Components {
     /**
     * Html type of the button
     */
-    'type': "submit" | "reset" | "button";
+    'type': 'submit' | 'reset' | 'button';
   }
   interface WuButtonAttributes extends StencilHTMLAttributes {
     /**
@@ -113,7 +114,8 @@ export namespace Components {
     /**
     * Shape of the button
     */
-    'shape'?: "circle" | "round";
+    'shape'?: 'circle' | 'round';
+    'target'?: string;
     /**
     * Button theme
     */
@@ -121,14 +123,14 @@ export namespace Components {
     /**
     * Html type of the button
     */
-    'type'?: "submit" | "reset" | "button";
+    'type'?: 'submit' | 'reset' | 'button';
   }
 
   interface WuCard {
     /**
-    * Card image alt text
+    * Subtitle of the card
     */
-    'alt'?: string;
+    'cardSubtitle'?: string;
     /**
     * Title of the card
     */
@@ -142,23 +144,33 @@ export namespace Components {
     */
     'hover'?: boolean;
     /**
+    * Position of media in the card
+    */
+    'mediaAbove': boolean;
+    /**
+    * Card image alt text
+    */
+    'mediaAlt'?: string;
+    /**
     * Card image source url, if specified, image will display on top of the card.
     */
-    'src'?: string;
+    'mediaSrc'?: string;
+    /**
+    * Thumbnail version of the card image, image will be loaded progressively if `media-thumb` is specified
+    */
+    'mediaThumb'?: string;
+    'onCardClick': (ev: Event) => void;
     /**
     * Make card themable
     */
     'theme'?: string;
-    /**
-    * Thumbnail version of the card image, image will be loaded progressively if `thumb` is specified
-    */
-    'thumb'?: string;
+    'thumbnailSrc'?: string;
   }
   interface WuCardAttributes extends StencilHTMLAttributes {
     /**
-    * Card image alt text
+    * Subtitle of the card
     */
-    'alt'?: string;
+    'cardSubtitle'?: string;
     /**
     * Title of the card
     */
@@ -172,17 +184,27 @@ export namespace Components {
     */
     'hover'?: boolean;
     /**
+    * Position of media in the card
+    */
+    'mediaAbove'?: boolean;
+    /**
+    * Card image alt text
+    */
+    'mediaAlt'?: string;
+    /**
     * Card image source url, if specified, image will display on top of the card.
     */
-    'src'?: string;
+    'mediaSrc'?: string;
+    /**
+    * Thumbnail version of the card image, image will be loaded progressively if `media-thumb` is specified
+    */
+    'mediaThumb'?: string;
+    'onCardClick'?: (ev: Event) => void;
     /**
     * Make card themable
     */
     'theme'?: string;
-    /**
-    * Thumbnail version of the card image, image will be loaded progressively if `thumb` is specified
-    */
-    'thumb'?: string;
+    'thumbnailSrc'?: string;
   }
 
   interface WuDivider {}

@@ -24,7 +24,7 @@
   </head>
 
   <body>
-    <wu-header fixed theme="primary">
+    <!-- <wu-header fixed theme="primary">
       <wu-container fluid fill-height>
         <wu-row fill-height class="f-align-center">
           <wu-col class="text-left">
@@ -157,7 +157,7 @@
             </wu-form>
           </wu-col>
         </wu-row>
-      </wu-container>
+      </wu-container> -->
       <wu-page>
         <wu-container>
           <h2>Card</h2>
@@ -174,32 +174,33 @@
                 Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>. Assumenda, sit illum nam
                 blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam
                 provident. Sed quo enim voluptates?
-                <div slot="footer">
-                  <a href="#">Link</a> <button type="button">Button</button>
-                  <button type="button" class="action">Button.action</button>
-                  <wu-button type="button">Wu Button</wu-button>
+                <div slot="footer-left">
+                    <a href="#">Link</a> <button type="button">Button</button>
+                    <wu-button theme="primary" type="button">Button</wu-button>
                 </div>
               </wu-card>
             </wu-col>
             <wu-col portion="1">
-              <wu-card hover="hover" card-title="Media Card" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
-                src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
+              <wu-card hover="hover" card-title="Media Card" media-thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
+                media-above media-src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima,
                 consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo
                 enim voluptates?
               </wu-card>
             </wu-col>
             <wu-col portion="1">
-              <wu-card hover="hover" card-title="Card with actions" thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
-                src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
+              <wu-card hover="hover" card-title="Card with actions" card-subtitle="something else" media-thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
+                media-src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dolorem aut architecto assumenda sapiente
                 vero dolores distinctio molestias pariatur! Beatae vitae itaque maxime, deserunt odit repudiandae
                 repellendus ea quo atque.
-                <div slot="footer">
-                  <a href="#">Link</a> <button type="button">Button</button>
-                  <button type="button" class="action">Button.action</button>
-                  <wu-button type="button">Wu Button</wu-button>
-                </div>
+                  <div slot="footer-left">
+                      <a href="#">Link</a> <button type="button">Button</button>
+                      <button type="button" class="action">Button.action</button>
+                  </div>
+                  <div slot="footer-right">
+                    <a href="#"><i class="material-icons">grade</i></a>
+                  </div>
               </wu-card>
             </wu-col>
           </wu-row>

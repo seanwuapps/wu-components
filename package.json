@@ -10,12 +10,11 @@
     "dist/"
   ],
   "scripts": {
+
     "build": "stencil build",
-    "dev": "sd concurrent \"stencil build --dev --docs --watch\" \"stencil-dev-server\" ",
-    "serve": "stencil-dev-server",
-    "start": "npm run dev",
-    "test": "jest --no-cache",
-    "test.watch": "jest --watch --no-cache",
+    "start": "stencil build --dev --watch --serve",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
     "release:patch": "npm run build --prod & npm version patch & npm publish",
     "release:minor": "npm run build --prod & npm version minor & npm publish",
     "release:major": "npm run build --prod & npm version major & npm publish",
@@ -45,7 +44,7 @@
     "stylelint": "^9.10.1",
     "stylelint-config-strict-scss": "^0.5.0",
     "stylelint-scss": "^3.6.1",
-    "workbox-build": "^3.4.1"
+    "workbox-build": "^3.6.3"
   },
   "author": "Sean Wu",
   "license": "MIT",

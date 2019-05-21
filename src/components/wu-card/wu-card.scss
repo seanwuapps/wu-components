@@ -17,12 +17,15 @@ wu-card {
       @include raisedHover();
     }
   }
-  .card {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+
+  .title-row {
+    padding: var(--wu-card-outer-padding);
+    padding-bottom: var(--wu-card-inner-padding);
+    &.media-above {
+      padding-top: var(--wu-card-inner-padding);
+    }
   }
+
   .card-media {
     img {
       width: 100%;
@@ -30,38 +33,76 @@ wu-card {
     }
   }
   .card-body {
-    padding: var(--wu-card-outer-padding);
+    padding: var(--wu-card-inner-padding) var(--wu-card-outer-padding);
   }
   .card-title {
     font-size: 22px;
-    border-bottom: 1px solid #efefef;
+    font-weight: 500;
+    // border-bottom: 1px solid #efefef;
     display: block;
-    padding: var(--wu-card-outer-padding);
-    padding-top: var(--wu-card-inner-padding);
-    padding-bottom: var(--wu-card-inner-padding);
   }
+
+  .card-subtitle {
+    font-size: 16px;
+    color: var(--color-grey);
+  }
+
+  .card-spacer {
+    display: block;
+    margin-bottom: var(--wu-card-inner-padding);
+  }
+
   .card-footer {
-    border-top: 1px solid #efefef;
     // margin-top: var(--wu-card-outer-padding);
     padding: var(--wu-card-outer-padding);
     padding-top: var(--wu-card-inner-padding);
-    .action {
-      border: none;
-      background: white;
-      color: currentColor;
-      border-bottom: 1px solid currentColor;
-      transition: border-color var(--fast);
-      font-size: 16px;
-      cursor: pointer;
-      padding: 3px 0;
-      margin-right: 5px;
-      text-decoration: none;
-      &:hover,
-      &:focus {
+    display: flex;
+    max-width: 100%;
+    align-items: center;
+
+    .footer-left {
+      flex-basis: 70%;
+      overflow: visible;
+      white-space: nowrap;
+
+      a,
+      button {
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        color: currentColor;
+        transition: border-color var(--fast);
+        font-size: 16px;
+        cursor: pointer;
+        margin-right: 5px;
         text-decoration: none;
-        outline: none;
-        border-bottom-color: transparent;
+        border-bottom: 1px solid transparent;
+        box-shadow: none;
+        padding: 5px;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          outline: none;
+          border-bottom-color: currentColor;
+        }
       }
+    }
+
+    .footer-right {
+      flex-basis: 30%;
+      text-align: right;
+      // wu-button {
+      //   button,
+      //   a {
+      //     border: none;
+      //     display: inline-block;
+      //     &:hover,
+      //     &:focus {
+      //       background: var(--color-grey) !important;
+      //     }
+      //   }
+      // }
     }
   }
 }
