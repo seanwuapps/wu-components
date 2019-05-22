@@ -1,14 +1,33 @@
-import { Component, State } from '@stencil/core'
+import { Component, State, Element } from '@stencil/core'
 
 @Component({
   tag: 'wu-drop-menu',
   styleUrls: ['vars.css', 'wu-drop-menu.scss']
 })
 export class WuDropMenu {
+  @Element() el: HTMLElement
   @State() open: boolean = false
   toggle() {
     this.open = !this.open
   }
+
+  componentDidLoad() {
+    document.addEventListener('click', event => {
+      var isClickInside = this.el.contains(event.target as HTMLElement)
+
+      if (!isClickInside) {
+        this.open = false
+      }
+    })
+
+    document.addEventListener('keyup', e => {
+      console.log(e.keyCode)
+      if (e.keyCode === 27) {
+        this.open = false
+      }
+    })
+  }
+
   render() {
     return (
       <div>
