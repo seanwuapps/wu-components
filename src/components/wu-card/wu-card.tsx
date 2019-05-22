@@ -91,7 +91,7 @@ export class WuCard {
       'title-row' +
       (this.mediaAbove ? ' media-above' : '') +
       (this.hasOverflowMenu ? ' has-overflow-menu' : '')
-    console.log(titleRowClass)
+
     return (
       <div>
         <div
@@ -131,7 +131,7 @@ export class WuCard {
           <div class='card-body'>
             <slot />
           </div>
-          <div class='card-footer'>
+          <div class='card-footer' onClick={e => e.stopPropagation()}>
             <div class='footer-left'>
               <slot name='footer-left' />
             </div>

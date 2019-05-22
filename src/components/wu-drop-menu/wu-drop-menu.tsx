@@ -26,6 +26,10 @@ export class WuDropMenu {
         this.open = false
       }
     })
+
+    this.el.addEventListener('click', e => {
+      e.stopPropagation()
+    })
   }
 
   render() {
