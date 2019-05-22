@@ -21,15 +21,22 @@ wu-drop-menu {
     border-radius: 5px;
     overflow: hidden;
     max-width: 300px;
-    a {
+    a,
+    button {
       display: block;
-      width: auto;
+      width: 100%;
+      text-align: left;
       white-space: nowrap;
       padding: 1em 2em;
       text-decoration: none;
       color: #333;
+      background: white;
+      border: none;
+      font-size: 1rem;
+      margin: 0;
       overflow: hidden;
       text-overflow: ellipsis;
+      cursor: pointer;
       &:hover,
       &:focus {
         background: #efefef;

@@ -42,12 +42,19 @@ wu-card {
     border-bottom-right-radius: var(--wu-card-radius-bottom-right);
     @include raised(1);
 
+    a {
+      color: currentColor;
+    }
+
     .title-row {
       padding: var(--wu-card-outer-padding);
       padding-bottom: var(--wu-card-inner-padding);
-      padding-right: calc(
-        var(--wu-card-outer-padding) + var(--wu-drop-menu-trigger-size)
-      );
+
+      &.has-overflow-menu {
+        padding-right: calc(
+          var(--wu-card-outer-padding) + var(--wu-drop-menu-trigger-size)
+        );
+      }
       &.media-above {
         padding-top: var(--wu-card-inner-padding);
       }
@@ -94,24 +101,29 @@ wu-card {
 
         a,
         button {
-          padding: 0;
+          display: inline-block;
           border: none;
           border-radius: 0;
           background: transparent;
           color: currentColor;
-          transition: border-color var(--fast);
+          will-change: border-color, background;
+          transition: all var(--fast);
           font-size: 16px;
           cursor: pointer;
-          margin-right: 5px;
+          margin: 0 2 px;
           text-decoration: none;
           border-bottom: 1px solid transparent;
           box-shadow: none;
-          padding: 5px;
+          padding: 4px 6px;
+          text-transform: uppercase;
+          font-weight: bold;
+          line-height: 1.5em;
           &:hover,
           &:focus {
+            background: rgba(#ccc, 0.4);
+            border-bottom-color: currentColor;
             text-decoration: none;
             outline: none;
-            border-bottom-color: currentColor;
           }
         }
       }
@@ -119,6 +131,10 @@ wu-card {
       .footer-right {
         flex-basis: 30%;
         text-align: right;
+        a,
+        button {
+          color: currentColor;
+        }
         // wu-button {
         //   button,
         //   a {

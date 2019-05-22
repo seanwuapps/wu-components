@@ -159,7 +159,6 @@ export namespace Components {
     * Thumbnail version of the card image, image will be loaded progressively if `media-thumb` is specified
     */
     'mediaThumb'?: string;
-    'onCardClick': (ev: Event) => void;
     /**
     * Make card themable
     */
@@ -199,7 +198,6 @@ export namespace Components {
     * Thumbnail version of the card image, image will be loaded progressively if `media-thumb` is specified
     */
     'mediaThumb'?: string;
-    'onCardClick'?: (ev: Event) => void;
     /**
     * Make card themable
     */

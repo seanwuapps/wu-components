@@ -7,10 +7,10 @@
  * @prop --wu-card-inner-padding: Padding inside card between sections
  */
 :root {
-  --wu-card-radius-top-left: 1rem;
-  --wu-card-radius-top-right: 1rem;
-  --wu-card-radius-bottom-left: 1rem;
-  --wu-card-radius-bottom-right: 1rem;
+  --wu-card-radius-top-left: 0.25em;
+  --wu-card-radius-top-right: 0.25em;
+  --wu-card-radius-bottom-left: 0.25em;
+  --wu-card-radius-bottom-right: 0.25em;
   --wu-card-outer-padding: 20px;
   --wu-card-inner-padding: 10px;
 }

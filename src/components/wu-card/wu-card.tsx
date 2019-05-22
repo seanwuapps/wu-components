@@ -64,12 +64,20 @@ export class WuCard {
    */
   @Prop({ mutable: true, reflectToAttr: true }) theme?: string
 
-  @Prop() onCardClick: (ev: Event) => void
   @State()
   hasFooter: boolean
 
+  @State()
+  hasCustomTitle: boolean
+
+  @State()
+  hasOverflowMenu: boolean
+
   componentDidLoad() {
     this.hasFooter = isSlotEmpty(this.el, 'footer')
+    this.hasCustomTitle = isSlotEmpty(this.el, 'custom-title')
+    this.hasOverflowMenu = isSlotEmpty(this.el, 'overflow-menu')
+
     if (this.hover) {
       this.el.classList.add('hoverable')
     }
@@ -77,37 +85,18 @@ export class WuCard {
       this.el.classList.add('flat')
     }
   }
-  handleClick(e: Event) {
-    if (this.onCardClick) {
-      this.onCardClick(e)
-    }
-  }
 
   render() {
+    const titleRowClass =
+      'title-row' +
+      (this.mediaAbove ? ' media-above' : '') +
+      (this.hasOverflowMenu ? ' has-overflow-menu' : '')
+    console.log(titleRowClass)
     return (
       <div>
         <div
           class={this.mediaAbove ? 'overflow-menu on-media' : 'overflow-menu'}>
-          <wu-drop-menu>
-            <div slot='trigger'>
-              <i class='material-icons'>more_vert</i>
-            </div>
-            <nav>
-              <ul>
-                <li>
-                  <a href='#'>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.{' '}
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>Action 2</a>
-                </li>
-                <li>
-                  <a href='#'>Action 3</a>
-                </li>
-              </ul>
-            </nav>
-          </wu-drop-menu>
+          <slot name='overflow-menu' />
         </div>
         <div class='card'>
           {this.mediaSrc && this.mediaAbove ? (
@@ -116,21 +105,17 @@ export class WuCard {
               src={this.mediaSrc}
               thumb={this.mediaThumb}
               alt={this.mediaAlt}
-              onClick={e => this.handleClick(e)}
             />
           ) : null}
 
-          <div class={this.mediaAbove ? 'title-row media-above' : 'title-row'}>
-            {this.cardTitle && (
-              <div
-                class='card-title'
-                innerHTML={this.cardTitle}
-                onClick={e => this.handleClick(e)}
-              />
+          <div class={titleRowClass}>
+            <slot name='custom-title' />
+            {!this.hasCustomTitle && this.cardTitle && (
+              <div class='card-title'>{this.cardTitle}</div>
             )}
 
-            {this.cardSubtitle && (
-              <div class='card-subtitle' innerHTML={this.cardSubtitle} />
+            {!this.hasCustomTitle && this.cardSubtitle && (
+              <div class='card-subtitle'>{this.cardSubtitle}</div>
             )}
           </div>
 
@@ -140,7 +125,6 @@ export class WuCard {
               src={this.mediaSrc}
               thumb={this.mediaThumb}
               alt={this.mediaAlt}
-              onClick={e => this.handleClick(e)}
             />
           ) : null}
 
