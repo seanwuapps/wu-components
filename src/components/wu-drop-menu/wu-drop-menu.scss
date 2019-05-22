@@ -41,6 +41,15 @@ wu-drop-menu {
       &:focus {
         background: #efefef;
       }
+      i {
+        margin-right: 10px;
+        vertical-align: middle;
+        line-height: 1em;
+      }
+    }
+
+    wu-divider {
+      --wu-divider-spacing: 10px;
     }
     ul {
       padding: 0;
