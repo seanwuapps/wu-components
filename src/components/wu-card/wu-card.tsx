@@ -131,7 +131,7 @@ export class WuCard {
           <div class='card-body'>
             <slot />
           </div>
-          <div class='card-footer' onClick={e => e.stopPropagation()}>
+          <div class='card-footer'>
             <div class='footer-left'>
               <slot name='footer-left' />
             </div>
