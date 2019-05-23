@@ -3,6 +3,9 @@ wu-card {
   position: relative;
   @include themeable('card');
 
+  & > div {
+    height: 100%;
+  }
   .overflow-menu {
     position: absolute;
     z-index: 9;
