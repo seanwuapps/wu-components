@@ -21,8 +21,8 @@ export class WuDropMenu {
     })
 
     document.addEventListener('keyup', e => {
-      console.log(e.keyCode)
       if (e.keyCode === 27) {
+        //esc
         this.open = false
       }
     })

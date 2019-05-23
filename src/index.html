@@ -174,15 +174,46 @@
                 </div>
               </wu-card>
             </wu-col>
+            
             <wu-col portion="1">
-              <wu-card hover="hover" card-title="Media Card" media-thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
-                media-above media-src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text" >
-                <div slot="overflow-menu">
-                    <wu-drop-menu theme="primary">
-                      <div slot='trigger' theme="danger">
-                        <i class='material-icons'>more_vert</i>
-                      </div>
-                      <nav>
+              
+              <wu-card 
+                theme="dark" 
+                media-above 
+                id="test-card" 
+                hover="hover" 
+                card-title='Normal title' 
+                card-subtitle="<a href='#'>Lorem ipsum dolor</a>, sit amet consectetur adipisi" 
+                media-thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
+                media-src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" 
+              >
+               <div slot="custom-title" class="card-title">
+                  <a href="#">Custom</a> card title
+               </div>
+               <div slot="overflow-menu">
+                  <wu-drop-menu theme="primary">
+                    <div slot='trigger' theme="danger">
+                      <i class='material-icons'>more_vert</i>
+                    </div>
+                    <nav>
+                      <ul>
+                        <li>
+                          <a href='#'>
+                              <i class='material-icons'>star</i>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.{' '}
+                          </a>
+                        </li>
+                        <li>
+                          <button>
+                              <i class='material-icons'>star</i>Action 2</button>
+                        </li>
+                        <li>
+                          <a href='#'>Action 3</a>
+                        </li>
+                      </ul>
+                    </nav>
+                    <wu-divider></wu-divider>
+                    <nav>
                         <ul>
                           <li>
                             <a href='#'>
@@ -199,43 +230,13 @@
                           </li>
                         </ul>
                       </nav>
-                      <wu-divider></wu-divider>
-                      <nav>
-                          <ul>
-                            <li>
-                              <a href='#'>
-                                  <i class='material-icons'>star</i>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit.{' '}
-                              </a>
-                            </li>
-                            <li>
-                              <button>
-                                  <i class='material-icons'>star</i>Action 2</button>
-                            </li>
-                            <li>
-                              <a href='#'>Action 3</a>
-                            </li>
-                          </ul>
-                        </nav>
-                    </wu-drop-menu>
-                </div>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, sit illum nam blanditiis minima,
-                consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam provident. Sed quo
-                enim voluptates?
-              </wu-card>
-            </wu-col>
-            <wu-col portion="1">
-              
-              <wu-card theme="dark" id="test-card" hover="hover" card-title='Normal title' card-subtitle="<a href='#'>Lorem ipsum dolor</a>, sit amet consectetur adipisi" media-thumb="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/thumb.jpg"
-                media-src="https://wepet.net/storage/photos/Dog/2/92acc1e0-f41b-11e6-bb65-d3cd42155ca5/original.jpg" alt="text">
-               <div slot="custom-title">
-                  <a href="#">Custom</a> card title
-               </div>
+                  </wu-drop-menu>
+              </div>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est dolorem aut architecto assumenda sapiente
                 vero dolores distinctio molestias pariatur! Beatae vitae itaque maxime, deserunt odit repudiandae
                 repellendus ea quo atque.
                   <div slot="footer-left">
-                      <a href="#">Link</a> <button type="button">Button</button>
+                      <a href="#">Link</a> <button type="button" onclick="alert('123')">Button</button>
                   </div>
                   <div slot="footer-right">
                     <a href="#"><i class="material-icons">grade</i></a>

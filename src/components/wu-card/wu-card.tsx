@@ -64,8 +64,8 @@ export class WuCard {
    */
   @Prop({ mutable: true, reflectToAttr: true }) theme?: string
 
-  @State()
-  hasFooter: boolean
+  // @State()
+  // hasFooter: boolean
 
   @State()
   hasCustomTitle: boolean
@@ -74,7 +74,7 @@ export class WuCard {
   hasOverflowMenu: boolean
 
   componentDidLoad() {
-    this.hasFooter = isSlotEmpty(this.el, 'footer')
+    // this.hasFooter = isSlotEmpty(this.el, 'footer')
     this.hasCustomTitle = isSlotEmpty(this.el, 'custom-title')
     this.hasOverflowMenu = isSlotEmpty(this.el, 'overflow-menu')
 
@@ -84,6 +84,11 @@ export class WuCard {
     if (this.flat) {
       this.el.classList.add('flat')
     }
+
+    const footer = this.el.querySelector('.card-footer')
+    footer.addEventListener('click', e => {
+      e.stopPropagation()
+    })
   }
 
   render() {
