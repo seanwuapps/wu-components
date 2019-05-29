@@ -3,7 +3,7 @@ import { Component, Prop, Element, Listen } from '@stencil/core'
 @Component({
   tag: 'wu-row',
   styleUrl: 'wu-row.scss'
-  })
+})
 export class WuRow {
   @Element()
   el: HTMLElement
@@ -12,21 +12,23 @@ export class WuRow {
   @Prop({ mutable: true })
   equalHeight: string = ''
 
-  componentDidLoad () {
+  componentDidLoad() {
     this.el.style.cssText = `--gap:${this.gap}`
   }
   @Listen('window:load')
-  doEqualHeight () {
+  doEqualHeight() {
     if (this.equalHeight.length) {
-      const elmList = this.el.querySelectorAll(this.equalHeight)
-      const maxHeight = this.getMaxHeight(elmList)
-      for (let i = 0; i < elmList.length; i++) {
-        ;(elmList[i] as HTMLElement).style.height = maxHeight + 'px'
-      }
+      setTimeout(() => {
+        const elmList = this.el.querySelectorAll(this.equalHeight)
+        const maxHeight = this.getMaxHeight(elmList)
+        for (let i = 0; i < elmList.length; i++) {
+          ;(elmList[i] as HTMLElement).style.height = maxHeight + 'px'
+        }
+      }, 100)
     }
   }
 
-  getMaxHeight (els) {
+  getMaxHeight(els) {
     let result = 0
     for (let i = 0; i < els.length; i++) {
       const el = els[i]
@@ -38,7 +40,7 @@ export class WuRow {
     return result
   }
 
-  render () {
+  render() {
     return <slot />
   }
 }
