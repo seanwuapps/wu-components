@@ -87,6 +87,7 @@ export class WuCard {
 
     const footer = this.el.querySelector('.card-footer')
     footer.addEventListener('click', e => {
+      console.log(e.target)
       e.stopPropagation()
     })
   }

@@ -164,13 +164,13 @@
           <wu-row auto-mobile equal-height="wu-card">
            
             <wu-col portion="1">
-              <wu-card flat="flat" card-title="Text Card with hover effect" theme="light" hover="hover">
+              <wu-card onclick="console.log('card clicked')" flat="flat" card-title="Text Card with hover effect" theme="light" hover="hover">
                 Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>. Assumenda, sit illum nam
                 blanditiis minima, consequatur illo accusamus autem animi doloribus sapiente saepe facere ratione aliquam
                 provident. Sed quo enim voluptates?
                 <div slot="footer-left">
                     <a href="#">Link</a> <button type="button">Button</button>
-                    <wu-button theme="primary" type="button">Button</wu-button>
+                    <wu-button theme="primary" type="button" onclick="console.log('asdf')">Button</wu-button>
                 </div>
               </wu-card>
             </wu-col>
