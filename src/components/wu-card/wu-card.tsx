@@ -85,11 +85,11 @@ export class WuCard {
       this.el.classList.add('flat')
     }
 
-    const footer = this.el.querySelector('.card-footer')
-    footer.addEventListener('click', e => {
-      console.log(e.target)
-      e.stopPropagation()
-    })
+    // const footer = this.el.querySelector('.card-footer')
+    // footer.addEventListener('click', e => {
+    //   console.log(e.target)
+    //   e.stopPropagation()
+    // })
   }
 
   render() {
