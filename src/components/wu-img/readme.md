@@ -7,14 +7,14 @@
 
 ## Properties
 
-| Property    | Attribute    | Description | Type     |
-| ----------- | ------------ | ----------- | -------- |
-| `alt`       | `alt`        |             | `string` |
-| `positionX` | `position-x` |             | `string` |
-| `positionY` | `position-y` |             | `string` |
-| `shape`     | `shape`      |             | `string` |
-| `src`       | `src`        |             | `string` |
-| `thumb`     | `thumb`      |             | `string` |
+| Property    | Attribute    | Description | Type     | Default     |
+| ----------- | ------------ | ----------- | -------- | ----------- |
+| `alt`       | `alt`        |             | `string` | `undefined` |
+| `positionX` | `position-x` |             | `string` | `undefined` |
+| `positionY` | `position-y` |             | `string` | `undefined` |
+| `shape`     | `shape`      |             | `string` | `undefined` |
+| `src`       | `src`        |             | `string` | `undefined` |
+| `thumb`     | `thumb`      |             | `string` | `undefined` |
 
 
 ----------------------------------------------

@@ -12,7 +12,7 @@ wu-button {
     @include raisedHover();
     filter: brightness(105%);
   }
-  &[outline] {
+  &.outline {
     border: 1px solid currentColor;
   }
   button,
@@ -31,7 +31,7 @@ wu-button {
     border-radius: var(--wu-button-radius);
   }
 
-  &[block] {
+  &.block {
     display: block;
     button,
     a {
@@ -41,7 +41,7 @@ wu-button {
       padding-right: 0;
     }
   }
-  &[flat] {
+  &.flat {
     box-shadow: none;
     &:hover {
       box-shadow: none;
@@ -49,7 +49,7 @@ wu-button {
   }
 
   // Shapes
-  &[shape='circle'] {
+  &.shape-circle {
     width: 3em;
     height: 3em;
     border-radius: 50%;
@@ -64,7 +64,7 @@ wu-button {
       white-space: nowrap;
     }
   }
-  &[shape='round'] {
+  &.shape-round {
     height: 3em;
     border-radius: 1.5em;
   }

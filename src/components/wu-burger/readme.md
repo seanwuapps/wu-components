@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property    | Attribute   | Description                                                                              | Type                                     |
-| ----------- | ----------- | ---------------------------------------------------------------------------------------- | ---------------------------------------- |
-| `animation` | `animation` | animation used to transition from burger icon to close icon                              | `"middle-out"`, `"spin-out"`, `"rotate"` |
-| `panel`     | `panel`     | if specified, burger icon will disappear at the screen size to accomodate "panel layout" | `"xs"`, `"sm"`, `"md"`, `"lg"`           |
-| `target`    | `target`    | id of the target wu-drawer-menu element                                                  | `string`                                 |
-| `theme`     | `theme`     | Change the color of the burger using a theme                                             | `string`                                 |
+| Property    | Attribute   | Description                                                                              | Type                                     | Default        |
+| ----------- | ----------- | ---------------------------------------------------------------------------------------- | ---------------------------------------- | -------------- |
+| `animation` | `animation` | animation used to transition from burger icon to close icon                              | `"middle-out" \| "rotate" \| "spin-out"` | `'middle-out'` |
+| `panel`     | `panel`     | if specified, burger icon will disappear at the screen size to accomodate "panel layout" | `"lg" \| "md" \| "sm" \| "xs"`           | `undefined`    |
+| `target`    | `target`    | id of the target wu-drawer-menu element                                                  | `string`                                 | `undefined`    |
+| `theme`     | `theme`     | Change the color of the burger using a theme                                             | `string`                                 | `undefined`    |
 
 
 ## CSS Custom Properties

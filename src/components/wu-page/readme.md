@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property             | Attribute              | Description | Type      |
-| -------------------- | ---------------------- | ----------- | --------- |
-| `reflectFixedHeader` | `reflect-fixed-header` |             | `boolean` |
+| Property             | Attribute              | Description | Type      | Default     |
+| -------------------- | ---------------------- | ----------- | --------- | ----------- |
+| `reflectFixedHeader` | `reflect-fixed-header` |             | `boolean` | `undefined` |
 
 
 ----------------------------------------------

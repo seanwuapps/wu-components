@@ -7,12 +7,12 @@
 
 ## Properties
 
-| Property   | Attribute   | Description | Type                   |
-| ---------- | ----------- | ----------- | ---------------------- |
-| `imgHref`  | `img-href`  |             | `string`               |
-| `imgShape` | `img-shape` |             | `"circle"`, `"square"` |
-| `img`      | `img`       |             | `string`               |
-| `theme`    | `theme`     |             | `string`               |
+| Property   | Attribute   | Description | Type                   | Default     |
+| ---------- | ----------- | ----------- | ---------------------- | ----------- |
+| `img`      | `img`       |             | `string`               | `undefined` |
+| `imgHref`  | `img-href`  |             | `string`               | `undefined` |
+| `imgShape` | `img-shape` |             | `"circle" \| "square"` | `'square'`  |
+| `theme`    | `theme`     |             | `string`               | `undefined` |
 
 
 ----------------------------------------------

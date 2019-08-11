@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     |
-| -------- | --------- | ----------- | -------- |
-| `depth`  | `depth`   |             | `number` |
-| `type`   | `type`    |             | `string` |
+| Property | Attribute | Description | Type     | Default |
+| -------- | --------- | ----------- | -------- | ------- |
+| `depth`  | `depth`   |             | `number` | `1`     |
+| `type`   | `type`    |             | `string` | `'box'` |
 
 
 ----------------------------------------------

@@ -7,20 +7,47 @@
 
 ## Properties
 
-| Property    | Attribute    | Description | Type                           |
-| ----------- | ------------ | ----------- | ------------------------------ |
-| `autoClose` | `auto-close` |             | `boolean`                      |
-| `panel`     | `panel`      |             | `"xs"`, `"sm"`, `"md"`, `"lg"` |
-| `position`  | `position`   |             | `"left"`, `"right"`            |
-| `theme`     | `theme`      |             | `string`                       |
+| Property    | Attribute    | Description | Type                           | Default     |
+| ----------- | ------------ | ----------- | ------------------------------ | ----------- |
+| `autoClose` | `auto-close` |             | `boolean`                      | `true`      |
+| `panel`     | `panel`      |             | `"lg" \| "md" \| "sm" \| "xs"` | `undefined` |
+| `position`  | `position`   |             | `"left" \| "right"`            | `undefined` |
+| `theme`     | `theme`      |             | `string`                       | `undefined` |
 
 
 ## Methods
 
-| Method      | Description |
-| ----------- | ----------- |
-| `closeMenu` |             |
-| `openMenu`  |             |
+### `closeMenu(trigger?: HTMLElement) => void`
+
+
+
+#### Parameters
+
+| Name      | Type          | Description |
+| --------- | ------------- | ----------- |
+| `trigger` | `HTMLElement` |             |
+
+#### Returns
+
+Type: `void`
+
+
+
+### `openMenu(trigger: HTMLElement) => void`
+
+
+
+#### Parameters
+
+| Name      | Type          | Description |
+| --------- | ------------- | ----------- |
+| `trigger` | `HTMLElement` |             |
+
+#### Returns
+
+Type: `void`
+
+
 
 
 ----------------------------------------------

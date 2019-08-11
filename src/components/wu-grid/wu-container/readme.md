@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property     | Attribute     | Description | Type      |
-| ------------ | ------------- | ----------- | --------- |
-| `fillHeight` | `fill-height` |             | `boolean` |
-| `fluid`      | `fluid`       |             | `boolean` |
+| Property     | Attribute     | Description | Type      | Default     |
+| ------------ | ------------- | ----------- | --------- | ----------- |
+| `fillHeight` | `fill-height` |             | `boolean` | `undefined` |
+| `fluid`      | `fluid`       |             | `boolean` | `undefined` |
 
 
 ----------------------------------------------

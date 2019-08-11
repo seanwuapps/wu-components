@@ -7,21 +7,21 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type      |
-| ---------- | ---------- | ----------- | --------- |
-| `checked`  | `checked`  |             | `boolean` |
-| `label`    | `label`    |             | `string`  |
-| `name`     | `name`     |             | `string`  |
-| `required` | `required` |             | `boolean` |
-| `theme`    | `theme`    |             | `string`  |
-| `value`    | --         |             | `any`     |
+| Property   | Attribute  | Description | Type      | Default     |
+| ---------- | ---------- | ----------- | --------- | ----------- |
+| `checked`  | `checked`  |             | `boolean` | `undefined` |
+| `label`    | `label`    |             | `string`  | `undefined` |
+| `name`     | `name`     |             | `string`  | `undefined` |
+| `required` | `required` |             | `boolean` | `undefined` |
+| `theme`    | `theme`    |             | `string`  | `undefined` |
+| `value`    | `value`    |             | `any`     | `undefined` |
 
 
 ## Events
 
-| Event    | Description |
-| -------- | ----------- |
-| `change` |             |
+| Event    | Description | Type                |
+| -------- | ----------- | ------------------- |
+| `change` |             | `CustomEvent<void>` |
 
 
 ----------------------------------------------

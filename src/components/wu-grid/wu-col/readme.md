@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type     |
-| --------- | --------- | ----------- | -------- |
-| `basis`   | `basis`   |             | `string` |
-| `portion` | `portion` |             | `string` |
+| Property  | Attribute | Description | Type     | Default |
+| --------- | --------- | ----------- | -------- | ------- |
+| `basis`   | `basis`   |             | `string` | `''`    |
+| `portion` | `portion` |             | `string` | `'1'`   |
 
 
 ----------------------------------------------

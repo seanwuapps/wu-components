@@ -7,28 +7,58 @@
 
 ## Properties
 
-| Property      | Attribute | Description | Type     |
-| ------------- | --------- | ----------- | -------- |
-| `iconOutline` | --        |             | `any`    |
-| `icon`        | --        |             | `any`    |
-| `max`         | `max`     |             | `number` |
-| `value`       | `value`   |             | `number` |
+| Property      | Attribute      | Description | Type     | Default |
+| ------------- | -------------- | ----------- | -------- | ------- |
+| `icon`        | `icon`         |             | `any`    | `''`    |
+| `iconOutline` | `icon-outline` |             | `any`    | `''`    |
+| `max`         | `max`          |             | `number` | `5`     |
+| `value`       | `value`        |             | `number` | `0`     |
 
 
 ## Events
 
-| Event    | Description |
-| -------- | ----------- |
-| `change` |             |
+| Event    | Description | Type                |
+| -------- | ----------- | ------------------- |
+| `change` |             | `CustomEvent<void>` |
 
 
 ## Methods
 
-| Method   | Description |
-| -------- | ----------- |
-| `getVal` |             |
-| `reset`  |             |
-| `setVal` |             |
+### `getVal() => Promise<number>`
+
+
+
+#### Returns
+
+Type: `Promise<number>`
+
+
+
+### `reset() => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+### `setVal(val: any) => Promise<number>`
+
+
+
+#### Parameters
+
+| Name  | Type  | Description |
+| ----- | ----- | ----------- |
+| `val` | `any` |             |
+
+#### Returns
+
+Type: `Promise<number>`
+
+
 
 
 ----------------------------------------------
